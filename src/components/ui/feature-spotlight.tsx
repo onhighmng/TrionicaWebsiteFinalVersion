@@ -1,0 +1,251 @@
+"use client"
+
+import { useState } from "react"
+import { ArrowUpRight } from "lucide-react"
+
+interface FeaturedSpotlightProps {
+  label?: string;
+  title1?: string;
+  title2?: string;
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  index?: string;
+  icon?: React.ReactNode;
+  accentColor?: string;
+}
+
+export function FeaturedSpotlight({
+  label = "Featured",
+  title1 = "Modern",
+  title2 = "Living",
+  description = "Where architecture meets the natural world.",
+  imageSrc = "https://plus.unsplash.com/premium_photo-1681338224373-9669c2497c05?q=80&w=2307&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  imageAlt = "Modern architecture",
+  index = "01",
+  icon,
+  accentColor = "hsl(var(--foreground))"
+}: FeaturedSpotlightProps) {
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <div
+      className="group relative flex cursor-pointer flex-col items-center gap-8 md:flex-row md:items-center md:gap-12 lg:gap-20"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Left: Text Block */}
+      <div className="relative z-10 flex w-full shrink-0 flex-col items-center text-center md:w-1/2 md:items-start md:text-left lg:pr-8">
+        {/* Label with animated line */}
+        <div className="mb-6 flex items-center gap-3 md:mb-8 md:gap-4">
+          <div
+            className="h-px transition-all duration-700"
+            style={{
+              width: isHovered ? 48 : 32,
+              backgroundColor: accentColor,
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          />
+          <span
+            className="text-[10px] font-medium uppercase tracking-[0.25em] transition-all duration-700 md:text-xs"
+            style={{
+              color: accentColor,
+              letterSpacing: isHovered ? "0.3em" : "0.25em",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          >
+            {label}
+          </span>
+        </div>
+
+        {/* Icon */}
+        {icon && (
+          <div className="mb-6">
+            <div
+              className="transition-all duration-700"
+              style={{
+                transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
+                transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              }}
+            >
+              {icon}
+            </div>
+          </div>
+        )}
+
+        {/* Title - responsive text sizes */}
+        <h2 className="relative">
+          <span
+            className="block text-4xl font-normal tracking-tight transition-all duration-700 sm:text-5xl md:text-5xl lg:text-6xl"
+            style={{
+              color: "#1f2937",
+              transform: isHovered ? "translateY(-2px)" : "translateY(0)",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          >
+            {title1}
+          </span>
+          <span
+            className="block text-4xl font-normal tracking-tight transition-all duration-700 sm:text-5xl md:text-5xl lg:text-6xl"
+            style={{
+              color: "#1f2937",
+              transform: isHovered ? "translateX(12px)" : "translateX(0)",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          >
+            {title2}
+          </span>
+        </h2>
+
+        {/* Description - responsive spacing */}
+        <p
+          className="mt-6 text-sm leading-relaxed transition-all duration-700 md:mt-8 md:text-base lg:mt-10 lg:text-lg"
+          style={{
+            color: isHovered ? "#6b7280" : "#9ca3af",
+            transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+            transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          {description}
+        </p>
+
+        {/* Minimal CTA - responsive spacing */}
+        <div className="mt-6 flex items-center gap-4 md:mt-8 lg:mt-10">
+          <div
+            className="flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-500 md:h-11 md:w-11 lg:h-12 lg:w-12"
+            style={{
+              borderColor: isHovered ? accentColor : "#d1d5db",
+              backgroundColor: isHovered ? accentColor : "transparent",
+              color: isHovered ? "#ffffff" : "#1f2937",
+              transform: isHovered ? "scale(1.05)" : "scale(1)",
+              boxShadow: isHovered ? `0 8px 32px ${accentColor}15` : "0 0 0 transparent",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          >
+            <ArrowUpRight
+              className="h-3.5 w-3.5 transition-transform duration-500 md:h-4 md:w-4"
+              style={{
+                transform: isHovered ? "rotate(45deg)" : "rotate(0deg)",
+                transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              }}
+            />
+          </div>
+          <span
+            className="text-[10px] font-medium uppercase tracking-widest transition-all duration-700 md:text-xs"
+            style={{
+              color: "#1f2937",
+              opacity: isHovered ? 1 : 0.5,
+              transform: isHovered ? "translateX(0)" : "translateX(-8px)",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              transitionDelay: isHovered ? "100ms" : "0ms",
+            }}
+          >
+            Explorar
+          </span>
+        </div>
+      </div>
+
+      {/* Right: Image Block */}
+      <div
+        className="relative transition-all duration-700"
+        style={{
+          transform: isHovered ? "translateX(4px) translateY(-4px)" : "translateX(0) translateY(0)",
+          transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      >
+        {/* Frame outline */}
+        <div
+          className="absolute -inset-3 border transition-all duration-700 md:-inset-4"
+          style={{
+            borderColor: isHovered ? `${accentColor}26` : "transparent",
+            transform: isHovered ? "scale(1.01)" : "scale(1)",
+            transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        />
+
+        {/* Image container - responsive sizing */}
+        <div className="relative h-[320px] w-full overflow-hidden sm:h-[380px] md:h-[440px] md:w-[440px] lg:h-[500px] lg:w-[500px]">
+          <div
+            className="absolute -inset-1 transition-all duration-700"
+            style={{
+              boxShadow: isHovered ? `0 24px 64px ${accentColor}1A` : "0 0 0 transparent",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          />
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="h-full w-full object-cover transition-all duration-1000"
+            style={{
+              transform: isHovered ? "scale(1.03)" : "scale(1)",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          />
+
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent transition-opacity duration-700"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          />
+
+          {/* Corner accents */}
+          <div
+            className="absolute left-2 top-2 h-5 w-px bg-white/80 transition-all duration-500 md:left-3 md:top-3 md:h-6"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              transform: isHovered ? "scaleY(1)" : "scaleY(0)",
+              transformOrigin: "top",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              transitionDelay: "50ms",
+            }}
+          />
+          <div
+            className="absolute left-2 top-2 h-px w-5 bg-white/80 transition-all duration-500 md:left-3 md:top-3 md:w-6"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              transform: isHovered ? "scaleX(1)" : "scaleX(0)",
+              transformOrigin: "left",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              transitionDelay: "100ms",
+            }}
+          />
+          <div
+            className="absolute bottom-2 right-2 h-5 w-px bg-white/80 transition-all duration-500 md:bottom-3 md:right-3 md:h-6"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              transform: isHovered ? "scaleY(1)" : "scaleY(0)",
+              transformOrigin: "bottom",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              transitionDelay: "150ms",
+            }}
+          />
+          <div
+            className="absolute bottom-2 right-2 h-px w-5 bg-white/80 transition-all duration-500 md:bottom-3 md:right-3 md:w-6"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              transform: isHovered ? "scaleX(1)" : "scaleX(0)",
+              transformOrigin: "right",
+              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              transitionDelay: "200ms",
+            }}
+          />
+        </div>
+
+        {/* Index number */}
+        <span
+          className="absolute -bottom-6 right-0 font-mono text-xs transition-all duration-700 md:-bottom-8 md:text-sm"
+          style={{
+            color: "#6b7280",
+            opacity: isHovered ? 1 : 0.4,
+            transform: isHovered ? "translateY(12px)" : "translateY(0)",
+            transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          {index}
+        </span>
+      </div>
+    </div>
+  )
+}
