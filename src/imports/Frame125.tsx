@@ -1,4 +1,5 @@
 import svgPaths from "./svg-t1bwdxff8k";
+import hidrometriaImg from "figma:asset/7471fbafe1e6b51023d1be516117d57974d1faa1.png";
 
 function Title() {
   return (
@@ -72,9 +73,11 @@ function Tab() {
       <Text1 />
       <Btn />
       <div className="absolute h-[221.584px] left-[12.74px] top-[13.03px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 318.574 221.584">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
+        <img
+          src={hidrometriaImg}
+          alt="Hidrometria"
+          className="w-full h-full object-cover rounded-lg"
+        />
       </div>
     </div>
   );

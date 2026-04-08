@@ -34,9 +34,5 @@ function Section() {
 }
 
 export default function Frame() {
-  return (
-    <div className="relative size-full">
-      <Section />
-    </div>
-  );
+  return <Section />;
 }

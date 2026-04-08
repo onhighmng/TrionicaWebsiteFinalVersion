@@ -47,13 +47,13 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
   };
   
   return (
-    <section className={`mt-0 pt-16 md:pt-20 lg:pt-24 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#f9f9f9] ${className}`} ref={heroRef} data-navbar-section="light">
+    <section className={`-mt-16 md:-mt-28 lg:-mt-40 xl:-mt-80 2xl:-mt-96 pt-0 xl:pt-0 pt-32 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#f5f5f5] ${className}`} ref={heroRef} data-navbar-section="light">
       <div className="max-w-6xl mx-auto">
         <div className="relative">
           {/* Header */}
           <div className="flex justify-between items-center mb-8 md:mb-12">
             <div className="flex items-center gap-2 text-2xl md:text-3xl">
-              <span className="text-[#2354a2] animate-spin text-3xl md:text-4xl">✱</span>
+              <span className="text-[#2354a2] animate-spin text-3xl md:text-4xl font-['Inter','Noto_Sans_Symbols_2',sans-serif]">✱</span>
               <TimelineContent
                 as="span"
                 animationNum={0}
@@ -182,7 +182,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               <div className="flex flex-col items-center">
                 <AnimatedCounter
                   target={100}
-                  duration={3500}
+                  duration={6000}
                   suffix="+"
                   className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
                 />
@@ -191,7 +191,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               <div className="flex flex-col items-center">
                 <AnimatedCounter
                   target={15}
-                  duration={3500}
+                  duration={6000}
                   suffix="+"
                   className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
                 />
@@ -199,21 +199,21 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               </div>
               <div className="flex flex-col items-center">
                 <AnimatedCounter
-                  target={95}
-                  duration={3500}
-                  suffix="%"
+                  target={10}
+                  duration={6000}
+                  suffix="+"
                   className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
                 />
-                <span className="text-gray-600 text-[10px] md:text-xs mt-2">Experiência</span>
+                <span className="text-gray-600 text-[10px] md:text-xs mt-2">Marcas Globais</span>
               </div>
               <div className="flex flex-col items-center">
                 <AnimatedCounter
-                  target={91}
-                  duration={3500}
-                  suffix="%"
+                  target={6}
+                  duration={6000}
+                  suffix=""
                   className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
                 />
-                <span className="text-gray-600 text-[10px] md:text-xs mt-2">Atendimento</span>
+                <span className="text-gray-600 text-[10px] md:text-xs mt-2">Sectores Atendidos</span>
               </div>
             </TimelineContent>
 

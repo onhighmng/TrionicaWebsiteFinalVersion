@@ -278,7 +278,7 @@ function Navigation({ currentPage, onNavigate, solucoesOpen, setSolucoesOpen }: 
       image: "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=400&h=250&fit=crop"
     },
     aguas: {
-      description: "Equipamentos para tratamento e análise de qualidade de água",
+      description: "Equipamento de medição, análise e tratamento de água para consumo e residuais",
       image: "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=400&h=250&fit=crop"
     },
     ambiente: {
@@ -286,7 +286,7 @@ function Navigation({ currentPage, onNavigate, solucoesOpen, setSolucoesOpen }: 
       image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=400&h=250&fit=crop"
     },
     minas: {
-      description: "Equipamentos para exploração mineira e análise geológica",
+      description: "Equipamentos para prospeção, exploração mineira e análise geológica",
       image: "https://images.unsplash.com/photo-1558603668-6570496b66f8?w=400&h=250&fit=crop"
     }
   };

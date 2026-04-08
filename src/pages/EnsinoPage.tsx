@@ -1,16 +1,21 @@
 import React, { useRef } from 'react';
 import Frame5 from '../imports/Frame5';
 import Frame6 from '../imports/Frame6';
-import Frame7 from '../imports/Frame7';
 import { TimelineContent } from '../components/ui/timeline-animation';
+import { CTAFooterSection } from '../components/home/CTAFooterSection';
+import imgFrame112 from "figma:asset/425c11ad81b3fa008e9906f62c78aece21554cc7.png";
 
-export function EnsinoPage() {
+interface EnsinoPageProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="w-full bg-white" data-navbar-section="light">
-      {/* Wrapper for the Frame5 component with proper spacing and containment */}
-      <div className="pt-20 md:pt-24 pb-8 md:pb-12 px-4" ref={heroRef}>
+    <div className="w-full bg-[#F5F5F5]" data-navbar-section="light">
+      {/* Desktop Hero Section */}
+      <div className="hidden md:block pt-20 md:pt-24 pb-8 md:pb-12 px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -44,8 +49,46 @@ export function EnsinoPage() {
         </TimelineContent>
       </div>
 
-      {/* Frame6 - Infrastructure section */}
-      <div className="pb-8 md:pb-12 px-4">
+      {/* Mobile Hero Section */}
+      <section className="md:hidden relative w-full bg-[#F5F5F5] pt-20 pb-8 px-6">
+        <div className="max-w-[600px] mx-auto">
+          {/* Badge */}
+          <div className="flex gap-[4px] items-center h-[40px] mb-4">
+            <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[30px]">
+              <div className="flex-none">
+                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#fb2c36] text-[24px] animate-spin">✱</p>
+              </div>
+            </div>
+            <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">ENSINO</p>
+          </div>
+          
+          {/* Heading */}
+          <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
+            Equipando o Futuro
+          </h1>
+          
+          {/* Hero Image */}
+          <div className="w-full rounded-[12px] overflow-hidden mb-6">
+            <img 
+              alt="Ensino - Equipamentos educacionais" 
+              className="w-full h-auto object-cover" 
+              src={imgFrame112}
+            />
+          </div>
+        </div>
+      </section>
+      
+      {/* Mobile Description Section */}
+      <section className="md:hidden relative w-full bg-[#F5F5F5] px-6 pb-8">
+        <div className="max-w-[600px] mx-auto">
+          <p className="font-['Roboto:Regular',sans-serif] text-[#1c1716] text-[18px] leading-[26px] text-justify">
+            Preparando as próximas gerações com equipamentos de classe mundial.
+          </p>
+        </div>
+      </section>
+
+      {/* Frame6 - Infrastructure section - Desktop only for now */}
+      <div className="hidden md:block px-4 -mb-80">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1170px] mx-auto">
           <div className="relative w-full" style={{ paddingBottom: '101.97%' }}> {/* 1193/1170 = 101.97% */}
             <div className="absolute inset-0">
@@ -57,17 +100,14 @@ export function EnsinoPage() {
         </div>
       </div>
 
-      {/* Frame7 - Technology Transform section */}
-      <div className="pb-12 md:pb-16 px-4">
-        <div className="relative w-full max-w-[95%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] xl:max-w-[537px] mx-auto">
-          <div className="relative w-full" style={{ paddingBottom: '59.4%' }}> {/* 319/537 = 59.4% */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[537px] h-[319px] scale-[0.5] sm:scale-[0.65] md:scale-[0.8] lg:scale-[0.93] xl:scale-100 origin-center">
-                <Frame7 />
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Frame6 - Mobile version */}
+      <div className="md:hidden px-4">
+        <Frame6 />
+      </div>
+
+      {/* Call to Action Footer Section */}
+      <div className="md:-mt-72">
+        <CTAFooterSection onNavigate={onNavigate} />
       </div>
     </div>
   );

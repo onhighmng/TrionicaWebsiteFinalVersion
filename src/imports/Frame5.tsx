@@ -1,4 +1,5 @@
 import svgPaths from "./svg-h4pr4z8tj9";
+import Frame112Image from "./Frame112-2559-7";
 
 function VerticalCutReveal() {
   return <div className="h-[105.594px] shrink-0 w-full" data-name="VerticalCutReveal" />;
@@ -7,7 +8,7 @@ function VerticalCutReveal() {
 function Ensino() {
   return (
     <div className="h-[130px] relative shrink-0 w-full" data-name="Ensino">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[26px] left-0 not-italic text-[#4a5565] text-[16px] text-justify top-[-0.59px] tracking-[-0.3125px] w-[701px]">Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[26px] left-0 not-italic text-[#4a5565] text-[24px] text-justify top-[-0.59px] tracking-[-0.3125px] w-[701px]">Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.</p>
     </div>
   );
 }
@@ -57,7 +58,7 @@ function ArrowRight() {
 
 function Button() {
   return (
-    <div className="absolute bg-[#bbf814] content-stretch flex gap-[10px] h-[46.357px] items-center justify-center left-[782.92px] px-[33px] py-[15px] rounded-[35px] top-[593.37px] w-[184.652px]" data-name="Button">
+    <div className="absolute bg-[#bbf814] content-stretch flex gap-[10px] h-[46.357px] items-center justify-center left-[782.92px] px-[33px] py-[15px] rounded-[35px] top-[593.37px] w-[184.652px] hidden" data-name="Button">
       <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[#010101] text-[16px] text-nowrap tracking-[-0.3125px]">CONTACTAR</p>
       <ArrowRight />
     </div>
@@ -66,7 +67,7 @@ function Button() {
 
 function Image() {
   return (
-    <div className="h-[56px] relative shrink-0 w-[130px]" data-name="Image">
+    <div className="h-[56px] relative shrink-0 w-[130px] hidden" data-name="Image">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 130 56">
         <g id="Image">
           <circle cx="28" cy="28" fill="var(--fill-0, #C4C4C4)" id="Image_2" r="26.5" stroke="var(--stroke-0, white)" strokeWidth="3" />
@@ -97,7 +98,7 @@ function Content() {
 
 function People1() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-[183.79px] items-center justify-center left-[50.78px] px-[20px] py-[21px] rounded-[15px] top-[428.22px] w-[203.117px]" data-name="People">
+    <div className="absolute bg-white content-stretch flex flex-col items-center justify-center left-[50.78px] px-[24px] py-[20px] rounded-[15px] top-[428.22px] w-[220px] hidden" data-name="People">
       <Content />
     </div>
   );
@@ -107,18 +108,16 @@ function Section() {
   return (
     <div className="absolute contents left-0 top-0" data-name="Section 01">
       <Button />
-      <div className="absolute h-[662.907px] left-0 top-0 w-[1167px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1167 663">
-          <path d={svgPaths.p6458a00} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
+      <div className="absolute h-[662.907px] left-0 top-0 w-[1167px] rounded-[15px] overflow-hidden" data-name="Image">
+        <Frame112Image />
       </div>
       <People1 />
       <div className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[133.509px] leading-[1.12] left-0 text-[#1c1716] text-[64px] top-0 tracking-[-1.92px] w-[536.414px]">
         <p className="mb-0">{`Equipando o `}</p>
         <p>Futuro</p>
       </div>
-      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-[69px] leading-[40px] left-[4px] text-[#1c1716] text-[32px] top-[146px] w-[572px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Eduque com a tecnologia que as melhores universidades do mundo utilizam.
+      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[4px] text-[#1c1716] text-[22px] top-[170px] w-[572px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        Preparando as próximas gerações com equipamentos de classe mundial.
       </p>
     </div>
   );
@@ -180,7 +179,7 @@ export default function Frame2() {
   return (
     <div className="relative size-full">
       <Frame1 />
-      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[1162.95px] not-italic text-[#fb2c36] text-[24px] text-nowrap text-right top-[714px] tracking-[0.0703px] translate-x-[-100%]">TRIONICA</p>
+      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[984px] -translate-x-1/2 not-italic text-[#fb2c36] text-[24px] text-nowrap top-[714px] tracking-[0.0703px]">Triónica</p>
     </div>
   );
 }

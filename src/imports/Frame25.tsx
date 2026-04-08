@@ -56,7 +56,7 @@ function ButtonNavButton2({ onNavigate }: { onNavigate?: (page: string) => void 
       image: imgSaude
     },
     aguas: {
-      description: "Equipamentos para tratamento e análise de qualidade de água",
+      description: "Equipamento de medição, análise e tratamento de água para consumo e residuais",
       image: "https://images.unsplash.com/photo-1674471361523-195aa08e69b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=250"
     },
     ambiente: {
@@ -64,7 +64,7 @@ function ButtonNavButton2({ onNavigate }: { onNavigate?: (page: string) => void 
       image: imgAmbiente
     },
     minas: {
-      description: "Equipamentos para exploração mineira e análise geológica",
+      description: "Equipamentos para prospeção, exploração mineira e análise geológica",
       image: "https://images.unsplash.com/photo-1764422743505-97c9ea0e43f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=250"
     }
   };

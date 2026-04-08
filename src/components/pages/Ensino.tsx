@@ -72,7 +72,7 @@ export function Ensino() {
               <span>Ferramentas de investigação agronômica</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1683119926853-6427b2966f9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ3JpY3VsdHVyZSUyMGxhYm9yYXRvcnklMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY1MjIzNDg2fDA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="agricultura equipment"
@@ -116,7 +116,7 @@ export function Ensino() {
               <span>Material didático para laboratórios</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1705727210721-961cc64a6895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2llbmNlJTIwbGFib3JhdG9yeSUyMHBoeXNpY3MlMjBjaGVtaXN0cnklMjBiaW9sb2d5fGVufDF8fHx8MTc2NTIyMzQ4Nnww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="science laboratory"
@@ -160,9 +160,9 @@ export function Ensino() {
               <span>Material para estudos geotécnicos</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1762448442388-131c0dbc5037?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXZpbCUyMGVuZ2luZWVyaW5nJTIwY29uc3RydWN0aW9uJTIwbWF0ZXJpYWxzfGVufDF8fHx8MTc2NTIyMzQ4Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://images.unsplash.com/photo-1762448442388-131c0dbc5037?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXZpbCUyMGVuZ2luZWVyaW5nJTIwbWF0ZXJpYWxzfGVufDF8fHx8MTc2NTIyMzQ4Nnww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="construction materials"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
             />
@@ -204,7 +204,7 @@ export function Ensino() {
               <span>Equipamentos de reabilitação desportiva</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1763198302210-9b4a3a979dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBzY2llbmNlJTIwZXF1aXBtZW50fGVufDF8fHx8MTc2NTIyMzQ4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="sports science"
@@ -248,7 +248,7 @@ export function Ensino() {
               <span>Sistemas de controle e programação</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1720879996903-24859d1df48f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJvbmljcyUyMGVuZ2luZWVyaW5nJTIwbGFib3JhdG9yeXxlbnwxfHx8fDE3NjUyMjM0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="electronics engineering"
@@ -292,7 +292,7 @@ export function Ensino() {
               <span>Material para hidráulica e pneumática</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1655137414518-95bb094b9c9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWNoYW5pY2FsJTIwZW5naW5lZXJpbmclMjBsYWJvcmF0b3J5fGVufDF8fHx8MTc2NTIyMzQ4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="mechanical engineering"
@@ -310,9 +310,9 @@ export function Ensino() {
   ];
 
   return (
-    <div>
-      {/* Hero Section with AboutSection3 Style */}
-      <section className="py-8 px-4 bg-[#f9f9f9]" ref={heroRef}>
+    <div className="min-h-screen bg-[#eeeeee]">
+      {/* Hero Section - Desktop */}
+      <section className="hidden md:block py-8 px-4 bg-[#eeeeee]" ref={heroRef}>
         <div className="max-w-6xl mx-auto">
           <div className="relative">
             {/* Header */}
@@ -466,7 +466,45 @@ export function Ensino() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 pb-20">
+      {/* Hero Section - Mobile */}
+      <section className="md:hidden relative w-full bg-[#eeeeee] pt-20 pb-8 px-6">
+        <div className="max-w-[600px] mx-auto">
+          {/* Badge */}
+          <div className="flex gap-[4px] items-center h-[40px] mb-4">
+            <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[30px]">
+              <div className="flex-none">
+                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#fb2c36] text-[24px] animate-spin">✱</p>
+              </div>
+            </div>
+            <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">ENSINO</p>
+          </div>
+          
+          {/* Heading */}
+          <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
+            Equipamentos Didácticos Para Todos os Níveis de Ensino
+          </h1>
+          
+          {/* Hero Image */}
+          <div className="w-full rounded-[12px] overflow-hidden mb-6">
+            <img 
+              alt="Ensino - Equipamentos educacionais" 
+              className="w-full h-auto object-cover" 
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&auto=format&fit=crop"
+            />
+          </div>
+        </div>
+      </section>
+      
+      {/* Mobile Description Section - Only visible on mobile */}
+      <section className="md:hidden relative w-full bg-[#eeeeee] px-6 pb-8">
+        <div className="max-w-[600px] mx-auto">
+          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-justify tracking-[-0.3125px]">
+            Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.
+          </p>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 pb-20 bg-[#eeeeee]">
         <div className="max-w-6xl mx-auto">
           <Timeline data={timelineData} />
         </div>

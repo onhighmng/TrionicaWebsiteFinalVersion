@@ -44,7 +44,9 @@ function Text3() {
       </p>
       <div className="font-['Epilogue:Medium',sans-serif] font-medium leading-[1.2] min-w-full relative shrink-0 text-[#d4d4d4] text-[24px] w-[min-content]">
         <p className="mb-0">Segunda - Sexta</p>
-        <p>08:00 - 17:00</p>
+        <p className="mb-0">08:00 - 17:00</p>
+        <p className="mb-0 mt-2">Sábado</p>
+        <p>09:00 - 13:00</p>
       </div>
     </div>
   );

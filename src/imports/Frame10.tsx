@@ -34,9 +34,5 @@ function Section() {
 }
 
 export default function Frame() {
-  return (
-    <div className="relative size-full bg-[#f9f9f9] flex items-center justify-center">
-      <Section />
-    </div>
-  );
+  return <Section />;
 }

@@ -209,74 +209,7 @@ export function PartnersSection() {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-white overflow-hidden" data-navbar-section="light">
-      {/* Colored gradient background */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        {/* Pink gradient blob */}
-        <div className="absolute left-1/2 top-[20%] -translate-x-1/2 w-[600px] h-[600px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2132 1882">
-            <g filter="url(#filter0_f_partners_1)">
-              <ellipse cx="1065.71" cy="940.822" fill="#F9A7FC" rx="445.711" ry="320.822" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="1881.64" id="filter0_f_partners_1" width="2131.42" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="310" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-        
-        {/* Red/Pink gradient blob */}
-        <div className="absolute left-[60%] top-[15%] w-[500px] h-[500px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1803 1645">
-            <g filter="url(#filter0_f_partners_2)">
-              <ellipse cx="901.017" cy="822.427" fill="#FD91AB" rx="281.017" ry="202.427" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="1644.85" id="filter0_f_partners_2" width="1802.03" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="310" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-        
-        {/* Blue gradient blob */}
-        <div className="absolute left-[25%] top-[50%] w-[400px] h-[400px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2040 1914">
-            <g filter="url(#filter0_f_partners_3)">
-              <ellipse cx="1019.61" cy="956.585" fill="#0028F9" rx="209.611" ry="146.585" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="1913.17" id="filter0_f_partners_3" width="2039.22" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="405" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-        
-        {/* Orange gradient blob */}
-        <div className="absolute left-[35%] top-[25%] w-[450px] h-[450px] rotate-[313deg]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1452 1504">
-            <g filter="url(#filter0_f_partners_4)">
-              <path d={svgPaths.p2044e100} fill="#FFCC80" fillOpacity="0.6" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="1503.13" id="filter0_f_partners_4" width="1451.57" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="210" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-
+    <section className="relative py-16 md:py-24 lg:py-32 bg-[#f5f5f5]" data-navbar-section="light">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header with gradient text */}
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">

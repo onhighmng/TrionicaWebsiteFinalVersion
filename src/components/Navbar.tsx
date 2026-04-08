@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { getImageUrl } from "../utils/images";
@@ -19,6 +19,77 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkBg, setIsDarkBg] = useState(true); // Track if navbar is over dark background
   const [isDropdownHovered, setIsDropdownHovered] = useState(false);
+  const [isNavbarReady, setIsNavbarReady] = useState(false);
+  const [highlightSolucoes, setHighlightSolucoes] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverBlockRef = useRef(false);
+
+  // Prevent dropdown from showing during initial animation and page changes
+  useEffect(() => {
+    // BLOCK ALL HOVER EVENTS IMMEDIATELY
+    hoverBlockRef.current = true;
+    
+    // Force close everything immediately
+    setIsDropdownHovered(false);
+    setOpenDropdown(null);
+    setIsNavbarReady(false);
+    
+    // Clear any pending timeouts
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    
+    const timer = setTimeout(() => {
+      setIsNavbarReady(true);
+      // Unblock hover events after animations complete
+      hoverBlockRef.current = false;
+    }, 1200);
+    
+    return () => {
+      clearTimeout(timer);
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+      hoverBlockRef.current = true; // Block on cleanup
+    };
+  }, [currentPage]);
+
+  // Listen for custom event to open Soluções dropdown
+  useEffect(() => {
+    const handleOpenSolucoes = () => {
+      if (isNavbarReady && !hoverBlockRef.current) {
+        setOpenDropdown('solucoes');
+        setIsDropdownHovered(true);
+        setHighlightSolucoes(true);
+        // Auto-close after 5 seconds
+        dropdownTimeoutRef.current = setTimeout(() => {
+          setIsDropdownHovered(false);
+          setOpenDropdown(null);
+          setHighlightSolucoes(false);
+        }, 5000);
+      }
+    };
+
+    window.addEventListener('openSolucoesDropdown', handleOpenSolucoes);
+    return () => window.removeEventListener('openSolucoesDropdown', handleOpenSolucoes);
+  }, [isNavbarReady]);
+
+  // Listen for custom event to open mobile menu with Soluções dropdown
+  useEffect(() => {
+    const handleOpenMobileSolucoes = () => {
+      // Open mobile menu
+      setMobileMenuOpen(true);
+      setHighlightSolucoes(true);
+      // Open Soluções dropdown after a short delay
+      setTimeout(() => {
+        setOpenDropdown('solucoes');
+      }, 300);
+    };
+
+    window.addEventListener('openMobileSolucoesMenu', handleOpenMobileSolucoes);
+    return () => window.removeEventListener('openMobileSolucoesMenu', handleOpenMobileSolucoes);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,31 +129,24 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
   }, [currentPage]); // Re-run when page changes
 
   const handleNavClick = (page: string) => {
+    // Scroll to top when navigating to any page
+    window.scrollTo({ top: 0, behavior: 'instant' });
     onNavigate(page);
     setMobileMenuOpen(false);
     setOpenDropdown(null);
-    // Scroll to top when navigating
-    if (page !== 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   };
 
   // Check if we're on home page for white pill navbar
   const isHomePage = currentPage === 'home';
-
-  // Don't render navbar on home page
-  if (isHomePage) {
-    return null;
-  }
 
   return (
     <>
       {/* Fixed Navigation Wrapper */}
       <div className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 flex justify-center`}>
         {/* Navigation Container - Transparent wrapper */}
-        <nav className={`relative mt-3 md:mt-4 lg:mt-6 transition-all duration-300 w-[1280px] h-[72px] flex items-center justify-between`} style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}>
+        <nav className={`relative ${isHomePage ? '-mt-1 md:mt-4 lg:mt-6' : 'mt-1 md:mt-4 lg:mt-6'} transition-all duration-300 w-full lg:w-[1280px] h-[72px] flex items-center justify-between px-4 lg:px-0`} style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}>
           
-          {/* Desktop Layout for non-home pages - Exact Figma structure */}
+          {/* Desktop Layout - Exact Figma structure - HIDDEN ON MOBILE */}
           {!isHomePage && (
             <>
               {/* Logo section - Outside background */}
@@ -94,7 +158,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0
                 }}
-                className="h-[50.4px] w-[48.6px] shrink-0 cursor-pointer ml-[124px]" 
+                className="hidden lg:block h-[50.4px] w-[48.6px] shrink-0 cursor-pointer lg:ml-[124px]" 
                 onClick={() => handleNavClick('home')}
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
@@ -107,7 +171,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 />
               </motion.div>
 
-              {/* Middle section with dark background - Only for navigation buttons */}
+              {/* Middle section with dark background - Only for navigation buttons - HIDDEN ON MOBILE */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.96, y: -8 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -116,7 +180,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.05
                 }}
-                className="absolute left-[360px] top-0 bg-[rgba(0,0,0,0.8)] backdrop-blur-md rounded-[16px] h-[72px] w-[541px] flex items-center px-[40px] overflow-visible"
+                className="hidden lg:flex absolute left-[360px] top-0 bg-white/90 backdrop-blur-md rounded-[16px] h-[72px] w-[541px] items-center px-[40px] overflow-visible"
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
                 {/* Navigation buttons group with grid layout */}
@@ -135,16 +199,33 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       className={`[grid-area:1_/_1] ml-0 ${
                         currentPage === 'home' 
                           ? 'bg-[rgba(101,73,246,0.15)] h-[50.006px] w-[80.184px] rounded-[33.352px] flex items-center justify-center cursor-pointer'
-                          : 'h-[20.011px] w-[40px] flex items-center cursor-pointer'
+                          : 'h-[20.011px] w-[50px] flex items-center cursor-pointer'
                       }`}
                       onClick={() => handleNavClick('home')}
                       style={{ willChange: 'transform, opacity' }}
                     >
                       <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                        currentPage === 'home' ? 'text-[#6549f6]' : 'text-white'
+                        currentPage === 'home' ? 'text-[#6549f6]' : 'text-black'
                       }`} style={{ fontVariationSettings: "'opsz' 14" }}>
-                        Home
+                        Início
                       </p>
+                    </motion.div>
+
+                    {/* Dot separator 1 */}
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        delay: 0.28,
+                        ease: [0.16, 1, 0.3, 1]
+                      }}
+                      className="[grid-area:1_/_1] ml-[70px] relative shrink-0 size-[7.4px]"
+                      style={{ willChange: 'transform, opacity' }}
+                    >
+                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
+                        <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
+                      </svg>
                     </motion.div>
 
                     {/* Sobre Nós button */}
@@ -156,15 +237,32 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                         delay: 0.32,
                         ease: [0.16, 1, 0.3, 1]
                       }}
-                      className="[grid-area:1_/_1] h-[20.011px] ml-[122px] flex items-center cursor-pointer"
+                      className="[grid-area:1_/_1] h-[20.011px] ml-[95px] flex items-center cursor-pointer"
                       onClick={() => handleNavClick('sobre-nos')}
                       style={{ willChange: 'transform, opacity' }}
                     >
                       <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                        currentPage === 'sobre-nos' ? 'text-[#FF6747]' : 'text-white'
+                        currentPage === 'sobre-nos' ? 'text-[#2354a2]' : 'text-black'
                       }`} style={{ fontVariationSettings: "'opsz' 14" }}>
                         Sobre Nós
                       </p>
+                    </motion.div>
+
+                    {/* Dot separator 2 */}
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        delay: 0.35,
+                        ease: [0.16, 1, 0.3, 1]
+                      }}
+                      className="[grid-area:1_/_1] ml-[220px] relative shrink-0 size-[7.4px]"
+                      style={{ willChange: 'transform, opacity' }}
+                    >
+                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
+                        <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
+                      </svg>
                     </motion.div>
 
                     {/* Soluções button with dropdown */}
@@ -177,22 +275,30 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                         ease: [0.16, 1, 0.3, 1]
                       }}
                       className="[grid-area:1_/_1] ml-[248px] flex items-center relative"
-                      onMouseEnter={() => setIsDropdownHovered(true)}
-                      onMouseLeave={() => setIsDropdownHovered(false)}
+                      onMouseEnter={() => {
+                        if (isNavbarReady && !hoverBlockRef.current) {
+                          setIsDropdownHovered(true);
+                        }
+                      }}
+                      onMouseLeave={() => {
+                        if (isNavbarReady && !hoverBlockRef.current) {
+                          setIsDropdownHovered(false);
+                        }
+                      }}
                       style={{ willChange: 'transform, opacity' }}
                     >
                       <div className="flex gap-[7.2px] items-center h-[20.011px] cursor-pointer">
                         <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                          ['ensino', 'saude', 'aguas', 'ambiente', 'minas'].includes(currentPage) ? 'text-[#FF6747]' : 'text-white'
+                          ['ensino', 'saude', 'aguas', 'ambiente', 'minas'].includes(currentPage) ? 'text-[#2354a2]' : 'text-black'
                         }`} style={{ fontVariationSettings: "'opsz' 14" }}>
                           Soluções
                         </p>
-                        <ChevronDown className="w-[17.1px] h-[17.1px] text-white" strokeWidth={1.425} />
+                        <ChevronDown className="w-[17.1px] h-[17.1px] text-black" strokeWidth={1.425} />
                       </div>
                       
                       {/* Dropdown menu */}
                       <AnimatePresence>
-                        {isDropdownHovered && (
+                        {isDropdownHovered && isNavbarReady && !hoverBlockRef.current && (
                           <motion.div
                             initial={{ opacity: 0, scale: 0.85, y: 10 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -203,7 +309,17 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                               damping: 11.5,
                               stiffness: 100,
                             }}
-                            className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 z-[10000]"
+                            className="absolute top-full left-1/2 transform -translate-x-1/2 z-[10000] pt-2"
+                            onMouseEnter={() => {
+                              if (isNavbarReady && !hoverBlockRef.current) {
+                                setIsDropdownHovered(true);
+                              }
+                            }}
+                            onMouseLeave={() => {
+                              if (isNavbarReady && !hoverBlockRef.current) {
+                                setIsDropdownHovered(false);
+                              }
+                            }}
                           >
                             <div className="bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
                               <div className="w-max h-full p-4">
@@ -211,9 +327,9 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                                   {[
                                     { id: 'ensino', label: 'Ensino', description: 'Equipamentos e soluções educacionais para laboratórios de ensino', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop' },
                                     { id: 'saude', label: 'Saúde', description: 'Equipamentos hospitalares e soluções para diagnóstico médico', image: imgSaude },
-                                    { id: 'aguas', label: 'Águas', description: 'Equipamentos para tratamento e análise de qualidade de água', image: imgAguas },
+                                    { id: 'aguas', label: 'Águas', description: 'Equipamento de medição, análise e tratamento de água para consumo e residuais', image: imgAguas },
                                     { id: 'ambiente', label: 'Ambiente', description: 'Soluções sustentáveis para monitorização ambiental', image: imgAmbiente },
-                                    { id: 'minas', label: 'Minas', description: 'Equipamentos para exploração mineira e análise geológica', image: imgMinas }
+                                    { id: 'minas', label: 'Minas', description: 'Equipamentos para prospeção, exploração mineira e análise geológica', image: imgMinas }
                                   ].map((item) => (
                                     <ProductItem
                                       key={item.id}
@@ -231,6 +347,23 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       </AnimatePresence>
                     </motion.div>
 
+                    {/* Dot separator 3 */}
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        delay: 0.42,
+                        ease: [0.16, 1, 0.3, 1]
+                      }}
+                      className="[grid-area:1_/_1] ml-[352px] relative shrink-0 size-[7.4px]"
+                      style={{ willChange: 'transform, opacity' }}
+                    >
+                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
+                        <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
+                      </svg>
+                    </motion.div>
+
                     {/* Portfolio button */}
                     <motion.div 
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
@@ -241,11 +374,11 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                         ease: [0.16, 1, 0.3, 1]
                       }}
                       className="[grid-area:1_/_1] h-[20.011px] ml-[375px] flex items-center cursor-pointer"
-                      onClick={() => handleNavClick('blog')}
+                      onClick={() => handleNavClick('portfolio')}
                       style={{ willChange: 'transform, opacity' }}
                     >
                       <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                        currentPage === 'blog' ? 'text-[#FF6747]' : 'text-white'
+                        currentPage === 'portfolio' ? 'text-[#2354a2]' : 'text-black'
                       }`} style={{ fontVariationSettings: "'opsz' 14" }}>
                         Portfolio
                       </p>
@@ -255,7 +388,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 </div>
               </motion.div>
 
-              {/* Contactar button - Outside background, positioned on the right */}
+              {/* Contactar button - Outside background, positioned on the right - HIDDEN ON MOBILE */}
               <motion.button 
                 initial={{ opacity: 0, x: 20, scale: 0.98 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -265,7 +398,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   delay: 0.05
                 }}
                 onClick={() => handleNavClick('contacte-nos')}
-                className="absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+                className="hidden lg:flex absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
                 style={{ willChange: 'transform, opacity' }}
               >
                 <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#101828] text-[14px] text-center whitespace-nowrap tracking-[-0.1504px]">
@@ -275,27 +408,28 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
             </>
           )}
 
-          {/* Mobile Layout - Original flexbox */}
+          {/* Mobile Layout - Original flexbox - VISIBLE ON MOBILE ONLY */}
           <div className="flex lg:hidden items-center justify-between w-full">
             {/* Logo section */}
             <div className="flex items-center gap-2 md:gap-3 cursor-pointer" onClick={() => handleNavClick('home')}>
               <img 
                 src={getImageUrl("wp-content/uploads/2019/05/cropped-LogoTRIONICAmz-002_1-1.png")}
                 alt="Trionica" 
-                className={isHomePage ? "h-7 md:h-9 w-auto" : "h-8 md:h-10 w-auto"}
+                className="h-8 md:h-10 w-auto"
               />
-              <span className={`text-base md:text-lg lg:text-xl font-semibold ${isHomePage ? 'text-gray-900' : 'text-white'}`}>Trionica</span>
+              <span className={`text-base md:text-lg font-semibold ${currentPage === 'contacte-nos' ? 'text-white' : 'text-gray-900'}`}>Trionica</span>
             </div>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2"
             >
               <span className="sr-only">Toggle menu</span>
               {mobileMenuOpen ? (
-                <X className={`h-6 w-6 ${isHomePage ? 'text-gray-900' : 'text-white'}`} />
+                <X className={`h-6 w-6 ${currentPage === 'contacte-nos' ? 'text-white' : 'text-gray-900'}`} />
               ) : (
-                <Menu className={`h-6 w-6 ${isHomePage ? 'text-gray-900' : 'text-white'}`} />
+                <Menu className={`h-6 w-6 ${currentPage === 'contacte-nos' ? 'text-white' : 'text-gray-900'}`} />
               )}
             </button>
           </div>
@@ -305,95 +439,162 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
       {/* Mobile Navigation Menu with animation */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ y: "-100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex flex-col p-4 bg-black/95 md:hidden overflow-y-auto"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center cursor-pointer" onClick={() => handleNavClick('home')}>
-                <img 
-                  src={getImageUrl("wp-content/uploads/2019/05/cropped-LogoTRIONICAmz-002_1-1.png")}
-                  alt="Trionica" 
-                  className="h-10 w-auto"
-                />
-              </div>
-              <button onClick={() => setMobileMenuOpen(false)}>
-                <X className="h-6 w-6 text-white" />
-              </button>
-            </div>
-            <div className="mt-8 flex flex-col space-y-4">
-              <MobileNavItem 
-                label="Home" 
-                isActive={currentPage === 'home'}
-                onClick={() => handleNavClick('home')}
-              />
-              <MobileNavItem 
-                label="Sobre Nós" 
-                isActive={currentPage === 'sobre-nos'}
-                onClick={() => handleNavClick('sobre-nos')}
-              />
-              
-              {/* Mobile Soluções Dropdown */}
-              <div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/60 z-[9998]"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            
+            {/* Menu Panel - Full Screen */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 right-0 h-screen w-full bg-white shadow-2xl z-[9999] overflow-y-auto"
+            >
+              {/* Close Button */}
+              <div className="absolute top-6 right-6 z-10">
                 <button
-                  onClick={() => setOpenDropdown(openDropdown === 'solucoes' ? null : 'solucoes')}
-                  className={`w-full flex items-center justify-between border-b border-gray-800 pb-3 text-lg ${
-                    ['ensino', 'saude', 'aguas', 'ambiente', 'minas'].includes(currentPage)
-                      ? 'text-[#d65050]'
-                      : 'text-white'
-                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                  aria-label="Fechar menu"
                 >
-                  <span>Soluções</span>
-                  <motion.div
-                    animate={{ rotate: openDropdown === 'solucoes' ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="h-4 w-4 text-gray-400" />
-                  </motion.div>
+                  <X className="w-6 h-6 text-gray-700" />
                 </button>
-                <AnimatePresence>
-                  {openDropdown === 'solucoes' && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="mt-2 ml-4 space-y-2"
-                    >
-                      {[
-                        { id: 'ensino', label: 'Ensino' },
-                        { id: 'saude', label: 'Saúde' },
-                        { id: 'aguas', label: 'Águas' },
-                        { id: 'ambiente', label: 'Ambiente' },
-                        { id: 'minas', label: 'Minas' }
-                      ].map(item => (
-                        <button
-                          key={item.id}
-                          onClick={() => handleNavClick(item.id)}
-                          className={`w-full text-left px-4 py-2 rounded-lg text-sm ${
-                            currentPage === item.id
-                              ? 'bg-gradient-to-r from-[#2354a2] to-[#d65050] text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
-                          }`}
-                        >
-                          {item.label}
-                        </button>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
 
-              <MobileNavItem 
-                label="Portfolio" 
-                isActive={currentPage === 'blog'}
-                onClick={() => handleNavClick('blog')}
-              />
-            </div>
-          </motion.div>
+              {/* Centered Content */}
+              <div className="flex items-center justify-center min-h-screen px-8 py-20">
+                {/* Navigation Links */}
+                <nav className="flex flex-col gap-6 w-full max-w-md">
+                  <button
+                    onClick={() => handleNavClick('home')}
+                    className={`text-center transition-colors ${
+                      currentPage === 'home'
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#FF6747]"
+                    }`}
+                  >
+                    Início
+                  </button>
+                  
+                  <button
+                    onClick={() => handleNavClick('sobre-nos')}
+                    className={`text-center transition-colors ${
+                      currentPage === 'sobre-nos'
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                    }`}
+                  >
+                    Sobre Nós
+                  </button>
+                  
+                  {/* Soluções Dropdown */}
+                  <div>
+                    <button
+                      onClick={() => setOpenDropdown(openDropdown === 'solucoes' ? null : 'solucoes')}
+                      className={`w-full text-center transition-colors flex items-center justify-center gap-2 ${
+                        (highlightSolucoes || ['saude', 'aguas', 'ambiente', 'minas', 'ensino'].includes(currentPage))
+                          ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
+                          : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                      }`}
+                    >
+                      Soluções
+                      <ChevronDown className={`w-5 h-5 transition-transform ${openDropdown === 'solucoes' ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {openDropdown === 'solucoes' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="flex flex-col gap-3 mt-4 pl-4"
+                      >
+                        <button
+                          onClick={() => handleNavClick('saude')}
+                          className={`text-center transition-colors ${
+                            currentPage === 'saude'
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                          }`}
+                        >
+                          Saúde
+                        </button>
+                        <button
+                          onClick={() => handleNavClick('aguas')}
+                          className={`text-center transition-colors ${
+                            currentPage === 'aguas'
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                          }`}
+                        >
+                          Águas
+                        </button>
+                        <button
+                          onClick={() => handleNavClick('ambiente')}
+                          className={`text-center transition-colors ${
+                            currentPage === 'ambiente'
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                          }`}
+                        >
+                          Ambiente
+                        </button>
+                        <button
+                          onClick={() => handleNavClick('minas')}
+                          className={`text-center transition-colors ${
+                            currentPage === 'minas'
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                          }`}
+                        >
+                          Minas
+                        </button>
+                        <button
+                          onClick={() => handleNavClick('ensino')}
+                          className={`text-center transition-colors ${
+                            currentPage === 'ensino'
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                          }`}
+                        >
+                          Ensino
+                        </button>
+                      </motion.div>
+                    )}
+                  </div>
+                  
+                  <button
+                    onClick={() => handleNavClick('portfolio')}
+                    className={`text-center transition-colors ${
+                      currentPage === 'portfolio'
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                    }`}
+                  >
+                    Portfolio
+                  </button>
+                  
+                  <button
+                    onClick={() => handleNavClick('contacte-nos')}
+                    className={`text-center transition-colors ${
+                      currentPage === 'contacte-nos'
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                    }`}
+                  >
+                    Contacto
+                  </button>
+                </nav>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

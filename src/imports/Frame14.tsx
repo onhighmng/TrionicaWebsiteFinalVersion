@@ -1,9 +1,10 @@
 import svgPaths from "./svg-mo2j74ot3o";
+import Frame115Image from "./Frame115-2559-73";
 
 function Container() {
   return (
-    <div className="absolute blur-[0px] filter h-[30px] left-[815px] top-[697px] w-[305px]" data-name="Container">
-      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[330.95px] not-italic text-[#fb2c36] text-[24px] text-nowrap text-right top-0 tracking-[0.0703px] translate-x-[-100%]">TRIONICA</p>
+    <div className="absolute blur-[0px] filter h-[30px] left-[967px] top-[697px] w-[305px] hidden md:block" data-name="Container">
+      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-1/2 -translate-x-1/2 not-italic text-[#fb2c36] text-[24px] text-nowrap top-0 tracking-[0.0703px]">Triónica</p>
     </div>
   );
 }
@@ -56,7 +57,7 @@ function Container3() {
 
 function Container4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] h-[382px] items-start left-[64px] top-[522px] w-[744px]" data-name="Container">
+    <div className="absolute content-stretch flex flex-col gap-[32px] h-[382px] items-start left-[64px] top-[522px] w-[744px] hidden md:flex" data-name="Container">
       <VerticalCutReveal />
       <Container3 />
     </div>
@@ -78,7 +79,7 @@ function ArrowRight() {
 
 function Button() {
   return (
-    <div className="absolute bg-[#bbf814] content-stretch flex gap-[10px] h-[46.357px] items-center justify-center left-[782.92px] px-[33px] py-[15px] rounded-[35px] top-[690.37px] w-[184.652px]" data-name="Button">
+    <div className="absolute bg-[#bbf814] content-stretch flex gap-[10px] h-[46.357px] items-center justify-center left-[782.92px] px-[33px] py-[15px] rounded-[35px] top-[690.37px] w-[184.652px] hidden" data-name="Button">
       <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[#010101] text-[16px] text-nowrap tracking-[-0.3125px]">CONTACTAR</p>
       <ArrowRight />
     </div>
@@ -87,7 +88,7 @@ function Button() {
 
 function Image() {
   return (
-    <div className="h-[56px] relative shrink-0 w-[130px]" data-name="Image">
+    <div className="h-[56px] relative shrink-0 w-[130px] hidden" data-name="Image">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 130 56">
         <g id="Image">
           <circle cx="28" cy="28" fill="var(--fill-0, #C4C4C4)" id="Image_2" r="26.5" stroke="var(--stroke-0, white)" strokeWidth="3" />
@@ -118,7 +119,7 @@ function Content() {
 
 function People1() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-[183.79px] items-center justify-center left-[50.78px] px-[20px] py-[21px] rounded-[15px] top-[525.22px] w-[203.117px]" data-name="People">
+    <div className="absolute bg-white content-stretch flex flex-col h-[183.79px] items-center justify-center left-[50.78px] px-[20px] py-[21px] rounded-[15px] top-[525.22px] w-[203.117px] hidden" data-name="People">
       <Content />
     </div>
   );
@@ -128,10 +129,8 @@ function Section() {
   return (
     <div className="absolute contents left-0 top-[97px]" data-name="Section 01">
       <Button />
-      <div className="absolute h-[662.907px] left-0 top-[97px] w-[1167px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1167 663">
-          <path d={svgPaths.p6458a00} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
+      <div className="absolute h-[662.907px] left-0 top-[97px] w-[1167px] rounded-[15px] overflow-hidden block" data-name="Image">
+        <Frame115Image />
       </div>
       <People1 />
     </div>
@@ -161,7 +160,7 @@ function Text1() {
 
 function Container5() {
   return (
-    <div className="absolute content-stretch flex gap-[0.364px] h-[97px] items-center left-0 pl-[-7.636px] pr-0 py-0 top-0 w-[160px]" data-name="Container">
+    <div className="absolute content-stretch flex gap-[0.364px] h-[97px] items-center left-0 md:left-0 pl-[-7.636px] pr-0 py-0 top-0 w-[160px] block" data-name="Container">
       <div className="flex h-[42.874px] items-center justify-center relative shrink-0 w-[42.866px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[316.003deg]">
           <Text />
@@ -174,14 +173,14 @@ function Container5() {
 
 export default function Frame() {
   return (
-    <div className="relative size-full">
+    <div className="relative w-[1167px] h-full mx-auto">
       <Container />
       <Container4 />
       <Section />
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[19px] leading-[20px] left-[1117px] not-italic text-[#4a5565] text-[14px] text-right top-[751px] tracking-[-0.1504px] translate-x-[-100%] w-[300px]">Equipamentos Educacionais | Soluções Científicas</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[19px] leading-[20px] left-[1117px] not-italic text-[#4a5565] text-[14px] text-right top-[751px] tracking-[-0.1504px] translate-x-[-100%] w-[300px] hidden md:block">Equipamentos Educacionais | Soluções Científicas</p>
       <Container5 />
-      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[133.509px] leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] w-[536.414px]">Juntos pelo mundo verde.</p>
-      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-[69px] leading-[40px] left-[8px] text-[#1c1716] text-[32px] top-[257px] w-[590px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[133.509px] leading-[1.12] left-[8px] md:left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] w-[536.414px] block">Juntos pelo mundo verde.</p>
+      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[8px] md:left-[8px] text-[#1c1716] text-[22px] top-[275px] w-[590px] block" style={{ fontVariationSettings: "'wdth' 100" }}>
         Ferramentas modernas para construir um legado de biodiversidade e equilíbrio.
       </p>
     </div>

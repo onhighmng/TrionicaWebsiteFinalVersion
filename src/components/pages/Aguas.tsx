@@ -1,16 +1,20 @@
 import React, { useRef } from 'react';
 import Frame11 from '../../imports/Frame11';
 import Frame12 from '../../imports/Frame12';
-import Frame13 from '../../imports/Frame13';
 import { TimelineContent } from '../ui/timeline-animation';
+import { CTAFooterSection } from '../home/CTAFooterSection';
 
-export function Aguas() {
+interface AguasProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function Aguas({ onNavigate }: AguasProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="min-h-screen bg-[#f9f9f9]">
+    <div className="min-h-screen bg-[#f5f5f5]">
       {/* Hero Section */}
-      <section className="relative w-full bg-[#f9f9f9] pt-20 md:pt-24 pb-8 md:pb-12 px-4" ref={heroRef}>
+      <section className="relative w-full bg-[#f5f5f5] pt-20 md:pt-24 pb-12 md:pb-20 px-4 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -32,10 +36,10 @@ export function Aguas() {
             }
           }}
         >
-          <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
-            <div className="relative w-full" style={{ paddingBottom: '64.29%' }}> {/* 900/1400 = 64.29% */}
-              <div className="absolute inset-0">
-                <div className="w-[1400px] h-[900px] scale-[0.4] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top-left">
+          <div className="relative w-full mx-auto overflow-hidden">
+            <div className="relative w-full" style={{ paddingBottom: '70%' }}> {/* Increased from 64.29% to give more vertical space */}
+              <div className="absolute inset-0 flex items-start justify-center">
+                <div className="w-[1400px] h-[900px] scale-[0.295] min-[430px]:scale-[0.32] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top md:origin-top-left">
                   <Frame11 />
                 </div>
               </div>
@@ -44,35 +48,37 @@ export function Aguas() {
         </TimelineContent>
       </section>
       
+      {/* Mobile Description Section - Between hero and cards */}
+      <section className="md:hidden relative w-full bg-[#f5f5f5] px-4 pb-8">
+        <div className="max-w-[90%] mx-auto text-center">
+          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] tracking-[-0.3125px]">
+            Oferecemos soluções tecnológicas que facilitam o controlo, análise e melhoria da qualidade da água.
+          </p>
+        </div>
+      </section>
+      
       {/* Equipment Grid Section */}
-      <section className="relative w-full bg-[#f9f9f9] py-12 md:py-16 lg:py-20 px-4">
+      <section className="relative w-full bg-[#f5f5f5] px-4 md:px-4 md:-mb-80">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
-          <div className="relative w-full" style={{ paddingBottom: '125%' }}> {/* 1750/1400 = 125% */}
+          {/* Desktop version with scaling */}
+          <div className="hidden md:block relative w-full" style={{ paddingBottom: '125%' }}>
             <div className="absolute inset-0">
-              <div className="w-[1400px] h-[1750px] scale-[0.4] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top-left">
+              <div className="w-[1400px] h-[1750px] scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top-left">
                 <Frame12 />
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="relative w-full bg-[#f9f9f9] pt-12 md:pt-16 lg:pt-20 pb-4 md:pb-6 px-4">
-        <div className="relative w-full max-w-[95%] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1000px] xl:max-w-[1200px] mx-auto">
-          <div className="relative w-full" style={{ paddingBottom: '33.33%' }}> {/* 400/1200 = 33.33% */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[1200px] h-[400px] scale-[0.45] sm:scale-[0.55] md:scale-[0.7] lg:scale-[0.83] xl:scale-100 origin-center">
-                <Frame13 />
-              </div>
-            </div>
+          
+          {/* Mobile version - no scaling, direct render */}
+          <div className="md:hidden">
+            <Frame12 />
           </div>
         </div>
       </section>
       
-      {/* Space for additional components */}
-      <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 lg:py-20">
-        {/* Drop new components here */}
+      {/* CTA Footer Section */}
+      <div className="md:-mt-72">
+        <CTAFooterSection onNavigate={onNavigate} />
       </div>
     </div>
   );

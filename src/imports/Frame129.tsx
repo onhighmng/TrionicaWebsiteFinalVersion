@@ -195,7 +195,7 @@ function Heading2() {
 function Paragraph6() {
   return (
     <div className="h-[40.8px] relative shrink-0 w-full" data-name="Paragraph">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#525252] text-[12px] top-[0.85px] w-[113px]">Equipamentos para tratamento e análise de qualidade de água</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#525252] text-[12px] top-[0.85px] w-[113px]">Equipamento de medição, análise e tratamento de água para consumo e residuais</p>
     </div>
   );
 }
@@ -275,7 +275,7 @@ function Heading4() {
 function Paragraph8() {
   return (
     <div className="h-[40.8px] relative shrink-0 w-full" data-name="Paragraph">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#525252] text-[12px] top-[0.85px] w-[136px]">Equipamentos para exploração mineira e análise geológica</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#525252] text-[12px] top-[0.85px] w-[136px]">Equipamentos para prospeção, exploração mineira e análise geológica</p>
     </div>
   );
 }

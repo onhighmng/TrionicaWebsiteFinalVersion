@@ -8,9 +8,9 @@ export function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) 
         {/* Rounded card container - much larger */}
         <div className="relative overflow-hidden rounded-[20px] md:rounded-[28px] lg:rounded-[32px] bg-[#1a1a1a] px-6 py-10 md:px-10 md:py-14 lg:px-16 lg:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[800px] flex flex-col">
           {/* Content */}
-          <div className="relative z-10 grid gap-8 md:gap-10 lg:gap-12 md:grid-cols-2 lg:grid-cols-12 mb-auto">
-            {/* Left column - Description and social icons */}
-            <div className="lg:col-span-5 pb-4 border-b border-gray-700 md:border-b-0 md:pb-0">
+          <div className="relative z-10 grid gap-8 md:gap-10 lg:gap-12 md:grid-cols-1 mb-auto">
+            {/* Description and social icons */}
+            <div className="pb-4 border-b border-gray-700 md:border-b-0 md:pb-0">
               <p className="mb-6 md:mb-8 text-base md:text-lg lg:text-xl leading-relaxed text-gray-200">
                 Soluções tecnológicas inovadoras em automação, segurança e energia para transformar o seu negócio. Líder em Moçambique com qualidade internacional.
               </p>
@@ -44,53 +44,6 @@ export function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) 
                   aria-label="Twitter"
                 >
                   <Twitter className="h-4 w-4 md:h-5 md:w-5" />
-                </a>
-              </div>
-            </div>
-            
-            {/* Right columns - Navigation links */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-8 lg:col-span-7">
-              {/* Endereço */}
-              <div className="pb-6 border-b border-gray-800 md:border-b-0 md:pb-0">
-                <h3 className="mb-3 md:mb-4 text-sm md:text-base lg:text-lg uppercase tracking-wider text-white font-semibold">
-                  📍 Endereço
-                </h3>
-                <p className="text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed">
-                  Bairro da Costa do Sol<br />
-                  Av. Major General Cândido Mondlane, Nº 2007<br />
-                  Maputo, Moçambique
-                </p>
-              </div>
-              
-              {/* E-mail */}
-              <div className="pb-6 border-b border-gray-800 md:border-b-0 md:pb-0">
-                <h3 className="mb-3 md:mb-4 text-sm md:text-base lg:text-lg uppercase tracking-wider text-white font-semibold">
-                  📧 E-mail
-                </h3>
-                <a 
-                  href="mailto:geral@trionicamz.com"
-                  className="text-sm md:text-base lg:text-lg text-gray-200 hover:text-white transition-colors break-all"
-                >
-                  geral@trionicamz.com
-                </a>
-              </div>
-              
-              {/* Contactos */}
-              <div>
-                <h3 className="mb-3 md:mb-4 text-sm md:text-base lg:text-lg uppercase tracking-wider text-white font-semibold">
-                  📞 Contactos
-                </h3>
-                <a 
-                  href="tel:+258846974444"
-                  className="block text-sm md:text-base lg:text-lg text-gray-200 hover:text-white transition-colors mb-2"
-                >
-                  (+258) 84/86 69 74 444
-                </a>
-                <a 
-                  href="tel:+258820660201"
-                  className="block text-sm md:text-base lg:text-lg text-gray-200 hover:text-white transition-colors"
-                >
-                  (+258) 82 06 60 201
                 </a>
               </div>
             </div>

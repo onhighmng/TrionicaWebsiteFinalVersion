@@ -1,41 +1,26 @@
 import React from 'react';
-import Frame117 from '../../imports/Frame117'; // Mobile
-import Frame114 from '../../imports/Frame114-2259-1381'; // Desktop - NEW EXACT DESIGN
+import Frame1707482740 from '../../imports/Frame1707482740-2483-1883'; // Desktop - NEW MICROSCOPE DESIGN
 
 interface HeroSectionProps {
   onNavigate?: (page: string) => void;
   currentPage?: string;
+  onMenuClose?: () => void;
 }
 
-export function HeroSection({ onNavigate, currentPage }: HeroSectionProps) {
+export function HeroSection({ onNavigate, currentPage, onMenuClose }: HeroSectionProps) {
   return (
-    <>
-      {/* Mobile - Frame117 (374×611px) */}
-      <div className="block md:hidden relative w-full bg-white overflow-hidden">
-        <div className="relative w-full max-w-[374px] mx-auto">
-          <div className="relative w-full" style={{ paddingBottom: '163.37%' }}>
-            <div className="absolute inset-0">
-              <div className="w-[374px] h-[611px] scale-100 origin-top-left">
-                <Frame117 onNavigate={onNavigate} />
-              </div>
+    <section className="relative bg-[#eeeeee] w-full overflow-hidden -mb-8 md:-mb-12 lg:-mb-16">
+      {/* Container with responsive scaling */}
+      <div className="relative w-full max-w-[1440px] mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        {/* Scaled wrapper for the entire hero */}
+        <div className="relative w-full" style={{ paddingBottom: '93.26%' }}> {/* 1343/1440 = 93.26% */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute left-1/2 -translate-x-1/2 w-[1440px] h-[1343px] scale-[0.26] sm:scale-[0.36] md:scale-[0.55] lg:scale-[0.75] xl:scale-100 origin-top pointer-events-auto">
+              <Frame1707482740 onNavigate={onNavigate} currentPage={currentPage} onMenuClose={onMenuClose} />
             </div>
           </div>
         </div>
       </div>
-
-      {/* Desktop/Tablet - Frame114 (exact Figma design) */}
-      <div className="hidden md:block relative w-full bg-white overflow-visible -mb-8 md:-mb-12 lg:-mb-16">
-        <div className="relative w-full max-w-[1346px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0">
-          <div className="relative w-full">
-            <div className="relative overflow-visible flex justify-center">
-              {/* The frame is 1346.594px wide with 775px height */}
-              <div className="w-[1346.594px] h-[775px] scale-[0.75] md:scale-[0.8] lg:scale-[0.9] xl:scale-95 2xl:scale-100 origin-top">
-                <Frame114 onNavigate={onNavigate} currentPage={currentPage} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </section>
   );
 }

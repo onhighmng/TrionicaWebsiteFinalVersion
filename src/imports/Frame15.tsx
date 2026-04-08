@@ -1,323 +1,108 @@
 import svgPaths from "./svg-qmyqfzvoya";
+import { useRef } from "react";
+import { TimelineContent } from "../components/ui/timeline-animation";
+import acusticaImg from "figma:asset/abdc8e6a38c1d529f460b672ddeac064f7a84c06.png";
+import monitorizacaoImg from "figma:asset/67e71a4a13a23c4c93d05f897f6c2c6b9b8c8ae4.png";
+import oceanografiaImg from "figma:asset/f7f4eee559adeada02a567b17879154cb9f44ed4.png";
+import saneamentoImg from "figma:asset/b6d01fa62fc7ce659df3be03127709bfd17c9c10.png";
 
-function Title() {
-  return (
-    <div className="content-stretch flex gap-[9px] items-center relative shrink-0" data-name="Title">
-      <div className="relative shrink-0 size-[6px]" data-name="dot">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
-          <circle cx="3" cy="3" fill="var(--fill-0, #224433)" id="dot" r="3" />
-        </svg>
-      </div>
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.55] relative shrink-0 text-[#1c1716] text-[14px] text-nowrap">SANEAMENTO</p>
-    </div>
-  );
-}
-
-function Text() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[328px]" data-name="Text">
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.15] relative shrink-0 text-[#1c1716] text-[28px] tracking-[-0.84px] w-full">Sistemas de tratamento — desinfeção, dessalinização, ETARs</p>
-    </div>
-  );
-}
-
-function ArrowUpRight() {
-  return (
-    <div className="absolute left-[calc(50%+0.5px)] size-[30px] top-[calc(50%+0.5px)] translate-x-[-50%] translate-y-[-50%]" data-name="ArrowUpRight">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g clipPath="url(#clip0_2047_349)" id="ArrowUpRight">
-          <g id="Vector"></g>
-          <path d="M9 20.375L21.25 8.125" id="Vector_2" stroke="var(--stroke-0, #1C1716)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-          <path d="M9.6875 7.5H21.875V19.6875" id="Vector_3" stroke="var(--stroke-0, #1C1716)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-        </g>
-        <defs>
-          <clipPath id="clip0_2047_349">
-            <rect fill="white" height="30" width="30" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function Square() {
-  return (
-    <div className="bg-white relative rounded-[100px] shrink-0 size-[55px]" data-name="Square">
-      <ArrowUpRight />
-    </div>
-  );
-}
-
-function Square4() {
-  return (
-    <div className="bg-[#bbf814] relative rounded-[100px] shrink-0 size-[55px]" data-name="Square">
-      <ArrowUpRight />
-    </div>
-  );
-}
-
-function Tab5() {
-  return (
-    <div className="relative w-[344.06px] h-[443.167px]" data-name="Tab06">
-      <div className="absolute bg-[#deeae2] h-[443.167px] left-0 rounded-[20px] top-0 w-[344.06px]" data-name="Bg-Element" />
-      <div className="absolute content-stretch flex flex-col gap-[9px] items-start left-[25.48px] top-[262.42px] w-[278.646px]" data-name="Text">
-        <Title />
-        <Text />
-      </div>
-      <div className="absolute content-stretch flex items-center left-[284.59px] top-[12.73px]" data-name="Btn">
-        <Square />
-      </div>
-      <div className="absolute h-[221.584px] left-[12.74px] top-[12.73px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 319 222">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Title1() {
-  return (
-    <div className="content-stretch flex gap-[9px] items-center relative shrink-0" data-name="Title">
-      <div className="relative shrink-0 size-[6px]" data-name="dot">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
-          <circle cx="3" cy="3" fill="var(--fill-0, #224433)" id="dot" r="3" />
-        </svg>
-      </div>
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.55] relative shrink-0 text-[#1c1716] text-[14px] text-nowrap">OCEANOGRAFIA</p>
-    </div>
-  );
-}
-
-function Text2() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[318px]" data-name="Text">
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.15] relative shrink-0 text-[#1c1716] text-[28px] tracking-[-0.84px] w-[270px]">Sondas oceanográficas</p>
-    </div>
-  );
-}
-
-function Tab4() {
-  return (
-    <div className="relative w-[344.06px] h-[443.167px]" data-name="Tab05">
-      <div className="absolute bg-[#deeae2] h-[443.167px] left-0 rounded-[20px] top-0 w-[344.06px]" data-name="Bg-Element" />
-      <div className="absolute content-stretch flex flex-col gap-[9px] items-start left-[25.48px] top-[262.42px] w-[266.753px]" data-name="Text">
-        <Title1 />
-        <Text2 />
-      </div>
-      <div className="absolute content-stretch flex items-center left-[284.59px] top-[12.73px]" data-name="Btn">
-        <Square />
-      </div>
-      <div className="absolute h-[221.584px] left-[12.74px] top-[12.73px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 319 222">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Title2() {
-  return (
-    <div className="content-stretch flex gap-[9px] items-center relative shrink-0" data-name="Title">
-      <div className="relative shrink-0 size-[6px]" data-name="dot">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
-          <circle cx="3" cy="3" fill="var(--fill-0, #224433)" id="dot" r="3" />
-        </svg>
-      </div>
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.55] relative shrink-0 text-[#1c1716] text-[14px] text-nowrap">MONITORIZAÇÃO</p>
-    </div>
-  );
-}
-
-function Text4() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Text">
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.15] relative shrink-0 text-[#1c1716] text-[28px] tracking-[-0.84px] w-[170px]">Data loggers</p>
-    </div>
-  );
-}
-
-function Tab3() {
-  return (
-    <div className="relative w-[344.06px] h-[443.167px]" data-name="Tab04">
-      <div className="absolute bg-[#deeae2] h-[443.167px] left-0 rounded-[20px] top-0 w-[344.06px]" data-name="Bg-Element" />
-      <div className="absolute content-stretch flex flex-col gap-[9px] items-start left-[25.48px] top-[262.42px] w-[248.063px]" data-name="Text">
-        <Title2 />
-        <Text4 />
-      </div>
-      <div className="absolute content-stretch flex items-center left-[284.59px] top-[12.73px]" data-name="Btn">
-        <Square />
-      </div>
-      <div className="absolute h-[221.584px] left-[12.74px] top-[12.73px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 319 222">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Title3() {
-  return (
-    <div className="content-stretch flex gap-[9px] items-center relative shrink-0" data-name="Title">
-      <div className="relative shrink-0 size-[6px]" data-name="dot">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
-          <circle cx="3" cy="3" fill="var(--fill-0, #224433)" id="dot" r="3" />
-        </svg>
-      </div>
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.55] relative shrink-0 text-[#1c1716] text-[14px] text-nowrap">ACÚSTICA</p>
-    </div>
-  );
-}
-
-function Text6() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[328px]" data-name="Text">
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.15] relative shrink-0 text-[#1c1716] text-[28px] tracking-[-0.84px] w-[270px]">Sonómetros e vibrómetros</p>
-    </div>
-  );
-}
-
-function Tab2() {
-  return (
-    <div className="relative w-[344.06px] h-[443.167px]" data-name="Tab03">
-      <div className="absolute bg-[#deeae2] h-[443.167px] left-0 rounded-[20px] top-0 w-[344.06px]" data-name="Bg-Element" />
-      <div className="absolute content-stretch flex flex-col gap-[9px] items-start left-[25.48px] top-[262.42px] w-[278.646px]" data-name="Text">
-        <Title3 />
-        <Text6 />
-      </div>
-      <div className="absolute content-stretch flex items-center left-[284.59px] top-[12.73px]" data-name="Btn">
-        <Square />
-      </div>
-      <div className="absolute h-[221.584px] left-[12.74px] top-[12.73px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 319 222">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Title4() {
-  return (
-    <div className="content-stretch flex gap-[9px] items-center relative shrink-0" data-name="Title">
-      <div className="relative shrink-0 size-[6px]" data-name="dot">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
-          <circle cx="3" cy="3" fill="var(--fill-0, #224433)" id="dot" r="3" />
-        </svg>
-      </div>
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.55] relative shrink-0 text-[#1c1716] text-[14px] text-nowrap">QUALIDADE DO AR</p>
-    </div>
-  );
-}
-
-function Text8() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Text">
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.15] relative shrink-0 text-[#1c1716] text-[28px] tracking-[-0.84px] w-[290px]">Equipamentos de análise da qualidade do ar</p>
-    </div>
-  );
-}
-
-function Tab1() {
-  return (
-    <div className="relative w-[344.06px] h-[443.167px]" data-name="Tab02">
-      <div className="absolute bg-[#deeae2] h-[443.167px] left-0 rounded-[20px] top-0 w-[344.06px]" data-name="Bg-Element" />
-      <div className="absolute content-stretch flex flex-col gap-[9px] items-start left-[25.48px] top-[262.42px] w-[248.063px]" data-name="Text">
-        <Title4 />
-        <Text8 />
-      </div>
-      <div className="absolute content-stretch flex items-center left-[284.59px] top-[12.73px]" data-name="Btn">
-        <Square4 />
-      </div>
-      <div className="absolute h-[221.584px] left-[12.74px] top-[12.73px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 319 222">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Title5() {
-  return (
-    <div className="content-stretch flex gap-[9px] items-center relative shrink-0" data-name="Title">
-      <div className="relative shrink-0 size-[6px]" data-name="dot">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
-          <circle cx="3" cy="3" fill="var(--fill-0, #224433)" id="dot" r="3" />
-        </svg>
-      </div>
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.55] relative shrink-0 text-[#1c1716] text-[14px] text-nowrap">METEOROLOGIA</p>
-    </div>
-  );
-}
-
-function Text10() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Text">
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.15] relative shrink-0 text-[#1c1716] text-[28px] tracking-[-0.84px] w-[248px]">Estações meteorológicas</p>
-    </div>
-  );
-}
-
-function Tab() {
-  return (
-    <div className="relative w-[344.06px] h-[443.167px]" data-name="Tab01">
-      <div className="absolute bg-[#deeae2] h-[443.167px] left-0 rounded-[20px] top-0 w-[344.06px]" data-name="Bg-Element" />
-      <div className="absolute content-stretch flex flex-col gap-[9px] items-start left-[25.48px] top-[262.42px] w-[248.063px]" data-name="Text">
-        <Title5 />
-        <Text10 />
-      </div>
-      <div className="absolute content-stretch flex items-center left-[284.59px] top-[12.73px]" data-name="Btn">
-        <Square />
-      </div>
-      <div className="absolute h-[221.584px] left-[12.74px] top-[12.73px] w-[318.574px]" data-name="Image">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 319 222">
-          <path d={svgPaths.p33926000} fill="var(--fill-0, #C4C4C4)" id="Image" />
-        </svg>
-      </div>
-    </div>
-  );
-}
+const sectionData = [
+  {
+    id: "meteorologia",
+    category: "METEOROLOGIA",
+    title: "Estações meteorológicas",
+    imgSrc: "https://images.unsplash.com/photo-1615603244607-6d8afd9b9507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWF0aGVyJTIwc3RhdGlvbiUyMG1ldGVvcm9sb2d5fGVufDF8fHx8MTc2ODMxMzE3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    id: "qualidade-ar",
+    category: "QUALIDADE DO AR",
+    title: "Equipamentos de análise da qualidade do ar",
+    imgSrc: "https://images.unsplash.com/photo-1765153155226-f617921051b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaXIlMjBxdWFsaXR5JTIwbW9uaXRvcmluZ3xlbnwxfHx8fDE3NjgzMTMxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    id: "acustica",
+    category: "ACÚSTICA",
+    title: "Sonómetros e vibrómetros",
+    imgSrc: acusticaImg,
+  },
+  {
+    id: "monitorizacao",
+    category: "MONITORIZAÇÃO",
+    title: "Data loggers",
+    imgSrc: monitorizacaoImg,
+  },
+  {
+    id: "oceanografia",
+    category: "OCEANOGRAFIA",
+    title: "Sondas oceanográficas",
+    imgSrc: oceanografiaImg,
+  },
+  {
+    id: "saneamento",
+    category: "SANEAMENTO",
+    title: "Sistemas de tratamento — desinfeção, dessalinização, ETARs",
+    imgSrc: saneamentoImg,
+  },
+];
 
 function Section() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const revealVariants = {
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: {
+        delay: i * 0.3,
+        duration: 0.5,
+      },
+    }),
+    hidden: {
+      filter: "blur(10px)",
+      y: -20,
+      opacity: 0,
+    },
+  };
+
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[1181px]" data-name="Section 03">
-      <div className="absolute bg-[#ecf1ee] h-[1300px] left-1/2 rounded-[25px] top-0 translate-x-[-50%] w-[1181px]" data-name="Bg-element" />
-      
-      {/* Cards Container - Centered */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[269.38px] w-[1074.66px]">
-        {/* Row 1 */}
-        <div className="absolute left-0 top-0">
-          <Tab />
-        </div>
-        <div className="absolute left-[365.3px] top-0">
-          <Tab1 />
-        </div>
-        <div className="absolute left-[730.6px] top-0">
-          <Tab2 />
-        </div>
-        
-        {/* Row 2 */}
-        <div className="absolute left-0 top-[464.89px]">
-          <Tab3 />
-        </div>
-        <div className="absolute left-[365.3px] top-[464.89px]">
-          <Tab4 />
+    <div className="relative w-full -mt-4 pb-8 px-4 md:px-8" ref={timelineRef} data-name="Section 03">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sectionData.map((item, index) => (
+            <TimelineContent
+              as="div"
+              animationNum={index}
+              timelineRef={timelineRef}
+              customVariants={revealVariants}
+              key={item.id}
+              className="relative group no-underline bg-[#deeae2] p-4 rounded-lg border border-[#c5d7cc] hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                src={item.imgSrc}
+                alt={item.title}
+                className="rounded-lg w-full object-cover aspect-video mb-3"
+              />
+              <div className="flex gap-2 items-center mb-2">
+                <div className="relative shrink-0 size-[6px]">
+                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
+                    <circle cx="3" cy="3" fill="#224433" r="3" />
+                  </svg>
+                </div>
+                <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-xs uppercase tracking-wide">
+                  {item.category}
+                </p>
+              </div>
+              <h3 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-lg leading-tight">
+                {item.title}
+              </h3>
+            </TimelineContent>
+          ))}
         </div>
       </div>
-      
-      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[46.283px] leading-[1.12] left-[calc(50%-2.38px)] text-[#1c1716] text-[48px] text-center top-[93px] tracking-[-1.44px] translate-x-[-50%] w-[714.238px]">Ativos de Inteligência Geográfica.</p>
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal h-[86.896px] leading-[1.55] left-[calc(50%+0.35px)] text-[#1c1716] text-[16px] text-center top-[160.76px] translate-x-[-50%] w-[457.898px]">Instrumentação de alta fidelidade para quem exige o padrão máximo de rigor científico.</p>
     </div>
   );
 }
 
 export default function Frame() {
-  return (
-    <div className="relative size-full flex items-center justify-center">
-      <Section />
-    </div>
-  );
+  return <Section />;
 }

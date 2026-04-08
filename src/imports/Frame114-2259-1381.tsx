@@ -87,7 +87,7 @@ function ButtonNavButton2({ isHovered, onMouseEnter, onMouseLeave, onNavigate, c
     {
       id: 'aguas',
       label: 'Águas',
-      description: 'Equipamentos para tratamento e análise de qualidade de água',
+      description: 'Equipamento de medição, análise e tratamento de água para consumo e residuais',
       image: imgAguas
     },
     {
@@ -99,7 +99,7 @@ function ButtonNavButton2({ isHovered, onMouseEnter, onMouseLeave, onNavigate, c
     {
       id: 'minas',
       label: 'Minas',
-      description: 'Equipamentos para exploração mineira e análise geológica',
+      description: 'Equipamentos para prospeção, exploração mineira e análise geológica',
       image: imgMinas
     }
   ];

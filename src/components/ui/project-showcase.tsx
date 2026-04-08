@@ -4,6 +4,30 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
+import ifpelacImg from "figma:asset/d31608eced1506e2b0ab6eaceeee99ad59045336.png"
+import ifpelacPhotovoltaicsImg from "figma:asset/09e07fd8540ba2954e373cebd831c261450e9290.png"
+import ifpelacAuditoriumImg from "figma:asset/a3f0a572434404c45f72420548a95089fa2c26b8.png"
+import ifpelacLabImg from "figma:asset/911431dab07427c6c5e254f22141277304068c3d.png"
+import seetpImg from "figma:asset/c6cbea9045063612fe5c5a15936e04e150fd2999.png"
+import seetpCharriotImg from "figma:asset/76f837f3ff9dd9f12752bfe218560ec2b0590de3.png"
+import seetpMuanzaImg from "figma:asset/b8b220ca7dc61ebdea5e72635f54722dd3eee016.png"
+import seetpMaioImg from "figma:asset/623124a118fa40128a0ac8ecffca42d30d5a6d14.png"
+import miremeInamiImg from "figma:asset/ca4fff8b45d7bec0b6435b71d15bb054bc931358.png"
+import inamiLabImg from "figma:asset/914ec62016f50e49700817a6e2934f8e80de0bff.png"
+import edmChimoioImg from "figma:asset/d8c2f4bd153362248e9a98aca02008fcc82f3634.png"
+import kfwAutoImg from "figma:asset/2a99570188868ed389594a2ffcd50d68300547a0.png"
+import kfwElectricalImg from "figma:asset/7a6cc51bda1f35be51ac13d61aa2ffa832625975.png"
+import kfwSimulatorImg from "figma:asset/caae220e32033cd5256dd242d96655b7dec69c4a.png"
+import beiraElectricalImg from "figma:asset/b3f30dd8cd35f1b82e3eb506d8b5fef58233315d.png"
+import beiraWorkbenchImg from "figma:asset/fd6611003a9c6c69b3cf38b49c30ed8166bec88a.png"
+import beiraLabImg from "figma:asset/92cda19d2391c27f3d4929a37f6b93828a58c571.png"
+import beiraWeldingImg from "figma:asset/2341ad20738b3658d08251e2506b5b8c5afa1e90.png"
+import beiraWorkshopImg from "figma:asset/d81838a81be2a577384234692bc66e1c3399ae26.png"
+import beiraComputerLabImg from "figma:asset/e8f1981e50c1c56a3554a03b4ff74c2d40a5404e.png"
+import marreraMicroscopeLabImg from "figma:asset/df2b8dd20bbf5f2fe20efb3edc47e9a41f00dd68.png"
+import marreraGreenLabImg from "figma:asset/3e4a1e8e86ce36c4df56c8835c50af2c71e61eb8.png"
+import marreraComputerRoomImg from "figma:asset/c4cffa4a696d8e0e939513daf8b06af4bdf3f09c.png"
+import marreraKitchenImg from "figma:asset/7c0ef6560415d15cf19e405480f124b0deee80ff.png"
 
 interface Project {
   id: string
@@ -11,7 +35,7 @@ interface Project {
   description: string
   category: string
   link: string
-  image: string
+  image: string | string[]
 }
 
 const projects: Project[] = [
@@ -21,7 +45,7 @@ const projects: Project[] = [
     description: "Fornecimento, instalação e pós-venda de sistemas de formação técnica e profissional (TVET) na Escola Profissional Familiar e Rural de Marrera",
     category: "FORMAÇÃO (TVET)",
     link: "#",
-    image: "https://images.unsplash.com/photo-1760493828288-d2dbb70d18c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobmljYWwlMjBlZHVjYXRpb24lMjBsYWJvcmF0b3J5fGVufDF8fHx8MTc2NjY3NTUyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: [kfwAutoImg, kfwElectricalImg, kfwSimulatorImg],
   },
   {
     id: "escola-agraria",
@@ -29,7 +53,7 @@ const projects: Project[] = [
     description: "Instalação completa de laboratórios, oficinas e equipamentos agrícolas",
     category: "INSTALAÇÃO",
     link: "#",
-    image: "https://images.unsplash.com/photo-1757609908191-8924793da9e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ3JpY3VsdHVyYWwlMjBzY2hvb2wlMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY2Njc1NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: [marreraMicroscopeLabImg, marreraGreenLabImg, marreraComputerRoomImg, marreraKitchenImg],
   },
   {
     id: "instituto-inhambane",
@@ -45,7 +69,7 @@ const projects: Project[] = [
     description: "Equipamentos e montagem para oficinas de mecânica automóvel (chaparia, pintura, equipamentos de ensaio e inspeção de veículos)",
     category: "MECÂNICA",
     link: "#",
-    image: "https://images.unsplash.com/photo-1672844825476-66737d85bfce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvbW90aXZlJTIwd29ya3Nob3B8ZW58MXx8fHwxNzY2NTU3OTUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: [beiraElectricalImg, beiraWorkbenchImg, beiraLabImg, beiraWeldingImg, beiraWorkshopImg, beiraComputerLabImg],
   },
   {
     id: "total",
@@ -61,7 +85,7 @@ const projects: Project[] = [
     description: "Vários fornecimentos de equipamentos e ferramentas para centros de formação profissional em Maputo, Chimoio, Pemba e Tete.",
     category: "EQUIPAMENTOS",
     link: "#",
-    image: "https://images.unsplash.com/photo-1722312770621-e19e81430ba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0cmFpbmluZyUyMGNlbnRlcnxlbnwxfHx8fDE3NjY2NzU1Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: [ifpelacImg, ifpelacPhotovoltaicsImg, ifpelacAuditoriumImg, ifpelacLabImg],
   },
   {
     id: "edm",
@@ -69,15 +93,15 @@ const projects: Project[] = [
     description: "Instalação de oficinas e laboratórios de eletricidade, mecânica e testes de óleo.",
     category: "TESTES DE ÓLEO",
     link: "#",
-    image: "https://images.unsplash.com/photo-1761071176091-7da66403d24a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwbGFib3JhdG9yeSUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjY2NzU1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: edmChimoioImg,
   },
   {
     id: "seetp",
     title: "SEETP",
-    description: "Fornecimento de Equipamentos de frio, Electricidade, Carpintaria e Mobiliário de Dormitório para várias instituições educacionais",
+    description: "Fornecimento de Equipamentos de frio, Electricidade, Carpintaria e Mobiliário de Dormitório, Oficina de gesso cortado, pintura e Oficina de Carpintaria, instalação, treinamento e assistência as seguintes instituições: Escola Industrial 1º de Maio (Equipamento de Frio); Instituto Industrial e Comercial Engº Filipe Jacinto Nyusi de Namáua; Instituto Médio Politécnico de Murrupula.",
     category: "CLIMATIZAÇÃO",
     link: "#",
-    image: "https://images.unsplash.com/photo-1590880795696-20c7dfadacde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJwZW50cnklMjB3b3Jrc2hvcCUyMHRvb2xzfGVufDF8fHx8MTc2NjY2NjM2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: [seetpImg, seetpCharriotImg, seetpMuanzaImg, seetpMaioImg],
   },
   {
     id: "mireme-inami",
@@ -85,7 +109,23 @@ const projects: Project[] = [
     description: "Fornecimento de equipamento sísmico e de laboratório para geologia.",
     category: "SISMOLOGIA",
     link: "#",
-    image: "https://images.unsplash.com/photo-1666536343362-e2b78d2490fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnZW9sb2d5JTIwc2Vpc21pYyUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjY2NzU1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: [miremeInamiImg, inamiLabImg],
+  },
+  {
+    id: "marrera-labs",
+    title: "Laboratórios de Marrera",
+    description: "Laboratórios de Microscópio, Laboratório Verde e Sala de Computadores na Escola de Marrera",
+    category: "LABORATÓRIOS",
+    link: "#",
+    image: [marreraMicroscopeLabImg, marreraGreenLabImg, marreraComputerRoomImg],
+  },
+  {
+    id: "marrera-kitchen",
+    title: "Cozinha de Marrera",
+    description: "Instalação de cozinha na Escola de Marrera",
+    category: "INSTALAÇÃO",
+    link: "#",
+    image: marreraKitchenImg,
   },
 ]
 
@@ -98,8 +138,10 @@ export function ProjectShowcase({ onNavigate }: ProjectShowcaseProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number | null>(null)
+  const imageRotationRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const lerp = (start: number, end: number, factor: number) => {
@@ -123,6 +165,25 @@ export function ProjectShowcase({ onNavigate }: ProjectShowcaseProps) {
     }
   }, [mousePosition])
 
+  // Rotate images for projects with multiple images
+  useEffect(() => {
+    if (hoveredIndex !== null && imageRotationRef.current === null) {
+      const project = projects[hoveredIndex]
+      if (Array.isArray(project.image) && project.image.length > 1) {
+        imageRotationRef.current = setInterval(() => {
+          setCurrentImageIndex((prev) => (prev + 1) % project.image.length)
+        }, 2500) // Change image every 2.5 seconds
+      }
+    }
+
+    return () => {
+      if (imageRotationRef.current) {
+        clearInterval(imageRotationRef.current)
+        imageRotationRef.current = null
+      }
+    }
+  }, [hoveredIndex])
+
   const handleMouseMove = (e: React.MouseEvent) => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect()
@@ -136,11 +197,17 @@ export function ProjectShowcase({ onNavigate }: ProjectShowcaseProps) {
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index)
     setIsVisible(true)
+    setCurrentImageIndex(0)
   }
 
   const handleMouseLeave = () => {
     setHoveredIndex(null)
     setIsVisible(false)
+    setCurrentImageIndex(0)
+    if (imageRotationRef.current) {
+      clearInterval(imageRotationRef.current)
+      imageRotationRef.current = null
+    }
   }
 
   const handleClick = (projectId: string) => {
@@ -148,13 +215,16 @@ export function ProjectShowcase({ onNavigate }: ProjectShowcaseProps) {
   }
 
   return (
-    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-4xl mx-auto px-6 py-16">
+    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
       <h2 className="text-[#2d2d2d]/60 text-sm font-medium tracking-[10.88px] uppercase mb-12">O Nosso Método</h2>
 
       <div className="mb-12">
-        <h3 className="text-[#2d2d2d] text-5xl leading-[1.1] font-normal">
+        <h3 className="text-[#2d2d2d] text-5xl leading-[1.1] font-normal mb-6">
           Marcos de Impacto Estratégico.
         </h3>
+        <p className="text-[#2d2d2d]/70 text-lg leading-relaxed max-w-3xl">
+          A Triónica Moçambique Lda. tem participado em diversos projetos nacionais de grande impacto, incluindo:
+        </p>
       </div>
 
       {/* Floating image preview */}
@@ -173,7 +243,7 @@ export function ProjectShowcase({ onNavigate }: ProjectShowcaseProps) {
           {projects.map((project, index) => (
             <img
               key={project.id}
-              src={project.image}
+              src={Array.isArray(project.image) ? project.image[currentImageIndex] : project.image}
               alt={project.title}
               className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-out"
               style={{

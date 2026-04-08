@@ -4,7 +4,7 @@ import { AboutSection } from './components/home/AboutSection';
 import { LatestPostSection } from './components/home/LatestPostSection';
 import { ProductsSection } from './components/home/ProductsSection';
 import { WhyChooseUsSection } from './components/home/WhyChooseUsSection';
-import { TestimonialsSection } from './components/home/TestimonialsSection';
+import { CTAFooterSection } from './components/home/CTAFooterSection';
 import { PartnersSection } from './components/home/PartnersSection';
 
 // Pages
@@ -27,6 +27,7 @@ import { Footer } from './components/Footer';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedProject, setSelectedProject] = useState<string | undefined>();
+  const [heroKey, setHeroKey] = useState(0);
 
   // Set favicon to Trionica logo
   useEffect(() => {
@@ -76,7 +77,12 @@ function App() {
     if (projectId) {
       setSelectedProject(projectId);
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const handleMenuClose = () => {
+    // Increment heroKey to trigger animation replay
+    setHeroKey(prev => prev + 1);
   };
 
   const renderPage = () => {
@@ -84,49 +90,53 @@ function App() {
       case 'home':
         return (
           <>
-            <HeroSection onNavigate={handleNavigation} currentPage={currentPage} />
+            {/* Navbar - Mobile only for home page */}
+            <div className="lg:hidden">
+              <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
+            </div>
+            <HeroSection onNavigate={handleNavigation} currentPage={currentPage} key={heroKey} onMenuClose={handleMenuClose} />
             <AboutSection onNavigate={handleNavigation} />
             <LatestPostSection onNavigate={handleNavigation} />
             <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
             <WhyChooseUsSection onNavigate={handleNavigation} />
-            <TestimonialsSection />
+            <CTAFooterSection onNavigate={handleNavigation} />
           </>
         );
       case 'sobre-nos': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-          <SobreNos />
+          <SobreNos onNavigate={handleNavigation} />
         </>
       );
       case 'aguas': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-          <Aguas />
+          <Aguas onNavigate={handleNavigation} />
         </>
       );
       case 'ensino': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-          <EnsinoPage />
+          <EnsinoPage onNavigate={handleNavigation} />
         </>
       );
       case 'saude': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-          <Saude />
+          <Saude onNavigate={handleNavigation} />
         </>
       );
       case 'ambiente': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-          <Ambiente />
+          <Ambiente onNavigate={handleNavigation} />
         </>
       );
       case 'minas': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-          <Minas />
+          <Minas onNavigate={handleNavigation} />
         </>
       );
       case 'contacte-nos': return (
@@ -136,6 +146,12 @@ function App() {
         </>
       );
       case 'blog': return (
+        <>
+          <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
+          <Blog onNavigate={handleNavigation} />
+        </>
+      );
+      case 'portfolio': return (
         <>
           <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
           <Blog onNavigate={handleNavigation} />
@@ -161,7 +177,7 @@ function App() {
             <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
             <WhyChooseUsSection onNavigate={handleNavigation} />
-            <TestimonialsSection />
+            <CTAFooterSection onNavigate={handleNavigation} />
         </>
       );
     }
@@ -173,7 +189,6 @@ function App() {
       <main className="flex-grow">
         {renderPage()}
       </main>
-      <Footer />
     </div>
   );
 }
