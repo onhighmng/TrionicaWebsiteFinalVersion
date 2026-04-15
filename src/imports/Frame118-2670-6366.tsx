@@ -2,6 +2,8 @@ import svgPaths from "./svg-ibf45u2fp8";
 import imgImageEquipaTrionica from "figma:asset/3804a766a7521e0a7f2d19d0c3b58b1eafb3c2d6.png";
 import imgImageTrionicaLogo from "figma:asset/d93cf643f81c1830c9529a1d38a8671cd0110ae2.png";
 import imgImageMicroscope from "figma:asset/4c938511638a83fc20943d41401141f356031574.png";
+import imgTeamPhoto from "figma:asset/b73ba6512c4db24a6d7646546785bde768099a3b.png";
+import imgLabEquipment from "figma:asset/2e5ef36057cf3da5268cb361884efa7b3c3f72d1.png";
 import imgImageEducacaoVisual from "figma:asset/1ed30bca1c7dacfeb480999ad8e008cd86f66392.png";
 import imgImageSaudeVisual from "figma:asset/c3e462d779bb19de3da9b06340a2d1b0429475ea.png";
 import imgImageAguasVisual from "figma:asset/9a555059eca3a0e95b663c4837fc54ef7a26e76a.png";
@@ -5009,7 +5011,7 @@ function ImageMicroscope1() {
       className="h-[1290.913px] relative shrink-0 w-[950.459px]" 
       data-name="Image (Microscope)"
     >
-      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImageMicroscope} />
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgLabEquipment} />
     </motion.div>
   );
 }

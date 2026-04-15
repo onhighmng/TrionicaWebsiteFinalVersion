@@ -184,7 +184,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen font-sans">
+    <div className="flex flex-col min-h-screen font-sans relative">
       {/* Main content */}
       <main className="flex-grow">
         {renderPage()}

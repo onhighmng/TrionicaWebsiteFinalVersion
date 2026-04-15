@@ -34,7 +34,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
     },
     {
       title: 'Nossa Visão',
-      description: 'Ser uma empresa de referência em Moçambique no fornecimento de equipamentos laboratoriais e soluções tecnológicas, destacando-nos pela inovação, qualidade e amplitude dos nossos serviços — desde o fornecimento, instalação e formaão até à manutenção especializada.',
+      description: 'Ser uma empresa de referência em Moçambique no fornecimento de equipamentos laboratoriais e soluções tecnológicas, destacando-nos pela inovação, qualidade e amplitude dos nossos serviços — desde o fornecimento, instalação e formação até à manutenção especializada.',
       link: '',
       color: '#475569', // Slate gray - sophisticated and modern
     },

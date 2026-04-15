@@ -2,30 +2,44 @@ import suneilaImage from "figma:asset/56e3a70f9923c7aafaa9f6ef1a7f2f06ab021c93.p
 import claudiaImage from "figma:asset/112a216849b9752ec9446d7eaaac3b83be7e504e.png";
 import member3Image from "figma:asset/0151d44b824da5af6b2609327d49fb41fad703b4.png";
 import member4Image from "figma:asset/77584b62874c3cf4369e0b04a50244c4569988ea.png";
+import arlindoImage from "figma:asset/b744211ee8565a847017ec7039d64ee916bc2156.png";
+import lauraImage from "figma:asset/787facb8c0fea54886457d7cde5b9d6f845757de.png";
 
 const members = [
     {
-        name: 'Suneila [ultimo nome]',
-        role: 'Directora Executiva (CEO) Triónica Moçambique',
+        name: 'Suneila Canudo',
+        role: 'Administradora',
         avatar: suneilaImage,
         link: '#',
     },
     {
-        name: 'Cláudia [last name and position needed]',
-        role: 'Triónica Moçambique',
+        name: 'Laura Zibia',
+        role: 'Assistente Administrativa',
+        avatar: lauraImage,
+        link: '#',
+    },
+    {
+        name: 'Nádia Nhampimbe',
+        role: 'Assistente de Contabilidade',
         avatar: claudiaImage,
         link: '#',
     },
     {
-        name: '[full name and position needed]',
-        role: '',
+        name: 'Aquino Tsandzana',
+        role: 'Assistente de Logística',
         avatar: member3Image,
         link: '#',
     },
     {
-        name: '[full name and position needed]',
-        role: '',
+        name: 'Celso Ernesto',
+        role: 'Assistente de Logística',
         avatar: member4Image,
+        link: '#',
+    },
+    {
+        name: 'Arlindo Nhavotso',
+        role: 'Técnico',
+        avatar: arlindoImage,
         link: '#',
     },
 ]
@@ -57,7 +71,13 @@ export default function TeamSection() {
                     <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
                         {members.map((member, index) => (
                             <div key={index} className="group overflow-hidden">
-                                <img className="h-96 w-full rounded-md object-cover object-top md:grayscale transition-all duration-500 md:hover:grayscale-0 md:group-hover:h-[22.5rem] md:group-hover:rounded-xl" src={member.avatar} alt="team member" width="826" height="1239" />
+                                <img 
+                                    className="h-96 w-full rounded-md object-cover object-top brightness-[0.85] md:grayscale transition-all duration-500 md:hover:grayscale-0 md:hover:brightness-100 md:group-hover:h-[22.5rem] md:group-hover:rounded-xl" 
+                                    src={member.avatar} 
+                                    alt={member.name} 
+                                    width="826" 
+                                    height="1239" 
+                                />
                                 <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
                                     <div className="flex justify-between">
                                         <h3 className="text-title text-base font-medium transition-all duration-500 md:group-hover:tracking-wider">{member.name}</h3>

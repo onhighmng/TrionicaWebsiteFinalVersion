@@ -19,5 +19,23 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
     }
   ];
 
-  return null;
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-12">Nossos Produtos</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <div 
+              key={index}
+              className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => onNavigate(product.link)}
+            >
+              <h3 className="text-xl font-semibold mb-3">{product.title}</h3>
+              <p className="text-gray-600">{product.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

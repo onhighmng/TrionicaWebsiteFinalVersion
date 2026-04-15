@@ -1,3 +1,4 @@
+import image_6c72dadd527eba87d1ba2541e9c3b110adcb82e5 from 'figma:asset/6c72dadd527eba87d1ba2541e9c3b110adcb82e5.png'
 "use client";
 import { TimelineContent } from "../ui/timeline-animation";
 import { VerticalCutReveal } from "../ui/vertical-cut-reveal";
@@ -113,12 +114,12 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={3}
               timelineRef={heroRef}
               customVariants={scaleVariants}
-              className="md:col-span-4"
+              className="md:col-span-4 flex items-center"
             >
               <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80"
+                src={image_6c72dadd527eba87d1ba2541e9c3b110adcb82e5}
                 alt="Equipa Trionica"
-                className="w-full h-full object-cover rounded-2xl shadow-lg"
+                className="w-full object-contain rounded-2xl shadow-lg"
               />
             </TimelineContent>
 

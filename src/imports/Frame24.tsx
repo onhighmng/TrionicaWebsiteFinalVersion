@@ -107,7 +107,7 @@ export default function Frame24({ currentPage, onNavigate }: Frame24Props) {
       hasDropdown: true,
       dropdownItems: [
         { label: 'Águas', page: 'aguas', icon: '💧' },
-        { label: 'Ensino', page: 'ensino', icon: '📚' },
+        { label: 'Ensino e Investigação', page: 'ensino', icon: '📚' },
         { label: 'Saúde', page: 'saude', icon: '⚕️' },
         { label: 'Ambiente', page: 'ambiente', icon: '🌱' },
         { label: 'Minas', page: 'minas', icon: '⛏️' }

@@ -56,7 +56,7 @@ export function AnimatedCounter({
   }, [isInView, target, duration]);
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`relative inline-block ${className}`}>
       {count}{suffix}
     </span>
   );

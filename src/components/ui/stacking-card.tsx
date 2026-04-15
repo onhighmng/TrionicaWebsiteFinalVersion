@@ -3,6 +3,7 @@ import { ReactLenis } from 'lenis/react';
 import { useTransform, motion, useScroll, MotionValue } from 'motion/react';
 import { useRef, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import imgTeamPhoto from 'figma:asset/b73ba6512c4db24a6d7646546785bde768099a3b.png';
 
 interface ProjectData {
   title: string;
@@ -142,7 +143,7 @@ const Component = forwardRef<HTMLElement, ComponentRootProps>(({ projects, heade
 
   return (
     <ReactLenis root>
-      <main className='bg-gradient-to-br from-gray-50 to-white' ref={container}>
+      <main className='relative bg-gradient-to-br from-gray-50 to-white' ref={container}>
         {headerTitle && (
           <section className='text-gray-900 pt-20 pb-12 w-full bg-gradient-to-br from-gray-50 to-white'>
             <div className='text-center max-w-4xl mx-auto px-4'>
@@ -150,9 +151,16 @@ const Component = forwardRef<HTMLElement, ComponentRootProps>(({ projects, heade
                 <span className='text-gray-900'>Descubra a nossa </span>
                 <span className='text-gray-400'>{headerTitle}</span>
               </h2>
-              <p className='text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed'>
+              <p className='text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12'>
                 Conheça os pilares que guiam a Trionica na entrega de soluções inovadoras e serviços de excelência para nossos clientes.
               </p>
+              <div className='max-w-5xl mx-auto'>
+                <img 
+                  src={imgTeamPhoto} 
+                  alt="Equipa Triónica" 
+                  className='w-full h-auto rounded-2xl shadow-2xl'
+                />
+              </div>
             </div>
           </section>
         )}
