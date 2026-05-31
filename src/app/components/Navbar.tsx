@@ -402,7 +402,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 style={{ willChange: 'transform, opacity' }}
               >
                 <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#101828] text-[14px] text-center whitespace-nowrap tracking-[-0.1504px]">
-                  Contactar
+                  Contactar-nos
                 </p>
               </motion.button>
             </>

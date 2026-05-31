@@ -13,10 +13,6 @@ import consultoriaImage from "figma:asset/56e3a70f9923c7aafaa9f6ef1a7f2f06ab021c
 import professionalImage from "figma:asset/0151d44b824da5af6b2609327d49fb41fad703b4.png";
 import specialistImage from "figma:asset/112a216849b9752ec9446d7eaaac3b83be7e504e.png";
 import technicalSupportImage from "figma:asset/9719e880b9b0de82d10614661ba220b85460451d.png";
-import imgUnion from "figma:asset/96f96b17c5fcf5f0537a7577cb0341d10c0558e2.png";
-import imgUnion1 from "figma:asset/6a22570eeac45c73383df24364a1f8a0b34dc74d.png";
-import imgUnion2 from "figma:asset/92a7f61b249712ca60bec2ba142e35515aae7b0a.png";
-import imgUnion3 from "figma:asset/1b38e673a1e839e28a809a1a80db2c541b9236e9.png";
 
 interface SobreNosProps {
   onNavigate?: (page: string) => void;
@@ -49,87 +45,8 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
 
   return (
     <div>
-      {/* Hero Section with Decorative Images */}
-      <section className="relative bg-white py-16 md:py-20 lg:py-28 overflow-hidden min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center" data-navbar-section="light">
-        {/* Decorative Corner Images */}
-        {/* Top Left - Animate from left */}
-        <motion.div 
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 0.9 }}
-          viewport={{ once: false, amount: 0.1, margin: "0px 0px -100px 0px" }}
-          transition={{ 
-            duration: 1.2, 
-            ease: [0.22, 1, 0.36, 1],
-            opacity: { duration: 0.8 }
-          }}
-          className="absolute left-0 top-0 w-[120px] h-[120px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px]"
-        >
-          <img 
-            src={imgUnion} 
-            alt="" 
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-        
-        {/* Top Right - Animate from right */}
-        <motion.div 
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 0.9 }}
-          viewport={{ once: false, amount: 0.1, margin: "0px 0px -100px 0px" }}
-          transition={{ 
-            duration: 1.2, 
-            ease: [0.22, 1, 0.36, 1],
-            opacity: { duration: 0.8 }
-          }}
-          className="absolute right-0 top-0 w-[120px] h-[120px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px]"
-        >
-          <img 
-            src={imgUnion3} 
-            alt="" 
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-        
-        {/* Bottom Left - Animate from left */}
-        <motion.div 
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 0.9 }}
-          viewport={{ once: false, amount: 0.1, margin: "0px 0px -100px 0px" }}
-          transition={{ 
-            duration: 1.2, 
-            ease: [0.22, 1, 0.36, 1],
-            opacity: { duration: 0.8 },
-            delay: 0.15
-          }}
-          className="absolute left-0 bottom-0 w-[120px] h-[120px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px]"
-        >
-          <img 
-            src={imgUnion1} 
-            alt="" 
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-        
-        {/* Bottom Right - Animate from right */}
-        <motion.div 
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 0.9 }}
-          viewport={{ once: false, amount: 0.1, margin: "0px 0px -100px 0px" }}
-          transition={{ 
-            duration: 1.2, 
-            ease: [0.22, 1, 0.36, 1],
-            opacity: { duration: 0.8 },
-            delay: 0.15
-          }}
-          className="absolute right-0 bottom-0 w-[120px] h-[120px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px]"
-        >
-          <img 
-            src={imgUnion2} 
-            alt="" 
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-
+      {/* Hero Section */}
+      <section className="relative bg-white py-16 md:py-20 lg:py-28 flex items-center" data-navbar-section="light">
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 md:px-6 lg:px-8 pt-24 pb-16 md:pt-0 md:pb-0">
           <motion.div 
@@ -231,6 +148,46 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
             </div>
             <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-[20px] text-nowrap text-white">Explorar Soluções</p>
           </button>
+        </div>
+      </section>
+
+      {/* Porquê Escolher a Triónica */}
+      <section className="py-12 md:py-16 lg:py-20 bg-white" data-navbar-section="light">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
+          <div className="mb-10 md:mb-12 text-center">
+            <span className="inline-block text-[#2354a2] text-sm font-semibold tracking-[6px] uppercase mb-4">A Nossa Diferença</span>
+            <h2 className="font-['Manrope'] font-bold text-[#0c1313] text-2xl md:text-3xl lg:text-4xl tracking-tight">
+              Porquê escolher a Triónica Moçambique?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                text: "A Triónica Moçambique, Lda é reconhecida pela sua solidez, qualidade e compromisso com o desenvolvimento de soluções inovadoras nas áreas de Ensino & Investigação, Saúde, Águas, Ambiente e Minas."
+              },
+              {
+                text: "Destacamo-nos pela cobertura nacional, garantindo proximidade e resposta eficiente em todo o território nacional."
+              },
+              {
+                text: "Oferecemos assistência técnica especializada, assegurando suporte contínuo e fiável em todas as fases dos projectos."
+              },
+              {
+                text: "Investimos na formação e capacitação contínua, promovendo o fortalecimento das competências técnicas dos nossos clientes e parceiros."
+              },
+              {
+                text: "Garantimos ainda um forte compromisso com o serviço de pós-venda e com a implementação bem-sucedida de projectos, assegurando qualidade, eficiência e resultados sustentáveis."
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 items-start bg-[#f8f9fc] rounded-2xl p-6">
+                <div className="mt-1 shrink-0 w-7 h-7 rounded-full bg-[#2354a2] flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p className="font-['Manrope'] text-[#5c6161] text-base leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

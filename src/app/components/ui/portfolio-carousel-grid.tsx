@@ -220,7 +220,7 @@ export function PortfolioCarouselGrid() {
           Soluções Implementadas em Moçambique
         </h3>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          A Triónica Moçambique Lda. tem participado em diversos projetos nacionais de grande impacto
+          Conheça alguns dos projectos realizados pela TRIÓNICA em instituições de ensino, indústria, energia, mineração e formação técnica profissional
         </p>
       </div>
 
