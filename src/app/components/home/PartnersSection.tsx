@@ -178,9 +178,9 @@ const allLogos = [
   { name: "Sasol", id: 8, img: SasolLogo as any },
   { name: "CP", id: 9, img: CPLogo as any },
   { name: "DIS", id: 10, img: DISLogo as any },
-  { name: "Matest", id: 11, img: MatestLogo as any },
-  { name: "Optika", id: 12, img: OptikaLogo as any },
-  { name: "Lucas Nuelle", id: 13, img: LucasNuelleLogo as any },
+  { name: "Matest", id: 11, img: MatestLogo as any, url: "https://www.matest.com/en" },
+  { name: "Optika", id: 12, img: OptikaLogo as any, url: "https://www.optika-italy.com" },
+  { name: "Lucas Nuelle", id: 13, img: LucasNuelleLogo as any, url: "https://www.lucas-nuelle.com" },
   { name: "Conchem", id: 14, img: ConchemLogo as any },
 ];
 

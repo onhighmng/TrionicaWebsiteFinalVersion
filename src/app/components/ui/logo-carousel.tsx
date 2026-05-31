@@ -13,6 +13,7 @@ interface Logo {
   name: string
   id: number
   img: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  url?: string
 }
 
 interface LogoColumnProps {
@@ -55,6 +56,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
     const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
     const currentIndex = Math.floor(adjustedTime / cycleInterval)
     const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+    const currentUrl = logos[currentIndex].url
 
     return (
       <motion.div
@@ -96,7 +98,13 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
               },
             }}
           >
-            <CurrentLogo className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32" />
+            {currentUrl ? (
+              <a href={currentUrl} target="_blank" rel="noopener noreferrer" aria-label={logos[currentIndex].name}>
+                <CurrentLogo className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32" />
+              </a>
+            ) : (
+              <CurrentLogo className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32" />
+            )}
           </motion.div>
         </AnimatePresence>
       </motion.div>
