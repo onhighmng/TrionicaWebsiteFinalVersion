@@ -1,9 +1,9 @@
 import svgPaths from "./svg-ibf45u2fp8";
 import imgImageEquipaTrionica from "figma:asset/3804a766a7521e0a7f2d19d0c3b58b1eafb3c2d6.png";
 import imgImageTrionicaLogo from "figma:asset/d93cf643f81c1830c9529a1d38a8671cd0110ae2.png";
-import imgImageMicroscope from "figma:asset/4c938511638a83fc20943d41401141f356031574.png";
+import imgImageMicroscope from "../../imports/trionica_new_banner_for_hero-1.png";
 import imgTeamPhoto from "figma:asset/b73ba6512c4db24a6d7646546785bde768099a3b.png";
-import imgLabEquipment from "figma:asset/2e5ef36057cf3da5268cb361884efa7b3c3f72d1.png";
+import imgLabEquipment from "../../imports/trionica_new_banner_for_hero-1.png";
 import imgImageEducacaoVisual from "figma:asset/1ed30bca1c7dacfeb480999ad8e008cd86f66392.png";
 import imgImageSaudeVisual from "figma:asset/c3e462d779bb19de3da9b06340a2d1b0429475ea.png";
 import imgImageAguasVisual from "figma:asset/9a555059eca3a0e95b663c4837fc54ef7a26e76a.png";
@@ -668,12 +668,10 @@ function Text23() {
 
 function Paragraph4() {
   return (
-    <div className="absolute h-[492.205px] left-[89.85px] top-[141.97px] w-[812.613px]" data-name="Paragraph">
-      <Text19 />
-      <Text20 />
-      <Text21 />
-      <Text22 />
-      <Text23 />
+    <div className="absolute left-[89.85px] top-[141.97px] w-[900px]" data-name="Paragraph">
+      <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[#050505] text-[80px]">
+        Soluções Tecnologias Integradas para o Desenvolvimento de Moçambique
+      </p>
     </div>
   );
 }
@@ -735,7 +733,7 @@ function Container16() {
 function Paragraph6() {
   return (
     <div className="absolute h-[76.53px] left-0 top-0 w-[1401.686px]" data-name="Paragraph">
-      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[147.172px] left-0 text-[#050505] text-[123.934px] top-[2.59px] w-[1340.037px] whitespace-pre-wrap">A Triónica impulsiona soluções tecnológicas que apoiam o desenvolvimento científico e institucional do país</p>
+      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[147.172px] left-0 text-[#050505] text-[123.934px] top-[2.59px] w-[1340.037px] whitespace-pre-wrap">Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
     </div>
   );
 }
@@ -785,7 +783,7 @@ function Arrow() {
 function Paragraph8() {
   return (
     <div className="h-[30.213px] relative w-[305.197px]" data-name="Paragraph">
-      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[116.188px] left-[149.85px] text-[116.188px] text-center text-white top-[11.65px] translate-x-[-50%] whitespace-pre">Conheça-nos Melhor</p>
+      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[116.188px] left-[149.85px] text-[116.188px] text-center text-white top-[11.65px] translate-x-[-50%] whitespace-pre">Conheça as nossas soluções</p>
     </div>
   );
 }
@@ -4797,7 +4795,7 @@ function Group3() {
 function Paragraph43() {
   return (
     <div className="absolute h-[116.188px] left-[336.95px] top-[134.54px] w-[689.383px]" data-name="Paragraph">
-      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[131.68px] leading-[46.475px] left-[85.2px] text-[#050505] text-[38.729px] top-[-65.84px] w-[577.068px] whitespace-pre-wrap">A Triónica impulsiona soluções tecnológicas que apoiam o desenvolvimento científico e institucional do país</p>
+      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[131.68px] leading-[46.475px] left-[85.2px] text-[#050505] text-[38.729px] top-[-65.84px] w-[577.068px] whitespace-pre-wrap">Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
     </div>
   );
 }
@@ -5091,7 +5089,7 @@ function Button12() {
       <Arrow1 />
       <div className="flex items-center justify-center relative shrink-0">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <p className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[43.571px] relative text-[29.047px] text-white whitespace-pre">{` Conheça-nos Melhor`}</p>
+          <p className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[43.571px] relative text-[29.047px] text-white whitespace-pre">{` Conheça as nossas soluções`}</p>
         </div>
       </div>
     </motion.div>

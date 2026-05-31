@@ -71,10 +71,7 @@ export function QuemSomos() {
             <div className="p-8 border border-gray-100 rounded shadow-sm hover:shadow-lg transition-shadow hover:-translate-y-1 transform duration-300">
               <div className="text-4xl mb-6">👁️</div>
               <h3 className="text-[#2354a2] text-xl font-bold mb-4">Nossa Visão</h3>
-              <p className="text-gray-600 text-sm mb-2">Assumir cada vez mais um papel de empresa de referência em Moçambique no Fornecimento de Equipamentos Laboratoriais no mercado.</p>
-              <p className="text-gray-600 text-sm mb-2">Destacarmo‐nos nas nossas áreas de negócio como empresa inovadora, diferenciada no produto e na globalidade do serviço;</p>
-              <p className="text-gray-600 text-sm mb-2">Consolidar a nossa posição como empresa de referência em todo o processo: fornecimento de equipamento, treinamento, instalação, reparação e manutenção e</p>
-              <p className="text-gray-600 text-sm">Valorizar a responsabilidade social e garantir viabilidade económica, satisfazendo trabalhadores e acionistas.</p>
+              <p className="text-gray-600 text-sm">Ser uma empresa de referência em Moçambique no fornecimento de equipamentos de soluções tecnológicas para fins Didáticos, laboratoriais e investigação, destacando-nos pela inovação, qualidade e amplitude dos nossos serviços — desde o projecto, fornecimento, instalação e formação até à manutenção especializada.</p>
             </div>
 
             <div className="p-8 border border-gray-100 rounded shadow-sm hover:shadow-lg transition-shadow hover:-translate-y-1 transform duration-300">

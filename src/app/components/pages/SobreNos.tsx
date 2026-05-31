@@ -34,7 +34,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
     },
     {
       title: 'Nossa Visão',
-      description: 'Ser uma empresa de referência em Moçambique no fornecimento de equipamentos laboratoriais e soluções tecnológicas, destacando-nos pela inovação, qualidade e amplitude dos nossos serviços — desde o fornecimento, instalação e formação até à manutenção especializada.',
+      description: 'Ser uma empresa de referência em Moçambique no fornecimento de equipamentos de soluções tecnológicas para fins Didáticos, laboratoriais e investigação, destacando-nos pela inovação, qualidade e amplitude dos nossos serviços — desde o projecto, fornecimento, instalação e formação até à manutenção especializada.',
       link: '',
       color: '#475569', // Slate gray - sophisticated and modern
     },
@@ -157,7 +157,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
                 Desde 2010, dedicamo-nos ao fornecimento de equipamentos de laboratório e tecnologias avançadas para os sectores de Ensino e Investigação, Saúde, Águas, Ambiente e Minas, garantido qualidade, inovação e fiabilidade.
               </p>
               <p>
-                Com uma equipa de profissionais altamente qualificados, acumulamos 15 anos de experiência que se refletem na excelência dos nossos serviços, na formação contínua dos nossos parceiros e na manutenção rigorosa dos equipamentos fornecidos. O reconhecimento dos nossos clientes é um dos nossos maiores indicadores de sucesso.
+                Com uma equipa de profissionais altamente qualificados, acumulamos 15 anos de experiência que se refletem na excelência dos nossos produtos e serviços, fruto da formação contínua dos nossos colaboradores e na manutenção rigorosa dos equipamentos fornecidos. O reconhecimento dos nossos clientes é um dos nossos maiores indicadores de sucesso.
               </p>
             </div>
             

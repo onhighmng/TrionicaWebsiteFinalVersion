@@ -35,6 +35,7 @@ export default function TimeLine_01({
   entries = [],
 }: TimeLine_01Props) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sentinelRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -92,7 +93,7 @@ export default function TimeLine_01({
 
         <div className="mx-auto mt-8 md:mt-12 max-w-6xl space-y-12 md:space-y-16 px-4">
           {entries.map((entry, index) => {
-            const isActive = index === activeIndex;
+            const isActive = index === activeIndex || index === hoveredIndex;
 
             return (
               <div
@@ -100,6 +101,8 @@ export default function TimeLine_01({
                 className="relative flex flex-col gap-6 md:flex-row md:gap-12 lg:gap-16"
                 ref={(el) => setItemRef(el, index)}
                 aria-current={isActive ? "true" : "false"}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Sticky meta column */}
                 <div className="top-8 flex h-min w-full md:w-72 lg:w-80 shrink-0 items-center gap-4 md:sticky">

@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 import { Microscope, Droplet, TreePine, Mountain, GraduationCap } from 'lucide-react';
 import TimeLine_01, { TimeLine_01Entry } from '../ui/release-time-line';
 import saudeImage from "figma:asset/c3e462d779bb19de3da9b06340a2d1b0429475ea.png";
-import aguasImage from "figma:asset/9a555059eca3a0e95b663c4837fc54ef7a26e76a.png";
+import aguasImage from "../../../imports/image-21.png";
 import ambienteImage from "figma:asset/d4a1c3843c3ab947a2fce919c2f975b36328a96f.png";
 import minasImage from "figma:asset/f63e17a409d48cc3dad0703b061331bc8219a04e.png";
-import educacaoImage from "figma:asset/1ed30bca1c7dacfeb480999ad8e008cd86f66392.png";
+import educacaoImage from "../../../imports/image-22.png";
 
 export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) => void }) {
   const timelineEntries: TimeLine_01Entry[] = [
@@ -52,13 +52,12 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
       icon: Droplet,
       title: "Águas",
       subtitle: "Tratamento • Análise • Monitorização",
-      description: "Equipamento de medição, análise e tratamento de água para consumo e residuais",
+      description: "Equipamento de medição, análise e controlo da qualidade da água para consumo e residuais",
       items: [
-        "Sistemas de tratamento de água",
-        "Equipamentos de análise química",
-        "Monitorização em tempo real",
-        "Controlo de qualidade",
-        "Soluções personalizadas"
+        "Medição de caudais e consumos",
+        "Sistemas de controlo de perdas",
+        "Medição e controlo da qualidade da água",
+        "Telemetria"
       ],
       image: aguasImage,
       button: {
@@ -73,11 +72,11 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
       subtitle: "Água • Solo • Ar",
       description: "Sistemas de monitorização da água, solo e ar, unidades de tratamento de águas e águas residuais, instrumentação e sistemas de aquisição e registo de dados.",
       items: [
-        "Monitorização ambiental integrada",
-        "Tratamento de águas residuais",
-        "Análise de qualidade do solo",
-        "Sistemas de aquisição de dados",
-        "Relatórios e consultoria"
+        "Medição e controlo da qualidade da Ar",
+        "Medição e controlo da qualidade da Água",
+        "Medição e controlo da qualidade dos Solos",
+        "Medição e controlo do ruído e vibração",
+        "Tratamento de água para consumo e residuais"
       ],
       image: ambienteImage,
       button: {
@@ -88,15 +87,14 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
     },
     {
       icon: Mountain,
-      title: "Minas",
+      title: "Minas e Sismologia",
       subtitle: "Exploração • Análise • Segurança",
-      description: "Equipamentos para prospeção, exploração mineira e análise geológica",
+      description: "Equipamentos para prospeção, processamento mineiro, análise geológica e sísmica",
       items: [
-        "Equipamentos de exploração mineira",
         "Análise geológica e mineralógica",
-        "Monitorização de segurança",
-        "Gestão ambiental em minas",
-        "Formação em segurança mineira"
+        "Prospeção Geofísica",
+        "Estações Sísmicas",
+        "Equipamentos de processamento à escala laboratorial"
       ],
       image: minasImage,
       button: {

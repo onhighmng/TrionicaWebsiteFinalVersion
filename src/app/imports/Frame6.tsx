@@ -1,47 +1,49 @@
-import svgPaths from "./svg-qmyqfzvoya";
+import svgPaths from "./svg-zq3hsj0qm5";
 import { useRef } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import acusticaImg from "figma:asset/abdc8e6a38c1d529f460b672ddeac064f7a84c06.png";
-import monitorizacaoImg from "figma:asset/67e71a4a13a23c4c93d05f897f6c2c6b9b8c8ae4.png";
-import oceanografiaImg from "figma:asset/f7f4eee559adeada02a567b17879154cb9f44ed4.png";
-import saneamentoImg from "figma:asset/b6d01fa62fc7ce659df3be03127709bfd17c9c10.png";
+import educacaoImg from "../../imports/image-15.png";
+import cienciaImg from "../../imports/image-16.png";
+import energiaImg from "../../imports/image-17.png";
+import tecnologiaImg from "../../imports/image-19.png";
+import mobiliarioImg from "../../imports/image-20.png";
+import diversosImg from "figma:asset/488dd2582b16219f94f440fad7db7cb7cdcc83d7.png";
 
 const sectionData = [
   {
-    id: "meteorologia",
-    category: "METEOROLOGIA",
-    title: "Estações meteorológicas",
-    imgSrc: "https://images.unsplash.com/photo-1615603244607-6d8afd9b9507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWF0aGVyJTIwc3RhdGlvbiUyMG1ldGVvcm9sb2d5fGVufDF8fHx8MTc2ODMxMzE3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    id: "educacao",
+    category: "EDUCAÇÃO-ENGENHARIAS",
+    title: "Equipamentos didácticos e científicos",
+    imgSrc: educacaoImg,
   },
   {
-    id: "qualidade-ar",
-    category: "QUALIDADE DO AR",
-    title: "Equipamentos de análise da qualidade do ar",
-    imgSrc: "https://images.unsplash.com/photo-1765153155226-f617921051b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaXIlMjBxdWFsaXR5JTIwbW9uaXRvcmluZ3xlbnwxfHx8fDE3NjgzMTMxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    id: "ciencia",
+    category: "EDUCAÇÃO-CIÊNCIAS",
+    title: "Equipamentos didácticos e científicos",
+    imgSrc: cienciaImg,
   },
   {
-    id: "acustica",
-    category: "ACÚSTICA",
-    title: "Sonómetros e vibrómetros",
-    imgSrc: acusticaImg,
+    id: "energia",
+    category: "OFICINAS TECNOLÓGICAS",
+    title: "Metalomecânica, soldadura, carpintaria",
+    imgSrc: energiaImg,
   },
   {
-    id: "monitorizacao",
-    category: "MONITORIZAÇÃO",
-    title: "Data loggers",
-    imgSrc: monitorizacaoImg,
+    id: "tecnologia",
+    category: "TECNOLOGIA",
+    title: "Simuladores e quadros interativos",
+    imgSrc: tecnologiaImg,
   },
   {
-    id: "oceanografia",
-    category: "OCEANOGRAFIA",
-    title: "Sondas oceanográficas",
-    imgSrc: oceanografiaImg,
+    id: "mobiliario",
+    category: "MOBILIÁRIO",
+    title: "Mobiliário escolar, universitário e laboratorial",
+    imgSrc: mobiliarioImg,
   },
   {
-    id: "saneamento",
-    category: "SANEAMENTO",
-    title: "Sistemas de tratamento — desinfeção, dessalinização, ETARs",
-    imgSrc: saneamentoImg,
+    id: "diversos",
+    category: "DIVERSOS",
+    title: "Soluções para Desporto indoor outdoor",
+    imgSrc: diversosImg,
   },
 ];
 
@@ -65,7 +67,7 @@ function Section() {
   };
 
   return (
-    <div className="relative w-full -mt-4 pb-8 px-4 md:px-8" ref={timelineRef} data-name="Section 03">
+    <div className="relative w-full -mt-4 pb-8 px-8" ref={timelineRef} data-name="Section 03">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sectionData.map((item, index) => (
@@ -104,5 +106,9 @@ function Section() {
 }
 
 export default function Frame() {
-  return <Section />;
+  return (
+    <div className="relative size-full">
+      <Section />
+    </div>
+  );
 }

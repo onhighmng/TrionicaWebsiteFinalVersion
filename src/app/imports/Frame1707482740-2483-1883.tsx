@@ -1,6 +1,6 @@
 import svgPaths from "./svg-4curm7xai9";
 import imgImage from "figma:asset/d93cf643f81c1830c9529a1d38a8671cd0110ae2.png";
-import imgMicroscope from "figma:asset/21981c40de7e768d2cd32ef71a0c55c3aa5fd54f.png";
+import imgMicroscope from "../../imports/trionica_new_banner_for_hero.png";
 import { imgRectangle } from "./svg-mmlvz";
 import bciLogo from "figma:asset/82cd405a60a5f350e706ed8d47affe6341ac868f.png";
 import bancoMocambiqueLogo from "figma:asset/01e953708179a504fc7c0147ad9b0d1eba4f4677.png";
@@ -355,7 +355,7 @@ function Button2({ onNavigate }: { onNavigate?: (page: string) => void }) {
       <Arrow />
       <div className="flex items-center justify-center relative shrink-0">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <p className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[30px] relative text-[17px] xl:text-[17px] text-[30px] text-nowrap text-white">Conheça-nos Melhor</p>
+          <p className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[30px] relative text-[17px] xl:text-[17px] text-[30px] text-nowrap text-white">Conheça as nossas soluções</p>
         </div>
       </div>
     </button>
@@ -372,7 +372,7 @@ function Frame6({ onNavigate }: { onNavigate?: (page: string) => void }) {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[20px] min-w-full relative shrink-0 text-[#050505] text-[19px] w-[min-content]"
       >
-        A Triónica impulsiona soluções tecnológicas que apoiam o desenvolvimento científico e institucional do país
+        Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas
       </motion.p>
       <motion.div 
         initial={{ x: -100, opacity: 0 }}
@@ -747,25 +747,20 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
       {/* Desktop version - shown only on xl screens */}
       <div className="hidden xl:block pointer-events-auto" style={{ pointerEvents: 'auto' }}>
         {/* <Group9 /> - Removed vertical dashed grid lines */}
-        <p className="absolute capitalize font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[0.94] left-[calc(50%-227.26px)] text-[#050505] text-[0px] top-[141px] tracking-[-8.5px] w-[807px]">
-          <span className="text-[130px]">O</span>
-          <span className="text-[170px]"> </span>
-          <span className="text-[130px]">Futuro</span>
-          <span className="text-[170px]"> </span>
-          <span className="text-[170px] text-[rgba(5,5,5,0.3)]">Começa</span>
+        <p className="absolute font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] left-[94px] text-[#050505] text-[48px] top-[141px] w-[800px]">
+          Soluções Tecnologias Integradas para o Desenvolvimento de Moçambique
         </p>
         <Frame2 onNavigate={onNavigate} />
         <Frame5 onNavigate={onNavigate} />
         <Frame3 />
-        <motion.div 
+        <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute capitalize font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[105px] leading-[20px] left-[1132px] text-[#050505] text-[16px] top-[206px] w-[277px]"
+          className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[105px] leading-[20px] left-[1132px] text-[#050505] text-[16px] top-[206px] w-[277px]"
         >
-          <p className="mb-0">Ensino, Saúde, Águas, Ambiente e Minas.</p>
-          <p>Soluções de referência desde 2010.</p>
+          <p>Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
         </motion.div>
         <Frame6 onNavigate={onNavigate} />
         <div className="absolute h-[77.48px] items-center justify-center left-[444px] top-[282.41px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>

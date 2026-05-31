@@ -1,8 +1,8 @@
 import svgPaths from "./svg-demwt5vn45";
 import imgImageEquipaTrionica from "figma:asset/3804a766a7521e0a7f2d19d0c3b58b1eafb3c2d6.png";
 import imgImageTrionicaLogo from "figma:asset/d93cf643f81c1830c9529a1d38a8671cd0110ae2.png";
-import imgImageMicroscope from "figma:asset/4c938511638a83fc20943d41401141f356031574.png";
-import imgImageEducacaoVisual from "figma:asset/1ed30bca1c7dacfeb480999ad8e008cd86f66392.png";
+import imgImageMicroscope from "../../imports/trionica_new_banner_for_hero-1.png";
+import imgImageEducacaoVisual from "../../imports/image-15.png";
 import imgImageSaudeVisual from "figma:asset/c3e462d779bb19de3da9b06340a2d1b0429475ea.png";
 import imgImageAguasVisual from "figma:asset/9a555059eca3a0e95b663c4837fc54ef7a26e76a.png";
 import imgImageAmbienteVisual from "figma:asset/d4a1c3843c3ab947a2fce919c2f975b36328a96f.png";
@@ -1565,7 +1565,7 @@ function ImageEducacaoVisual() {
 function Heading1() {
   return (
     <div className="h-[22.496px] relative shrink-0 w-full" data-name="Heading 2">
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] left-0 not-italic text-[#101828] text-[18px] top-[0.64px] tracking-[-0.8895px] whitespace-pre">Educação</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] left-0 not-italic text-[#101828] text-[18px] top-[0.64px] tracking-[-0.8895px] whitespace-pre">EDUCAÇÃO-ENGENHARIAS</p>
     </div>
   );
 }
@@ -1594,7 +1594,7 @@ function Container25() {
 function Text26() {
   return (
     <div className="absolute h-[45.509px] left-[17.99px] top-0 w-[217.767px]" data-name="Text">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[22.75px] left-0 not-italic text-[#4a5565] text-[14px] top-[0.55px] tracking-[-0.1504px] w-[218px] whitespace-pre-wrap">Equipamentos didáticos de última geração</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[22.75px] left-0 not-italic text-[#4a5565] text-[14px] top-[0.55px] tracking-[-0.1504px] w-[218px] whitespace-pre-wrap">Equipamentos didácticos e científicos</p>
     </div>
   );
 }

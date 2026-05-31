@@ -3,7 +3,6 @@ import { HeroSection } from './components/home/HeroSection';
 import { AboutSection } from './components/home/AboutSection';
 import { LatestPostSection } from './components/home/LatestPostSection';
 import { ProductsSection } from './components/home/ProductsSection';
-import { WhyChooseUsSection } from './components/home/WhyChooseUsSection';
 import { CTAFooterSection } from './components/home/CTAFooterSection';
 import { PartnersSection } from './components/home/PartnersSection';
 
@@ -99,7 +98,6 @@ function App() {
             <LatestPostSection onNavigate={handleNavigation} />
             <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
-            <WhyChooseUsSection onNavigate={handleNavigation} />
             <CTAFooterSection onNavigate={handleNavigation} />
           </>
         );
@@ -176,7 +174,6 @@ function App() {
             <LatestPostSection onNavigate={handleNavigation} />
             <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
-            <WhyChooseUsSection onNavigate={handleNavigation} />
             <CTAFooterSection onNavigate={handleNavigation} />
         </>
       );
