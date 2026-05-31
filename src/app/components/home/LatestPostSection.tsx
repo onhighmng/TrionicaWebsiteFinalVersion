@@ -12,15 +12,17 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
   const timelineEntries: TimeLine_01Entry[] = [
     {
       icon: GraduationCap,
-      title: "Educação",
-      subtitle: "Ensino • Laboratórios • Investigação",
-      description: "Equipamentos didáticos, laboratoriais e de investigação para escolas, centros de formação, laboratórios e universidades.",
+      title: "Ensino & Investigação",
+      subtitle: "Soluções tecnológicas para instituições públicas, privadas e centros de formação",
+      description: "Fornecimento de equipamentos didáticos, laboratoriais, oficinais, científicos, de investigação e de simulação para instituições públicas, privadas, centros de formação, laboratórios e universidades em Moçambique.",
       items: [
-        "Equipamentos didáticos de última geração",
-        "Soluções laboratoriais completas",
-        "Ferramentas de investigação científica",
-        "Suporte técnico especializado",
-        "Formação e capacitação"
+        "Equipamentos didáticos e científicos",
+        "Equipamentos e Ferramentas para Ciências Naturais, Eletrotecnia/Electrónica, Mecânica, Geofísica, Engenharia Civil e Agricultura",
+        "Equipamentos Tecnológicos para Petróleo & Gás",
+        "Simulação e treinamento avançado",
+        "Quadros e painéis interativos",
+        "Mobiliário escolar, universitário, laboratorial e oficinal",
+        "Soluções para Desporto"
       ],
       image: educacaoImage,
       button: {
@@ -33,13 +35,14 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
       icon: Microscope,
       title: "Saúde",
       subtitle: "Hospitais • Clínicas • Laboratórios",
-      description: "Equipamentos hospitalares, laboratoriais e de investigação para hospitais, unidades de saúde e laboratórios.",
+      description: "Fornecimento de Equipamentos hospitalares, laboratoriais e de investigação para instituições da área da saúde.",
       items: [
-        "Equipamentos hospitalares certificados",
-        "Instrumentação laboratorial de precisão",
-        "Soluções de diagnóstico avançadas",
-        "Manutenção e calibração",
-        "Consultoria técnica especializada"
+        "Equipamentos e mobiliário hospitalar",
+        "Raio-X, Tomografia Computorizada (CT) e Ressonância Magnética (MRI)",
+        "Equipamentos para Centros de Diagnóstico",
+        "Tele-radiologia",
+        "Sistemas automáticos de apoio à decisão clínica",
+        "Soluções avançadas para deteção da tuberculose, incluindo OneStopTB"
       ],
       image: saudeImage,
       button: {
@@ -52,12 +55,15 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
       icon: Droplet,
       title: "Águas",
       subtitle: "Tratamento • Análise • Monitorização",
-      description: "Equipamento de medição, análise e controlo da qualidade da água para consumo e residuais",
+      description: "Fornecimento de Equipamentos e soluções para análise, monitorização e tratamento da qualidade da água",
       items: [
-        "Medição de caudais e consumos",
-        "Sistemas de controlo de perdas",
-        "Medição e controlo da qualidade da água",
-        "Telemetria"
+        "Caudalímetros (controlo de perdas)",
+        "Contadores mecânicos, eletrónicos e pré-pagos",
+        "Kits de análise da qualidade da água",
+        "Data loggers e telemetria",
+        "Sistemas de monitorização de recursos hídricos",
+        "Sistemas de tratamento — desinfeção, dessalinização, ETARs",
+        "Instrumentação e medidores de nível e precipitação"
       ],
       image: aguasImage,
       button: {
@@ -69,14 +75,15 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
     {
       icon: TreePine,
       title: "Ambiente",
-      subtitle: "Água • Solo • Ar",
-      description: "Sistemas de monitorização da água, solo e ar, unidades de tratamento de águas e águas residuais, instrumentação e sistemas de aquisição e registo de dados.",
+      subtitle: "Controlo Ambiental • Solo • Ar",
+      description: "Equipamentos e soluções para monitorização da qualidade do solo, ar e gestão de dados ambientais",
       items: [
-        "Medição e controlo da qualidade da Ar",
-        "Medição e controlo da qualidade da Água",
+        "Estações meteorológicas",
+        "Equipamentos de análise da qualidade do ar",
         "Medição e controlo da qualidade dos Solos",
-        "Medição e controlo do ruído e vibração",
-        "Tratamento de água para consumo e residuais"
+        "Medição e controlo do ruído e vibração (Sonómetro e vibrómetros)",
+        "Data loggers",
+        "Sondas oceanográficas"
       ],
       image: ambienteImage,
       button: {
@@ -91,10 +98,13 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
       subtitle: "Exploração • Análise • Segurança",
       description: "Equipamentos para prospeção, processamento mineiro, análise geológica e sísmica",
       items: [
-        "Análise geológica e mineralógica",
-        "Prospeção Geofísica",
-        "Estações Sísmicas",
-        "Equipamentos de processamento à escala laboratorial"
+        "Equipamentos de geofísica e estações sísmicas",
+        "Equipamentos de diagrafia para águas subterrâneas",
+        "AAS, Magnetómetros, Gravimetria, Resistividade e Sísmica",
+        "Microscopia e produção de lâminas",
+        "Equipamentos para análise de rochas e agregados",
+        "Tecnologia XRF e XRD",
+        "Sistemas de processamento"
       ],
       image: minasImage,
       button: {
@@ -136,7 +146,7 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             className="font-['Manrope'] text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl font-medium"
           >
-            Transformando laboratórios. Capacitando profissionais. Construindo o futuro de Moçambique.
+            Fornecemos Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
           </motion.p>
         </div>
 

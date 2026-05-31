@@ -220,7 +220,7 @@ export function ProjectShowcase({ onNavigate }: ProjectShowcaseProps) {
 
       <div className="mb-12">
         <h3 className="text-[#2d2d2d] text-5xl leading-[1.1] font-normal mb-6">
-          Marcos de Impacto Estratégico.
+          Soluções Implementadas em Moçambique.
         </h3>
         <p className="text-[#2d2d2d]/70 text-lg leading-relaxed max-w-3xl">
           A Triónica Moçambique Lda. tem participado em diversos projetos nacionais de grande impacto, incluindo:

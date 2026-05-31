@@ -217,7 +217,7 @@ export function PortfolioCarouselGrid() {
           Nossos Projetos
         </h2>
         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Marcos de Impacto Estratégico
+          Soluções Implementadas em Moçambique
         </h3>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto">
           A Triónica Moçambique Lda. tem participado em diversos projetos nacionais de grande impacto

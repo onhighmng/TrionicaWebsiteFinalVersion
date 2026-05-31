@@ -239,7 +239,7 @@ function Form() {
 function Form1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] md:gap-[20px] items-start relative shrink-0 w-full md:w-[600px] lg:w-[714px]" data-name="Form">
-      <p className="font-['Epilogue:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#d4d4d4] text-[28px] md:text-[38px] lg:text-[48px]">Vamos Construir o Futuro Juntos</p>
+      <p className="font-['Epilogue:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#d4d4d4] text-[28px] md:text-[38px] lg:text-[48px]">Engenharia, Tecnologia e Inovação ao Serviço de Moçambique</p>
       <p className="font-['Public_Sans:Regular',sans-serif] font-normal leading-[1.3] relative shrink-0 text-[#a3a3a3] text-[14px] md:text-[16px]">Entre em contacto connosco para explorar soluções tecnológicas personalizadas para as necessidades da sua instituição.</p>
       <Form />
     </div>

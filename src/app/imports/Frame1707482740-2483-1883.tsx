@@ -214,7 +214,7 @@ function ButtonBase() {
       <div aria-hidden="true" className="absolute border-[#050505] border-[1.002px] border-solid inset-0 pointer-events-none rounded-[71.141px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex gap-[10.02px] items-center justify-center px-[20.04px] py-[12.024px] relative size-full">
-          <p className="basis-0 font-['Sora:SemiBold',sans-serif] font-semibold grow leading-[26.052px] min-h-px min-w-px relative shrink-0 text-[#050505] text-[13px] text-center">Contactar</p>
+          <p className="basis-0 font-['Sora:SemiBold',sans-serif] font-semibold grow leading-[26.052px] min-h-px min-w-px relative shrink-0 text-[#050505] text-[13px] text-center">Contactar-nos</p>
         </div>
       </div>
     </div>
@@ -372,7 +372,7 @@ function Frame6({ onNavigate }: { onNavigate?: (page: string) => void }) {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[20px] min-w-full relative shrink-0 text-[#050505] text-[19px] w-[min-content]"
       >
-        Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas
+        Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas
       </motion.p>
       <motion.div 
         initial={{ x: -100, opacity: 0 }}
@@ -748,7 +748,7 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
       <div className="hidden xl:block pointer-events-auto" style={{ pointerEvents: 'auto' }}>
         {/* <Group9 /> - Removed vertical dashed grid lines */}
         <p className="absolute font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] left-[94px] text-[#050505] text-[48px] top-[141px] w-[800px]">
-          Soluções Tecnologias Integradas para o Desenvolvimento de Moçambique
+          Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
         </p>
         <Frame2 onNavigate={onNavigate} />
         <Frame5 onNavigate={onNavigate} />
@@ -760,7 +760,7 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[105px] leading-[20px] left-[1132px] text-[#050505] text-[16px] top-[206px] w-[277px]"
         >
-          <p>Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
+          <p>Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
         </motion.div>
         <Frame6 onNavigate={onNavigate} />
         <div className="absolute h-[77.48px] items-center justify-center left-[444px] top-[282.41px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>

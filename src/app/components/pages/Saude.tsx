@@ -12,9 +12,9 @@ export function Saude({ onNavigate }: SaudeProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#e2e2e2]">
       {/* Hero Section */}
-      <section className="relative w-full bg-[#f5f5f5] pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
+      <section className="relative w-full bg-[#e2e2e2] pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -49,7 +49,7 @@ export function Saude({ onNavigate }: SaudeProps) {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="md:hidden relative w-full bg-[#f5f5f5] px-6 pb-8">
+      <section className="md:hidden relative w-full bg-[#e2e2e2] px-6 pb-8">
         <div className="max-w-[600px] mx-auto">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-justify tracking-[-0.3125px]">
             Contribuímos para o fortalecimento do sistema nacional de saúde através do fornecimento de equipamentos de última geração para prevenção, diagnóstico e tratamento.
@@ -58,7 +58,7 @@ export function Saude({ onNavigate }: SaudeProps) {
       </section>
       
       {/* Innovation Section */}
-      <section className="relative w-full bg-[#f5f5f5] px-4 md:-mb-80 mt-12">
+      <section className="relative w-full bg-[#e2e2e2] px-4 md:-mb-80 mt-12">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
           <div className="hidden md:block relative w-full" style={{ paddingBottom: '85.71%' }}> {/* 1200/1400 = 85.71% */}
             <div className="absolute inset-0">

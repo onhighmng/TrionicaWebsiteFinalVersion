@@ -48,7 +48,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
   };
   
   return (
-    <section className={`-mt-16 md:-mt-28 lg:-mt-40 xl:-mt-80 2xl:-mt-96 pt-0 xl:pt-0 pt-32 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#f5f5f5] ${className}`} ref={heroRef} data-navbar-section="light">
+    <section className={`-mt-16 md:-mt-28 lg:-mt-40 xl:-mt-80 2xl:-mt-96 pt-0 xl:pt-0 pt-32 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#e2e2e2] ${className}`} ref={heroRef} data-navbar-section="light">
       <div className="max-w-6xl mx-auto">
         <div className="relative">
           {/* Header */}
@@ -75,10 +75,10 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
             customVariants={revealVariants}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-12 md:mb-16 max-w-4xl"
           >
-            Desde 2010, a apoiar o{" "}
-            <span className="font-bold">desenvolvimento</span>{" "}
-            <span className="italic font-light">científico e tecnológico</span>{" "}
-            do país.
+            Há mais de 15 anos desenvolvemos{" "}
+            <span className="font-bold">soluções tecnológicas integradas</span>{" "}
+            para instituições públicas, privadas e centros de formação em{" "}
+            <span className="italic font-light">Moçambique</span>.
           </TimelineContent>
 
           {/* Main Content Grid */}
@@ -95,7 +95,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
                 Somos uma empresa moçambicana sediada em Maputo, especializada no desenvolvimento de soluções tecnológicas e implementação de projetos em áreas estratégicas.
               </p>
               <p className="text-gray-600 leading-relaxed text-justify">
-                Desde 2010, fornecemos equipamentos laboratoriais e tecnologias avançadas para os sectores de Ensino e Investigação, Saúde, Águas, Ambiente e Minas, com foco na qualidade, inovação e fiabilidade.
+                Há mais de 15 anos desenvolvemos soluções tecnológicas integradas para instituições públicas, privadas e centros de formação em Moçambique, fornecemos equipamentos laboratoriais, oficinais e tecnologias avançadas para as áreas de Ensino & Investigação, Saúde, Águas, Ambiente e Minas, com foco na qualidade, inovação e fiabilidade.
               </p>
               <div className="pt-2">
                 <FlowButton 

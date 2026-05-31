@@ -15,7 +15,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
   return (
     <>
       {/* Mobile/Tablet Version - Hidden on desktop */}
-      <section className="lg:hidden relative bg-[#f5f5f5] py-12 md:py-16 w-full overflow-hidden" data-navbar-section="light">
+      <section className="lg:hidden relative bg-[#e2e2e2] py-12 md:py-16 w-full overflow-hidden" data-navbar-section="light">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           {/* Top left text */}
           <div className="font-['Plus_Jakarta_Sans'] font-medium leading-[1.7] text-[#565656] text-sm md:text-base mb-8 md:mb-12 text-center md:text-left">
@@ -26,15 +26,15 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
           {/* Center heading */}
           <div className="text-center mb-8 md:mb-12 px-4">
             <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-[32px] md:text-[48px] leading-tight md:leading-[72px] text-[#050505] tracking-tight md:tracking-[-2.56px]">
-              <p className="mb-0">Pronto Para Iniciar</p>
-              <p>o Seu Projecto?</p>
+              <p className="mb-0">Pronto Para Desenvolver</p>
+              <p>o Seu Próximo Projecto?</p>
             </h2>
           </div>
 
           {/* Center subtext */}
           <div className="font-['Plus_Jakarta_Sans'] font-normal leading-[24px] text-[#565656] text-base md:text-[18px] text-center mb-8 md:mb-12 px-4">
-            <p className="mb-0">Vamos discutir a melhor solução</p>
-            <p>para o seu projecto.</p>
+            <p className="mb-0">A nossa equipa está preparada para identificar e implementar</p>
+            <p>a solução mais adequada às necessidades da sua instituição.</p>
           </div>
 
           {/* Center button */}
@@ -52,94 +52,16 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
                   </div>
                 </div>
               </div>
-              <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-base md:text-[20px] text-nowrap text-white">Contactar</p>
+              <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-base md:text-[20px] text-nowrap text-white">Contactar-nos</p>
             </button>
-          </div>
-
-          {/* Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 max-w-4xl mx-auto">
-            {/* Left testimonial */}
-            <div className="rounded-[40px] md:rounded-[60px] bg-white shadow-lg p-6 md:p-8 flex flex-col justify-between min-h-[280px] md:min-h-[318px]">
-              <div className="space-y-4">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="none" viewBox="0 0 30.5325 30.5325">
-                      <path d={svgPaths.p36924880} fill="#FFC046" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-['Plus_Jakarta_Sans'] text-sm md:text-[14px] leading-[20px] text-[#050505]">
-                  A Triónica forneceu equipamentos de alta qualidade que transformaram nosso laboratório.
-                </p>
-                <p className="font-['Plus_Jakarta_Sans'] text-sm md:text-[14px] leading-[20px] text-[#050505]">
-                  Excelente serviço e suporte técnico.
-                </p>
-              </div>
-              <div>
-                <p className="font-['Plus_Jakarta_Sans'] font-bold text-sm md:text-[14px] text-[#050505]">Dr. João Silva</p>
-                <p className="font-['Plus_Jakarta_Sans'] text-xs md:text-[11px] text-[#667085] uppercase tracking-wide">Universidade de Maputo</p>
-              </div>
-            </div>
-
-            {/* Right testimonial */}
-            <div className="rounded-[40px] md:rounded-[60px] bg-white shadow-lg p-6 md:p-8 flex flex-col justify-between min-h-[280px] md:min-h-[318px]">
-              <div className="space-y-4">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="none" viewBox="0 0 30.5325 30.5325">
-                      <path d={svgPaths.p36924880} fill="#FFC046" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-['Plus_Jakarta_Sans'] text-sm md:text-[14px] leading-[20px] text-[#050505]">
-                  Trabalhamos com a Triónica há mais de 5 anos. A equipa deles é sempre disponível e resolve qualquer problema rapidamente. Confiamos plenamente nos seus serviços.
-                </p>
-              </div>
-              <div>
-                <p className="font-['Plus_Jakarta_Sans'] font-bold text-sm md:text-[14px] text-[#050505]">Eng. Maria Couto</p>
-                <p className="font-['Plus_Jakarta_Sans'] text-xs md:text-[11px] text-[#667085] uppercase tracking-wide">EDM - Electricidade de Moçambique</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Rating badge */}
-          <div className="flex gap-3 items-center justify-center mb-12 md:mb-16">
-            <div className="relative shrink-0 size-[30.533px]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30.5325 30.5325">
-                <path d={svgPaths.p36924880} fill="#FFC046" />
-              </svg>
-            </div>
-            <p className="font-['Plus_Jakarta_Sans'] font-bold leading-[1.5] text-[#050505] text-lg md:text-[20.355px] text-nowrap">5.0</p>
           </div>
 
           {/* Footer Group */}
           <div className="bg-white rounded-[24px] md:rounded-[40px] p-6 md:p-12">
             {/* Main heading */}
             <div className="font-['Plus_Jakarta_Sans'] font-medium text-[32px] md:text-[48px] leading-tight text-[#050505] text-center md:text-left mb-8 md:mb-12">
-              <p className="mb-0">Construindo o Sucesso</p>
-              <p>de Moçambique</p>
-            </div>
-
-            {/* Newsletter section */}
-            <div className="mb-12 md:mb-16">
-              <div className="font-['Helvetica_Neue'] leading-[1.2] text-[24px] md:text-[28px] text-[#050505] mb-6 text-center md:text-left">
-                <p className="mb-0">Subscreva a</p>
-                <p>nossa newsletter</p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-2 md:gap-[8px] items-stretch sm:items-center max-w-md">
-                <div className="bg-[#f5f5f5] flex items-center px-6 md:px-[32px] py-5 md:py-[24px] rounded-[20px] flex-1">
-                  <input 
-                    type="email"
-                    placeholder="Digite o seu email"
-                    className="w-full bg-transparent font-['Plus_Jakarta_Sans'] font-normal text-base md:text-[20px] text-[#6b7280] outline-none"
-                  />
-                </div>
-                <button className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors flex items-center justify-center px-6 md:px-[32px] py-5 md:py-[24px] rounded-[20px] shrink-0">
-                  <svg className="size-5 md:size-[24px]" fill="none" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </svg>
-                </button>
-              </div>
+              <p className="mb-0">Triónica — Tecnologia e Soluções</p>
+              <p>para o Desenvolvimento de Moçambique</p>
             </div>
 
             {/* Large Trionica text */}
@@ -255,7 +177,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
       </section>
 
       {/* Desktop Version - Original absolute positioning layout - Hidden on mobile/tablet */}
-      <section className="hidden lg:block relative bg-[#f5f5f5] h-[1552px] w-full overflow-hidden max-w-[1440px] mx-auto" data-navbar-section="light">
+      <section className="hidden lg:block relative bg-[#e2e2e2] h-[1300px] w-full overflow-hidden max-w-[1440px] mx-auto" data-navbar-section="light">
         {/* Decorative circles - right side */}
         <div className="absolute bottom-[338px] contents right-[-181px]">
           <div className="absolute border border-[#545b5b] border-dashed bottom-[943px] opacity-20 right-[424px] rounded-[1000px] size-[603px]" />
@@ -272,14 +194,14 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
 
         {/* Center heading */}
         <div className="absolute capitalize font-['Plus_Jakarta_Sans'] font-bold leading-[72px] left-[calc(50%-5.5px)] text-[#050505] text-[64px] text-center top-[219px] tracking-[-2.56px] translate-x-[-50%] w-[559px]">
-          <p className="mb-0">Pronto Para Iniciar</p>
-          <p>o Seu Projecto?</p>
+          <p className="mb-0">Pronto Para Desenvolver</p>
+          <p>o Seu Próximo Projecto?</p>
         </div>
 
         {/* Center subtext */}
         <div className="absolute font-['Plus_Jakarta_Sans'] font-normal leading-[24px] left-1/2 text-[#565656] text-[18px] text-center top-[387px] translate-x-[-50%] w-[338px]">
-          <p className="mb-0">Vamos discutir a melhor solução</p>
-          <p>para o seu projecto.</p>
+          <p className="mb-0">A nossa equipa está preparada para identificar e implementar</p>
+          <p>a solução mais adequada às necessidades da sua instituição.</p>
         </div>
 
         {/* Center button */}
@@ -302,78 +224,25 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
               </div>
               <div className="flex items-center justify-center shrink-0">
                 <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-                  <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-[20px] text-nowrap text-white">Contactar</p>
+                  <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-[20px] text-nowrap text-white">Contactar-nos</p>
                 </div>
               </div>
             </button>
           </div>
         </div>
 
-        {/* Left testimonial */}
-        <div className="absolute h-[318px] left-[140px] rounded-[60px] top-[363px] w-[298px] bg-white shadow-lg p-8 flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5" fill="none" viewBox="0 0 30.5325 30.5325">
-                  <path d={svgPaths.p36924880} fill="#FFC046" />
-                </svg>
-              ))}
-            </div>
-            <p className="font-['Plus_Jakarta_Sans'] text-[14px] leading-[20px] text-[#050505]">
-              A Triónica forneceu equipamentos de alta qualidade que transformaram nosso laboratório.
-            </p>
-            <p className="font-['Plus_Jakarta_Sans'] text-[14px] leading-[20px] text-[#050505]">
-              Excelente serviço e suporte técnico.
-            </p>
-          </div>
-          <div>
-            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[14px] text-[#050505]">Dr. João Silva</p>
-            <p className="font-['Plus_Jakarta_Sans'] text-[11px] text-[#667085] uppercase tracking-wide">Universidade de Maputo</p>
-          </div>
-        </div>
-
-        {/* Right testimonial */}
-        <div className="absolute h-[318px] left-[1002px] rounded-[60px] top-[80px] w-[298px] bg-white shadow-lg p-8 flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5" fill="none" viewBox="0 0 30.5325 30.5325">
-                  <path d={svgPaths.p36924880} fill="#FFC046" />
-                </svg>
-              ))}
-            </div>
-            <p className="font-['Plus_Jakarta_Sans'] text-[14px] leading-[20px] text-[#050505]">
-              Trabalhamos com a Triónica há mais de 5 anos. A equipa deles é sempre disponível e resolve qualquer problema rapidamente. Confiamos plenamente nos seus serviços.
-            </p>
-          </div>
-          <div>
-            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[14px] text-[#050505]">Eng. Maria Couto</p>
-            <p className="font-['Plus_Jakarta_Sans'] text-[11px] text-[#667085] uppercase tracking-wide">EDM - Electricidade de Moçambique</p>
-          </div>
-        </div>
-
-        {/* Rating badge */}
-        <div className="absolute flex gap-[11.45px] items-center left-[1114px] top-[633.73px]">
-          <div className="relative shrink-0 size-[30.533px]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30.5325 30.5325">
-              <path d={svgPaths.p36924880} fill="#FFC046" />
-            </svg>
-          </div>
-          <p className="font-['Plus_Jakarta_Sans'] font-bold leading-[1.5] shrink-0 text-[#050505] text-[20.355px] text-nowrap">5.0</p>
-        </div>
-
         {/* Footer Group */}
-        <div className="absolute contents left-[30px] top-[832px]">
+        <div className="absolute contents left-[30px] top-[580px]">
           {/* White footer container */}
-          <div className="absolute bg-white h-[690px] left-[30px] rounded-[40px] top-[832px] w-[1380px]" />
+          <div className="absolute bg-white h-[690px] left-[30px] rounded-[40px] top-[580px] w-[1380px]" />
           
           {/* Large Trionica text */}
-          <p className="absolute font-['Plus_Jakarta_Sans'] font-bold leading-[1.2] left-[calc(50%-1px)] text-[180px] text-[rgba(35,84,162,0.89)] text-center text-nowrap top-[1165px] tracking-[-9px] translate-x-[-50%] uppercase">
+          <p className="absolute font-['Plus_Jakarta_Sans'] font-bold leading-[1.2] left-[calc(50%-1px)] text-[180px] text-[rgba(35,84,162,0.89)] text-center text-nowrap top-[913px] tracking-[-9px] translate-x-[-50%] uppercase">
             Triónica
           </p>
 
           {/* Navigation links */}
-          <div className="absolute flex gap-[32px] items-center left-[calc(50%-344.4px)] top-[1078px] translate-x-[-50%]">
+          <div className="absolute flex gap-[32px] items-center left-[calc(50%-344.4px)] top-[826px] translate-x-[-50%]">
             <button 
               onClick={() => handleNavigation('home')}
               className="font-['Plus_Jakarta_Sans'] font-bold leading-[20.04px] shrink-0 text-[#4278ec] text-[18px] text-nowrap tracking-[-0.18px]"
@@ -416,7 +285,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
           </div>
 
           {/* Bottom section with line, social icons, and copyright */}
-          <div className="absolute flex flex-col gap-[24px] items-center justify-center left-[140px] top-[1419px] w-[1160px]">
+          <div className="absolute flex flex-col gap-[24px] items-center justify-center left-[140px] top-[1167px] w-[1160px]">
             <div className="h-0 relative shrink-0 w-full">
               <div className="absolute inset-[-1px_0_0_0]">
                 <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1160 1.0001">
@@ -487,34 +356,10 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
             </div>
           </div>
 
-          {/* Newsletter form */}
-          <div className="absolute flex gap-[8px] items-center left-[896px] top-[1053px]">
-            <div className="bg-[#f5f5f5] flex h-[72px] items-start px-[32px] py-[24px] rounded-[20px] shrink-0 w-[324px]">
-              <p className="font-['Plus_Jakarta_Sans'] font-normal leading-none shrink-0 text-[#6b7280] text-[20px] text-nowrap">Digite o seu email</p>
-            </div>
-            <div className="flex items-center justify-center shrink-0 size-[72px]">
-              <div className="flex-none rotate-[270deg]">
-                <button className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors flex items-center justify-center px-[32px] py-[24px] rounded-[20px] w-[72px]">
-                  <div className="relative shrink-0 size-[24px]">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <path d="M6 9L12 15L18 9" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter heading */}
-          <div className="absolute font-['Helvetica_Neue'] leading-[1.2] left-[896px] text-[#050505] text-[32px] top-[937px] w-[260px]">
-            <p className="mb-0">Subscreva a</p>
-            <p>nossa newsletter</p>
-          </div>
-
           {/* Main heading */}
-          <div className="absolute font-['Plus_Jakarta_Sans'] font-medium leading-none left-[83px] text-[#050505] text-[64px] top-[904px] w-[718px]">
-            <p className="mb-0">Construindo o Sucesso</p>
-            <p>de Moçambique</p>
+          <div className="absolute font-['Plus_Jakarta_Sans'] font-medium leading-none left-[83px] text-[#050505] text-[64px] top-[652px] w-[718px]">
+            <p className="mb-0">Triónica — Tecnologia e Soluções</p>
+            <p>para o Desenvolvimento de Moçambique</p>
           </div>
         </div>
       </section>

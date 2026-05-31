@@ -70,7 +70,7 @@ function ServiceIconContainer3() {
 function HowItWork() {
   return (
     <div className="absolute contents left-0 top-0" data-name="How it work">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[127px] leading-[1.1] left-[calc(50%-573px)] not-italic text-[#2d2d2d] text-[48px] top-[40.62px] w-[866px]">Marcos de Impacto Estratégico.</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[127px] leading-[1.1] left-[calc(50%-573px)] not-italic text-[#2d2d2d] text-[48px] top-[40.62px] w-[866px]">Soluções Implementadas em Moçambique.</p>
       <OurServiceHeaderContainer />
       <div className="absolute bg-[#1e1e1e] h-[234.053px] left-[198.26px] rounded-[30px] top-[174.41px] w-[360.793px]" data-name="Service Background" />
       <div className="absolute bg-[#1e1e1e] h-[234.053px] left-[198.26px] rounded-[30px] top-[466.3px] w-[360.793px]" data-name="Service Background" />

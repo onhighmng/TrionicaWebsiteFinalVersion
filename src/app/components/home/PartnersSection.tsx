@@ -209,7 +209,7 @@ export function PartnersSection() {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-[#f5f5f5]" data-navbar-section="light">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-[#e2e2e2]" data-navbar-section="light">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header with gradient text */}
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">

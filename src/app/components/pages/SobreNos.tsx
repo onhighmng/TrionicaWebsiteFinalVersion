@@ -28,19 +28,19 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
   const missionVisionValues = [
     {
       title: 'MISSÃO',
-      description: '• Desenvolver e implementar soluções inovadoras e serviços que respondam com precisão às necessidades dos nossos clientes;\n• Garantir assistência pós-venda de elevada qualidade e eficiência;\n• Priorizar a excelência, utilizando práticas modernas, tecnologias avançadas e procedimentos eficazes.',
+      description: 'Desenvolver e implementar soluções tecnológicas inovadoras que respondam com precisão às necessidades dos nossos clientes, garantindo qualidade, eficiência e assistência especializada.',
       link: '',
       color: '#2354a2', // Trionica blue
     },
     {
-      title: 'Nossa Visão',
-      description: 'Ser uma empresa de referência em Moçambique no fornecimento de equipamentos de soluções tecnológicas para fins Didáticos, laboratoriais e investigação, destacando-nos pela inovação, qualidade e amplitude dos nossos serviços — desde o projecto, fornecimento, instalação e formação até à manutenção especializada.',
+      title: 'VISÃO',
+      description: 'Ser a empresa de referência em Moçambique no fornecimento de soluções tecnológicas para ensino & investigação, saúde, águas, ambiente, minas e desenvolvimento institucional.',
       link: '',
       color: '#475569', // Slate gray - sophisticated and modern
     },
     {
-      title: 'Nossos Valores',
-      description: '• Inovação – Soluções modernas e ajustadas à realidade do cliente;\n• Eficiência – Respostas ágeis e orientadas a resultados;\n• Eficácia – Processos sólidos e de alto desempenho;\n• Honestidade – Relações transparentes com clientes, fornecedores e parceiros;\n• Criação de Valor – Equipamentos fiáveis e sustentáveis;\n• Responsabilidade Social – Ética, impacto e compromisso com o país;\n• Reinvestimento – Aperfeiçoamento técnico e formação contínua ao nível nacional e internacional.',
+      title: 'VALORES',
+      description: '• Inovação\n• Excelência\n• Eficiência\n• Honestidade\n• Responsabilidade\n• Desenvolvimento Contínuo',
       link: '',
       color: '#1e293b', // Dark slate for contrast
       customHeight: 'h-[650px]',
@@ -150,51 +150,41 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
             
             {/* Description */}
             <div className="font-['Manrope'] text-[#5c6161] text-base md:text-lg lg:text-xl leading-relaxed space-y-4 md:space-y-5 lg:space-y-6 mb-10 md:mb-12 lg:mb-16">
-              <p>
-                A Triónica Moçambique Lda. é uma empresa moçambicana sediada na cidade de Maputo, especializada no desenvolvimento de soluções tecnológicas e na implementação de projetos em diversas áreas estratégicas.
+              <p className="font-semibold text-[#0c1313]">
+                Construindo o Futuro de Moçambique Desde 2010
               </p>
               <p>
-                Desde 2010, dedicamo-nos ao fornecimento de equipamentos de laboratório e tecnologias avançadas para os sectores de Ensino e Investigação, Saúde, Águas, Ambiente e Minas, garantido qualidade, inovação e fiabilidade.
+                A Triónica Moçambique, Lda é uma empresa especializada no fornecimento de soluções tecnológicas, equipamentos, formação técnica e assistência especializada para os sectores de Ensino & Investigação, Saúde, Águas, Ambiente e Minas.
               </p>
               <p>
-                Com uma equipa de profissionais altamente qualificados, acumulamos 15 anos de experiência que se refletem na excelência dos nossos produtos e serviços, fruto da formação contínua dos nossos colaboradores e na manutenção rigorosa dos equipamentos fornecidos. O reconhecimento dos nossos clientes é um dos nossos maiores indicadores de sucesso.
+                Desde 2010, fornecemos equipamentos, tecnologias e serviços especializados, assegurando qualidade, inovação e fiabilidade em todas as etapas dos projectos, desde a consultoria até à assistência técnica pós-venda.
               </p>
             </div>
-            
-            {/* Button */}
-            <button className="flex flex-col items-center gap-3 transition-all duration-300 group cursor-pointer mx-auto">
-              <span className="font-['Manrope'] font-bold text-[#245454] text-base md:text-lg lg:text-xl tracking-wide">
-                ROLE PARA EXPLORAR
-              </span>
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="w-10 h-10 flex items-center justify-center"
-              >
-                <svg 
-                  width="40" 
-                  height="40" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="#245454" 
-                  strokeWidth="2.5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <path d="M19 12l-7 7-7-7"/>
-                </svg>
-              </motion.div>
-            </button>
           </motion.div>
         </div>
       </section>
 
       {/* Nossa Equipa - Team Section */}
-      <section className="bg-white" data-navbar-section="light">
+      <section className="bg-white pt-12 md:pt-16 lg:pt-20" data-navbar-section="light">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl text-center mb-10 md:mb-12">
+          <h2 className="font-['Manrope'] font-medium text-[#0c1313] text-2xl md:text-3xl lg:text-4xl mb-6 tracking-tight">
+            Uma Equipa Preparada Para Apoiar o Seu Projecto
+          </h2>
+          <p className="font-['Manrope'] text-[#5c6161] text-base md:text-lg leading-relaxed mb-8">
+            A nossa equipa técnica recebe formação contínua em Moçambique e no estrangeiro, garantindo elevados padrões de instalação, operação, manutenção e suporte técnico.
+          </p>
+          <h3 className="font-['Manrope'] font-semibold text-[#0c1313] text-lg md:text-xl mb-4">
+            Áreas de apoio:
+          </h3>
+          <ul className="font-['Manrope'] text-[#5c6161] text-base md:text-lg leading-relaxed grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 max-w-2xl mx-auto text-left">
+            <li>• Instalação de equipamentos</li>
+            <li>• Formação técnica especializada</li>
+            <li>• Assistência pós-venda</li>
+            <li>• Diagnóstico e manutenção</li>
+            <li>• Calibração</li>
+            <li>• Fornecimento de peças de reposição</li>
+          </ul>
+        </div>
         <TeamSection />
       </section>
 
@@ -245,7 +235,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
       </section>
 
       {/* Why Choose Us */}
-      <section className="relative bg-[#f5f5f5] py-12 md:py-16 lg:py-20 w-full overflow-hidden" data-navbar-section="light">
+      <section className="relative bg-[#e2e2e2] py-12 md:py-16 lg:py-20 w-full overflow-hidden" data-navbar-section="light">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
           {/* Decorative circles - right side - desktop only */}
           <div className="hidden xl:block absolute bottom-[338px] right-[-181px]">
@@ -264,15 +254,15 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
           {/* Center heading */}
           <div className="text-center mb-8 md:mb-12 px-4">
             <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-[32px] md:text-[48px] lg:text-[64px] leading-tight md:leading-[72px] text-[#050505] tracking-tight md:tracking-[-2.56px]">
-              <p className="mb-0">Pronto Para Iniciar</p>
-              <p>o Seu Projecto?</p>
+              <p className="mb-0">Pronto Para Desenvolver</p>
+              <p>o Seu Próximo Projecto?</p>
             </h2>
           </div>
 
           {/* Center subtext */}
           <div className="font-['Plus_Jakarta_Sans'] font-normal leading-[24px] text-[#565656] text-base md:text-[18px] text-center mb-8 md:mb-12 px-4">
-            <p className="mb-0">Vamos discutir a melhor solução</p>
-            <p>para o seu projecto.</p>
+            <p className="mb-0">A nossa equipa está preparada para identificar e implementar</p>
+            <p>a solução mais adequada às necessidades da sua instituição.</p>
           </div>
 
           {/* Center button */}
@@ -295,94 +285,16 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
                   </div>
                 </div>
               </div>
-              <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-base md:text-[20px] text-nowrap text-white">Contactar</p>
+              <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-base md:text-[20px] text-nowrap text-white">Contactar-nos</p>
             </button>
-          </div>
-
-          {/* Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 max-w-4xl mx-auto">
-            {/* Left testimonial */}
-            <div className="rounded-[40px] md:rounded-[60px] bg-white shadow-lg p-6 md:p-8 flex flex-col justify-between min-h-[280px] md:min-h-[318px]">
-              <div className="space-y-4">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="none" viewBox="0 0 30.5325 30.5325">
-                      <path d={svgPaths.p36924880} fill="#FFC046" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-['Plus_Jakarta_Sans'] text-sm md:text-[14px] leading-[20px] text-[#050505]">
-                  A Triónica forneceu equipamentos de alta qualidade que transformaram nosso laboratório.
-                </p>
-                <p className="font-['Plus_Jakarta_Sans'] text-sm md:text-[14px] leading-[20px] text-[#050505]">
-                  Excelente serviço e suporte técnico.
-                </p>
-              </div>
-              <div>
-                <p className="font-['Plus_Jakarta_Sans'] font-bold text-sm md:text-[14px] text-[#050505]">Dr. João Silva</p>
-                <p className="font-['Plus_Jakarta_Sans'] text-xs md:text-[11px] text-[#667085] uppercase tracking-wide">Universidade de Maputo</p>
-              </div>
-            </div>
-
-            {/* Right testimonial */}
-            <div className="rounded-[40px] md:rounded-[60px] bg-white shadow-lg p-6 md:p-8 flex flex-col justify-between min-h-[280px] md:min-h-[318px]">
-              <div className="space-y-4">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="none" viewBox="0 0 30.5325 30.5325">
-                      <path d={svgPaths.p36924880} fill="#FFC046" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-['Plus_Jakarta_Sans'] text-sm md:text-[14px] leading-[20px] text-[#050505]">
-                  Trabalhamos com a Triónica há mais de 5 anos. A equipa deles é sempre disponível e resolve qualquer problema rapidamente. Confiamos plenamente nos seus serviços.
-                </p>
-              </div>
-              <div>
-                <p className="font-['Plus_Jakarta_Sans'] font-bold text-sm md:text-[14px] text-[#050505]">Eng. Maria Couto</p>
-                <p className="font-['Plus_Jakarta_Sans'] text-xs md:text-[11px] text-[#667085] uppercase tracking-wide">EDM - Electricidade de Moçambique</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Rating badge */}
-          <div className="flex gap-3 items-center justify-center mb-12 md:mb-16">
-            <div className="relative shrink-0 size-[30.533px]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30.5325 30.5325">
-                <path d={svgPaths.p36924880} fill="#FFC046" />
-              </svg>
-            </div>
-            <p className="font-['Plus_Jakarta_Sans'] font-bold leading-[1.5] text-[#050505] text-lg md:text-[20.355px] text-nowrap">5.0</p>
           </div>
 
           {/* Footer Group */}
           <div className="bg-white rounded-[24px] md:rounded-[40px] p-6 md:p-12 lg:p-16">
             {/* Main heading */}
             <div className="font-['Plus_Jakarta_Sans'] font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-tight text-[#050505] text-center md:text-left mb-8 md:mb-12">
-              <p className="mb-0">Construindo o Sucesso</p>
-              <p>de Moçambique</p>
-            </div>
-
-            {/* Newsletter section */}
-            <div className="mb-12 md:mb-16">
-              <div className="font-['Helvetica_Neue'] leading-[1.2] text-[24px] md:text-[28px] lg:text-[32px] text-[#050505] mb-6 text-center md:text-left">
-                <p className="mb-0">Subscreva a</p>
-                <p>nossa newsletter</p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-2 md:gap-[8px] items-stretch sm:items-center max-w-md">
-                <div className="bg-[#f5f5f5] flex items-center px-6 md:px-[32px] py-5 md:py-[24px] rounded-[20px] flex-1">
-                  <input 
-                    type="email"
-                    placeholder="Digite o seu email"
-                    className="w-full bg-transparent font-['Plus_Jakarta_Sans'] font-normal text-base md:text-[20px] text-[#6b7280] outline-none"
-                  />
-                </div>
-                <button className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors flex items-center justify-center px-6 md:px-[32px] py-5 md:py-[24px] rounded-[20px] shrink-0">
-                  <svg className="size-5 md:size-[24px]" fill="none" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </svg>
-                </button>
-              </div>
+              <p className="mb-0">Triónica — Tecnologia e Soluções</p>
+              <p>para o Desenvolvimento de Moçambique</p>
             </div>
 
             {/* Large Trionica text */}
