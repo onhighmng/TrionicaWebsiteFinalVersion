@@ -753,15 +753,7 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
         <Frame2 onNavigate={onNavigate} />
         <Frame5 onNavigate={onNavigate} />
         <Frame3 />
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[105px] leading-[20px] left-[1132px] text-[#050505] text-[16px] top-[206px] w-[277px]"
-        >
-          <p>Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
-        </motion.div>
+        {/* Duplicate subtitle removed — it is already shown under the heading. */}
         {/* Decorative "OnHigh" badge — moved onto the image area so it no longer
             overlaps the heading text. */}
         <div className="absolute h-[77.48px] items-center justify-center left-[560px] top-[470px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>
