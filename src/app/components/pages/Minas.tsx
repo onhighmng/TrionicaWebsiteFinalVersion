@@ -50,7 +50,7 @@ export function Minas({ onNavigate }: MinasProps) {
           <div className="flex gap-[4px] items-center h-[40px] mb-4">
             <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[30px]">
               <div className="flex-none">
-                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#fb2c36] text-[24px] animate-spin">✱</p>
+                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#2354a2] text-[24px] animate-spin">✱</p>
               </div>
             </div>
             <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">Minas</p>

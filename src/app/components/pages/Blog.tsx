@@ -129,24 +129,6 @@ export function Blog({ onNavigate }: BlogProps) {
               Um portfólio de tecnologia de vanguarda ao serviço das instituições que lideram Moçambique.
             </p>
 
-            {/* Scroll Indicator */}
-            <motion.div
-              className="inline-flex flex-col items-center gap-2"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.8,
-                delay: 0.6,
-                repeat: Infinity,
-                repeatType: "reverse",
-                repeatDelay: 1
-              }}
-            >
-              <span className="font-['Inter'] font-medium text-[#2354a2] text-sm tracking-wider uppercase">
-                Role para Explorar
-              </span>
-              <ChevronDown className="w-6 h-6 text-[#2354a2]" strokeWidth={2.5} />
-            </motion.div>
           </motion.div>
         </div>
       </section>

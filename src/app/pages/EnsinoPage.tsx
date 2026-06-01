@@ -56,15 +56,15 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
           <div className="flex gap-[4px] items-center h-[40px] mb-4">
             <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[30px]">
               <div className="flex-none">
-                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#fb2c36] text-[24px] animate-spin">✱</p>
+                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#2354a2] text-[24px] animate-spin">✱</p>
               </div>
             </div>
-            <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">ENSINO</p>
+            <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">ENSINO &amp; INVESTIGAÇÃO</p>
           </div>
-          
+
           {/* Heading */}
-          <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
-            Equipando o Futuro
+          <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[32px] leading-[1.15] tracking-[-1px] mb-6">
+            Equipamentos para Ensino e Investigação
           </h1>
           
           {/* Hero Image */}
@@ -82,7 +82,7 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
       <section className="md:hidden relative w-full bg-[#F5F5F5] px-6 pb-8">
         <div className="max-w-[600px] mx-auto">
           <p className="font-['Roboto:Regular',sans-serif] text-[#1c1716] text-[18px] leading-[26px] text-justify">
-            Preparando as próximas gerações com equipamentos de classe mundial.
+            Disponibilizamos uma vasta gama de equipamentos destinados ao ensino superior, instituições técnico-profissionais, escolas secundárias e primárias, bem como laboratórios de investigação.
           </p>
         </div>
       </section>
