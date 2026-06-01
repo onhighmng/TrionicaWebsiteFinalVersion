@@ -214,7 +214,7 @@ function ButtonBase() {
       <div aria-hidden="true" className="absolute border-[#050505] border-[1.002px] border-solid inset-0 pointer-events-none rounded-[71.141px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex gap-[10.02px] items-center justify-center px-[20.04px] py-[12.024px] relative size-full">
-          <p className="basis-0 font-['Sora:SemiBold',sans-serif] font-semibold grow leading-[26.052px] min-h-px min-w-px relative shrink-0 text-[#050505] text-[13px] text-center">Contactar-nos</p>
+          <p className="font-['Sora:SemiBold',sans-serif] font-semibold leading-[26.052px] relative shrink-0 text-[#050505] text-[13px] text-center whitespace-nowrap">Contactar-nos</p>
         </div>
       </div>
     </div>
@@ -225,7 +225,7 @@ function Button({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <button 
       onClick={() => onNavigate?.('contacte-nos')}
-      className="content-stretch flex h-[40px] items-start relative rounded-[52.103px] shrink-0 w-[110px] hover:opacity-80 transition-opacity cursor-pointer" 
+      className="content-stretch flex h-[40px] items-start relative rounded-[52.103px] shrink-0 w-[150px] hover:opacity-80 transition-opacity cursor-pointer"
       data-name="Button"
     >
       <ButtonBase />
