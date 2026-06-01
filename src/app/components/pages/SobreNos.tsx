@@ -13,6 +13,8 @@ import consultoriaImage from "figma:asset/56e3a70f9923c7aafaa9f6ef1a7f2f06ab021c
 import professionalImage from "figma:asset/0151d44b824da5af6b2609327d49fb41fad703b4.png";
 import specialistImage from "figma:asset/112a216849b9752ec9446d7eaaac3b83be7e504e.png";
 import technicalSupportImage from "figma:asset/9719e880b9b0de82d10614661ba220b85460451d.png";
+import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
+import escritorioImage from "../../../imports/escritorio.jpg";
 
 interface SobreNosProps {
   onNavigate?: (page: string) => void;
@@ -102,7 +104,27 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
             <li>• Fornecimento de peças de reposição</li>
           </ul>
         </div>
-        <TeamSection />
+        {/* Institutional team photo (replaces the individual member cards) */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pb-12 md:pb-16 lg:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+            <div className="lg:col-span-2 overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src={equipaGrupoImage}
+                alt="Equipa Triónica Moçambique"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src={escritorioImage}
+                alt="Equipa Triónica em ambiente de trabalho"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Mission, Vision & Values */}

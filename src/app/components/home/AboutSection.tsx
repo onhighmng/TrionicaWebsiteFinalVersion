@@ -1,4 +1,4 @@
-import image_6c72dadd527eba87d1ba2541e9c3b110adcb82e5 from 'figma:asset/6c72dadd527eba87d1ba2541e9c3b110adcb82e5.png'
+import image_6c72dadd527eba87d1ba2541e9c3b110adcb82e5 from '../../../imports/equipa-evento.jpg'
 "use client";
 import { TimelineContent } from "../ui/timeline-animation";
 import { VerticalCutReveal } from "../ui/vertical-cut-reveal";
