@@ -44,7 +44,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
       setIsNavbarReady(true);
       // Unblock hover events after animations complete
       hoverBlockRef.current = false;
-    }, 1200);
+    }, 250);
     
     return () => {
       clearTimeout(timer);
@@ -154,7 +154,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ 
-                  duration: 0.8, 
+                  duration: 0.3,
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0
                 }}
@@ -176,7 +176,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 initial={{ opacity: 0, scale: 0.96, y: -8 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ 
-                  duration: 0.9, 
+                  duration: 0.3,
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.05
                 }}
@@ -192,7 +192,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.25,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -216,7 +216,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.8, 
+                        duration: 0.3,
                         delay: 0.28,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -233,7 +233,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.32,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -253,7 +253,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.8, 
+                        duration: 0.3,
                         delay: 0.35,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -270,7 +270,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.39,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -352,7 +352,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.8, 
+                        duration: 0.3,
                         delay: 0.42,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -369,7 +369,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.46,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -393,7 +393,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 initial={{ opacity: 0, x: 20, scale: 0.98 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ 
-                  duration: 1.2, 
+                  duration: 0.35,
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.05
                 }}

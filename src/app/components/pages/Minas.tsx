@@ -82,7 +82,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Equipment Grid Section */}
-      <section className="relative w-full bg-[#e2e2e2] px-4 md:px-4 md:-mb-80">
+      <section className="relative w-full bg-[#e2e2e2] px-4 md:px-4">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
           {/* Desktop version with scaling */}
           <div className="hidden md:block relative w-full" style={{ paddingBottom: '122.29%' }}> {/* 1712/1400 = 122.29% */}
@@ -101,7 +101,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* CTA Footer Section */}
-      <div className="md:-mt-72">
+      <div>
         <CTAFooterSection onNavigate={onNavigate} />
       </div>
     </div>

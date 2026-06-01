@@ -58,7 +58,7 @@ export function Saude({ onNavigate }: SaudeProps) {
       </section>
       
       {/* Innovation Section */}
-      <section className="relative w-full bg-[#e2e2e2] px-4 md:-mb-80 mt-12">
+      <section className="relative w-full bg-[#e2e2e2] px-4 mt-12">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
           <div className="hidden md:block relative w-full" style={{ paddingBottom: '85.71%' }}> {/* 1200/1400 = 85.71% */}
             <div className="absolute inset-0">
@@ -76,7 +76,7 @@ export function Saude({ onNavigate }: SaudeProps) {
       </section>
       
       {/* CTA Footer Section */}
-      <div className="md:-mt-72">
+      <div>
         <CTAFooterSection onNavigate={onNavigate} />
       </div>
     </div>
