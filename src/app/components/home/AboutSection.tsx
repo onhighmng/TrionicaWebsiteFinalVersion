@@ -48,7 +48,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
   };
   
   return (
-    <section className={`-mt-16 md:-mt-28 lg:-mt-40 xl:-mt-80 2xl:-mt-96 pt-0 xl:pt-0 pt-32 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#e2e2e2] ${className}`} ref={heroRef} data-navbar-section="light">
+    <section className={`-mt-16 md:-mt-28 lg:-mt-40 xl:-mt-[440px] 2xl:-mt-[470px] pt-0 xl:pt-0 pt-32 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#e2e2e2] ${className}`} ref={heroRef} data-navbar-section="light">
       <div className="max-w-6xl mx-auto">
         <div className="relative">
           {/* Header */}

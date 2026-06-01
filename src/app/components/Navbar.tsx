@@ -300,15 +300,10 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       <AnimatePresence>
                         {isDropdownHovered && isNavbarReady && !hoverBlockRef.current && (
                           <motion.div
-                            initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                            initial={{ opacity: 0, scale: 0.97, y: 6 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.85, y: 10 }}
-                            transition={{
-                              type: "spring",
-                              mass: 0.5,
-                              damping: 11.5,
-                              stiffness: 100,
-                            }}
+                            exit={{ opacity: 0, scale: 0.97, y: 6 }}
+                            transition={{ duration: 0.12, ease: "easeOut" }}
                             className="absolute top-full left-1/2 transform -translate-x-1/2 z-[10000] pt-2"
                             onMouseEnter={() => {
                               if (isNavbarReady && !hoverBlockRef.current) {
@@ -356,7 +351,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                         delay: 0.42,
                         ease: [0.16, 1, 0.3, 1]
                       }}
-                      className="[grid-area:1_/_1] ml-[352px] relative shrink-0 size-[7.4px]"
+                      className="[grid-area:1_/_1] ml-[374px] relative shrink-0 size-[7.4px]"
                       style={{ willChange: 'transform, opacity' }}
                     >
                       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
@@ -373,7 +368,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                         delay: 0.46,
                         ease: [0.16, 1, 0.3, 1]
                       }}
-                      className="[grid-area:1_/_1] h-[20.011px] ml-[375px] flex items-center cursor-pointer"
+                      className="[grid-area:1_/_1] h-[20.011px] ml-[398px] flex items-center cursor-pointer"
                       onClick={() => handleNavClick('portfolio')}
                       style={{ willChange: 'transform, opacity' }}
                     >

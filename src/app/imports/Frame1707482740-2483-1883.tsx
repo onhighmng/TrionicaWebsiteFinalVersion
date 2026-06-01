@@ -151,15 +151,10 @@ function Frame2({ onNavigate }: { onNavigate?: (page: string) => void }) {
           <AnimatePresence>
             {isDropdownOpen && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                initial={{ opacity: 0, scale: 0.97, y: 6 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.85, y: 10 }}
-                transition={{
-                  type: "spring",
-                  mass: 0.5,
-                  damping: 11.5,
-                  stiffness: 100,
-                }}
+                exit={{ opacity: 0, scale: 0.97, y: 6 }}
+                transition={{ duration: 0.12, ease: "easeOut" }}
                 className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 z-[10000]"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
@@ -349,7 +344,7 @@ function Button2({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <button 
       onClick={() => onNavigate?.('sobre-nos')}
-      className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors cursor-pointer content-stretch flex gap-[9px] items-center pl-[6px] xl:pl-[6px] pl-[16px] pr-[32px] xl:pr-[32px] pr-[56px] py-[6px] xl:py-[6px] py-[20px] relative rounded-[80px] w-[255px] xl:w-[255px] w-full" 
+      className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors cursor-pointer content-stretch flex gap-[9px] items-center pl-[6px] xl:pl-[6px] pl-[16px] pr-[32px] xl:pr-[32px] pr-[56px] py-[6px] xl:py-[6px] py-[20px] relative rounded-[80px] w-full xl:w-fit"
       data-name="Button"
     >
       <Arrow />
