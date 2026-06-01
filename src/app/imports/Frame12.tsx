@@ -36,7 +36,7 @@ const sectionData = [
   {
     id: "hidrologia",
     category: "HIDROLOGIA",
-    title: "Sistemas de monitorizaç��o de recursos hídricos",
+    title: "Sistemas de monitorização de recursos hídricos",
     imgSrc: hidrologiaImg,
   },
   {

@@ -14,8 +14,8 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
 
   return (
     <>
-      {/* Mobile/Tablet Version - Hidden on desktop */}
-      <section className="lg:hidden relative bg-[#e2e2e2] py-12 md:py-16 w-full overflow-hidden" data-navbar-section="light">
+      {/* Responsive flow-based layout (used at all breakpoints) */}
+      <section className="relative bg-[#e2e2e2] py-12 md:py-16 lg:py-20 w-full overflow-hidden" data-navbar-section="light">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           {/* Top left text */}
           <div className="font-['Plus_Jakarta_Sans'] font-medium leading-[1.7] text-[#565656] text-sm md:text-base mb-8 md:mb-12 text-center md:text-left">
@@ -176,8 +176,9 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
         </div>
       </section>
 
-      {/* Desktop Version - Original absolute positioning layout - Hidden on mobile/tablet */}
-      <section className="hidden lg:block relative bg-[#e2e2e2] h-[1300px] w-full overflow-hidden max-w-[1440px] mx-auto" data-navbar-section="light">
+      {/* Legacy desktop absolute-positioned layout — disabled (caused overlapping
+          sections). The responsive flow layout above is now used on all screens. */}
+      <section className="hidden" aria-hidden="true" data-navbar-section="light">
         {/* Decorative circles - right side */}
         <div className="absolute bottom-[338px] contents right-[-181px]">
           <div className="absolute border border-[#545b5b] border-dashed bottom-[943px] opacity-20 right-[424px] rounded-[1000px] size-[603px]" />
