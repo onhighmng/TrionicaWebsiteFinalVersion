@@ -364,7 +364,7 @@ function Button2({ onNavigate }: { onNavigate?: (page: string) => void }) {
 
 function Frame6({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="hidden xl:flex absolute content-stretch flex-col gap-[31px] items-start left-[94px] top-[224px] w-[265px]">
+    <div className="hidden xl:flex content-stretch flex-col gap-[31px] items-start w-[300px]">
       <motion.p 
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -747,9 +747,14 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
       {/* Desktop version - shown only on xl screens */}
       <div className="hidden xl:block pointer-events-auto" style={{ pointerEvents: 'auto' }}>
         {/* <Group9 /> - Removed vertical dashed grid lines */}
-        <p className="absolute font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] left-[94px] text-[#050505] text-[48px] top-[141px] w-[800px]">
-          Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
-        </p>
+        {/* Left content column — heading + description + button stacked in flow
+            so they never overlap regardless of how the text wraps. */}
+        <div className="hidden xl:flex flex-col gap-[36px] absolute left-[94px] top-[120px] w-[760px] z-[5]">
+          <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[#050505] text-[48px] w-[760px]">
+            Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
+          </p>
+          <Frame6 onNavigate={onNavigate} />
+        </div>
         <Frame2 onNavigate={onNavigate} />
         <Frame5 onNavigate={onNavigate} />
         <Frame3 />
@@ -762,8 +767,9 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
         >
           <p>Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
         </motion.div>
-        <Frame6 onNavigate={onNavigate} />
-        <div className="absolute h-[77.48px] items-center justify-center left-[444px] top-[282.41px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>
+        {/* Decorative "OnHigh" badge — moved onto the image area so it no longer
+            overlaps the heading text. */}
+        <div className="absolute h-[77.48px] items-center justify-center left-[560px] top-[470px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>
           <div className="flex-none rotate-[328deg]">
             <Frame4 />
           </div>
