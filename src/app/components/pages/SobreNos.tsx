@@ -132,14 +132,14 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
 
         {/* Individual team members */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pt-12 md:pt-16 pb-12 md:pb-16 lg:pb-20">
-          <div className="grid gap-x-6 gap-y-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-x-4 md:gap-x-5 gap-y-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
             {teamMembers.map((member, index) => (
               <div key={index} className="group overflow-hidden">
                 <div className="overflow-hidden rounded-xl bg-[#e9ecf2]">
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="h-72 md:h-80 w-full object-cover object-top md:grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
+                    className="h-56 md:h-64 lg:h-56 xl:h-64 w-full object-cover object-top md:grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
                     loading="lazy"
                   />
                 </div>
