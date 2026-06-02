@@ -1,8 +1,8 @@
 import svgPaths from "./svg-hkc198tcgj";
 import { useRef, useState } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import infraestruturaImg from "figma:asset/dd81d3bef9f3b0c39a102624e8227864df172233.png";
-import diagnosticoImg from "figma:asset/5b527ca2036656eeb3df5f4ae7501226e8fad166.png";
+import infraestruturaImg from "../../imports/card-saude-infra.jpg";
+import diagnosticoImg from "../../imports/card-saude-diag.jpg";
 import softwareImg from "figma:asset/ae2f21cfb3b0a3b087d95214ce3c7a4fd9239140.png";
 
 const sectionData = [

@@ -70,7 +70,7 @@ export default function Frame156Wrapper({ onNavigate }: Frame156WrapperProps) {
   return (
     <div className="relative size-full">
       {/* Title */}
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[127px] leading-[1.1] left-[calc(50%-573px)] not-italic text-[#2d2d2d] text-[48px] top-[40.62px] w-[866px]">Marcos de Impacto Estratégico.</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[127px] leading-[1.1] left-[calc(50%-573px)] not-italic text-[#2d2d2d] text-[48px] top-[40.62px] w-[866px]">Soluções Implementadas em Moçambique.</p>
       <OurServiceHeaderContainer />
       
       {/* First Row - Card 1: KFW/MCTESTP */}

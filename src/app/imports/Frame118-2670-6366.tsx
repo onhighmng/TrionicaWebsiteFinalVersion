@@ -670,7 +670,7 @@ function Paragraph4() {
   return (
     <div className="absolute left-[89.85px] top-[141.97px] w-[900px]" data-name="Paragraph">
       <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[#050505] text-[80px]">
-        Soluções Tecnologias Integradas para o Desenvolvimento de Moçambique
+        Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
       </p>
     </div>
   );
@@ -733,7 +733,7 @@ function Container16() {
 function Paragraph6() {
   return (
     <div className="absolute h-[76.53px] left-0 top-0 w-[1401.686px]" data-name="Paragraph">
-      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[147.172px] left-0 text-[#050505] text-[123.934px] top-[2.59px] w-[1340.037px] whitespace-pre-wrap">Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
+      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[147.172px] left-0 text-[#050505] text-[123.934px] top-[2.59px] w-[1340.037px] whitespace-pre-wrap">Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
     </div>
   );
 }
@@ -3268,7 +3268,7 @@ function Paragraph23() {
   return (
     <div className="h-[27.888px] relative w-[90.758px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[116.188px] left-[46.2px] text-[77.459px] text-center text-white top-[-5.97px] translate-x-[-50%] whitespace-pre">Contactar</p>
+        <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[116.188px] left-[46.2px] text-[77.459px] text-center text-white top-[-5.97px] translate-x-[-50%] whitespace-pre">Contactar-nos</p>
       </div>
     </div>
   );
@@ -4795,7 +4795,7 @@ function Group3() {
 function Paragraph43() {
   return (
     <div className="absolute h-[116.188px] left-[336.95px] top-[134.54px] w-[689.383px]" data-name="Paragraph">
-      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[131.68px] leading-[46.475px] left-[85.2px] text-[#050505] text-[38.729px] top-[-65.84px] w-[577.068px] whitespace-pre-wrap">Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
+      <p className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[131.68px] leading-[46.475px] left-[85.2px] text-[#050505] text-[38.729px] top-[-65.84px] w-[577.068px] whitespace-pre-wrap">Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
     </div>
   );
 }

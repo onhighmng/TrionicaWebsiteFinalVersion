@@ -6,7 +6,7 @@ import { MenuItem, ProductItem } from "./ui/navbar-menu";
 import imgSaude from "figma:asset/5387dac094734b07fbea93a0716344069eaf78fc.png";
 import imgAguas from "figma:asset/e5338e4f7a6437afa17dbc009c762e48754173a4.png";
 import imgAmbiente from "figma:asset/c1b1db6c514cff25caa0cecbe74fea6016b4cc73.png";
-import imgMinas from "figma:asset/f7f09a1149bfa2062668c63ecb8f8d1f941ca029.png";
+import imgMinas from "../../imports/card-minas.jpg";
 
 interface NavbarProps {
   currentPage: string;
@@ -44,7 +44,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
       setIsNavbarReady(true);
       // Unblock hover events after animations complete
       hoverBlockRef.current = false;
-    }, 1200);
+    }, 250);
     
     return () => {
       clearTimeout(timer);
@@ -154,7 +154,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ 
-                  duration: 0.8, 
+                  duration: 0.3,
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0
                 }}
@@ -176,7 +176,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 initial={{ opacity: 0, scale: 0.96, y: -8 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ 
-                  duration: 0.9, 
+                  duration: 0.3,
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.05
                 }}
@@ -192,7 +192,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.25,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -216,7 +216,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.8, 
+                        duration: 0.3,
                         delay: 0.28,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -233,7 +233,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.32,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -253,7 +253,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.8, 
+                        duration: 0.3,
                         delay: 0.35,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -270,7 +270,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.39,
                         ease: [0.16, 1, 0.3, 1]
                       }}
@@ -300,15 +300,10 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       <AnimatePresence>
                         {isDropdownHovered && isNavbarReady && !hoverBlockRef.current && (
                           <motion.div
-                            initial={{ opacity: 0, scale: 0.85, y: 10 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.85, y: 10 }}
-                            transition={{
-                              type: "spring",
-                              mass: 0.5,
-                              damping: 11.5,
-                              stiffness: 100,
-                            }}
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 6 }}
+                            transition={{ duration: 0.14, ease: "easeOut" }}
                             className="absolute top-full left-1/2 transform -translate-x-1/2 z-[10000] pt-2"
                             onMouseEnter={() => {
                               if (isNavbarReady && !hoverBlockRef.current) {
@@ -321,7 +316,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                               }
                             }}
                           >
-                            <div className="bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
+                            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
                               <div className="w-max h-full p-4">
                                 <div className="grid grid-cols-2 gap-3">
                                   {[
@@ -352,11 +347,11 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.8, 
+                        duration: 0.3,
                         delay: 0.42,
                         ease: [0.16, 1, 0.3, 1]
                       }}
-                      className="[grid-area:1_/_1] ml-[352px] relative shrink-0 size-[7.4px]"
+                      className="[grid-area:1_/_1] ml-[374px] relative shrink-0 size-[7.4px]"
                       style={{ willChange: 'transform, opacity' }}
                     >
                       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
@@ -369,11 +364,11 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       initial={{ opacity: 0, y: 3, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ 
-                        duration: 1.0, 
+                        duration: 0.3,
                         delay: 0.46,
                         ease: [0.16, 1, 0.3, 1]
                       }}
-                      className="[grid-area:1_/_1] h-[20.011px] ml-[375px] flex items-center cursor-pointer"
+                      className="[grid-area:1_/_1] h-[20.011px] ml-[398px] flex items-center cursor-pointer"
                       onClick={() => handleNavClick('portfolio')}
                       style={{ willChange: 'transform, opacity' }}
                     >
@@ -393,16 +388,16 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 initial={{ opacity: 0, x: 20, scale: 0.98 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ 
-                  duration: 1.2, 
+                  duration: 0.35,
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.05
                 }}
                 onClick={() => handleNavClick('contacte-nos')}
-                className="hidden lg:flex absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+                className="hidden lg:flex absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] border border-[#101828] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
                 style={{ willChange: 'transform, opacity' }}
               >
                 <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#101828] text-[14px] text-center whitespace-nowrap tracking-[-0.1504px]">
-                  Contactar
+                  Contactar-nos
                 </p>
               </motion.button>
             </>

@@ -112,12 +112,11 @@ function Section() {
         <Frame112Image />
       </div>
       <People1 />
-      <div className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[133.509px] leading-[1.12] left-0 text-[#1c1716] text-[64px] top-0 tracking-[-1.92px] w-[536.414px]">
-        <p className="mb-0">{`Equipando o `}</p>
-        <p>Futuro</p>
+      <div className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.1] left-0 text-[#1c1716] text-[44px] top-0 tracking-[-1.4px] w-[620px]">
+        <p>Equipamentos para Ensino e Investigação</p>
       </div>
-      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[4px] text-[#1c1716] text-[22px] top-[170px] w-[572px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Preparando as próximas gerações com equipamentos de classe mundial.
+      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[4px] text-[#1c1716] text-[20px] top-[150px] w-[600px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        Disponibilizamos uma vasta gama de equipamentos destinados ao ensino superior, instituições técnico-profissionais, escolas secundárias e primárias, bem como laboratórios de investigação.
       </p>
     </div>
   );
@@ -135,7 +134,7 @@ function Text() {
   return (
     <div className="h-[30.48px] relative w-[30.156px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[28px] left-[1.39px] not-italic text-[#fb2c36] text-[32px] text-nowrap top-[-0.56px] tracking-[-0.4492px] animate-spin">✱</p>
+        <p className="absolute font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[28px] left-[1.39px] not-italic text-[#2354a2] text-[32px] text-nowrap top-[-0.56px] tracking-[-0.4492px] animate-spin">✱</p>
       </div>
     </div>
   );
@@ -145,7 +144,7 @@ function Text1() {
   return (
     <div className="blur-[0px] filter h-[20px] relative shrink-0 w-[52.547px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-0 not-italic text-[#4a5565] text-[32px] text-nowrap top-[0.5px] tracking-[-0.1504px]">ENSINO</p>
+        <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-0 not-italic text-[#4a5565] text-[22px] text-nowrap top-[0.5px] tracking-[-0.1504px]">Ensino &amp; Investigação</p>
       </div>
     </div>
   );
@@ -179,7 +178,7 @@ export default function Frame2() {
   return (
     <div className="relative size-full">
       <Frame1 />
-      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[984px] -translate-x-1/2 not-italic text-[#fb2c36] text-[24px] text-nowrap top-[714px] tracking-[0.0703px]">Triónica</p>
+      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[984px] -translate-x-1/2 not-italic text-[#2354a2] text-[24px] text-nowrap top-[714px] tracking-[0.0703px]">Triónica</p>
     </div>
   );
 }

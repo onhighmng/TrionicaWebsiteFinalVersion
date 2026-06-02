@@ -56,28 +56,8 @@ export function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) 
             </div>
           </div>
           
-          {/* Newsletter and Copyright at bottom */}
+          {/* Copyright at bottom */}
           <div className="relative z-10 mt-auto pt-8 md:pt-8 space-y-4 md:space-y-6">
-            {/* Newsletter */}
-            <div className="mx-auto max-w-md w-full">
-              <h3 className="mb-3 text-center text-xs md:text-sm uppercase tracking-wider text-white">
-                Subscreva a nossa newsletter
-              </h3>
-              <form className="flex flex-col sm:flex-row gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="O seu email"
-                  className="flex-1 rounded-full bg-white/10 px-4 py-2 md:py-2.5 text-xs md:text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-white px-5 md:px-6 py-2 md:py-2.5 text-xs md:text-sm text-[#1a1a1a] transition-transform hover:scale-105 whitespace-nowrap"
-                >
-                  Subscrever
-                </button>
-              </form>
-            </div>
-            
             {/* Copyright */}
             <p className="text-center text-[10px] md:text-xs text-gray-500">
               &copy; {new Date().getFullYear()} Trionica Moçambique. Todos os direitos reservados.

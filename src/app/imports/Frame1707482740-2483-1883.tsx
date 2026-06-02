@@ -1,6 +1,9 @@
 import svgPaths from "./svg-4curm7xai9";
 import imgImage from "figma:asset/d93cf643f81c1830c9529a1d38a8671cd0110ae2.png";
 import imgMicroscope from "../../imports/trionica_new_banner_for_hero.png";
+import plant1 from "../../imports/plant-1.jpg";
+import plant2 from "../../imports/plant-2.jpg";
+import plant3 from "../../imports/plant-3.jpg";
 import { imgRectangle } from "./svg-mmlvz";
 import bciLogo from "figma:asset/82cd405a60a5f350e706ed8d47affe6341ac868f.png";
 import bancoMocambiqueLogo from "figma:asset/01e953708179a504fc7c0147ad9b0d1eba4f4677.png";
@@ -41,6 +44,29 @@ function Counter({ from = 0, to, duration = 2, suffix = "" }: { from?: number; t
   }, [rounded, suffix]);
 
   return <span ref={ref}>{from}{suffix}</span>;
+}
+
+// Animated hero image: rotates through the industrial-plant renders (Melhorias 2,
+// home hero — "Colocar animação nas fotos, que será o hero deste bloco").
+function RotatingPlants() {
+  const plants = [plant1, plant2, plant3];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((p) => (p + 1) % plants.length), 3500);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {plants.map((src, i) => (
+        <img
+          key={i}
+          alt="Equipamento industrial Triónica"
+          src={src}
+          className={`absolute left-0 top-0 size-full max-w-none object-contain transition-opacity duration-[1200ms] ease-in-out ${i === idx ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </div>
+  );
 }
 
 function Group9() {
@@ -151,20 +177,15 @@ function Frame2({ onNavigate }: { onNavigate?: (page: string) => void }) {
           <AnimatePresence>
             {isDropdownOpen && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.85, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.85, y: 10 }}
-                transition={{
-                  type: "spring",
-                  mass: 0.5,
-                  damping: 11.5,
-                  stiffness: 100,
-                }}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 6 }}
+                transition={{ duration: 0.14, ease: "easeOut" }}
                 className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 z-[10000]"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
                   <div className="w-max h-full p-4">
                     <div className="grid grid-cols-2 gap-3">
                       {[
@@ -214,7 +235,7 @@ function ButtonBase() {
       <div aria-hidden="true" className="absolute border-[#050505] border-[1.002px] border-solid inset-0 pointer-events-none rounded-[71.141px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex gap-[10.02px] items-center justify-center px-[20.04px] py-[12.024px] relative size-full">
-          <p className="basis-0 font-['Sora:SemiBold',sans-serif] font-semibold grow leading-[26.052px] min-h-px min-w-px relative shrink-0 text-[#050505] text-[13px] text-center">Contactar</p>
+          <p className="font-['Sora:SemiBold',sans-serif] font-semibold leading-[26.052px] relative shrink-0 text-[#050505] text-[13px] text-center whitespace-nowrap">Contactar-nos</p>
         </div>
       </div>
     </div>
@@ -225,7 +246,7 @@ function Button({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <button 
       onClick={() => onNavigate?.('contacte-nos')}
-      className="content-stretch flex h-[40px] items-start relative rounded-[52.103px] shrink-0 w-[110px] hover:opacity-80 transition-opacity cursor-pointer" 
+      className="content-stretch flex h-[40px] items-start relative rounded-[52.103px] shrink-0 w-[150px] hover:opacity-80 transition-opacity cursor-pointer"
       data-name="Button"
     >
       <ButtonBase />
@@ -349,7 +370,7 @@ function Button2({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <button 
       onClick={() => onNavigate?.('sobre-nos')}
-      className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors cursor-pointer content-stretch flex gap-[9px] items-center pl-[6px] xl:pl-[6px] pl-[16px] pr-[32px] xl:pr-[32px] pr-[56px] py-[6px] xl:py-[6px] py-[20px] relative rounded-[80px] w-[255px] xl:w-[255px] w-full" 
+      className="bg-[#4278ec] hover:bg-[#3562c9] transition-colors cursor-pointer content-stretch flex gap-[9px] items-center pl-[6px] xl:pl-[6px] pl-[16px] pr-[32px] xl:pr-[32px] pr-[56px] py-[6px] xl:py-[6px] py-[20px] relative rounded-[80px] w-full xl:w-fit"
       data-name="Button"
     >
       <Arrow />
@@ -364,7 +385,7 @@ function Button2({ onNavigate }: { onNavigate?: (page: string) => void }) {
 
 function Frame6({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="hidden xl:flex absolute content-stretch flex-col gap-[31px] items-start left-[94px] top-[224px] w-[265px]">
+    <div className="hidden xl:flex content-stretch flex-col gap-[31px] items-start w-[300px]">
       <motion.p 
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -372,7 +393,7 @@ function Frame6({ onNavigate }: { onNavigate?: (page: string) => void }) {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[20px] min-w-full relative shrink-0 text-[#050505] text-[19px] w-[min-content]"
       >
-        Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas
+        Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino & Investigação, Saúde, Água, Ambiente e Minas
       </motion.p>
       <motion.div 
         initial={{ x: -100, opacity: 0 }}
@@ -693,9 +714,7 @@ function Group5() {
         className="absolute inset-[-20.2%_-0.19%_0_-0.11%]" 
         data-name="Rectangle"
       >
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="Microscope" className="absolute left-0 max-w-none size-full top-0 object-contain" src={imgMicroscope} />
-        </div>
+        <RotatingPlants />
       </motion.div>
     </div>
   );
@@ -747,23 +766,21 @@ function ManufactureLandingPage({ onNavigate, onMenuClose }: { onNavigate?: (pag
       {/* Desktop version - shown only on xl screens */}
       <div className="hidden xl:block pointer-events-auto" style={{ pointerEvents: 'auto' }}>
         {/* <Group9 /> - Removed vertical dashed grid lines */}
-        <p className="absolute font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] left-[94px] text-[#050505] text-[48px] top-[141px] w-[800px]">
-          Soluções Tecnologias Integradas para o Desenvolvimento de Moçambique
-        </p>
+        {/* Left content column — heading + description + button stacked in flow
+            so they never overlap regardless of how the text wraps. */}
+        <div className="hidden xl:flex flex-col gap-[36px] absolute left-[94px] top-[120px] w-[760px] z-[5]">
+          <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[#050505] text-[48px] w-[760px]">
+            Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
+          </p>
+          <Frame6 onNavigate={onNavigate} />
+        </div>
         <Frame2 onNavigate={onNavigate} />
         <Frame5 onNavigate={onNavigate} />
         <Frame3 />
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium h-[105px] leading-[20px] left-[1132px] text-[#050505] text-[16px] top-[206px] w-[277px]"
-        >
-          <p>Equipamentos de laboratórios, formação e assistência técnica para os sectores da Ensino & Investigação, Saúde, Água, Ambiente e Minas</p>
-        </motion.div>
-        <Frame6 onNavigate={onNavigate} />
-        <div className="absolute h-[77.48px] items-center justify-center left-[444px] top-[282.41px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>
+        {/* Duplicate subtitle removed — it is already shown under the heading. */}
+        {/* Decorative "OnHigh" badge — moved onto the image area so it no longer
+            overlaps the heading text. */}
+        <div className="absolute h-[77.48px] items-center justify-center left-[560px] top-[470px] w-[97.522px] flex" style={{ "--transform-inner-width": "54.078125", "--transform-inner-height": "19.1875" } as React.CSSProperties}>
           <div className="flex-none rotate-[328deg]">
             <Frame4 />
           </div>

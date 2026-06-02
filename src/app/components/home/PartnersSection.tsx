@@ -178,9 +178,9 @@ const allLogos = [
   { name: "Sasol", id: 8, img: SasolLogo as any },
   { name: "CP", id: 9, img: CPLogo as any },
   { name: "DIS", id: 10, img: DISLogo as any },
-  { name: "Matest", id: 11, img: MatestLogo as any },
-  { name: "Optika", id: 12, img: OptikaLogo as any },
-  { name: "Lucas Nuelle", id: 13, img: LucasNuelleLogo as any },
+  { name: "Matest", id: 11, img: MatestLogo as any, url: "https://www.matest.com/en" },
+  { name: "Optika", id: 12, img: OptikaLogo as any, url: "https://www.optika-italy.com" },
+  { name: "Lucas Nuelle", id: 13, img: LucasNuelleLogo as any, url: "https://www.lucas-nuelle.com" },
   { name: "Conchem", id: 14, img: ConchemLogo as any },
 ];
 
@@ -209,7 +209,7 @@ export function PartnersSection() {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-[#f5f5f5]" data-navbar-section="light">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-[#e2e2e2]" data-navbar-section="light">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header with gradient text */}
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">

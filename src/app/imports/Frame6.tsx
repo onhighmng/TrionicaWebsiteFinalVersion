@@ -6,7 +6,7 @@ import cienciaImg from "../../imports/image-16.png";
 import energiaImg from "../../imports/image-17.png";
 import tecnologiaImg from "../../imports/image-19.png";
 import mobiliarioImg from "../../imports/image-20.png";
-import diversosImg from "figma:asset/488dd2582b16219f94f440fad7db7cb7cdcc83d7.png";
+import diversosImg from "../../imports/card-desporto.jpg";
 
 const sectionData = [
   {

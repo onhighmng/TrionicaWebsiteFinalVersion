@@ -13,7 +13,7 @@ export function ContacteNos() {
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <h1 className="font-['Epilogue:Medium',sans-serif] font-medium text-white text-[32px] md:text-[48px] lg:text-[56px] leading-[1.2] mb-6 md:mb-8">
-            Vamos Construir o Futuro Juntos
+            Engenharia, Tecnologia e Inovação ao Serviço de Moçambique
           </h1>
           
           {/* Description */}

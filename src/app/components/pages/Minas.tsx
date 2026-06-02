@@ -13,9 +13,9 @@ export function Minas({ onNavigate }: MinasProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#e2e2e2]">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:flex relative w-full bg-[#f5f5f5] pt-20 md:pt-24 pb-8 md:pb-12 justify-center items-center" ref={heroRef}>
+      <section className="hidden md:flex relative w-full bg-[#e2e2e2] pt-20 md:pt-24 pb-8 md:pb-12 justify-center items-center" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -44,13 +44,13 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Hero Section - Mobile */}
-      <section className="md:hidden relative w-full bg-[#f5f5f5] pt-20 pb-8 px-6">
+      <section className="md:hidden relative w-full bg-[#e2e2e2] pt-20 pb-8 px-6">
         <div className="max-w-[600px] mx-auto">
           {/* Badge */}
           <div className="flex gap-[4px] items-center h-[40px] mb-4">
             <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[30px]">
               <div className="flex-none">
-                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#fb2c36] text-[24px] animate-spin">✱</p>
+                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#2354a2] text-[24px] animate-spin">✱</p>
               </div>
             </div>
             <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">Minas</p>
@@ -73,7 +73,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="md:hidden relative w-full bg-[#f5f5f5] px-6 pb-8">
+      <section className="md:hidden relative w-full bg-[#e2e2e2] px-6 pb-8">
         <div className="max-w-[600px] mx-auto">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-justify tracking-[-0.3125px]">
             Apoiamos o desenvolvimento do sector mineiro com equipamentos de alta tecnologia para laboratórios e investigação geológica.
@@ -82,7 +82,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Equipment Grid Section */}
-      <section className="relative w-full bg-[#f5f5f5] px-4 md:px-4 md:-mb-80">
+      <section className="relative w-full bg-[#e2e2e2] px-4 md:px-4">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
           {/* Desktop version with scaling */}
           <div className="hidden md:block relative w-full" style={{ paddingBottom: '122.29%' }}> {/* 1712/1400 = 122.29% */}
@@ -101,7 +101,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* CTA Footer Section */}
-      <div className="md:-mt-72">
+      <div>
         <CTAFooterSection onNavigate={onNavigate} />
       </div>
     </div>
