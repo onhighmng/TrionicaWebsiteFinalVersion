@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Microscope, Droplet, TreePine, Mountain, GraduationCap } from 'lucide-react';
 import TimeLine_01, { TimeLine_01Entry } from '../ui/release-time-line';
-import saudeImage from "figma:asset/c3e462d779bb19de3da9b06340a2d1b0429475ea.png";
+import saudeImage from "../../../imports/card-saude.jpg";
 import aguasImage from "../../../imports/image-21.png";
 import ambienteImage from "../../../imports/card-ambiente.jpg";
 import minasImage from "../../../imports/card-minas.jpg";
