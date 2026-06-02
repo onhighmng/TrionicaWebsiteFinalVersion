@@ -22,13 +22,13 @@ import membro4 from "../../../imports/membro-4.jpg";
 import membro5 from "../../../imports/membro-5.jpg";
 import membro6 from "../../../imports/membro-6.jpg";
 
+// NOTE: photo<->name mapping is a best guess by gender — please confirm/correct.
 const teamMembers = [
-  { photo: membro1, name: "", role: "" },
-  { photo: membro2, name: "", role: "" },
-  { photo: membro3, name: "", role: "" },
-  { photo: membro4, name: "", role: "" },
-  { photo: membro5, name: "", role: "" },
-  { photo: membro6, name: "", role: "" },
+  { photo: membro3, name: "Suneila Canudo", role: "Administradora" },
+  { photo: membro4, name: "Laura Zibia", role: "Assistente Administrativa" },
+  { photo: membro1, name: "Aquino Tsandzana", role: "Assistente de Logística" },
+  { photo: membro2, name: "Celso Ernesto", role: "Assistente de Logística" },
+  { photo: membro5, name: "Arlindo Nhavotso", role: "Técnico" },
 ];
 
 interface SobreNosProps {
@@ -132,26 +132,25 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
         </div>
 
         {/* Individual team members */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pt-10 md:pt-12 pb-12 md:pb-16 lg:pb-20">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-            {teamMembers.map((member, i) => (
-              <div key={i} className="text-center">
-                <div className="aspect-square overflow-hidden rounded-2xl shadow-md bg-[#f1f3f7]">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pt-12 md:pt-16 pb-12 md:pb-16 lg:pb-20">
+          <div className="grid gap-x-6 gap-y-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="group overflow-hidden">
+                <div className="overflow-hidden rounded-xl bg-[#e9ecf2]">
                   <img
                     src={member.photo}
-                    alt={member.name || "Membro da equipa Triónica"}
-                    className="w-full h-full object-cover"
+                    alt={member.name}
+                    className="h-72 md:h-80 w-full object-cover object-top md:grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
                     loading="lazy"
                   />
                 </div>
-                {member.name && (
-                  <div className="mt-3">
-                    <p className="font-['Manrope'] font-semibold text-[#0c1313] text-sm md:text-base leading-tight">{member.name}</p>
-                    {member.role && (
-                      <p className="font-['Manrope'] text-[#5c6161] text-xs md:text-sm">{member.role}</p>
-                    )}
+                <div className="px-1 pt-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-['Manrope'] font-semibold text-[#0c1313] text-sm md:text-base leading-tight">{member.name}</h3>
+                    <span className="text-[#9aa0a6] text-xs shrink-0">_0{index + 1}</span>
                   </div>
-                )}
+                  <p className="font-['Manrope'] text-[#5c6161] text-xs md:text-sm mt-1">{member.role}</p>
+                </div>
               </div>
             ))}
           </div>
