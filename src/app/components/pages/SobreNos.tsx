@@ -14,21 +14,20 @@ import professionalImage from "figma:asset/0151d44b824da5af6b2609327d49fb41fad70
 import specialistImage from "figma:asset/112a216849b9752ec9446d7eaaac3b83be7e504e.png";
 import technicalSupportImage from "figma:asset/9719e880b9b0de82d10614661ba220b85460451d.png";
 import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
-import escritorioImage from "../../../imports/escritorio.jpg";
-import membro1 from "../../../imports/membro-1.jpg";
+import suneilaImg from "../../../imports/suneila.jpg";
+import lauraImg from "../../../imports/escritorio.jpg";
 import membro2 from "../../../imports/membro-2.jpg";
-import membro3 from "../../../imports/membro-3.jpg";
 import membro4 from "../../../imports/membro-4.jpg";
 import membro5 from "../../../imports/membro-5.jpg";
 import membro6 from "../../../imports/membro-6.jpg";
 
-// NOTE: photo<->name mapping is a best guess by gender — please confirm/correct.
 const teamMembers = [
-  { photo: membro3, name: "Suneila Canudo", role: "Administradora" },
-  { photo: membro4, name: "Laura Zibia", role: "Assistente Administrativa" },
-  { photo: membro1, name: "Aquino Tsandzana", role: "Assistente de Logística" },
+  { photo: suneilaImg, name: "Suneila Canudo", role: "Administradora" },
+  { photo: lauraImg, name: "Laura Zibia", role: "Assistente Administrativa" },
+  { photo: membro4, name: "Nádia Nhampimbe", role: "Assistente de Contabilidade" },
+  { photo: membro5, name: "Aquino Tsandzana", role: "Assistente de Logística" },
   { photo: membro2, name: "Celso Ernesto", role: "Assistente de Logística" },
-  { photo: membro5, name: "Arlindo Nhavotso", role: "Técnico" },
+  { photo: membro6, name: "Arlindo Nhavotso", role: "Técnico" },
 ];
 
 interface SobreNosProps {
@@ -133,7 +132,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
 
         {/* Individual team members */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pt-12 md:pt-16 pb-12 md:pb-16 lg:pb-20">
-          <div className="grid gap-x-6 gap-y-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid gap-x-6 gap-y-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
             {teamMembers.map((member, index) => (
               <div key={index} className="group overflow-hidden">
                 <div className="overflow-hidden rounded-xl bg-[#e9ecf2]">
