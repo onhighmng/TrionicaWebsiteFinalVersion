@@ -393,7 +393,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   delay: 0.05
                 }}
                 onClick={() => handleNavClick('contacte-nos')}
-                className="hidden lg:flex absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+                className="hidden lg:flex absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] border border-[#101828] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
                 style={{ willChange: 'transform, opacity' }}
               >
                 <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#101828] text-[14px] text-center whitespace-nowrap tracking-[-0.1504px]">

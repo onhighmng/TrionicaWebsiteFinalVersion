@@ -23,9 +23,9 @@ import beiraLabImg from "figma:asset/92cda19d2391c27f3d4929a37f6b93828a58c571.pn
 import beiraWeldingImg from "figma:asset/2341ad20738b3658d08251e2506b5b8c5afa1e90.png"
 import beiraWorkshopImg from "figma:asset/d81838a81be2a577384234692bc66e1c3399ae26.png"
 import beiraComputerLabImg from "figma:asset/e8f1981e50c1c56a3554a03b4ff74c2d40a5404e.png"
-import marreraMicroscopeLabImg from "figma:asset/df2b8dd20bbf5f2fe20efb3edc47e9a41f00dd68.png"
-import marreraGreenLabImg from "figma:asset/3e4a1e8e86ce36c4df56c8835c50af2c71e61eb8.png"
-import marreraComputerRoomImg from "figma:asset/c4cffa4a696d8e0e939513daf8b06af4bdf3f09c.png"
+import marreraMicroscopeLabImg from "../../../imports/marrera-1.jpg"
+import marreraGreenLabImg from "../../../imports/marrera-2.jpg"
+import marreraComputerRoomImg from "../../../imports/marrera-3.jpg"
 import marreraKitchenImg from "figma:asset/7c0ef6560415d15cf19e405480f124b0deee80ff.png"
 
 interface Project {
