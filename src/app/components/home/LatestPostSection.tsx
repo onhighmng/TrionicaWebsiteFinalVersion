@@ -4,8 +4,8 @@ import { Microscope, Droplet, TreePine, Mountain, GraduationCap } from 'lucide-r
 import TimeLine_01, { TimeLine_01Entry } from '../ui/release-time-line';
 import saudeImage from "figma:asset/c3e462d779bb19de3da9b06340a2d1b0429475ea.png";
 import aguasImage from "../../../imports/image-21.png";
-import ambienteImage from "figma:asset/d4a1c3843c3ab947a2fce919c2f975b36328a96f.png";
-import minasImage from "figma:asset/f63e17a409d48cc3dad0703b061331bc8219a04e.png";
+import ambienteImage from "../../../imports/card-ambiente.jpg";
+import minasImage from "../../../imports/card-minas.jpg";
 import educacaoImage from "../../../imports/image-22.png";
 
 export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) => void }) {

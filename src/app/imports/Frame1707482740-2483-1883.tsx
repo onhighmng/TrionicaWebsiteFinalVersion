@@ -1,6 +1,9 @@
 import svgPaths from "./svg-4curm7xai9";
 import imgImage from "figma:asset/d93cf643f81c1830c9529a1d38a8671cd0110ae2.png";
 import imgMicroscope from "../../imports/trionica_new_banner_for_hero.png";
+import plant1 from "../../imports/plant-1.jpg";
+import plant2 from "../../imports/plant-2.jpg";
+import plant3 from "../../imports/plant-3.jpg";
 import { imgRectangle } from "./svg-mmlvz";
 import bciLogo from "figma:asset/82cd405a60a5f350e706ed8d47affe6341ac868f.png";
 import bancoMocambiqueLogo from "figma:asset/01e953708179a504fc7c0147ad9b0d1eba4f4677.png";
@@ -41,6 +44,29 @@ function Counter({ from = 0, to, duration = 2, suffix = "" }: { from?: number; t
   }, [rounded, suffix]);
 
   return <span ref={ref}>{from}{suffix}</span>;
+}
+
+// Animated hero image: rotates through the industrial-plant renders (Melhorias 2,
+// home hero — "Colocar animação nas fotos, que será o hero deste bloco").
+function RotatingPlants() {
+  const plants = [plant1, plant2, plant3];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((p) => (p + 1) % plants.length), 3500);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {plants.map((src, i) => (
+        <img
+          key={i}
+          alt="Equipamento industrial Triónica"
+          src={src}
+          className={`absolute left-0 top-0 size-full max-w-none object-contain transition-opacity duration-[1200ms] ease-in-out ${i === idx ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </div>
+  );
 }
 
 function Group9() {
@@ -688,9 +714,7 @@ function Group5() {
         className="absolute inset-[-20.2%_-0.19%_0_-0.11%]" 
         data-name="Rectangle"
       >
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="Microscope" className="absolute left-0 max-w-none size-full top-0 object-contain" src={imgMicroscope} />
-        </div>
+        <RotatingPlants />
       </motion.div>
     </div>
   );

@@ -3,7 +3,7 @@ import Frame5 from '../imports/Frame5';
 import Frame6 from '../imports/Frame6';
 import { TimelineContent } from '../components/ui/timeline-animation';
 import { CTAFooterSection } from '../components/home/CTAFooterSection';
-import imgFrame112 from "figma:asset/425c11ad81b3fa008e9906f62c78aece21554cc7.png";
+import imgFrame112 from "../../imports/ensino-lab.jpg";
 
 interface EnsinoPageProps {
   onNavigate?: (page: string) => void;
