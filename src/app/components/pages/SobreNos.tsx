@@ -158,10 +158,29 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
 
       {/* Mission, Vision & Values */}
       <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white" data-navbar-section="light" ref={missionRef}>
-        <StackingCard 
-          projects={missionVisionValues}
-          headerTitle="Missão, Visão e Valores" className="text-[24px] text-[20px]"
-        />
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="font-['Manrope'] font-bold text-[#0c1313] text-3xl md:text-4xl tracking-tight">
+              Missão, Visão e Valores
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+            {missionVisionValues.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl p-8 md:p-10 text-white shadow-lg flex flex-col"
+                style={{ backgroundColor: item.color }}
+              >
+                <h3 className="font-['Manrope'] font-bold text-2xl md:text-3xl mb-5 tracking-tight">
+                  {item.title}
+                </h3>
+                <div className="font-['Manrope'] text-white/90 text-base md:text-lg leading-relaxed whitespace-pre-line">
+                  {item.description}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         
         {/* Explorar Soluções Button */}
         <div className="flex justify-center mt-12">
