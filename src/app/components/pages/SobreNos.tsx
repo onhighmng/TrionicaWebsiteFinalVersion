@@ -15,6 +15,21 @@ import specialistImage from "figma:asset/112a216849b9752ec9446d7eaaac3b83be7e504
 import technicalSupportImage from "figma:asset/9719e880b9b0de82d10614661ba220b85460451d.png";
 import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
 import escritorioImage from "../../../imports/escritorio.jpg";
+import membro1 from "../../../imports/membro-1.jpg";
+import membro2 from "../../../imports/membro-2.jpg";
+import membro3 from "../../../imports/membro-3.jpg";
+import membro4 from "../../../imports/membro-4.jpg";
+import membro5 from "../../../imports/membro-5.jpg";
+import membro6 from "../../../imports/membro-6.jpg";
+
+const teamMembers = [
+  { photo: membro1, name: "", role: "" },
+  { photo: membro2, name: "", role: "" },
+  { photo: membro3, name: "", role: "" },
+  { photo: membro4, name: "", role: "" },
+  { photo: membro5, name: "", role: "" },
+  { photo: membro6, name: "", role: "" },
+];
 
 interface SobreNosProps {
   onNavigate?: (page: string) => void;
@@ -104,25 +119,41 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
             <li>• Fornecimento de peças de reposição</li>
           </ul>
         </div>
-        {/* Institutional team photo (replaces the individual member cards) */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pb-12 md:pb-16 lg:pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
-            <div className="lg:col-span-2 overflow-hidden rounded-2xl shadow-lg">
-              <img
-                src={equipaGrupoImage}
-                alt="Equipa Triónica Moçambique"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="overflow-hidden rounded-2xl shadow-lg">
-              <img
-                src={escritorioImage}
-                alt="Equipa Triónica em ambiente de trabalho"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
+        {/* Institutional team photo */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
+          <div className="overflow-hidden rounded-2xl md:rounded-3xl shadow-lg">
+            <img
+              src={equipaGrupoImage}
+              alt="Equipa Triónica Moçambique"
+              className="w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* Individual team members */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pt-10 md:pt-12 pb-12 md:pb-16 lg:pb-20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+            {teamMembers.map((member, i) => (
+              <div key={i} className="text-center">
+                <div className="aspect-square overflow-hidden rounded-2xl shadow-md bg-[#f1f3f7]">
+                  <img
+                    src={member.photo}
+                    alt={member.name || "Membro da equipa Triónica"}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                {member.name && (
+                  <div className="mt-3">
+                    <p className="font-['Manrope'] font-semibold text-[#0c1313] text-sm md:text-base leading-tight">{member.name}</p>
+                    {member.role && (
+                      <p className="font-['Manrope'] text-[#5c6161] text-xs md:text-sm">{member.role}</p>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
