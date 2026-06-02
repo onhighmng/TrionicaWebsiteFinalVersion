@@ -300,10 +300,10 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       <AnimatePresence>
                         {isDropdownHovered && isNavbarReady && !hoverBlockRef.current && (
                           <motion.div
-                            initial={{ opacity: 0, scale: 0.97, y: 6 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.97, y: 6 }}
-                            transition={{ duration: 0.12, ease: "easeOut" }}
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 6 }}
+                            transition={{ duration: 0.14, ease: "easeOut" }}
                             className="absolute top-full left-1/2 transform -translate-x-1/2 z-[10000] pt-2"
                             onMouseEnter={() => {
                               if (isNavbarReady && !hoverBlockRef.current) {
@@ -316,7 +316,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                               }
                             }}
                           >
-                            <div className="bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
+                            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
                               <div className="w-max h-full p-4">
                                 <div className="grid grid-cols-2 gap-3">
                                   {[

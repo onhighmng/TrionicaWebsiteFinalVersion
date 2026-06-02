@@ -151,15 +151,15 @@ function Frame2({ onNavigate }: { onNavigate?: (page: string) => void }) {
           <AnimatePresence>
             {isDropdownOpen && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.97, y: 6 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.97, y: 6 }}
-                transition={{ duration: 0.12, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 6 }}
+                transition={{ duration: 0.14, ease: "easeOut" }}
                 className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 z-[10000]"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
                   <div className="w-max h-full p-4">
                     <div className="grid grid-cols-2 gap-3">
                       {[
