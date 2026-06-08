@@ -48,11 +48,11 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
   };
   
   return (
-    <section className={`pt-20 md:pt-24 lg:pt-28 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 lg:px-8 bg-[#e2e2e2] ${className ?? ""}`} ref={heroRef} data-navbar-section="light">
-      <div className="max-w-6xl mx-auto">
+    <section className={`pt-20 md:pt-24 lg:pt-28 pb-12 md:pb-16 lg:pb-20 bg-[#e2e2e2] ${className ?? ""}`} ref={heroRef} data-navbar-section="light">
+      <div className="w-full">
         <div className="relative">
           {/* Header */}
-          <div className="flex justify-between items-center mb-8 md:mb-12">
+          <div className="flex justify-between items-center mb-8 md:mb-12 px-4 md:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-2xl md:text-3xl">
               <span className="text-[#2354a2] animate-spin text-3xl md:text-4xl font-['Inter','Noto_Sans_Symbols_2',sans-serif]">✱</span>
               <TimelineContent
@@ -73,11 +73,11 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
             animationNum={1}
             timelineRef={heroRef}
             customVariants={revealVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-12 md:mb-16 max-w-4xl"
+            className="text-2xl md:text-3xl lg:text-[36px] font-bold text-gray-900 mb-12 md:mb-16 max-w-4xl px-4 md:px-6 lg:px-8"
           >
-            Há mais de 15 anos desenvolvemos{" "}
-            <span className="font-bold">soluções tecnológicas integradas</span>{" "}
-            para instituições públicas, privadas e centros de formação em{" "}
+            Há mais de <span className="italic font-light">15 anos</span> desenvolvemos{" "}
+            <span className="font-bold italic">soluções tecnológicas integradas</span>{" "}
+            para <span className="italic font-light">instituições públicas, privadas</span> e centros de formação em{" "}
             <span className="italic font-light">Moçambique</span>.
           </TimelineContent>
 
@@ -89,7 +89,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={2}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="md:col-span-4 space-y-4"
+              className="md:col-span-4 space-y-4 pl-4 md:pl-6 lg:pl-8"
             >
               <p className="text-gray-600 leading-relaxed text-justify">
                 Somos uma empresa moçambicana sediada em Maputo, especializada no desenvolvimento de soluções tecnológicas e implementação de projetos em áreas estratégicas.
@@ -129,7 +129,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={4}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="md:col-span-4 space-y-4"
+              className="md:col-span-4 space-y-4 pr-4 md:pr-6 lg:pr-8"
             >
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-[#2354a2] flex items-center justify-center flex-shrink-0 mt-1">
@@ -171,14 +171,14 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
           </div>
 
           {/* Bottom Section - Stats & CTA */}
-          <div className="flex flex-col md:flex-row flex-wrap justify-between items-center md:items-end gap-8 pt-8 border-t border-gray-200">
-            {/* Stats Row - All Numbers Horizontal */}
+          <div className="flex flex-col items-center gap-8 pt-8 border-t border-gray-200 px-4 md:px-6 lg:px-8">
+            {/* Stats Row */}
             <TimelineContent
               as="div"
               animationNum={5}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="grid grid-cols-2 sm:flex sm:items-baseline gap-6 md:gap-8 lg:gap-12 w-full md:w-auto"
+              className="grid grid-cols-2 sm:flex sm:items-baseline gap-6 md:gap-8 lg:gap-12 justify-center w-full"
             >
               <div className="flex flex-col items-center">
                 <AnimatedCounter
@@ -218,15 +218,15 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               </div>
             </TimelineContent>
 
-            {/* Right - CTA Button */}
+            {/* CTA Button */}
             <TimelineContent
               as="div"
               animationNum={6}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="w-full md:w-auto flex justify-center md:justify-end"
+              className="flex justify-center"
             >
-              <FlowButton 
+              <FlowButton
                 text="SAIBA MAIS"
                 onClick={() => onNavigate('sobre-nos')}
                 bgColor="#2354a2"

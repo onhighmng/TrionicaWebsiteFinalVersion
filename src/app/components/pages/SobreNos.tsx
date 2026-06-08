@@ -119,15 +119,13 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
           </ul>
         </div>
         {/* Institutional team photo */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
-          <div className="overflow-hidden rounded-2xl md:rounded-3xl shadow-lg">
-            <img
-              src={equipaGrupoImage}
-              alt="Equipa Triónica Moçambique"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div>
+        <div className="w-full overflow-hidden">
+          <img
+            src={equipaGrupoImage}
+            alt="Equipa Triónica Moçambique"
+            className="w-full object-cover"
+            loading="lazy"
+          />
         </div>
 
         {/* Individual team members */}
