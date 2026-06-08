@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 
 export type TimeLine_01Entry = {
   icon: React.ComponentType<{ className?: string }>;
@@ -25,214 +25,116 @@ export interface TimeLine_01Props {
   className?: string;
 }
 
-/**
- * Behavior: Only the card that is currently centered in the viewport is "open".
- * As you scroll, the active card expands to reveal its full content. Others stay collapsed.
- */
-export default function TimeLine_01({
-  title,
-  description,
-  entries = [],
-}: TimeLine_01Props) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const sentinelRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  // Create stable setters for refs inside map
-  const setItemRef = (el: HTMLDivElement | null, i: number) => {
-    itemRefs.current[i] = el;
-  };
-  const setSentinelRef = (el: HTMLDivElement | null, i: number) => {
-    sentinelRefs.current[i] = el;
-  };
-
-  useEffect(() => {
-    if (!sentinelRefs.current.length) return;
-
-    let frame = 0;
-    const updateActiveByProximity = () => {
-      frame = requestAnimationFrame(updateActiveByProximity);
-      const centerY = window.innerHeight / 3;
-      let bestIndex = 0;
-      let bestDist = Infinity;
-      sentinelRefs.current.forEach((node, i) => {
-        if (!node) return;
-        const rect = node.getBoundingClientRect();
-        const mid = rect.top + rect.height / 2;
-        const dist = Math.abs(mid - centerY);
-        if (dist < bestDist) {
-          bestDist = dist;
-          bestIndex = i;
-        }
-      });
-      if (bestIndex !== activeIndex) setActiveIndex(bestIndex);
-    };
-
-    frame = requestAnimationFrame(updateActiveByProximity);
-    return () => cancelAnimationFrame(frame);
-  }, [activeIndex]);
-
-  useEffect(() => {
-    setActiveIndex(0);
-  }, []);
-
+export default function TimeLine_01({ entries = [] }: TimeLine_01Props) {
   return (
-    <section className="py-12 md:py-16 lg:py-20">
-      <div className="w-full">
-        {title && description && (
-          <div className="mx-auto max-w-5xl mb-12 px-4">
-            <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl text-gray-900">
-              {title}
-            </h1>
-            <p className="mb-6 text-base text-gray-600 md:text-lg">
-              {description}
-            </p>
-          </div>
-        )}
+    <div className="flex flex-col gap-16 md:gap-20 lg:gap-24">
+      {entries.map((entry, i) => {
+        const isEven = i % 2 === 0;
+        const num = String(i + 1).padStart(2, "0");
 
-        <div className="mx-auto mt-8 md:mt-12 max-w-6xl space-y-12 md:space-y-16 px-4">
-          {entries.map((entry, index) => {
-            const isActive = index === activeIndex || index === hoveredIndex;
-
-            return (
-              <div
-                key={index}
-                className="relative flex flex-col gap-6 md:flex-row md:gap-12 lg:gap-16"
-                ref={(el) => setItemRef(el, index)}
-                aria-current={isActive ? "true" : "false"}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {/* Sticky meta column */}
-                <div className="top-8 flex h-min w-full md:w-72 lg:w-80 shrink-0 items-center gap-4 md:sticky">
-                  <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-xl transition-colors duration-300 ${
-                      isActive ? "bg-[#2354a2] text-white" : "bg-gray-100 text-gray-400"
-                    }`}>
-                      <entry.icon className="h-6 w-6 md:h-7 md:w-7" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <span className="text-xl md:text-2xl lg:text-[28px] font-bold text-gray-900 tracking-tight leading-tight">
-                        {entry.title}
-                      </span>
-                      <span className="text-sm md:text-base lg:text-lg text-gray-500 font-medium">
-                        {entry.subtitle}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Invisible sentinel near the card title to measure proximity to viewport center */}
-                <div
-                  ref={(el) => setSentinelRef(el, index)}
-                  aria-hidden
-                  className="absolute -top-24 left-0 h-12 w-12 opacity-0"
-                />
-
-                {/* Content column */}
-                <article
-                  className={
-                    "flex flex-col rounded-2xl border p-4 md:p-5 transition-all duration-300 flex-1 " +
-                    (isActive
-                      ? "border-gray-200 bg-gray-50 shadow-lg"
-                      : "border-gray-100 bg-white")
-                  }
-                >
-                  {entry.image && (
-                    <img
-                      src={entry.image}
-                      alt={`${entry.title} visual`}
-                      className="mb-5 w-full h-80 lg:h-96 rounded-xl object-cover"
-                      loading="lazy"
-                    />
-                  )}
-                  <div className="space-y-5">
-                    {/* Header with improved typography */}
-                    <div className="space-y-3">
-                      <h2
-                        className={
-                          "text-lg font-semibold leading-tight tracking-tight md:text-xl transition-colors duration-200 " +
-                          (isActive ? "text-gray-900" : "text-gray-700")
-                        }
-                      >
-                        {entry.title}
-                      </h2>
-                      
-                      {/* Improved description with better spacing */}
-                      <p
-                        className={
-                          "text-sm leading-relaxed md:text-base transition-all duration-300 " +
-                          (isActive 
-                            ? "text-gray-600 line-clamp-none" 
-                            : "text-gray-500 line-clamp-2")
-                        }
-                      >
-                        {entry.description}
-                      </p>
-                    </div>
-
-                    {/* Enhanced expandable content */}
-                    <div
-                      aria-hidden={!isActive}
-                      className={
-                        "grid transition-all duration-500 ease-out " +
-                        (isActive 
-                          ? "grid-rows-[1fr] opacity-100" 
-                          : "grid-rows-[0fr] opacity-0")
-                      }
-                    >
-                      <div className="overflow-hidden">
-                        <div className="space-y-5 pt-2">
-                          {entry.items && entry.items.length > 0 && (
-                            <div className="rounded-xl border border-gray-200 bg-white p-5">
-                              <ul className="space-y-3">
-                                {entry.items.map((item, itemIndex) => (
-                                  <li 
-                                    key={itemIndex} 
-                                    className="flex items-start gap-3 text-sm md:text-base text-gray-600"
-                                  >
-                                    <div className="mt-2 h-1.5 w-1.5 rounded-full bg-[#2354a2] flex-shrink-0" />
-                                    <span className="leading-relaxed">{item}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-
-                          {entry.button && (
-                            <div className="flex justify-end">
-                              <Button 
-                                variant="default" 
-                                size="default"
-                                className="group bg-[#FF6747] hover:bg-[#ff8566] text-white font-medium transition-all duration-200" 
-                                onClick={entry.button.onClick}
-                                asChild={!!entry.button.url}
-                              >
-                                {entry.button.url ? (
-                                  <a href={entry.button.url} target="_blank" rel="noreferrer">
-                                    {entry.button.text} 
-                                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                  </a>
-                                ) : (
-                                  <>
-                                    {entry.button.text} 
-                                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                  </>
-                                )}
-                              </Button>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
+        const textBlock = (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex flex-col justify-center gap-6 py-4"
+          >
+            {/* Number + icon row */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-mono text-gray-400 tracking-widest">{num}</span>
+              <div className="p-2 rounded-lg bg-gray-100 text-gray-500">
+                <entry.icon className="h-4 w-4" />
               </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+              <span className="text-xs text-gray-400 font-medium uppercase tracking-wide">{entry.subtitle}</span>
+            </div>
+
+            {/* Title */}
+            <h3 className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-[42px] leading-tight tracking-tight">
+              {entry.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-600 leading-relaxed text-base md:text-lg max-w-md">
+              {entry.description}
+            </p>
+
+            {/* Bullet items */}
+            {entry.items && entry.items.length > 0 && (
+              <ul className="space-y-2">
+                {entry.items.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-gray-500">
+                    <div className="mt-[7px] h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Button */}
+            {entry.button && (
+              <div className="pt-2">
+                <button
+                  onClick={entry.button.onClick}
+                  className="group inline-flex items-center gap-2 bg-[#0d1b2a] hover:bg-[#1a3040] text-white font-semibold text-sm md:text-base px-6 py-3.5 rounded-2xl transition-all duration-200"
+                >
+                  {entry.button.text}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+              </div>
+            )}
+          </motion.div>
+        );
+
+        const imageBlock = (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="relative w-full rounded-3xl overflow-hidden"
+            style={{ aspectRatio: "4/3" }}
+          >
+            {entry.image ? (
+              <img
+                src={entry.image}
+                alt={entry.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                <entry.icon className="h-16 w-16 text-gray-400" />
+              </div>
+            )}
+            {/* Subtle label overlay */}
+            <div className="absolute bottom-4 left-4">
+              <span className="bg-black/40 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide">
+                {entry.title}
+              </span>
+            </div>
+          </motion.div>
+        );
+
+        return (
+          <div
+            key={i}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center"
+          >
+            {isEven ? (
+              <>
+                <div>{textBlock}</div>
+                <div>{imageBlock}</div>
+              </>
+            ) : (
+              <>
+                <div className="md:order-first order-last">{imageBlock}</div>
+                <div>{textBlock}</div>
+              </>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }

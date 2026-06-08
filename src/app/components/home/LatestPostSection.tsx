@@ -117,19 +117,10 @@ export function LatestPostSection({ onNavigate }: { onNavigate: (page: string) =
 
   return (
     <section className="relative bg-white py-12 md:py-16 lg:py-20 overflow-hidden" data-navbar-section="light">
-      <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-10">
+      <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6 lg:px-10">
         {/* Header Section */}
-        <div className="flex flex-col gap-6 mb-12">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="capitalize font-['Manrope'] font-medium leading-[1.2] text-gray-600 text-sm md:text-base lg:text-[16px] tracking-[-1px]"
-          >
-            2026
-          </motion.p>
-          <motion.div 
+        <div className="flex flex-col gap-4 mb-10 md:mb-14">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
