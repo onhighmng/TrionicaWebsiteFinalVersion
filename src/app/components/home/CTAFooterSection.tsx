@@ -1,5 +1,6 @@
 import React from 'react';
 import svgPaths from '../../imports/svg-a0w0pmyyr1';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 interface CTAFooterSectionProps {
   onNavigate?: (page: string) => void;
@@ -110,6 +111,55 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
               >
                 Portfolio
               </button>
+            </div>
+
+            {/* Contactos, Endereço & Certificações */}
+            <div className="border-t border-[#ededed] pt-8 md:pt-10 mb-8 md:mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center sm:text-left">
+              <div>
+                <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
+                  <MapPin className="w-4 h-4 text-[#4278ec]" />
+                  <p className="font-['Plus_Jakarta_Sans'] font-bold text-[#050505] text-sm uppercase tracking-wide">Endereço</p>
+                </div>
+                <p className="font-['Plus_Jakarta_Sans'] text-[#667085] text-sm leading-relaxed">
+                  Bairro da Costa do Sol<br />
+                  Av. Major General Cândido Mondlane, Nº 2007<br />
+                  Maputo, Moçambique
+                </p>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
+                  <Phone className="w-4 h-4 text-[#4278ec]" />
+                  <p className="font-['Plus_Jakarta_Sans'] font-bold text-[#050505] text-sm uppercase tracking-wide">Contactos</p>
+                </div>
+                <a href="tel:+258846974444" className="block font-['Plus_Jakarta_Sans'] text-[#667085] hover:text-[#4278ec] transition-colors text-sm">(+258) 84/86 69 74 444</a>
+                <a href="tel:+258820660201" className="block font-['Plus_Jakarta_Sans'] text-[#667085] hover:text-[#4278ec] transition-colors text-sm">(+258) 82 06 60 201</a>
+                <a href="mailto:geral@trionicamz.com" className="mt-1 inline-flex items-center justify-center sm:justify-start gap-2 font-['Plus_Jakarta_Sans'] text-[#667085] hover:text-[#4278ec] transition-colors text-sm break-all">
+                  <Mail className="w-4 h-4 shrink-0" /> geral@trionicamz.com
+                </a>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
+                  <Clock className="w-4 h-4 text-[#4278ec]" />
+                  <p className="font-['Plus_Jakarta_Sans'] font-bold text-[#050505] text-sm uppercase tracking-wide">Horário</p>
+                </div>
+                <p className="font-['Plus_Jakarta_Sans'] text-[#667085] text-sm leading-relaxed">
+                  Segunda – Sexta: 08:00 – 17:00<br />
+                  Sábado: 09:00 – 13:00
+                </p>
+              </div>
+
+              <div>
+                <p className="font-['Plus_Jakarta_Sans'] font-bold text-[#050505] text-sm uppercase tracking-wide mb-3">Certificações</p>
+                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                  {['NM ISO 9001:2015', 'NM ISO 14001:2015', 'NM ISO 45001:2018', 'Made in Mozambique'].map((cert) => (
+                    <span key={cert} className="inline-block rounded-full border border-[#2354a2]/30 bg-[#2354a2]/[0.06] text-[#2354a2] text-xs font-semibold px-3 py-1">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Bottom section with line, social icons, and copyright */}

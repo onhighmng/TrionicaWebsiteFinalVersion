@@ -147,7 +147,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
         <nav className={`relative ${isHomePage ? '-mt-1 md:mt-4 lg:mt-6' : 'mt-1 md:mt-4 lg:mt-6'} transition-all duration-300 w-full lg:w-[1280px] h-[72px] flex items-center justify-between px-4 lg:px-0`} style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}>
           
           {/* Desktop Layout - Exact Figma structure - HIDDEN ON MOBILE */}
-          {!isHomePage && (
+          {(
             <>
               {/* Logo section - Outside background */}
               <motion.div 
@@ -158,7 +158,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0
                 }}
-                className="hidden lg:block h-[50.4px] w-[48.6px] shrink-0 cursor-pointer lg:ml-[124px]" 
+                className="hidden lg:block h-[50.4px] w-[48.6px] shrink-0 cursor-pointer lg:ml-[24px]"
                 onClick={() => handleNavClick('home')}
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
@@ -180,206 +180,146 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.05
                 }}
-                className="hidden lg:flex absolute left-[360px] top-0 bg-white/90 backdrop-blur-md rounded-[16px] h-[72px] w-[541px] items-center px-[40px] overflow-visible"
+                className={`hidden lg:flex absolute left-[360px] top-0 rounded-full h-[72px] w-[541px] items-center justify-center px-[40px] overflow-visible backdrop-blur-xl transition-colors duration-300 ${isDarkBg ? 'bg-white/20' : 'bg-white/90 shadow-sm'}`}
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
-                {/* Navigation buttons group with grid layout */}
-                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start shrink-0">
-                  <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start">
-                    
-                    {/* Home button - active state with background */}
-                    <motion.div 
-                      initial={{ opacity: 0, y: 3, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.25,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className={`[grid-area:1_/_1] ml-0 ${
-                        currentPage === 'home' 
-                          ? 'bg-[rgba(101,73,246,0.15)] h-[50.006px] w-[80.184px] rounded-[33.352px] flex items-center justify-center cursor-pointer'
-                          : 'h-[20.011px] w-[50px] flex items-center cursor-pointer'
-                      }`}
-                      onClick={() => handleNavClick('home')}
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                        currentPage === 'home' ? 'text-[#6549f6]' : 'text-black'
-                      }`} style={{ fontVariationSettings: "'opsz' 14" }}>
-                        Início
+                {/* Navigation buttons — flex row, properly centred */}
+                <div className="flex items-center gap-4">
+
+                  {/* Início */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 3, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    className={`flex items-center justify-center cursor-pointer shrink-0 ${
+                      currentPage === 'home'
+                        ? `h-[44px] px-5 rounded-full ${isDarkBg ? 'bg-white/20' : 'bg-black/8'}`
+                        : 'h-[44px] px-2'
+                    }`}
+                    onClick={() => handleNavClick('home')}
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <p className={`font-['DM_Sans:Bold',sans-serif] font-bold text-[17px] leading-none whitespace-nowrap transition-colors duration-300 ${isDarkBg ? 'text-white' : 'text-[#101828]'}`} style={{ fontVariationSettings: "'opsz' 14" }}>
+                      Início
+                    </p>
+                  </motion.div>
+
+                  {/* Dot 1 */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                    className="shrink-0 size-[6px]"
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <svg className="block size-full" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill={isDarkBg ? 'white' : '#101828'} fillOpacity="0.5" /></svg>
+                  </motion.div>
+
+                  {/* Sobre Nós */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 3, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex items-center justify-center h-[44px] px-2 cursor-pointer shrink-0"
+                    onClick={() => handleNavClick('sobre-nos')}
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <p className={`font-['DM_Sans:Bold',sans-serif] font-bold text-[17px] leading-none whitespace-nowrap transition-colors duration-300 ${isDarkBg ? 'text-white' : 'text-[#101828]'}`} style={{ fontVariationSettings: "'opsz' 14" }}>
+                      Sobre Nós
+                    </p>
+                  </motion.div>
+
+                  {/* Dot 2 */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="shrink-0 size-[6px]"
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <svg className="block size-full" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill={isDarkBg ? 'white' : '#101828'} fillOpacity="0.5" /></svg>
+                  </motion.div>
+
+                  {/* Soluções with dropdown */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 3, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.39, ease: [0.16, 1, 0.3, 1] }}
+                    className="relative flex items-center"
+                    onMouseEnter={() => { if (isNavbarReady && !hoverBlockRef.current) setIsDropdownHovered(true); }}
+                    onMouseLeave={() => { if (isNavbarReady && !hoverBlockRef.current) setIsDropdownHovered(false); }}
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <div className="flex gap-[6px] items-center h-[44px] px-2 cursor-pointer">
+                      <p className={`font-['DM_Sans:Bold',sans-serif] font-bold text-[17px] leading-none whitespace-nowrap transition-colors duration-300 ${isDarkBg ? 'text-white' : 'text-[#101828]'}`} style={{ fontVariationSettings: "'opsz' 14" }}>
+                        Soluções
                       </p>
-                    </motion.div>
+                      <ChevronDown className={`w-[15px] h-[15px] transition-colors duration-300 ${isDarkBg ? 'text-white' : 'text-[#101828]'}`} strokeWidth={1.5} />
+                    </div>
 
-                    {/* Dot separator 1 */}
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.28,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="[grid-area:1_/_1] ml-[70px] relative shrink-0 size-[7.4px]"
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
-                        <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
-                      </svg>
-                    </motion.div>
-
-                    {/* Sobre Nós button */}
-                    <motion.div 
-                      initial={{ opacity: 0, y: 3, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.32,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="[grid-area:1_/_1] h-[20.011px] ml-[95px] flex items-center cursor-pointer"
-                      onClick={() => handleNavClick('sobre-nos')}
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                        currentPage === 'sobre-nos' ? 'text-[#2354a2]' : 'text-black'
-                      }`} style={{ fontVariationSettings: "'opsz' 14" }}>
-                        Sobre Nós
-                      </p>
-                    </motion.div>
-
-                    {/* Dot separator 2 */}
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.35,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="[grid-area:1_/_1] ml-[220px] relative shrink-0 size-[7.4px]"
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
-                        <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
-                      </svg>
-                    </motion.div>
-
-                    {/* Soluções button with dropdown */}
-                    <motion.div 
-                      initial={{ opacity: 0, y: 3, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.39,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="[grid-area:1_/_1] ml-[248px] flex items-center relative"
-                      onMouseEnter={() => {
-                        if (isNavbarReady && !hoverBlockRef.current) {
-                          setIsDropdownHovered(true);
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        if (isNavbarReady && !hoverBlockRef.current) {
-                          setIsDropdownHovered(false);
-                        }
-                      }}
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <div className="flex gap-[7.2px] items-center h-[20.011px] cursor-pointer">
-                        <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                          ['ensino', 'saude', 'aguas', 'ambiente', 'minas'].includes(currentPage) ? 'text-[#2354a2]' : 'text-black'
-                        }`} style={{ fontVariationSettings: "'opsz' 14" }}>
-                          Soluções
-                        </p>
-                        <ChevronDown className="w-[17.1px] h-[17.1px] text-black" strokeWidth={1.425} />
-                      </div>
-                      
-                      {/* Dropdown menu */}
-                      <AnimatePresence>
-                        {isDropdownHovered && isNavbarReady && !hoverBlockRef.current && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 6 }}
-                            transition={{ duration: 0.14, ease: "easeOut" }}
-                            className="absolute top-full left-1/2 transform -translate-x-1/2 z-[10000] pt-2"
-                            onMouseEnter={() => {
-                              if (isNavbarReady && !hoverBlockRef.current) {
-                                setIsDropdownHovered(true);
-                              }
-                            }}
-                            onMouseLeave={() => {
-                              if (isNavbarReady && !hoverBlockRef.current) {
-                                setIsDropdownHovered(false);
-                              }
-                            }}
-                          >
-                            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
-                              <div className="w-max h-full p-4">
-                                <div className="grid grid-cols-2 gap-3">
-                                  {[
-                                    { id: 'ensino', label: 'Ensino', description: 'Equipamentos e soluções educacionais para laboratórios de ensino', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop' },
-                                    { id: 'saude', label: 'Saúde', description: 'Equipamentos hospitalares e soluções para diagnóstico médico', image: imgSaude },
-                                    { id: 'aguas', label: 'Águas', description: 'Equipamento de medição, análise e tratamento de água para consumo e residuais', image: imgAguas },
-                                    { id: 'ambiente', label: 'Ambiente', description: 'Soluções sustentáveis para monitorização ambiental', image: imgAmbiente },
-                                    { id: 'minas', label: 'Minas', description: 'Equipamentos para prospeção, exploração mineira e análise geológica', image: imgMinas }
-                                  ].map((item) => (
-                                    <ProductItem
-                                      key={item.id}
-                                      title={item.label}
-                                      description={item.description}
-                                      onClick={() => handleNavClick(item.id)}
-                                      src={item.image}
-                                    />
-                                  ))}
-                                </div>
+                    {/* Dropdown menu */}
+                    <AnimatePresence>
+                      {isDropdownHovered && isNavbarReady && !hoverBlockRef.current && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.14, ease: "easeOut" }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 z-[10000] pt-2"
+                          onMouseEnter={() => { if (isNavbarReady && !hoverBlockRef.current) setIsDropdownHovered(true); }}
+                          onMouseLeave={() => { if (isNavbarReady && !hoverBlockRef.current) setIsDropdownHovered(false); }}
+                        >
+                          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/[0.1]">
+                            <div className="w-max h-full p-4">
+                              <div className="grid grid-cols-2 gap-3">
+                                {[
+                                  { id: 'ensino', label: 'Ensino', description: 'Equipamentos e soluções educacionais para laboratórios de ensino', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop' },
+                                  { id: 'saude', label: 'Saúde', description: 'Equipamentos hospitalares e soluções para diagnóstico médico', image: imgSaude },
+                                  { id: 'aguas', label: 'Águas', description: 'Equipamento de medição, análise e tratamento de água para consumo e residuais', image: imgAguas },
+                                  { id: 'ambiente', label: 'Ambiente', description: 'Soluções sustentáveis para monitorização ambiental', image: imgAmbiente },
+                                  { id: 'minas', label: 'Minas', description: 'Equipamentos para prospeção, exploração mineira e análise geológica', image: imgMinas }
+                                ].map((item) => (
+                                  <ProductItem
+                                    key={item.id}
+                                    title={item.label}
+                                    description={item.description}
+                                    onClick={() => handleNavClick(item.id)}
+                                    src={item.image}
+                                  />
+                                ))}
                               </div>
                             </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
 
-                    {/* Dot separator 3 */}
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.42,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="[grid-area:1_/_1] ml-[374px] relative shrink-0 size-[7.4px]"
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4 7.4">
-                        <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
-                      </svg>
-                    </motion.div>
+                  {/* Dot 3 */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                    className="shrink-0 size-[6px]"
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <svg className="block size-full" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill={isDarkBg ? 'white' : '#101828'} fillOpacity="0.5" /></svg>
+                  </motion.div>
 
-                    {/* Portfolio button */}
-                    <motion.div 
-                      initial={{ opacity: 0, y: 3, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.46,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="[grid-area:1_/_1] h-[20.011px] ml-[398px] flex items-center cursor-pointer"
-                      onClick={() => handleNavClick('portfolio')}
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      <p className={`font-['DM_Sans:Bold',sans-serif] font-bold leading-[22.234px] text-[19.455px] whitespace-nowrap ${
-                        currentPage === 'portfolio' ? 'text-[#2354a2]' : 'text-black'
-                      }`} style={{ fontVariationSettings: "'opsz' 14" }}>
-                        Portfolio
-                      </p>
-                    </motion.div>
+                  {/* Portfolio */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 3, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.46, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex items-center justify-center h-[44px] px-2 cursor-pointer shrink-0"
+                    onClick={() => handleNavClick('portfolio')}
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <p className={`font-['DM_Sans:Bold',sans-serif] font-bold text-[17px] leading-none whitespace-nowrap transition-colors duration-300 ${isDarkBg ? 'text-white' : 'text-[#101828]'}`} style={{ fontVariationSettings: "'opsz' 14" }}>
+                      Portfolio
+                    </p>
+                  </motion.div>
 
-                  </div>
                 </div>
               </motion.div>
 
@@ -393,7 +333,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   delay: 0.05
                 }}
                 onClick={() => handleNavClick('contacte-nos')}
-                className="hidden lg:flex absolute bg-white h-[40px] right-[40px] top-[16px] w-[114px] rounded-[16777216px] border border-[#101828] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+                className="hidden lg:flex absolute bg-white h-[40px] right-[8px] top-[8px] w-[114px] rounded-[16777216px] border border-[#101828] items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
                 style={{ willChange: 'transform, opacity' }}
               >
                 <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#101828] text-[14px] text-center whitespace-nowrap tracking-[-0.1504px]">

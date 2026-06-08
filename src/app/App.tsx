@@ -89,10 +89,7 @@ function App() {
       case 'home':
         return (
           <>
-            {/* Navbar - Mobile only for home page */}
-            <div className="lg:hidden">
-              <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
-            </div>
+            <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
             <HeroSection onNavigate={handleNavigation} currentPage={currentPage} key={heroKey} onMenuClose={handleMenuClose} />
             <AboutSection onNavigate={handleNavigation} />
             <LatestPostSection onNavigate={handleNavigation} />

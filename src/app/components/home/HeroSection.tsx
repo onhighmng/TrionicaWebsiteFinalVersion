@@ -1,5 +1,9 @@
-import React from 'react';
-import Frame1707482740 from '../../imports/Frame1707482740-2483-1883'; // Desktop - NEW MICROSCOPE DESIGN
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
+import heroVideo from "../../../assets/video/websitevideofinal.mp4";
+import bciLogo from "figma:asset/82cd405a60a5f350e706ed8d47affe6341ac868f.png";
+import bancoMocambiqueLogo from "figma:asset/01e953708179a504fc7c0147ad9b0d1eba4f4677.png";
+import hcbLogo from "figma:asset/63f97fc06c7d3667f8975059283b6bab246ebc3e.png";
 
 interface HeroSectionProps {
   onNavigate?: (page: string) => void;
@@ -7,20 +11,91 @@ interface HeroSectionProps {
   onMenuClose?: () => void;
 }
 
-export function HeroSection({ onNavigate, currentPage, onMenuClose }: HeroSectionProps) {
+const partnerLogos = [
+  { src: bciLogo, alt: "BCI" },
+  { src: bancoMocambiqueLogo, alt: "Banco de Moçambique" },
+  { src: hcbLogo, alt: "Hidroeléctrica de Cahora Bassa" },
+];
+
+export function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
-    <section className="relative bg-[#eeeeee] w-full overflow-hidden -mb-8 md:-mb-12 lg:-mb-16">
-      {/* Container with responsive scaling */}
-      <div className="relative w-full max-w-[1440px] mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-        {/* Scaled wrapper for the entire hero */}
-        <div className="relative w-full" style={{ paddingBottom: '93.26%' }}> {/* 1343/1440 = 93.26% */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute left-1/2 -translate-x-1/2 w-[1440px] h-[1343px] scale-[0.26] sm:scale-[0.36] md:scale-[0.55] lg:scale-[0.75] xl:scale-100 origin-top pointer-events-auto">
-              <Frame1707482740 onNavigate={onNavigate} currentPage={currentPage} onMenuClose={onMenuClose} />
+    <section
+      className="relative flex min-h-[760px] w-full items-end overflow-hidden bg-[#0c1d2c] pt-28 text-white md:min-h-screen"
+      data-navbar-section="dark"
+    >
+      <div className="absolute inset-0">
+        <video
+          className="absolute inset-0 size-full object-cover object-center"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[#102238]/45 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07111c] via-[#07111c]/42 to-[#07111c]/10" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 md:px-10 md:pb-16 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end lg:gap-16 xl:px-0 xl:pb-20">
+        <motion.div
+          className="max-w-4xl"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-white/70">
+            Tecnologia ao serviço de Moçambique
+          </p>
+          <h1 className="max-w-4xl font-['Plus_Jakarta_Sans:Bold',sans-serif] text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[0.98] tracking-[-0.055em] text-white">
+            Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
+          </h1>
+          <p className="mt-7 max-w-3xl font-['Plus_Jakarta_Sans:Medium',sans-serif] text-base font-medium leading-7 text-white/82 md:text-xl md:leading-8">
+            Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino &amp; Investigação, Saúde, Água, Ambiente e Minas
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col items-start gap-7 lg:items-end"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="flex items-center gap-4 lg:justify-end">
+            <div className="flex -space-x-3">
+              {partnerLogos.map((logo) => (
+                <div
+                  key={logo.alt}
+                  className="size-12 overflow-hidden rounded-full border-2 border-[#8fb3ff] bg-white shadow-lg"
+                >
+                  <img src={logo.src} alt={logo.alt} className="size-full object-cover" />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col text-sm leading-tight text-white/75">
+              <span className="text-lg font-semibold text-white">100+</span>
+              <span>parceiros de confiança</span>
             </div>
           </div>
-        </div>
+
+          <button
+            type="button"
+            onClick={() => onNavigate?.("contacte-nos")}
+            className="group flex items-center rounded-full text-sm font-semibold text-[#07111c]"
+          >
+            <span className="rounded-full bg-[#8fb3ff] px-6 py-4 transition-colors duration-300 group-hover:bg-white">
+              Contactar-nos
+            </span>
+            <span className="relative -ml-1 flex size-[52px] items-center justify-center overflow-hidden rounded-full bg-[#8fb3ff] transition-colors duration-300 group-hover:bg-white">
+              <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-8 group-hover:-translate-y-8" />
+              <ArrowUpRight className="absolute size-5 -translate-x-8 translate-y-8 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
+            </span>
+          </button>
+        </motion.div>
       </div>
+
     </section>
   );
 }
