@@ -16,14 +16,8 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
   return (
     <>
       {/* Responsive flow-based layout (used at all breakpoints) */}
-      <section className="relative bg-[#e2e2e2] py-12 md:py-16 lg:py-20 w-full overflow-hidden" data-navbar-section="light">
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          {/* Top left text */}
-          <div className="font-['Plus_Jakarta_Sans'] font-medium leading-[1.7] text-[#565656] text-sm md:text-base mb-8 md:mb-12 text-center md:text-left">
-            <p className="mb-0">Fornecemos soluções</p>
-            <p>completas para o seu sector.</p>
-          </div>
-
+      <section className="relative bg-[#e2e2e2] pt-6 md:pt-8 pb-0 w-full overflow-hidden" data-navbar-section="light">
+        <div className="w-full px-4 md:px-8 lg:px-12">
           {/* Center heading */}
           <div className="text-center mb-8 md:mb-12 px-4">
             <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-[32px] md:text-[48px] leading-tight md:leading-[72px] text-[#050505] tracking-tight md:tracking-[-2.56px]">
@@ -42,7 +36,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
           <div className="flex items-center justify-center mb-12 md:mb-16">
             <button 
               onClick={() => handleNavigation('contacte-nos')}
-              className="bg-[#4278ec] hover:bg-[#3562c9] transition-all duration-300 flex gap-4 md:gap-[24px] items-center pl-[6px] pr-6 md:pr-[32px] py-[6px] rounded-[80px] w-[200px] md:w-[225px]"
+              className="bg-[#4278ec] hover:bg-[#3562c9] transition-all duration-300 inline-flex w-auto gap-3 md:gap-4 items-center pl-[6px] pr-6 md:pr-8 py-[6px] rounded-[80px]"
             >
               <div className="bg-white flex items-center p-3 md:p-[16px] rounded-[80px] shrink-0">
                 <div className="flex items-center justify-center shrink-0">
@@ -60,19 +54,14 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
           {/* Footer Group */}
           <div className="bg-white rounded-[24px] md:rounded-[40px] p-6 md:p-12">
             {/* Main heading */}
-            <div className="font-['Plus_Jakarta_Sans'] font-medium text-[32px] md:text-[48px] leading-tight text-[#050505] text-center md:text-left mb-8 md:mb-12">
+            <div className="font-['Inter',sans-serif] font-medium text-[32px] md:text-[48px] leading-tight text-[#050505] text-center md:text-left mb-4 md:mb-6">
               <p className="mb-0">Triónica — Tecnologia e Soluções</p>
               <p>para o Desenvolvimento de Moçambique</p>
             </div>
 
-            {/* Large Trionica text */}
-            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[50px] sm:text-[70px] md:text-[120px] leading-[1.2] text-[rgba(35,84,162,0.89)] text-center uppercase mb-8 md:mb-12">
-              Triónica
-            </p>
-
             {/* Navigation links */}
-            <div className="flex flex-wrap justify-center gap-4 md:gap-[32px] items-center mb-8 md:mb-12">
-              <button 
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-[32px] items-center mb-8 md:mb-12">
+              <button
                 onClick={() => handleNavigation('home')}
                 className="font-['Plus_Jakarta_Sans'] font-bold text-base md:text-[18px] text-[#4278ec] tracking-tight md:tracking-[-0.18px]"
               >
@@ -112,6 +101,11 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
                 Portfolio
               </button>
             </div>
+
+            {/* Large Trionica text */}
+            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[50px] sm:text-[70px] md:text-[120px] leading-[1.2] text-[rgba(35,84,162,0.89)] text-center uppercase mb-8 md:mb-12">
+              Triónica
+            </p>
 
             {/* Contactos, Endereço & Certificações */}
             <div className="border-t border-[#ededed] pt-8 md:pt-10 mb-8 md:mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center sm:text-left">

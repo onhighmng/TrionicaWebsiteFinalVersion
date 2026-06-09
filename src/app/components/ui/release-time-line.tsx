@@ -25,116 +25,102 @@ export interface TimeLine_01Props {
   className?: string;
 }
 
-export default function TimeLine_01({ entries = [] }: TimeLine_01Props) {
+function SolutionCard({
+  entry,
+  index,
+  delay,
+  tall,
+}: {
+  entry: TimeLine_01Entry;
+  index: number;
+  delay?: number;
+  tall?: boolean;
+}) {
+  const num = String(index + 1).padStart(2, "0");
+
   return (
-    <div className="flex flex-col gap-16 md:gap-20 lg:gap-24">
-      {entries.map((entry, i) => {
-        const isEven = i % 2 === 0;
-        const num = String(i + 1).padStart(2, "0");
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: delay ?? 0 }}
+      className={`group relative overflow-hidden rounded-3xl cursor-pointer ${
+        tall ? "h-[360px] md:h-[500px]" : "h-[280px] md:h-[340px]"
+      }`}
+      onClick={entry.button?.onClick}
+    >
+      {entry.image && (
+        <img
+          src={entry.image}
+          alt={entry.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          loading="lazy"
+        />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/5" />
 
-        const textBlock = (
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex flex-col justify-center gap-6 py-4"
-          >
-            {/* Number + icon row */}
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-gray-400 tracking-widest">{num}</span>
-              <div className="p-2 rounded-lg bg-gray-100 text-gray-500">
-                <entry.icon className="h-4 w-4" />
-              </div>
-              <span className="text-xs text-gray-400 font-medium uppercase tracking-wide">{entry.subtitle}</span>
-            </div>
+      {/* Top row */}
+      <div className="absolute top-4 left-5 right-5 flex items-center justify-between">
+        <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/20">
+          <entry.icon className="h-3 w-3 text-white" />
+          <span className="text-white text-[10px] font-semibold uppercase tracking-widest leading-none">
+            {entry.title}
+          </span>
+        </div>
+        <span className="text-white/40 font-mono text-xs">{num}</span>
+      </div>
 
-            {/* Title */}
-            <h3 className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-[42px] leading-tight tracking-tight">
-              {entry.title}
-            </h3>
+      {/* Bottom content */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+        <h3 className={`text-white font-bold leading-tight mb-1 ${tall ? "text-xl md:text-2xl lg:text-3xl" : "text-lg md:text-xl"}`}>
+          {entry.title}
+        </h3>
+        <p className="text-white/60 text-xs md:text-sm leading-snug line-clamp-1">
+          {entry.subtitle}
+        </p>
 
-            {/* Description */}
-            <p className="text-gray-600 leading-relaxed text-base md:text-lg max-w-md">
-              {entry.description}
-            </p>
-
-            {/* Bullet items */}
-            {entry.items && entry.items.length > 0 && (
-              <ul className="space-y-2">
-                {entry.items.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-gray-500">
-                    <div className="mt-[7px] h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0" />
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {/* Button */}
-            {entry.button && (
-              <div className="pt-2">
+        {/* Hover reveal */}
+        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+          <div className="overflow-hidden">
+            <div className="mt-4 flex items-end justify-between gap-4">
+              <p className="text-white/75 text-xs md:text-sm leading-relaxed line-clamp-3 flex-1">
+                {entry.description}
+              </p>
+              {entry.button && (
                 <button
-                  onClick={entry.button.onClick}
-                  className="group inline-flex items-center gap-2 bg-[#0d1b2a] hover:bg-[#1a3040] text-white font-semibold text-sm md:text-base px-6 py-3.5 rounded-2xl transition-all duration-200"
+                  className="shrink-0 flex items-center justify-center w-9 h-9 bg-white rounded-xl hover:bg-gray-100 transition-colors"
+                  onClick={e => { e.stopPropagation(); entry.button?.onClick?.(); }}
                 >
-                  {entry.button.text}
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4 text-gray-900" />
                 </button>
-              </div>
-            )}
-          </motion.div>
-        );
-
-        const imageBlock = (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="relative w-full rounded-3xl overflow-hidden"
-            style={{ aspectRatio: "4/3" }}
-          >
-            {entry.image ? (
-              <img
-                src={entry.image}
-                alt={entry.title}
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <entry.icon className="h-16 w-16 text-gray-400" />
-              </div>
-            )}
-            {/* Subtle label overlay */}
-            <div className="absolute bottom-4 left-4">
-              <span className="bg-black/40 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide">
-                {entry.title}
-              </span>
+              )}
             </div>
-          </motion.div>
-        );
-
-        return (
-          <div
-            key={i}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center"
-          >
-            {isEven ? (
-              <>
-                <div>{textBlock}</div>
-                <div>{imageBlock}</div>
-              </>
-            ) : (
-              <>
-                <div className="md:order-first order-last">{imageBlock}</div>
-                <div>{textBlock}</div>
-              </>
-            )}
           </div>
-        );
-      })}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export default function TimeLine_01({ entries = [] }: TimeLine_01Props) {
+  const row1 = entries.slice(0, 2);
+  const row2 = entries.slice(2);
+
+  return (
+    <div className="flex flex-col gap-3 md:gap-4">
+      {/* Row 1: two equal tall cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+        {row1.map((entry, i) => (
+          <SolutionCard key={i} entry={entry} index={i} delay={i * 0.08} tall />
+        ))}
+      </div>
+
+      {/* Row 2: three equal shorter cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+        {row2.map((entry, i) => (
+          <SolutionCard key={i} entry={entry} index={i + 2} delay={i * 0.08} />
+        ))}
+      </div>
     </div>
   );
 }

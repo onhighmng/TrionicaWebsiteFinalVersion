@@ -97,15 +97,6 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               <p className="text-gray-600 leading-relaxed text-justify">
                 Há mais de 15 anos desenvolvemos soluções tecnológicas integradas para instituições públicas, privadas e centros de formação em Moçambique, fornecemos equipamentos laboratoriais, oficinais e tecnologias avançadas para as áreas de Ensino & Investigação, Saúde, Águas, Ambiente e Minas, com foco na qualidade, inovação e fiabilidade.
               </p>
-              <div className="pt-2">
-                <FlowButton 
-                  text="SAIBA MAIS"
-                  onClick={() => onNavigate('sobre-nos')}
-                  bgColor="#2354a2"
-                  textColor="#2354a2"
-                  borderColor="#2354a2"
-                />
-              </div>
             </TimelineContent>
 
             {/* Center - Team Image */}
@@ -171,14 +162,14 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
           </div>
 
           {/* Bottom Section - Stats & CTA */}
-          <div className="flex flex-col items-center gap-8 pt-8 border-t border-gray-200 px-4 md:px-6 lg:px-8">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between pt-8 border-t border-gray-200 px-4 md:px-6 lg:px-8">
             {/* Stats Row */}
             <TimelineContent
               as="div"
               animationNum={5}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="grid grid-cols-2 sm:flex sm:items-baseline gap-6 md:gap-8 lg:gap-12 justify-center w-full"
+              className="grid grid-cols-2 sm:flex sm:items-baseline gap-6 md:gap-8 lg:gap-12 justify-start"
             >
               <div className="flex flex-col items-center">
                 <AnimatedCounter
@@ -224,7 +215,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={6}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="flex justify-center"
+              className="flex justify-center md:justify-end shrink-0"
             >
               <FlowButton
                 text="SAIBA MAIS"

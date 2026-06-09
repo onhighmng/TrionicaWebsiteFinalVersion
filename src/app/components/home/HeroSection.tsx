@@ -41,16 +41,13 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 md:px-10 md:pb-16 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end lg:gap-16 xl:px-0 xl:pb-20">
         <motion.div
-          className="max-w-4xl"
+          className="w-full"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-white/70">
-            Tecnologia ao serviço de Moçambique
-          </p>
-          <h1 className="max-w-4xl font-['Plus_Jakarta_Sans:Bold',sans-serif] text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[0.98] tracking-[-0.055em] text-white">
-            Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
+          <h1 className="w-full font-['Plus_Jakarta_Sans:Bold',sans-serif] text-[clamp(1.75rem,2.5vw,2.8rem)] font-bold leading-[1.1] tracking-[0.01em] text-white">
+            Soluções Tecnológicas Integradas<br />para o Desenvolvimento de Moçambique
           </h1>
           <p className="mt-7 max-w-3xl font-['Plus_Jakarta_Sans:Medium',sans-serif] text-base font-medium leading-7 text-white/82 md:text-xl md:leading-8">
             Equipamentos Laboratoriais e Oficinais, Assistência Técnica para Formação nas Áreas de Ensino &amp; Investigação, Saúde, Água, Ambiente e Minas

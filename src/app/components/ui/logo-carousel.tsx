@@ -40,9 +40,20 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
   })
 
   const maxLength = Math.max(...columns.map((col) => col.length))
-  columns.forEach((col) => {
+
+  // Pad shorter columns ensuring no two columns show the same logo at the same time slot
+  columns.forEach((col, colIdx) => {
     while (col.length < maxLength) {
-      col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
+      const slotIdx = col.length
+      const usedAtSlot = new Set(
+        columns.map((c, i) => i !== colIdx ? c[slotIdx]?.id : undefined).filter(Boolean)
+      )
+      const usedInCol = new Set(col.map(l => l.id))
+      const candidate =
+        shuffled.find(l => !usedAtSlot.has(l.id) && !usedInCol.has(l.id)) ??
+        shuffled.find(l => !usedAtSlot.has(l.id)) ??
+        shuffled[0]
+      col.push(candidate)
     }
   })
 

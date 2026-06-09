@@ -1,33 +1,45 @@
-import React, { useRef } from 'react';
-import { getImageUrl } from '../../utils/images';
-import { CheckCircle, Clock, Award, Users, Target, Eye, Gem } from 'lucide-react';
+import React, { useState, useEffect, type SVGProps } from 'react';
 import { motion } from 'motion/react';
-import AboutSection3 from '../ui/about-section';
-import { TimelineContent } from '../ui/timeline-animation';
-import { FeaturedSpotlight } from '../ui/feature-spotlight';
-import StackingCard from '../ui/stacking-card';
-import { MagicText } from '../ui/magic-text';
-import TeamSection from '../ui/team';
+import { AeroHero3 } from '../ui/aero-hero-3';
+import { About3 } from '../ui/about-3';
+import { LogoCarousel } from '../ui/logo-carousel';
+import { GradientHeading } from '../ui/gradient-heading';
+import { getImageUrl } from '../../utils/images';
 import svgPaths from '../../imports/svg-a0w0pmyyr1';
-import consultoriaImage from "figma:asset/56e3a70f9923c7aafaa9f6ef1a7f2f06ab021c93.png";
-import professionalImage from "figma:asset/0151d44b824da5af6b2609327d49fb41fad703b4.png";
-import specialistImage from "figma:asset/112a216849b9752ec9446d7eaaac3b83be7e504e.png";
-import technicalSupportImage from "figma:asset/9719e880b9b0de82d10614661ba220b85460451d.png";
 import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
-import suneilaImg from "../../../imports/suneila.jpg";
-import lauraImg from "../../../imports/escritorio.jpg";
-import membro2 from "../../../imports/membro-2.jpg";
-import membro4 from "../../../imports/membro-4.jpg";
-import membro5 from "../../../imports/membro-5.jpg";
-import membro6 from "../../../imports/membro-6.jpg";
+import agaKhanLogo from "../../../imports/aka_maputo.png";
+import fipaasLogo from "../../../imports/fipaas_logo.jpg";
 
-const teamMembers = [
-  { photo: suneilaImg, name: "Suneila Canudo", role: "Administradora" },
-  { photo: lauraImg, name: "Laura Zibia", role: "Assistente Administrativa" },
-  { photo: membro4, name: "Nádia Nhampimbe", role: "Assistente de Contabilidade" },
-  { photo: membro5, name: "Aquino Tsandzana", role: "Assistente de Logística" },
-  { photo: membro2, name: "Celso Ernesto", role: "Assistente de Logística" },
-  { photo: membro6, name: "Arlindo Nhavotso", role: "Técnico" },
+// ── Client logo components ─────────────────────────────────────────────────────
+
+function ImgLogo({ src, alt }: { src: string; alt: string }) {
+  return (props: SVGProps<SVGSVGElement>) => (
+    <img src={src} alt={alt} className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300" {...(props as any)} />
+  );
+}
+
+function TextClientLogo({ label, color = '#1a1a2e' }: { label: string; color?: string }) {
+  return (props: SVGProps<SVGSVGElement>) => (
+    <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: 'clamp(12px, 1.4vw, 17px)', color, letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>
+      {label}
+    </span>
+  );
+}
+
+const clientLogos = [
+  { id: 1,  name: "ANEP",               img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/header-logo-anep.png'), alt: "ANEP" }) as any },
+  { id: 2,  name: "EDM",                img: TextClientLogo({ label: "EDM", color: "#006633" }) as any },
+  { id: 3,  name: "JICA",               img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Japan_International_Cooperation_Agency_logo.svg", alt: "JICA" }) as any },
+  { id: 4,  name: "GIZ",                img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Deutsche_Gesellschaft_f%C3%BCr_Internationale_Zusammenarbeit_Logo.svg", alt: "GIZ" }) as any },
+  { id: 5,  name: "KOICA",              img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/9/94/KOICA_official_logo_in_english.png", alt: "KOICA" }) as any },
+  { id: 6,  name: "TotalEnergies",      img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/d/d1/TotalEnergies_wordmark_%282021-present%29.svg", alt: "TotalEnergies" }) as any },
+  { id: 7,  name: "Fundação Aga Khan",  img: ImgLogo({ src: agaKhanLogo, alt: "Aga Khan Academy Maputo" }) as any },
+  { id: 8,  name: "FIPAAS",             img: ImgLogo({ src: fipaasLogo, alt: "FIPAAS" }) as any },
+  { id: 9,  name: "HCB",                img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/HCB-360x97.jpg'), alt: "HCB" }) as any },
+  { id: 10, name: "BCI",                img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/BCI-LAST-360x400.png'), alt: "BCI" }) as any },
+  { id: 11, name: "Banco de Moçambique",img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/banco-last-360x400.png'), alt: "Banco de Moçambique" }) as any },
+  { id: 12, name: "Universidades",      img: TextClientLogo({ label: "Universidades", color: "#475569" }) as any },
+  { id: 13, name: "Ministérios",        img: TextClientLogo({ label: "Ministérios", color: "#475569" }) as any },
 ];
 
 interface SobreNosProps {
@@ -35,229 +47,86 @@ interface SobreNosProps {
 }
 
 export function SobreNos({ onNavigate }: SobreNosProps) {
-  const missionRef = useRef<HTMLDivElement>(null);
-  
-  const missionVisionValues = [
-    {
-      title: 'MISSÃO',
-      description: 'Desenvolver e implementar soluções tecnológicas inovadoras que respondam com precisão às necessidades dos nossos clientes, garantindo qualidade, eficiência e assistência especializada.',
-      link: '',
-      color: '#2354a2', // Trionica blue
-    },
-    {
-      title: 'VISÃO',
-      description: 'Ser a empresa de referência em Moçambique no fornecimento de soluções tecnológicas para ensino & investigação, saúde, águas, ambiente, minas e desenvolvimento institucional.',
-      link: '',
-      color: '#475569', // Slate gray - sophisticated and modern
-    },
-    {
-      title: 'VALORES',
-      description: '• Inovação\n• Excelência\n• Eficiência\n• Honestidade\n• Responsabilidade\n• Desenvolvimento Contínuo',
-      link: '',
-      color: '#1e293b', // Dark slate for contrast
-      customHeight: 'h-[650px]',
-    },
-  ];
+  const [columnCount, setColumnCount] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setColumnCount(5);
+      else if (window.innerWidth >= 768) setColumnCount(4);
+      else setColumnCount(3);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-white py-16 md:py-20 lg:py-28 flex items-center" data-navbar-section="light">
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 md:px-6 lg:px-8 pt-24 pb-16 md:pt-0 md:pb-0">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2, margin: "0px 0px -100px 0px" }}
-            transition={{ 
-              duration: 1, 
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.3
-            }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            {/* Title */}
-            <h1 className="font-['Manrope'] font-medium text-[#0c1313] text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-10 lg:mb-12 tracking-tight">
-              SOBRE NÓS
-            </h1>
-            
-            {/* Description */}
-            <div className="font-['Manrope'] text-[#5c6161] text-base md:text-lg lg:text-xl leading-relaxed space-y-4 md:space-y-5 lg:space-y-6 mb-10 md:mb-12 lg:mb-16">
-              <p className="font-semibold text-[#0c1313]">
-                Construindo o Futuro de Moçambique Desde 2010
-              </p>
-              <p>
-                A Triónica Moçambique, Lda é uma empresa especializada no fornecimento de soluções tecnológicas, equipamentos, formação técnica e assistência especializada para os sectores de Ensino & Investigação, Saúde, Águas, Ambiente e Minas.
-              </p>
-              <p>
-                Desde 2010, fornecemos equipamentos, tecnologias e serviços especializados, assegurando qualidade, inovação e fiabilidade em todas as etapas dos projectos, desde a consultoria até à assistência técnica pós-venda.
-              </p>
+      <AeroHero3
+        title="SOBRE NÓS"
+        subtitle={"Construindo o Futuro de Moçambique Desde 2010\n\nA Triónica Moçambique, Lda é uma empresa especializada no fornecimento de soluções tecnológicas, equipamentos, formação técnica e assistência especializada para os sectores de Ensino & Investigação, Saúde, Águas, Ambiente e Minas.\n\nDesde 2010, fornecemos equipamentos, tecnologias e serviços especializados, assegurando qualidade, inovação e fiabilidade em todas as etapas dos projectos, desde a consultoria até à assistência técnica pós-venda."}
+        ctaLabel="Explorar Soluções"
+        onCtaClick={() => {
+          const isMobile = window.innerWidth < 1024;
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          setTimeout(() => {
+            window.dispatchEvent(new Event(isMobile ? 'openMobileSolucoesMenu' : 'openSolucoesDropdown'));
+          }, 500);
+        }}
+      />
+
+      {/* Nossa Equipa + Nossos Clientes */}
+      <About3
+        title="A Nossa Equipa"
+        description="A nossa equipa técnica recebe formação contínua em Moçambique e no estrangeiro, garantindo elevados padrões de instalação, operação, manutenção e suporte técnico."
+        mainImage={{ src: equipaGrupoImage, alt: "Equipa Triónica Moçambique" }}
+        secondaryImage={null}
+        breakout={{
+          title: "Áreas de Apoio",
+          bulletPoints: [
+            "Instalação de equipamentos",
+            "Formação técnica especializada",
+            "Assistência pós-venda",
+            "Diagnóstico e manutenção",
+            "Calibração",
+            "Fornecimento de peças de reposição",
+          ],
+        }}
+        middleContent={
+          <div className="py-12 md:py-16 lg:py-20">
+            <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
+              <div className="flex items-center gap-6 w-full max-w-2xl">
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gray-400 to-gray-400" />
+                <GradientHeading variant="secondary" size="sm" weight="semi">
+                  Nossos Clientes
+                </GradientHeading>
+                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gray-400 to-gray-400" />
+              </div>
+              <LogoCarousel columnCount={columnCount} logos={clientLogos} />
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Nossa Equipa - Team Section */}
-      <section className="bg-white pt-12 md:pt-16 lg:pt-20" data-navbar-section="light">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl text-center mb-10 md:mb-12">
-          <h2 className="font-['Manrope'] font-medium text-[#0c1313] text-2xl md:text-3xl lg:text-4xl mb-6 tracking-tight">
-            Uma Equipa Preparada Para Apoiar o Seu Projecto
-          </h2>
-          <p className="font-['Manrope'] text-[#5c6161] text-base md:text-lg leading-relaxed mb-8">
-            A nossa equipa técnica recebe formação contínua em Moçambique e no estrangeiro, garantindo elevados padrões de instalação, operação, manutenção e suporte técnico.
-          </p>
-          <h3 className="font-['Manrope'] font-semibold text-[#0c1313] text-lg md:text-xl mb-4">
-            Áreas de apoio:
-          </h3>
-          <ul className="font-['Manrope'] text-[#5c6161] text-base md:text-lg leading-relaxed grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 max-w-2xl mx-auto text-left">
-            <li>• Instalação de equipamentos</li>
-            <li>• Formação técnica especializada</li>
-            <li>• Assistência pós-venda</li>
-            <li>• Diagnóstico e manutenção</li>
-            <li>• Calibração</li>
-            <li>• Fornecimento de peças de reposição</li>
-          </ul>
-        </div>
-        {/* Institutional team photo */}
-        <div className="w-full overflow-hidden">
-          <img
-            src={equipaGrupoImage}
-            alt="Equipa Triónica Moçambique"
-            className="w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Individual team members */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl pt-12 md:pt-16 pb-12 md:pb-16 lg:pb-20">
-          <div className="grid gap-x-4 md:gap-x-5 gap-y-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="group overflow-hidden">
-                <div className="overflow-hidden rounded-xl bg-[#e9ecf2]">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="h-56 md:h-64 lg:h-56 xl:h-64 w-full object-cover object-top md:grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="px-1 pt-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-['Manrope'] font-semibold text-[#0c1313] text-sm md:text-base leading-tight">{member.name}</h3>
-                    <span className="text-[#9aa0a6] text-xs shrink-0">_0{index + 1}</span>
-                  </div>
-                  <p className="font-['Manrope'] text-[#5c6161] text-xs md:text-sm mt-1">{member.role}</p>
-                </div>
-              </div>
-            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Mission, Vision & Values */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white" data-navbar-section="light" ref={missionRef}>
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="font-['Manrope'] font-bold text-[#0c1313] text-3xl md:text-4xl tracking-tight">
-              Missão, Visão e Valores
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
-            {missionVisionValues.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl p-8 md:p-10 text-white shadow-lg flex flex-col"
-                style={{ backgroundColor: item.color }}
-              >
-                <h3 className="font-['Manrope'] font-bold text-2xl md:text-3xl mb-5 tracking-tight">
-                  {item.title}
-                </h3>
-                <div className="font-['Manrope'] text-white/90 text-base md:text-lg leading-relaxed whitespace-pre-line">
-                  {item.description}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Explorar Soluções Button */}
-        <div className="flex justify-center mt-12">
-          <button 
-            onClick={(e) => {
-              e.preventDefault();
-              
-              // Check if we're on mobile (below lg breakpoint)
-              const isMobile = window.innerWidth < 1024;
-              
-              if (isMobile) {
-                // Mobile: Open mobile menu and Soluções dropdown
-                window.scrollTo({ top: 0, behavior: 'instant' });
-                setTimeout(() => {
-                  const event = new Event('openMobileSolucoesMenu');
-                  window.dispatchEvent(event);
-                }, 500);
-              } else {
-                // Desktop: Scroll to top and open dropdown
-                window.scrollTo({ top: 0, behavior: 'instant' });
-                setTimeout(() => {
-                  const event = new Event('openSolucoesDropdown');
-                  window.dispatchEvent(event);
-                }, 500);
-              }
-            }}
-            className="bg-[#4278ec] hover:bg-[#3565d9] transition-colors content-stretch flex gap-[24px] items-center pl-[6px] pr-[32px] py-[6px] rounded-[80px] w-[282px] group cursor-pointer"
-          >
-            <div className="bg-white content-stretch flex items-center p-[16px] rounded-[80px] shrink-0">
-              <div className="flex items-center justify-center shrink-0 size-[27.321px]">
-                <svg className="block size-[20px]" fill="none" viewBox="0 0 20 20">
-                  <path d="M11.25 3.75L17.5 10M17.5 10L11.25 16.25M17.5 10H2.5" stroke="#4278EC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                </svg>
-              </div>
-            </div>
-            <p className="font-['Plus_Jakarta_Sans'] font-medium leading-[30px] text-[20px] text-nowrap text-white">Explorar Soluções</p>
-          </button>
-        </div>
-      </section>
-
-      {/* Porquê Escolher a Triónica */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white" data-navbar-section="light">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
-          <div className="mb-10 md:mb-12 text-center">
-            <span className="inline-block text-[#2354a2] text-sm font-semibold tracking-[6px] uppercase mb-4">A Nossa Diferença</span>
-            <h2 className="font-['Manrope'] font-bold text-[#0c1313] text-2xl md:text-3xl lg:text-4xl tracking-tight">
-              Porquê escolher a Triónica Moçambique?
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                text: "A Triónica Moçambique, Lda é reconhecida pela sua solidez, qualidade e compromisso com o desenvolvimento de soluções inovadoras nas áreas de Ensino & Investigação, Saúde, Águas, Ambiente e Minas."
-              },
-              {
-                text: "Destacamo-nos pela cobertura nacional, garantindo proximidade e resposta eficiente em todo o território nacional."
-              },
-              {
-                text: "Oferecemos assistência técnica especializada, assegurando suporte contínuo e fiável em todas as fases dos projectos."
-              },
-              {
-                text: "Investimos na formação e capacitação contínua, promovendo o fortalecimento das competências técnicas dos nossos clientes e parceiros."
-              },
-              {
-                text: "Garantimos ainda um forte compromisso com o serviço de pós-venda e com a implementação bem-sucedida de projectos, assegurando qualidade, eficiência e resultados sustentáveis."
-              },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-4 items-start bg-[#f8f9fc] rounded-2xl p-6">
-                <div className="mt-1 shrink-0 w-7 h-7 rounded-full bg-[#2354a2] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p className="font-['Manrope'] text-[#5c6161] text-base leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        }
+        achievementsTitle=""
+        achievementsDescription=""
+        achievements={[
+          {
+            label: "MISSÃO",
+            description: "Desenvolver e implementar soluções tecnológicas inovadoras que respondam com precisão às necessidades dos nossos clientes, garantindo qualidade, eficiência e assistência especializada.",
+            color: "#2354a2",
+          },
+          {
+            label: "VISÃO",
+            description: "Ser a empresa de referência em Moçambique no fornecimento de soluções tecnológicas para ensino & investigação, saúde, águas, ambiente, minas e desenvolvimento institucional.",
+            color: "#475569",
+          },
+          {
+            label: "VALORES",
+            description: "• Inovação\n• Excelência\n• Eficiência\n• Honestidade\n• Responsabilidade\n• Desenvolvimento Contínuo",
+            color: "#1e293b",
+          },
+        ]}
+      />
 
       {/* Why Choose Us */}
       <section className="relative bg-[#e2e2e2] py-12 md:py-16 lg:py-20 w-full overflow-hidden" data-navbar-section="light">
