@@ -48,7 +48,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
   };
   
   return (
-    <section className={`pt-20 md:pt-24 lg:pt-28 pb-12 md:pb-16 lg:pb-20 bg-[#e2e2e2] ${className ?? ""}`} ref={heroRef} data-navbar-section="light">
+    <section className={`pt-20 md:pt-24 lg:pt-28 pb-12 md:pb-16 lg:pb-20 bg-white ${className ?? ""}`} ref={heroRef} data-navbar-section="light">
       <div className="w-full">
         <div className="relative">
           {/* Header */}
@@ -89,7 +89,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={2}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="md:col-span-4 space-y-4 pl-4 md:pl-6 lg:pl-8"
+              className="md:col-span-3 space-y-4 pl-4 md:pl-6 lg:pl-8"
             >
               <p className="text-gray-600 leading-relaxed text-justify">
                 Somos uma empresa moçambicana sediada em Maputo, especializada no desenvolvimento de soluções tecnológicas e implementação de projetos em áreas estratégicas.
@@ -105,7 +105,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={3}
               timelineRef={heroRef}
               customVariants={scaleVariants}
-              className="md:col-span-4 flex items-center"
+              className="md:col-span-6 flex items-center"
             >
               <img
                 src={image_6c72dadd527eba87d1ba2541e9c3b110adcb82e5}
@@ -120,7 +120,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
               animationNum={4}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="md:col-span-4 space-y-4 pr-4 md:pr-6 lg:pr-8"
+              className="md:col-span-3 space-y-4 pr-4 md:pr-6 lg:pr-8"
             >
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-[#2354a2] flex items-center justify-center flex-shrink-0 mt-1">
