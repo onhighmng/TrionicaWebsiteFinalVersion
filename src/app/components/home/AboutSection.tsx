@@ -176,7 +176,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
                   target={100}
                   duration={6000}
                   suffix="+"
-                  className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
+                  className="text-[#2354a2] font-extralight text-3xl md:text-5xl lg:text-7xl tracking-tight"
                 />
                 <span className="text-gray-600 text-[10px] md:text-xs mt-2">Clientes</span>
               </div>
@@ -185,7 +185,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
                   target={15}
                   duration={6000}
                   suffix="+"
-                  className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
+                  className="text-[#2354a2] font-extralight text-3xl md:text-5xl lg:text-7xl tracking-tight"
                 />
                 <span className="text-gray-600 text-[10px] md:text-xs mt-2">Anos</span>
               </div>
@@ -194,7 +194,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
                   target={10}
                   duration={6000}
                   suffix="+"
-                  className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
+                  className="text-[#2354a2] font-extralight text-3xl md:text-5xl lg:text-7xl tracking-tight"
                 />
                 <span className="text-gray-600 text-[10px] md:text-xs mt-2">Marcas Globais</span>
               </div>
@@ -203,7 +203,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
                   target={6}
                   duration={6000}
                   suffix=""
-                  className="text-[#2354a2] font-extralight text-4xl md:text-6xl lg:text-8xl tracking-tight"
+                  className="text-[#2354a2] font-extralight text-3xl md:text-5xl lg:text-7xl tracking-tight"
                 />
                 <span className="text-gray-600 text-[10px] md:text-xs mt-2">Sectores Atendidos</span>
               </div>

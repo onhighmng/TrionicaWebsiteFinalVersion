@@ -185,7 +185,7 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
           {/* Image carousel */}
           <div
             ref={imageContainerRef}
-            className="relative w-full h-80 md:h-96 lg:h-[420px]"
+            className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[420px]"
             style={{ perspective: '1000px' }}
           >
             {solutions.map((s, i) => (

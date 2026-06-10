@@ -405,15 +405,15 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
               </div>
 
               {/* Centered Content */}
-              <div className="flex items-center justify-center min-h-screen px-8 py-20">
+              <div className="flex items-center justify-center min-h-screen px-4 sm:px-8 py-12 md:py-20">
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-6 w-full max-w-md">
                   <button
                     onClick={() => handleNavClick('home')}
                     className={`text-center transition-colors ${
                       currentPage === 'home'
-                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
-                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#FF6747]"
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-xl sm:text-[24px] md:text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-lg sm:text-[20px] md:text-[24px] text-[#667085] hover:text-[#FF6747]"
                     }`}
                   >
                     Início
@@ -423,8 +423,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                     onClick={() => handleNavClick('sobre-nos')}
                     className={`text-center transition-colors ${
                       currentPage === 'sobre-nos'
-                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
-                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-xl sm:text-[24px] md:text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-lg sm:text-[20px] md:text-[24px] text-[#667085] hover:text-[#2354a2]"
                     }`}
                   >
                     Sobre Nós
@@ -436,8 +436,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                       onClick={() => setOpenDropdown(openDropdown === 'solucoes' ? null : 'solucoes')}
                       className={`w-full text-center transition-colors flex items-center justify-center gap-2 ${
                         (highlightSolucoes || ['saude', 'aguas', 'ambiente', 'minas', 'ensino'].includes(currentPage))
-                          ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
-                          : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                          ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-xl sm:text-[24px] md:text-[28px] text-[#2354a2]"
+                          : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-lg sm:text-[20px] md:text-[24px] text-[#667085] hover:text-[#2354a2]"
                       }`}
                     >
                       Soluções
@@ -455,8 +455,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                           onClick={() => handleNavClick('saude')}
                           className={`text-center transition-colors ${
                             currentPage === 'saude'
-                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
-                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-base sm:text-[18px] md:text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-sm sm:text-base md:text-[20px] text-[#667085] hover:text-[#2354a2]"
                           }`}
                         >
                           Saúde
@@ -465,8 +465,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                           onClick={() => handleNavClick('aguas')}
                           className={`text-center transition-colors ${
                             currentPage === 'aguas'
-                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
-                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-base sm:text-[18px] md:text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-sm sm:text-base md:text-[20px] text-[#667085] hover:text-[#2354a2]"
                           }`}
                         >
                           Águas
@@ -475,8 +475,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                           onClick={() => handleNavClick('ambiente')}
                           className={`text-center transition-colors ${
                             currentPage === 'ambiente'
-                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
-                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-base sm:text-[18px] md:text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-sm sm:text-base md:text-[20px] text-[#667085] hover:text-[#2354a2]"
                           }`}
                         >
                           Ambiente
@@ -485,8 +485,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                           onClick={() => handleNavClick('minas')}
                           className={`text-center transition-colors ${
                             currentPage === 'minas'
-                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
-                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-base sm:text-[18px] md:text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-sm sm:text-base md:text-[20px] text-[#667085] hover:text-[#2354a2]"
                           }`}
                         >
                           Minas
@@ -495,8 +495,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                           onClick={() => handleNavClick('ensino')}
                           className={`text-center transition-colors ${
                             currentPage === 'ensino'
-                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[22px] text-[#2354a2]"
-                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[20px] text-[#667085] hover:text-[#2354a2]"
+                              ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-base sm:text-[18px] md:text-[22px] text-[#2354a2]"
+                              : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-sm sm:text-base md:text-[20px] text-[#667085] hover:text-[#2354a2]"
                           }`}
                         >
                           Ensino
@@ -509,8 +509,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                     onClick={() => handleNavClick('portfolio')}
                     className={`text-center transition-colors ${
                       currentPage === 'portfolio'
-                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
-                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-xl sm:text-[24px] md:text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-lg sm:text-[20px] md:text-[24px] text-[#667085] hover:text-[#2354a2]"
                     }`}
                   >
                     Portfolio
@@ -520,8 +520,8 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                     onClick={() => handleNavClick('contacte-nos')}
                     className={`text-center transition-colors ${
                       currentPage === 'contacte-nos'
-                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[28px] text-[#2354a2]"
-                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-[24px] text-[#667085] hover:text-[#2354a2]"
+                        ? "font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-xl sm:text-[24px] md:text-[28px] text-[#2354a2]"
+                        : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-lg sm:text-[20px] md:text-[24px] text-[#667085] hover:text-[#2354a2]"
                     }`}
                   >
                     Contacto

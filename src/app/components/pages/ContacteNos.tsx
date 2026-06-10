@@ -12,7 +12,7 @@ export function ContacteNos() {
       <section className="relative w-full bg-[#0046a2] pt-24 md:pt-32 pb-12 md:pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
-          <h1 className="font-['Epilogue:Medium',sans-serif] font-medium text-white text-[32px] md:text-[48px] lg:text-[56px] leading-[1.2] mb-6 md:mb-8">
+          <h1 className="font-['Epilogue:Medium',sans-serif] font-medium text-white text-xl sm:text-[28px] md:text-[40px] lg:text-[52px] leading-[1.2] mb-4 md:mb-8">
             Engenharia, Tecnologia e Inovação ao Serviço de Moçambique
           </h1>
           
@@ -22,13 +22,13 @@ export function ContacteNos() {
           </p>
 
           {/* Contact Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 lg:gap-10">
             {/* Address */}
             <div className="flex flex-col gap-2">
               <p className="font-['DM_Sans:Regular',sans-serif] text-[#fdfdfd] text-[14px] md:text-[16px] mb-1">
                 Endereço
               </p>
-              <p className="font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-[18px] md:text-[20px] lg:text-[22px] leading-[1.3]">
+              <p className="font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-sm sm:text-base md:text-[18px] lg:text-[20px] leading-[1.3]">
                 Bairro da Costa do Sol<br />
                 Av. Major General Cândido Mondlane, Nº 2007<br />
                 Maputo, Moçambique
@@ -42,7 +42,7 @@ export function ContacteNos() {
               </p>
               <a 
                 href="mailto:geral@trionicamz.com"
-                className="font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-[18px] md:text-[20px] lg:text-[22px] hover:text-white transition-colors break-words"
+                className="font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-sm sm:text-base md:text-[18px] lg:text-[20px] hover:text-white transition-colors break-words"
               >
                 geral@trionicamz.com
               </a>
@@ -56,13 +56,13 @@ export function ContacteNos() {
               <div className="space-y-2">
                 <a 
                   href="tel:+258846974444"
-                  className="block font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-[18px] md:text-[20px] lg:text-[22px] hover:text-white transition-colors"
+                  className="block font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-sm sm:text-base md:text-[18px] lg:text-[20px] hover:text-white transition-colors"
                 >
                   (+258) 84/86 69 74 444
                 </a>
                 <a 
                   href="tel:+258820660201"
-                  className="block font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-[18px] md:text-[20px] lg:text-[22px] hover:text-white transition-colors"
+                  className="block font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-sm sm:text-base md:text-[18px] lg:text-[20px] hover:text-white transition-colors"
                 >
                   (+258) 82 06 60 201
                 </a>
@@ -74,7 +74,7 @@ export function ContacteNos() {
               <p className="font-['DM_Sans:Regular',sans-serif] text-[#fdfdfd] text-[14px] md:text-[16px] mb-1">
                 Horário
               </p>
-              <p className="font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-[18px] md:text-[20px] lg:text-[22px] leading-[1.3]">
+              <p className="font-['Epilogue:Medium',sans-serif] font-medium text-[#d4d4d4] text-sm sm:text-base md:text-[18px] lg:text-[20px] leading-[1.3]">
                 Segunda - Sexta<br />
                 08:00 - 17:00<br />
                 Sábado<br />

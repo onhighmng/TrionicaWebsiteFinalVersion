@@ -32,7 +32,7 @@ export function PartnersSection() {
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
 
           {/* Title row */}
-          <div className="flex items-center gap-6 w-full max-w-2xl">
+          <div className="flex items-center gap-3 md:gap-6 w-full max-w-2xl">
             <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gray-600 to-gray-600" />
             <span className="text-white/70 font-semibold text-lg md:text-xl whitespace-nowrap tracking-wide">
               Nossas Marcas

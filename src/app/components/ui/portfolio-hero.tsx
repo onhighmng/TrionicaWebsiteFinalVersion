@@ -30,7 +30,7 @@ export default function PortfolioHero({ onNavigate }: PortfolioHeroProps) {
 
       {/* Content */}
       <div className="relative z-20 max-w-5xl px-6 text-center text-white">
-        <h1 className="font-['Manrope'] font-medium text-white text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight flex items-center justify-center gap-3 md:gap-4 flex-wrap">
+        <h1 className="font-['Manrope'] font-medium text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 tracking-tight flex items-center justify-center gap-2 md:gap-4 flex-wrap">
           <span>Construímos o Futuro</span>
           <img
             src={mozambiqueFlag}
@@ -43,7 +43,7 @@ export default function PortfolioHero({ onNavigate }: PortfolioHeroProps) {
           </span>
         </h1>
 
-        <p className="mx-auto mb-10 max-w-2xl text-center font-light text-lg text-white/80 md:text-xl">
+        <p className="mx-auto mb-8 max-w-xs sm:max-w-lg md:max-w-2xl text-center font-light text-sm sm:text-base md:text-lg text-white/80 lg:text-xl">
           Um portfólio de tecnologia de vanguarda ao serviço das instituições que lideram Moçambique.
         </p>
 

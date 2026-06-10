@@ -24,7 +24,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
         <div className="w-full px-4 md:px-8 lg:px-12">
           {/* Center heading */}
           <div className="text-center mb-8 md:mb-12 px-4">
-            <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-[32px] md:text-[48px] leading-tight md:leading-[72px] text-white tracking-tight md:tracking-[-2.56px]">
+            <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-xl sm:text-[28px] md:text-[40px] lg:text-[48px] leading-tight md:leading-[72px] text-white tracking-tight md:tracking-[-2.56px]">
               <p className="mb-0">Pronto Para Desenvolver</p>
               <p>o Seu Próximo Projecto?</p>
             </h2>
@@ -58,7 +58,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
           {/* Footer Group */}
           <div className="bg-white rounded-[24px] md:rounded-[40px] p-6 md:p-12">
             {/* Main heading */}
-            <div className="font-['Inter',sans-serif] font-medium text-[32px] md:text-[48px] leading-tight text-[#050505] text-center md:text-left mb-4 md:mb-6">
+            <div className="font-['Inter',sans-serif] font-medium text-lg sm:text-[22px] md:text-[32px] lg:text-[42px] leading-tight text-[#050505] text-center md:text-left mb-4 md:mb-6">
               <p className="mb-0">Triónica — Tecnologia e Soluções</p>
               <p>para o Desenvolvimento de Moçambique</p>
             </div>
@@ -107,12 +107,12 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
             </div>
 
             {/* Large Trionica text */}
-            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[50px] sm:text-[70px] md:text-[120px] leading-[1.2] text-[rgba(35,84,162,0.89)] text-center uppercase mb-8 md:mb-12">
+            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[30px] sm:text-[48px] md:text-[80px] lg:text-[120px] leading-[1.2] text-[rgba(35,84,162,0.89)] text-center uppercase mb-8 md:mb-12">
               Triónica
             </p>
 
             {/* Contactos, Endereço & Certificações */}
-            <div className="border-t border-[#ededed] pt-8 md:pt-10 mb-8 md:mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center sm:text-left">
+            <div className="border-t border-[#ededed] pt-6 md:pt-10 mb-6 md:mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 text-center sm:text-left">
               <div>
                 <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
                   <MapPin className="w-4 h-4 text-[#4278ec]" />
