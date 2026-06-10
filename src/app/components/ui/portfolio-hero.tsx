@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import maputoImg from "../../../imports/maputo.jpg";
+import mozambiqueFlag from "figma:asset/13696806984cbb3d9f84c25ed209563ac4ea660b.png";
 
 interface PortfolioHeroProps {
   onNavigate?: (page: string) => void;
@@ -29,13 +30,21 @@ export default function PortfolioHero({ onNavigate }: PortfolioHeroProps) {
 
       {/* Content */}
       <div className="relative z-20 max-w-5xl px-6 text-center text-white">
-        <h1 className="text-center font-['Plus_Jakarta_Sans'] font-normal text-5xl text-white tracking-tight md:text-6xl lg:text-8xl mb-6">
-          Sustainable Solutions for a Better Future
+        <h1 className="font-['Manrope'] font-medium text-white text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight flex items-center justify-center gap-3 md:gap-4 flex-wrap">
+          <span>Construímos o Futuro</span>
+          <img
+            src={mozambiqueFlag}
+            alt="Mozambique Flag"
+            className="inline-block h-8 md:h-10 lg:h-12 w-auto rounded-lg shadow-md"
+          />
+          <span className="text-[#e1fcad] relative inline-block">
+            Nacional
+            <span className="absolute left-0 right-0 h-[2px] bg-[#e1fcad] transform -rotate-1 origin-left" style={{ top: 'calc(100% + 4px)' }} />
+          </span>
         </h1>
 
-        <p className="mx-auto mb-8 max-w-2xl text-center font-light text-lg text-white/90 md:text-xl">
-          Empowering businesses and communities to thrive in a low-carbon world
-          through tailored clean energy solutions.
+        <p className="mx-auto mb-10 max-w-2xl text-center font-light text-lg text-white/80 md:text-xl">
+          Um portfólio de tecnologia de vanguarda ao serviço das instituições que lideram Moçambique.
         </p>
 
         <button
