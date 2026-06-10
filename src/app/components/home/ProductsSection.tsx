@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ensinoImg from '../../../imports/ensino-lab.jpg';
 import saudeImg from '../../../imports/card-saude.jpg';
@@ -93,8 +94,75 @@ const solutions = [
   },
 ];
 
+function calculateGap(width: number) {
+  const minWidth = 1024;
+  const maxWidth = 1456;
+  const minGap = 60;
+  const maxGap = 86;
+  if (width <= minWidth) return minGap;
+  if (width >= maxWidth) return Math.max(minGap, maxGap + 0.06018 * (width - maxWidth));
+  return minGap + (maxGap - minGap) * ((width - minWidth) / (maxWidth - minWidth));
+}
+
 export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => void }) {
   const [active, setActive] = useState(0);
+  const [hoverPrev, setHoverPrev] = useState(false);
+  const [hoverNext, setHoverNext] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(600);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const count = solutions.length;
+
+  useEffect(() => {
+    function handleResize() {
+      if (imageContainerRef.current) setContainerWidth(imageContainerRef.current.offsetWidth);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    autoplayRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % count);
+    }, 5000);
+    return () => { if (autoplayRef.current) clearInterval(autoplayRef.current); };
+  }, [count]);
+
+  const handleNext = useCallback(() => {
+    setActive((prev) => (prev + 1) % count);
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+  }, [count]);
+
+  const handlePrev = useCallback(() => {
+    setActive((prev) => (prev - 1 + count) % count);
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+  }, [count]);
+
+  function getImageStyle(index: number): React.CSSProperties {
+    const gap = calculateGap(containerWidth);
+    const maxStickUp = gap * 0.8;
+    const isActive = index === active;
+    const isLeft = (active - 1 + count) % count === index;
+    const isRight = (active + 1) % count === index;
+    if (isActive) return {
+      zIndex: 3, opacity: 1, pointerEvents: 'auto',
+      transform: 'translateX(0px) translateY(0px) scale(1) rotateY(0deg)',
+      transition: 'all 0.8s cubic-bezier(.4,2,.3,1)',
+    };
+    if (isLeft) return {
+      zIndex: 2, opacity: 1, pointerEvents: 'auto',
+      transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(15deg)`,
+      transition: 'all 0.8s cubic-bezier(.4,2,.3,1)',
+    };
+    if (isRight) return {
+      zIndex: 2, opacity: 1, pointerEvents: 'auto',
+      transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(-15deg)`,
+      transition: 'all 0.8s cubic-bezier(.4,2,.3,1)',
+    };
+    return { zIndex: 1, opacity: 0, pointerEvents: 'none', transition: 'all 0.8s cubic-bezier(.4,2,.3,1)' };
+  }
+
   const sol = solutions[active];
 
   return (
@@ -111,90 +179,91 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
           </h2>
         </div>
 
-        {/* Main grid: sidebar + content */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+        {/* Circular layout */}
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16 lg:gap-20 items-start">
 
-          {/* Sidebar tabs */}
-          <div className="lg:w-[300px] xl:w-[340px] shrink-0 flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+          {/* Image carousel */}
+          <div
+            ref={imageContainerRef}
+            className="relative w-full h-80 md:h-96 lg:h-[420px]"
+            style={{ perspective: '1000px' }}
+          >
             {solutions.map((s, i) => (
-              <button
+              <img
                 key={s.number}
-                onClick={() => setActive(i)}
-                className={`group flex items-center justify-between gap-4 px-5 py-4 rounded-xl text-left transition-all duration-300 shrink-0 lg:shrink w-auto lg:w-full border ${
-                  active === i
-                    ? 'bg-[#2354a2] border-[#2354a2] shadow-lg'
-                    : 'bg-white border-gray-100 hover:border-[#2354a2]/30 hover:bg-[#f5f7fc]'
-                }`}
-              >
-                <span className={`font-['Plus_Jakarta_Sans'] font-semibold text-sm md:text-base leading-snug ${
-                  active === i ? 'text-white' : 'text-[#0c1313]'
-                }`}>
-                  {s.title}
-                </span>
-                <span className={`font-mono text-xs font-bold tracking-widest shrink-0 ${
-                  active === i ? 'text-white/60' : 'text-[#2354a2]/40'
-                }`}>
-                  {s.number}
-                </span>
-              </button>
+                src={s.image}
+                alt={s.title}
+                className="absolute w-full h-full object-cover rounded-3xl"
+                style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.18)', ...getImageStyle(i) }}
+              />
             ))}
+            {/* Number badge on active image */}
+            <div className="absolute top-4 left-4 z-10 bg-[#2354a2] text-white text-xs font-bold px-3 py-1.5 rounded-full tracking-widest uppercase pointer-events-none">
+              {sol.number}
+            </div>
           </div>
 
-          {/* Content panel */}
-          <div className="flex-1 min-w-0">
+          {/* Content */}
+          <div className="flex flex-col justify-between">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col md:flex-row gap-8 lg:gap-10 h-full"
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
               >
-                {/* Image */}
-                <div className="w-full md:w-[45%] shrink-0">
-                  <div className="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
-                    <img
-                      src={sol.image}
-                      alt={sol.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-[#2354a2] text-white text-xs font-bold px-3 py-1.5 rounded-full tracking-widest uppercase">
-                      {sol.number}
-                    </div>
-                  </div>
-                </div>
+                <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[22px] md:text-[28px] text-[#0c1313] mb-1 tracking-tight">
+                  {sol.title}
+                </h3>
+                <p className="font-['Plus_Jakarta_Sans'] font-semibold text-[#2354a2] text-xs md:text-sm mb-4 uppercase tracking-wide">
+                  {sol.subtitle}
+                </p>
+                <p className="font-['Plus_Jakarta_Sans'] text-[#4b5563] text-sm md:text-base leading-relaxed mb-5">
+                  {sol.description}
+                </p>
 
-                {/* Text */}
-                <div className="flex flex-col justify-center flex-1">
-                  <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[22px] md:text-[28px] text-[#0c1313] mb-2 tracking-tight">
-                    {sol.title}
-                  </h3>
-                  <p className="font-['Plus_Jakarta_Sans'] font-semibold text-[#2354a2] text-xs md:text-sm mb-3 uppercase tracking-wide">
-                    {sol.subtitle}
-                  </p>
-                  <p className="font-['Plus_Jakarta_Sans'] text-[#4b5563] text-sm md:text-base leading-relaxed mb-5">
-                    {sol.description}
-                  </p>
+                <ul className="space-y-2 mb-6">
+                  {sol.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#2354a2] shrink-0 mt-0.5" />
+                      <span className="font-['Plus_Jakarta_Sans'] text-[#374151] text-sm leading-snug">{b}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                  <ul className="space-y-2 mb-7">
-                    {sol.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#2354a2] shrink-0 mt-0.5" />
-                        <span className="font-['Plus_Jakarta_Sans'] text-[#374151] text-sm leading-snug">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button
-                    onClick={() => { onNavigate(sol.link); window.scrollTo({ top: 0, behavior: 'instant' }); }}
-                    className="inline-flex items-center gap-2 self-start bg-[#2354a2] hover:bg-[#1a3f7a] text-white font-['Plus_Jakarta_Sans'] font-semibold text-sm px-6 py-3 rounded-full transition-colors duration-200"
-                  >
-                    Saber mais <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+                <button
+                  onClick={() => { onNavigate(sol.link); window.scrollTo({ top: 0, behavior: 'instant' }); }}
+                  className="inline-flex items-center gap-2 self-start bg-[#2354a2] hover:bg-[#1a3f7a] text-white font-['Plus_Jakarta_Sans'] font-semibold text-sm px-6 py-3 rounded-full transition-colors duration-200"
+                >
+                  Saber mais <ArrowRight className="w-4 h-4" />
+                </button>
               </motion.div>
             </AnimatePresence>
+
+            {/* Arrows */}
+            <div className="flex gap-4 mt-8">
+              <button
+                onClick={handlePrev}
+                onMouseEnter={() => setHoverPrev(true)}
+                onMouseLeave={() => setHoverPrev(false)}
+                aria-label="Anterior"
+                className="w-11 h-11 rounded-full flex items-center justify-center border-none cursor-pointer transition-colors duration-300"
+                style={{ backgroundColor: hoverPrev ? '#2354a2' : '#0c1313' }}
+              >
+                <FaArrowLeft size={16} color="#f1f1f7" />
+              </button>
+              <button
+                onClick={handleNext}
+                onMouseEnter={() => setHoverNext(true)}
+                onMouseLeave={() => setHoverNext(false)}
+                aria-label="Próximo"
+                className="w-11 h-11 rounded-full flex items-center justify-center border-none cursor-pointer transition-colors duration-300"
+                style={{ backgroundColor: hoverNext ? '#2354a2' : '#0c1313' }}
+              >
+                <FaArrowRight size={16} color="#f1f1f7" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
