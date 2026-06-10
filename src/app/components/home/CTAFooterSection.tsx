@@ -4,7 +4,6 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import madeInMozambique from "../../../imports/made_in_mozambique.png";
 import isoInno from "../../../imports/footer_iso_inno.png";
 import { PartnersSection } from './PartnersSection';
-import { ClientsSection } from './ClientsSection';
 
 interface CTAFooterSectionProps {
   onNavigate?: (page: string) => void;
@@ -20,7 +19,6 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
   return (
     <>
       <PartnersSection />
-      <ClientsSection />
       {/* Responsive flow-based layout (used at all breakpoints) */}
       <section className="relative bg-black pt-6 md:pt-8 pb-0 w-full overflow-hidden" data-navbar-section="dark">
         <div className="w-full px-4 md:px-8 lg:px-12">
