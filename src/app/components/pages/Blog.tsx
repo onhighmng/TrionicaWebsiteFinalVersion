@@ -8,6 +8,7 @@ import imgUnion1 from "figma:asset/6a22570eeac45c73383df24364a1f8a0b34dc74d.png"
 import imgUnion2 from "figma:asset/92a7f61b249712ca60bec2ba142e35515aae7b0a.png";
 import imgUnion3 from "figma:asset/1b38e673a1e839e28a809a1a80db2c541b9236e9.png";
 import mozambiqueFlag from "figma:asset/13696806984cbb3d9f84c25ed209563ac4ea660b.png";
+import PortfolioHero from '../ui/portfolio-hero';
 
 interface BlogProps {
   onNavigate: (page: string, projectId?: string) => void;
@@ -16,6 +17,7 @@ interface BlogProps {
 export function Blog({ onNavigate }: BlogProps) {
   return (
     <div className="min-h-screen bg-[#eeeeee]">
+      <PortfolioHero onNavigate={onNavigate} />
       {/* Hero Section with Decorative Images */}
       <section className="relative bg-[#eeeeee] py-16 md:py-20 lg:py-28 overflow-hidden min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center" data-navbar-section="light">
         {/* Decorative corner images removed for a cleaner hero */}
