@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HeroSection } from './components/home/HeroSection';
 import { AboutSection } from './components/home/AboutSection';
 import { ProductsSection } from './components/home/ProductsSection';
+import { TestimonialsSection } from './components/home/TestimonialsSection';
 import { CTAFooterSection } from './components/home/CTAFooterSection';
 
 // Pages
@@ -91,6 +92,7 @@ function App() {
             <HeroSection onNavigate={handleNavigation} currentPage={currentPage} key={heroKey} onMenuClose={handleMenuClose} />
             <AboutSection onNavigate={handleNavigation} />
             <ProductsSection onNavigate={handleNavigation} />
+            <TestimonialsSection />
           </>
         );
       case 'sobre-nos': return (
