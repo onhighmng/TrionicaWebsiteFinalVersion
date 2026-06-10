@@ -175,7 +175,7 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
             Nossas Soluções
           </span>
           <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-[28px] md:text-[40px] lg:text-[48px] leading-tight text-[#0c1313] max-w-3xl tracking-tight">
-            Fornecemos Soluções Tecnológicas Integradas para o Desenvolvimento de Moçambique
+            Fornecemos Soluções Tecnológicas Integradas<br />para o Desenvolvimento de Moçambique
           </h2>
         </div>
 
