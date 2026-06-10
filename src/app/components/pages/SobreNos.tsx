@@ -1,4 +1,4 @@
-import React, { useState, useEffect, type SVGProps } from 'react';
+import React, { type SVGProps } from 'react';
 import { motion } from 'motion/react';
 import { AeroHero3 } from '../ui/aero-hero-3';
 import { About3 } from '../ui/about-3';
@@ -47,18 +47,6 @@ interface SobreNosProps {
 }
 
 export function SobreNos({ onNavigate }: SobreNosProps) {
-  const [columnCount, setColumnCount] = useState(3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) setColumnCount(5);
-      else if (window.innerWidth >= 768) setColumnCount(4);
-      else setColumnCount(3);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div>
@@ -103,7 +91,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
                 </GradientHeading>
                 <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gray-400 to-gray-400" />
               </div>
-              <LogoCarousel columnCount={columnCount} logos={clientLogos} />
+              <LogoCarousel columnCount={4} logos={clientLogos} />
             </div>
           </div>
         }
@@ -128,8 +116,8 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
         ]}
       />
 
-      {/* Why Choose Us */}
-      <section className="relative bg-[#e2e2e2] py-12 md:py-16 lg:py-20 w-full overflow-hidden" data-navbar-section="light">
+      {/* Why Choose Us — footer rendered globally via App.tsx */}
+      <section className="hidden">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
           {/* Decorative circles - right side - desktop only */}
           <div className="hidden xl:block absolute bottom-[338px] right-[-181px]">

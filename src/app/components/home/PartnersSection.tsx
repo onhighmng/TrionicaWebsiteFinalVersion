@@ -2,6 +2,8 @@
 
 import React, { type SVGProps } from 'react';
 import { getImageUrl } from '../../utils/images';
+import auxilabLogo from "../../../imports/auxilab_logo.png";
+import valuestekLogo from "../../../imports/valuestek_logo.webp";
 import { GradientHeading } from '../ui/gradient-heading';
 import { LogoCarousel } from '../ui/logo-carousel';
 
@@ -26,7 +28,7 @@ function Img({ src, alt }: { src: string; alt: string }) {
     <img
       src={src}
       alt={alt}
-      className="max-w-full max-h-full object-contain"
+      className="w-full h-full object-contain"
       onError={() => setFailed(true)}
     />
   );
@@ -81,7 +83,7 @@ function CanonLogo(props: SVGProps<SVGSVGElement>) {
   return <Img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Canon_logo.svg" alt="Canon" />;
 }
 function ValueStekLogo(props: SVGProps<SVGSVGElement>) {
-  return <Img src="https://www.valuestek.com/wp-content/uploads/2025/05/Valuestek-logo-c.webp" alt="valueStek" />;
+  return <Img src={valuestekLogo} alt="ValueStek" />;
 }
 function XtoolsLogo(props: SVGProps<SVGSVGElement>) {
   return <Img src="https://dl.svgcdn.com/svg/cbi/xtool.svg" alt="xTool" />;
@@ -102,7 +104,7 @@ function DataboxLogo(props: SVGProps<SVGSVGElement>) {
   return <TextLogo name="Databox" color="#1a1a2e" />;
 }
 function AuxilabLogo(props: SVGProps<SVGSVGElement>) {
-  return <TextLogo name="Auxilab" color="#e2001a" />;
+  return <Img src={auxilabLogo} alt="Auxilab" />;
 }
 
 // ── All brand logos ────────────────────────────────────────────────────────────
@@ -117,7 +119,7 @@ const allLogos = [
   { name: "Drapper",        id: 7,  img: DrapperLogo as any,     url: "https://www.drapertools.com" },
   { name: "REV Robotics",   id: 8,  img: RevRoboticsLogo as any, url: "https://www.revrobotics.com" },
   { name: "Canon",          id: 9,  img: CanonLogo as any,       url: "https://www.canon.com" },
-  { name: "valueStek",      id: 10, img: ValueStekLogo as any,   url: "https://www.valuestek.com" },
+  { name: "ValueStek",      id: 10, img: ValueStekLogo as any,   url: "https://www.valuestek.com/" },
   { name: "Xtools",         id: 11, img: XtoolsLogo as any,      url: "https://www.xtool.com" },
   { name: "Stürmer",        id: 12, img: SturmerLogo as any,     url: "https://www.stuermer-machines.com" },
   { name: "Seabery",        id: 13, img: SeaberyLogo as any,     url: "https://seaberyat.com" },
@@ -128,22 +130,6 @@ const allLogos = [
 ];
 
 export function PartnersSection() {
-  const [columnCount, setColumnCount] = React.useState(3);
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setColumnCount(4);
-      } else {
-        setColumnCount(3);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <section className="relative pt-16 md:pt-24 lg:pt-32 pb-6 md:pb-8 bg-[#e2e2e2]" data-navbar-section="light">
       <div className="container mx-auto px-4 relative z-10">
@@ -156,7 +142,7 @@ export function PartnersSection() {
             <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gray-400 to-gray-400"></div>
           </div>
 
-          <LogoCarousel columnCount={columnCount} logos={allLogos} />
+          <LogoCarousel columnCount={4} logos={allLogos} />
         </div>
       </div>
     </section>

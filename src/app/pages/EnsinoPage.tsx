@@ -105,10 +105,6 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
         <Frame6 />
       </div>
 
-      {/* Call to Action Footer Section */}
-      <div className="md:-mt-72">
-        <CTAFooterSection onNavigate={onNavigate} />
-      </div>
     </div>
   );
 }

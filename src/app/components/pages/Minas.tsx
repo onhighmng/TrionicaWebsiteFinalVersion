@@ -100,10 +100,6 @@ export function Minas({ onNavigate }: MinasProps) {
         </div>
       </section>
       
-      {/* CTA Footer Section */}
-      <div>
-        <CTAFooterSection onNavigate={onNavigate} />
-      </div>
     </div>
   );
 }

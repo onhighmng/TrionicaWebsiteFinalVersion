@@ -75,10 +75,6 @@ export function Saude({ onNavigate }: SaudeProps) {
         </div>
       </section>
       
-      {/* CTA Footer Section */}
-      <div>
-        <CTAFooterSection onNavigate={onNavigate} />
-      </div>
     </div>
   );
 }

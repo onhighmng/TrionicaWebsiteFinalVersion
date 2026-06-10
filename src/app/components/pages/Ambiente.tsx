@@ -106,10 +106,6 @@ export function Ambiente({ onNavigate }: AmbienteProps) {
         </div>
       </section>
       
-      {/* CTA Footer Section */}
-      <div>
-        <CTAFooterSection onNavigate={onNavigate} />
-      </div>
     </div>
   );
 }

@@ -61,8 +61,6 @@ export function Blog({ onNavigate }: BlogProps) {
         <PortfolioCarouselGrid />
       </section>
       
-      {/* Footer */}
-      <CTAFooterSection onNavigate={onNavigate} />
     </div>
   );
 }

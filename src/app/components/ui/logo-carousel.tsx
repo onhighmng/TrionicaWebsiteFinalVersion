@@ -33,31 +33,36 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
   const shuffled = shuffleArray(allLogos)
-  const columns: Logo[][] = Array.from({ length: columnCount }, () => [])
+  const rowCount = Math.ceil(shuffled.length / columnCount)
 
-  shuffled.forEach((logo, index) => {
-    columns[index % columnCount].push(logo)
-  })
+  // Build a matrix where each row has `columnCount` distinct logos.
+  // Rows past the end of the logo list reuse logos, keeping each row unique.
+  const matrix: Logo[][] = []
+  let idx = 0
 
-  const maxLength = Math.max(...columns.map((col) => col.length))
+  for (let row = 0; row < rowCount; row++) {
+    const rowLogos: Logo[] = []
+    const usedInRow = new Set<number>()
 
-  // Pad shorter columns ensuring no two columns show the same logo at the same time slot
-  columns.forEach((col, colIdx) => {
-    while (col.length < maxLength) {
-      const slotIdx = col.length
-      const usedAtSlot = new Set(
-        columns.map((c, i) => i !== colIdx ? c[slotIdx]?.id : undefined).filter(Boolean)
-      )
-      const usedInCol = new Set(col.map(l => l.id))
-      const candidate =
-        shuffled.find(l => !usedAtSlot.has(l.id) && !usedInCol.has(l.id)) ??
-        shuffled.find(l => !usedAtSlot.has(l.id)) ??
-        shuffled[0]
-      col.push(candidate)
+    for (let col = 0; col < columnCount; col++) {
+      if (idx < shuffled.length) {
+        rowLogos.push(shuffled[idx])
+        usedInRow.add(shuffled[idx].id)
+        idx++
+      } else {
+        // Reuse any logo not already in this row
+        const candidate = shuffled.find(l => !usedInRow.has(l.id)) ?? shuffled[0]
+        rowLogos.push(candidate)
+        usedInRow.add(candidate.id)
+      }
     }
-  })
+    matrix.push(rowLogos)
+  }
 
-  return columns
+  // Transpose matrix to per-column arrays
+  return Array.from({ length: columnCount }, (_, col) =>
+    matrix.map(row => row[col])
+  )
 }
 
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(
@@ -80,34 +85,13 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
           ease: "easeOut",
         }}
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           <motion.div
             key={`${logos[currentIndex].id}-${currentIndex}`}
             className="absolute inset-0 flex items-center justify-center"
-            initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
-            animate={{
-              y: "0%",
-              opacity: 1,
-              filter: "blur(0px)",
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                mass: 1,
-                bounce: 0.2,
-                duration: 0.5,
-              },
-            }}
-            exit={{
-              y: "-20%",
-              opacity: 0,
-              filter: "blur(6px)",
-              transition: {
-                type: "tween",
-                ease: "easeIn",
-                duration: 0.3,
-              },
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }}
+            exit={{ opacity: 0, transition: { duration: 0.4, ease: "easeIn" } }}
           >
             {currentUrl ? (
               <a href={currentUrl} target="_blank" rel="noopener noreferrer" aria-label={logos[currentIndex].name}>
@@ -131,7 +115,7 @@ interface LogoCarouselProps {
 }
 
 export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
-  const [logoSets, setLogoSets] = useState<Logo[][]>([])
+  const logoSets = useMemo(() => distributeLogos(logos, columnCount), [logos, columnCount])
   const [currentTime, setCurrentTime] = useState(0)
 
   const updateTime = useCallback(() => {
@@ -142,11 +126,6 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
     const intervalId = setInterval(updateTime, 100)
     return () => clearInterval(intervalId)
   }, [updateTime])
-
-  useEffect(() => {
-    const distributedLogos = distributeLogos(logos, columnCount)
-    setLogoSets(distributedLogos)
-  }, [logos, columnCount])
 
   return (
     <div className="flex space-x-4">

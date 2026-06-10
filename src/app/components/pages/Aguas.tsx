@@ -76,10 +76,6 @@ export function Aguas({ onNavigate }: AguasProps) {
         </div>
       </section>
       
-      {/* CTA Footer Section */}
-      <div>
-        <CTAFooterSection onNavigate={onNavigate} />
-      </div>
     </div>
   );
 }

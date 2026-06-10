@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
 
 interface About3Props {
   title?: string;
@@ -128,20 +129,20 @@ export const About3 = ({
                 )}
               </div>
 
-              {/* Numbered rows — fill remaining height */}
+              {/* Bullet rows — blue gradient body with icon badges */}
               {breakout?.bulletPoints && breakout.bulletPoints.length > 0 && (
-                <ul className="flex flex-col flex-1 divide-y divide-gray-100 min-h-0">
+                <ul className="flex flex-col flex-1 bg-gradient-to-b from-[#2354a2] to-[#1a3f7a] px-7 py-5 min-h-0">
                   {breakout.bulletPoints.map((point, idx) => (
                     <li
                       key={point}
-                      className="flex flex-1 items-center gap-4 px-7 min-h-0"
+                      className="flex items-start gap-3 py-3 border-b border-white/10 last:border-b-0"
                     >
-                      <span className="font-['Manrope'] text-xl md:text-2xl font-bold text-[#2354a2]/20 shrink-0 w-8 leading-none select-none">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-['Manrope'] text-[#0c1313] text-sm md:text-[0.9rem] leading-tight">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="font-['Manrope'] text-white text-sm leading-relaxed pt-1">
                         {point}
-                      </span>
+                      </p>
                     </li>
                   ))}
                 </ul>

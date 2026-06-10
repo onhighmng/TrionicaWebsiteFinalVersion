@@ -95,7 +95,6 @@ function App() {
             <LatestPostSection onNavigate={handleNavigation} />
             <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
-            <CTAFooterSection onNavigate={handleNavigation} />
           </>
         );
       case 'sobre-nos': return (
@@ -171,7 +170,6 @@ function App() {
             <LatestPostSection onNavigate={handleNavigation} />
             <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
-            <CTAFooterSection onNavigate={handleNavigation} />
         </>
       );
     }
@@ -179,10 +177,10 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen font-sans relative">
-      {/* Main content */}
       <main className="flex-grow">
         {renderPage()}
       </main>
+      <CTAFooterSection onNavigate={handleNavigation} />
     </div>
   );
 }

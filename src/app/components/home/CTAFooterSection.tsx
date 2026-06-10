@@ -1,6 +1,8 @@
 import React from 'react';
 import svgPaths from '../../imports/svg-a0w0pmyyr1';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import madeInMozambique from "../../../imports/made_in_mozambique.png";
+import isoInno from "../../../imports/footer_iso_inno.png";
 
 interface CTAFooterSectionProps {
   onNavigate?: (page: string) => void;
@@ -146,12 +148,9 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
 
               <div>
                 <p className="font-['Plus_Jakarta_Sans'] font-bold text-[#050505] text-sm uppercase tracking-wide mb-3">Certificações</p>
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                  {['NM ISO 9001:2015', 'NM ISO 14001:2015', 'NM ISO 45001:2018', 'Made in Mozambique'].map((cert) => (
-                    <span key={cert} className="inline-block rounded-full border border-[#2354a2]/30 bg-[#2354a2]/[0.06] text-[#2354a2] text-xs font-semibold px-3 py-1">
-                      {cert}
-                    </span>
-                  ))}
+                <div className="flex flex-wrap gap-4 justify-center sm:justify-start items-center">
+                  <img src={isoInno} alt="NM ISO 9001 / 14001 / 45001" className="h-16 w-auto object-contain" />
+                  <img src={madeInMozambique} alt="Made in Mozambique" className="h-16 w-auto object-contain" />
                 </div>
               </div>
             </div>

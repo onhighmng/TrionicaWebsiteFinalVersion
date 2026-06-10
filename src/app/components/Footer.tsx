@@ -1,5 +1,7 @@
 import React from 'react';
 import { Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
+import madeInMozambique from "../../imports/made_in_mozambique.png";
+import isoInno from "../../imports/footer_iso_inno.png";
 
 export function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
@@ -58,6 +60,19 @@ export function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) 
           
           {/* Copyright at bottom */}
           <div className="relative z-10 mt-auto pt-8 md:pt-8 space-y-4 md:space-y-6">
+            {/* Badges */}
+            <div className="flex items-center justify-center gap-6">
+              <img
+                src={madeInMozambique}
+                alt="Made in Mozambique"
+                className="h-16 md:h-20 w-auto object-contain"
+              />
+              <img
+                src={isoInno}
+                alt="Empresa Certificada NM ISO 9001 / 14001 / 45001"
+                className="h-16 md:h-20 w-auto object-contain"
+              />
+            </div>
             {/* Copyright */}
             <p className="text-center text-[10px] md:text-xs text-gray-500">
               &copy; {new Date().getFullYear()} Trionica Moçambique. Todos os direitos reservados.
