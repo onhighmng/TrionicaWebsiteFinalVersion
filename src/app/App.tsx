@@ -3,7 +3,6 @@ import { HeroSection } from './components/home/HeroSection';
 import { AboutSection } from './components/home/AboutSection';
 import { ProductsSection } from './components/home/ProductsSection';
 import { CTAFooterSection } from './components/home/CTAFooterSection';
-import { PartnersSection } from './components/home/PartnersSection';
 
 // Pages
 import { SobreNos } from './components/pages/SobreNos';
@@ -91,7 +90,6 @@ function App() {
             <Navbar currentPage={currentPage} onNavigate={handleNavigation} />
             <HeroSection onNavigate={handleNavigation} currentPage={currentPage} key={heroKey} onMenuClose={handleMenuClose} />
             <AboutSection onNavigate={handleNavigation} />
-            <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
           </>
         );
@@ -165,7 +163,6 @@ function App() {
         <>
             <Frame24 currentPage={currentPage} onNavigate={handleNavigation} />
             <AboutSection onNavigate={handleNavigation} />
-            <PartnersSection />
             <ProductsSection onNavigate={handleNavigation} />
         </>
       );

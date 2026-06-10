@@ -3,6 +3,7 @@ import svgPaths from '../../imports/svg-a0w0pmyyr1';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import madeInMozambique from "../../../imports/made_in_mozambique.png";
 import isoInno from "../../../imports/footer_iso_inno.png";
+import { PartnersSection } from './PartnersSection';
 
 interface CTAFooterSectionProps {
   onNavigate?: (page: string) => void;
@@ -17,19 +18,20 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
 
   return (
     <>
+      <PartnersSection />
       {/* Responsive flow-based layout (used at all breakpoints) */}
-      <section className="relative bg-[#e2e2e2] pt-6 md:pt-8 pb-0 w-full overflow-hidden" data-navbar-section="light">
+      <section className="relative bg-black pt-6 md:pt-8 pb-0 w-full overflow-hidden" data-navbar-section="dark">
         <div className="w-full px-4 md:px-8 lg:px-12">
           {/* Center heading */}
           <div className="text-center mb-8 md:mb-12 px-4">
-            <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-[32px] md:text-[48px] leading-tight md:leading-[72px] text-[#050505] tracking-tight md:tracking-[-2.56px]">
+            <h2 className="capitalize font-['Plus_Jakarta_Sans'] font-bold text-[32px] md:text-[48px] leading-tight md:leading-[72px] text-white tracking-tight md:tracking-[-2.56px]">
               <p className="mb-0">Pronto Para Desenvolver</p>
               <p>o Seu Próximo Projecto?</p>
             </h2>
           </div>
 
           {/* Center subtext */}
-          <div className="font-['Plus_Jakarta_Sans'] font-normal leading-[24px] text-[#565656] text-base md:text-[18px] text-center mb-8 md:mb-12 px-4">
+          <div className="font-['Plus_Jakarta_Sans'] font-normal leading-[24px] text-white/60 text-base md:text-[18px] text-center mb-8 md:mb-12 px-4">
             <p className="mb-0">A nossa equipa está preparada para identificar e implementar</p>
             <p>a solução mais adequada às necessidades da sua instituição.</p>
           </div>

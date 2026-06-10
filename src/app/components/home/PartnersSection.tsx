@@ -131,15 +131,15 @@ const allLogos = [
 
 export function PartnersSection() {
   return (
-    <section className="relative pt-16 md:pt-24 lg:pt-32 pb-6 md:pb-8 bg-[#e2e2e2]" data-navbar-section="light">
+    <section className="relative pt-16 md:pt-24 lg:pt-32 pb-6 md:pb-8 bg-black" data-navbar-section="dark">
       <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
           <div className="flex items-center gap-6 w-full max-w-2xl">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gray-400 to-gray-400"></div>
-            <GradientHeading variant="secondary" size="sm" weight="semi">
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gray-600 to-gray-600"></div>
+            <GradientHeading variant="light" size="sm" weight="semi">
               Nossas Marcas
             </GradientHeading>
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gray-400 to-gray-400"></div>
+            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gray-600 to-gray-600"></div>
           </div>
 
           <LogoCarousel columnCount={4} logos={allLogos} />
