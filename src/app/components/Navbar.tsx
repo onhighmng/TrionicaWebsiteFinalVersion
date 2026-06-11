@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { getImageUrl } from "../utils/images";
 import { MenuItem, ProductItem } from "./ui/navbar-menu";
+import { Button } from "./ui/button";
 import imgSaude from "figma:asset/5387dac094734b07fbea93a0716344069eaf78fc.png";
 import imgAguas from "figma:asset/e5338e4f7a6437afa17dbc009c762e48754173a4.png";
 import imgAmbiente from "figma:asset/c1b1db6c514cff25caa0cecbe74fea6016b4cc73.png";
@@ -352,21 +353,20 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                 alt="Trionica" 
                 className="h-8 md:h-10 w-auto"
               />
-              <span className={`text-base md:text-lg font-semibold ${currentPage === 'contacte-nos' ? 'text-white' : 'text-gray-900'}`}>Trionica</span>
+              <span className={`text-base md:text-lg font-semibold ${currentPage === 'contacte-nos' && !mobileMenuOpen ? 'text-white' : 'text-gray-900'}`}>Trionica</span>
             </div>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2"
+            {/* Mobile menu button - stays above the menu overlay so the burger→X morph is visible */}
+            <Button
+              className="group relative z-[10001] bg-white text-gray-900 hover:bg-gray-900 hover:text-white"
+              variant="outline"
+              size="icon"
+              onClick={() => setMobileMenuOpen((prevState) => !prevState)}
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
             >
-              <span className="sr-only">Toggle menu</span>
-              {mobileMenuOpen ? (
-                <X className={`h-6 w-6 ${currentPage === 'contacte-nos' ? 'text-white' : 'text-gray-900'}`} />
-              ) : (
-                <Menu className={`h-6 w-6 ${currentPage === 'contacte-nos' ? 'text-white' : 'text-gray-900'}`} />
-              )}
-            </button>
+              <BurgerIcon />
+            </Button>
           </div>
         </nav>
       </div>
@@ -381,29 +381,18 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 z-[9998]"
+              className="fixed inset-0 bg-black/60 z-[9996]"
               onClick={() => setMobileMenuOpen(false)}
             />
-            
-            {/* Menu Panel - Full Screen */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 h-screen w-full bg-white shadow-2xl z-[9999] overflow-y-auto"
-            >
-              {/* Close Button */}
-              <div className="absolute top-6 right-6 z-10">
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                  aria-label="Fechar menu"
-                >
-                  <X className="w-6 h-6 text-gray-700" />
-                </button>
-              </div>
 
+            {/* Menu Panel - Full Screen, expands like a bubble from the burger button */}
+            <motion.div
+              initial={{ clipPath: 'circle(0% at calc(100% - 38px) 38px)' }}
+              animate={{ clipPath: 'circle(150% at calc(100% - 38px) 38px)' }}
+              exit={{ clipPath: 'circle(0% at calc(100% - 38px) 38px)' }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 right-0 h-screen w-full bg-white shadow-2xl z-[9997] overflow-y-auto"
+            >
               {/* Centered Content */}
               <div className="flex items-center justify-center min-h-screen px-4 sm:px-8 py-12 md:py-20">
                 {/* Navigation Links */}
@@ -536,7 +525,37 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
   );
 };
 
-function MobileNavItem({ 
+function BurgerIcon() {
+  return (
+    <svg
+      className="pointer-events-none"
+      width={16}
+      height={16}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 12L20 12"
+        className="origin-center -translate-y-[7px] transition-all duration-300 [transition-timing-function:cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
+      />
+      <path
+        d="M4 12H20"
+        className="origin-center transition-all duration-300 [transition-timing-function:cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
+      />
+      <path
+        d="M4 12H20"
+        className="origin-center translate-y-[7px] transition-all duration-300 [transition-timing-function:cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
+      />
+    </svg>
+  );
+}
+
+function MobileNavItem({
   label, 
   isActive,
   onClick 

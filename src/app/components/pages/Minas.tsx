@@ -13,9 +13,9 @@ export function Minas({ onNavigate }: MinasProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="min-h-screen bg-[#e2e2e2]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:flex relative w-full bg-[#e2e2e2] pt-20 md:pt-24 pb-8 md:pb-12 justify-center items-center" ref={heroRef}>
+      <section className="hidden md:flex relative w-full bg-white pt-20 md:pt-24 pb-8 md:pb-12 justify-center items-center" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -44,7 +44,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Hero Section - Mobile */}
-      <section className="md:hidden relative w-full bg-[#e2e2e2] pt-20 pb-8 px-6">
+      <section className="md:hidden relative w-full bg-white pt-20 pb-8 px-6">
         <div className="max-w-[600px] mx-auto">
           {/* Badge */}
           <div className="flex gap-[4px] items-center h-[40px] mb-4">
@@ -73,7 +73,7 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="md:hidden relative w-full bg-[#e2e2e2] px-6 pb-8">
+      <section className="md:hidden relative w-full bg-white px-6 pb-8">
         <div className="max-w-[600px] mx-auto">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-justify tracking-[-0.3125px]">
             Apoiamos o desenvolvimento do sector mineiro com equipamentos de alta tecnologia para laboratórios e investigação geológica.
@@ -82,21 +82,9 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Equipment Grid Section */}
-      <section className="relative w-full bg-[#e2e2e2] px-4 md:px-4">
+      <section className="relative w-full bg-white px-4 md:px-4">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
-          {/* Desktop version with scaling */}
-          <div className="hidden md:block relative w-full" style={{ paddingBottom: '122.29%' }}> {/* 1712/1400 = 122.29% */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[1400px] h-[1712px] scale-[0.4] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-center">
-                <Frame18 />
-              </div>
-            </div>
-          </div>
-          
-          {/* Mobile version - no scaling */}
-          <div className="md:hidden">
-            <Frame18 />
-          </div>
+          <Frame18 />
         </div>
       </section>
       

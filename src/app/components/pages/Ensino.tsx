@@ -310,9 +310,9 @@ export function Ensino() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#eeeeee]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:block py-8 px-4 bg-[#eeeeee]" ref={heroRef}>
+      <section className="hidden md:block py-8 px-4 bg-white" ref={heroRef}>
         <div className="max-w-6xl mx-auto">
           <div className="relative">
             {/* Header */}
@@ -425,7 +425,7 @@ export function Ensino() {
                   animationNum={12}
                   timelineRef={heroRef}
                   customVariants={revealVariants}
-                  className="text-red-500 text-2xl font-bold mb-2"
+                  className="text-gray-900 text-2xl font-bold mb-2"
                 >
                   TRIONICA
                 </TimelineContent>
@@ -467,7 +467,7 @@ export function Ensino() {
       </section>
 
       {/* Hero Section - Mobile */}
-      <section className="md:hidden relative w-full bg-[#eeeeee] pt-20 pb-8 px-6">
+      <section className="md:hidden relative w-full bg-white pt-20 pb-8 px-6">
         <div className="max-w-[600px] mx-auto">
           {/* Badge */}
           <div className="flex gap-[4px] items-center h-[40px] mb-4">
@@ -496,7 +496,7 @@ export function Ensino() {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="md:hidden relative w-full bg-[#eeeeee] px-6 pb-8">
+      <section className="md:hidden relative w-full bg-white px-6 pb-8">
         <div className="max-w-[600px] mx-auto">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-justify tracking-[-0.3125px]">
             Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.
@@ -504,7 +504,7 @@ export function Ensino() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 pb-20 bg-[#eeeeee]">
+      <div className="container mx-auto px-4 pb-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <Timeline data={timelineData} />
         </div>

@@ -179,8 +179,42 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
           </h2>
         </div>
 
-        {/* Circular layout */}
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16 lg:gap-20 items-start">
+        {/* Mobile: horizontally scrollable cards */}
+        <div
+          className="md:hidden -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2"
+          style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
+        >
+          {solutions.map((s) => (
+            <div
+              key={s.number}
+              className="snap-center shrink-0 w-[85%] max-w-[340px] bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex flex-col"
+            >
+              <div className="relative">
+                <img src={s.image} alt={s.title} className="w-full h-44 object-cover" />
+                <div className="absolute top-3 left-3 bg-[#2354a2] text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest">
+                  {s.number}
+                </div>
+              </div>
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[18px] text-[#0c1313] mb-2 tracking-tight">
+                  {s.title}
+                </h3>
+                <p className="font-['Plus_Jakarta_Sans'] text-[#4b5563] text-sm leading-relaxed mb-4 flex-1">
+                  {s.description}
+                </p>
+                <button
+                  onClick={() => { onNavigate(s.link); window.scrollTo({ top: 0, behavior: 'instant' }); }}
+                  className="inline-flex items-center justify-center gap-2 bg-[#2354a2] hover:bg-[#1a3f7a] text-white font-['Plus_Jakarta_Sans'] font-semibold text-sm px-6 py-3 rounded-full transition-colors duration-200"
+                >
+                  Saber mais <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Circular layout (desktop) */}
+        <div className="hidden md:grid gap-12 md:grid-cols-2 md:gap-16 lg:gap-20 items-start">
 
           {/* Image carousel */}
           <div

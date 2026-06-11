@@ -4,7 +4,7 @@ import Frame114Image from "./Frame114-2559-62";
 function Container() {
   return (
     <div className="absolute blur-[0px] filter h-[30px] left-[967px] top-[697px] w-[305px] hidden md:block" data-name="Container">
-      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-1/2 -translate-x-1/2 not-italic text-[#fb2c36] text-[24px] text-nowrap top-0 tracking-[0.0703px]">Triónica</p>
+      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-1/2 -translate-x-1/2 not-italic text-[#1c1716] text-[24px] text-nowrap top-0 tracking-[0.0703px]">Triónica</p>
     </div>
   );
 }
