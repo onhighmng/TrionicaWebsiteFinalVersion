@@ -20,7 +20,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
     <>
       <PartnersSection />
       {/* Responsive flow-based layout (used at all breakpoints) */}
-      <section className="relative bg-black pt-6 md:pt-8 pb-0 w-full overflow-hidden" data-navbar-section="dark">
+      <section className="relative bg-[#2354a2] pt-6 md:pt-8 pb-0 w-full overflow-hidden" data-navbar-section="dark">
         <div className="w-full px-4 md:px-8 lg:px-12">
           {/* Center heading */}
           <div className="text-center mb-8 md:mb-12 px-4">
@@ -76,7 +76,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
                   <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
                 </svg>
               </div>
-              <button 
+              <button
                 onClick={() => handleNavigation('sobre-nos')}
                 className="capitalize font-['Plus_Jakarta_Sans'] font-medium text-base md:text-[18px] text-[#667085] hover:text-[#4278ec] transition-colors"
               >
@@ -87,7 +87,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
                   <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
                 </svg>
               </div>
-              <button 
+              <button
                 onClick={() => handleNavigation('portfolio')}
                 className="capitalize font-['Plus_Jakarta_Sans'] font-medium text-base md:text-[18px] text-[#667085] hover:text-[#4278ec] transition-colors"
               >
@@ -98,7 +98,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
                   <circle cx="3.7" cy="3.7" fill="#050505" r="3.7" />
                 </svg>
               </div>
-              <button 
+              <button
                 onClick={() => handleNavigation('portfolio')}
                 className="capitalize font-['Plus_Jakarta_Sans'] font-medium text-base md:text-[18px] text-[#667085] hover:text-[#4278ec] transition-colors"
               >

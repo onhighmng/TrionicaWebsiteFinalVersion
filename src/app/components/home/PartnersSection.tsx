@@ -27,17 +27,17 @@ const logos = [
 
 export function PartnersSection() {
   return (
-    <section className="relative pt-16 md:pt-24 lg:pt-32 pb-6 md:pb-8 bg-black" data-navbar-section="dark">
+    <section className="relative pt-16 md:pt-24 lg:pt-32 pb-6 md:pb-8 bg-[#2354a2]" data-navbar-section="dark">
       <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
 
           {/* Title row */}
           <div className="flex items-center gap-3 md:gap-6 w-full max-w-2xl">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gray-600 to-gray-600" />
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/30 to-white/30" />
             <span className="text-white/70 font-semibold text-lg md:text-xl whitespace-nowrap tracking-wide">
               Nossas Marcas
             </span>
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gray-600 to-gray-600" />
+            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-white/30 to-white/30" />
           </div>
 
           <LogoCloud
