@@ -3,7 +3,6 @@
 import React from 'react';
 import { getImageUrl } from '../../utils/images';
 import auxilabLogo from "../../../imports/auxilab_logo.png";
-import valuestekLogo from "../../../imports/valuestek_logo.webp";
 import { LogoCloud } from '../ui/logo-cloud-3';
 
 const logos = [
@@ -13,10 +12,8 @@ const logos = [
   { src: "https://www.gunt.de/templates/gunt/img/gunt-hamburg.png",                                                           alt: "Gunt" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/0/0d/PHYWE_Logo_mit_Claim_CMYK.svg",                                 alt: "Phywe" },
   { src: "https://www.kern-sohn.com/cosmoshop/shared/pix/logo.svg",                                                           alt: "Kern" },
-  { src: "https://www.drapertools.com/content/draper-tools.png",                                                              alt: "Draper" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Rev_Official_Company_Logo.svg",                                 alt: "REV Robotics" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Canon_logo.svg",                                                alt: "Canon" },
-  { src: valuestekLogo,                                                                                                        alt: "ValueStek" },
   { src: "https://dl.svgcdn.com/svg/cbi/xtool.svg",                                                                           alt: "xTool" },
   { src: "https://www.stuermer-machines.com/typo3conf/ext/stuermer_theme/Resources/Public/Images/swdm.svg",                    alt: "Stürmer" },
   { src: "https://seaberyat.com/wp-content/uploads/2025/09/Logo_2-Color-RGB_Seabery.png",                                     alt: "Seabery" },
