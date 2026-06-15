@@ -12,7 +12,7 @@ export function Aguas({ onNavigate }: AguasProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" data-navbar-section="light">
       {/* Hero Section */}
       <section className="relative w-full bg-white pt-20 md:pt-24 pb-12 md:pb-20 px-4 md:px-4" ref={heroRef}>
         <TimelineContent

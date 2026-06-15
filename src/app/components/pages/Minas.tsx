@@ -13,7 +13,7 @@ export function Minas({ onNavigate }: MinasProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" data-navbar-section="light">
       {/* Hero Section - Desktop */}
       <section className="hidden md:flex relative w-full bg-white pt-20 md:pt-24 pb-8 md:pb-12 justify-center items-center" ref={heroRef}>
         <TimelineContent
