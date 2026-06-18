@@ -4,8 +4,8 @@ import { TimelineContent } from "../components/ui/timeline-animation";
 import educacaoImg from "../../imports/image-15.png";
 import cienciaImg from "../../imports/image-16.png";
 import energiaImg from "../../imports/image-17.png";
-import tecnologiaImg from "../../imports/image-19.png";
-import mobiliarioImg from "../../imports/image-20.png";
+import tecnologiaImg from "../../imports/valuesteek-classroom.jpg";
+import mobiliarioImg from "../../imports/fly-escolar-desk-single.jpg";
 import diversosImg from "../../imports/card-desporto.jpg";
 
 const sectionData = [

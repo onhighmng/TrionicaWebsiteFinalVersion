@@ -1,11 +1,11 @@
 import svgPaths from "./svg-widzfferv8";
 import { useRef, useState } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import gestaoImg from "../../imports/image-5.png";
-import medicaoImg from "../../imports/image-1.png";
-import qualidadeImg from "../../imports/image-3.png";
+import gestaoImg from "../../imports/water-meter-flow.jpeg";
+import medicaoImg from "../../imports/water-meter-industrial.jpeg";
+import qualidadeImg from "../../imports/water-probes.jpeg";
 import controloRemotoImg from "../../imports/image-2.png";
-import hidrologiaImg from "figma:asset/64301c13e18e12a0476c74f4520215268e1703a2.png";
+import hidrologiaImg from "../../imports/buoy-monitoring.jpeg";
 import tratamentoImg from "../../imports/image-4.png";
 
 const sectionData = [

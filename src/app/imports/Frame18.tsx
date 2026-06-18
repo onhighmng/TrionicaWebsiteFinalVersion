@@ -1,9 +1,9 @@
 import svgPaths from "./svg-tpr83w14el";
 import { useRef, useState } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import geofisicaImg from "../../imports/image-6.png";
+import geofisicaImg from "../../imports/qantix-q8.jpeg";
 import hidrogeologiaImg from "figma:asset/0efd7076281e220a819484eb2c7a3f20c3603558.png";
-import investigacaoImg from "../../imports/image-7.png";
+import investigacaoImg from "../../imports/mbb-2.jpeg";
 import laboratorioImg from "../../imports/image-8.png";
 import geotecniaImg from "../../imports/image-9.png";
 import analiseQuimicaImg from "../../imports/image-10.png";
