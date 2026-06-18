@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
 import educacaoImg from "../../imports/image-15.png";
 import cienciaImg from "../../imports/image-16.png";
-import energiaImg from "../../imports/image-17.png";
+import energiaImg from "../../imports/bedrunka-oficinas.jpg";
 import tecnologiaImg from "../../imports/valuesteek-classroom.jpg";
 import mobiliarioImg from "../../imports/fly-escolar-desk-single.jpg";
 import diversosImg from "../../imports/card-desporto.jpg";
