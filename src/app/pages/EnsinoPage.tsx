@@ -4,6 +4,7 @@ import Frame6 from '../imports/Frame6';
 import { TimelineContent } from '../components/ui/timeline-animation';
 import { CTAFooterSection } from '../components/home/CTAFooterSection';
 import imgFrame112 from "../../imports/ensino-lab.jpg";
+import { EnsinoSuppliersSection } from '../components/pages/EnsinoSuppliersSection';
 
 interface EnsinoPageProps {
   onNavigate?: (page: string) => void;
@@ -104,6 +105,9 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
       <div className="md:hidden px-4">
         <Frame6 />
       </div>
+
+      {/* Supplier brands + YouTube videos */}
+      <EnsinoSuppliersSection />
 
     </div>
   );
