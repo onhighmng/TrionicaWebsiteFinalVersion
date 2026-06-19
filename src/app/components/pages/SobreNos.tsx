@@ -7,6 +7,7 @@ import { GradientHeading } from '../ui/gradient-heading';
 import { getImageUrl } from '../../utils/images';
 import svgPaths from '../../imports/svg-a0w0pmyyr1';
 import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
+import equipaEventoImage from "../../../imports/equipa-evento.jpg";
 import agaKhanLogo from "../../../imports/aka_maputo.png";
 import fipaasLogo from "../../../imports/fipaas_logo.jpg";
 
@@ -54,6 +55,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
       <AeroHero3
         title="SOBRE NÓS"
         subtitle={"Construindo o Futuro de Moçambique Desde 2010\n\nA Triónica Moçambique, Lda é uma empresa especializada no fornecimento de soluções tecnológicas, equipamentos, formação técnica e assistência especializada para os sectores de Ensino & Investigação, Saúde, Águas, Ambiente e Minas.\n\nDesde 2010, fornecemos equipamentos, tecnologias e serviços especializados, assegurando qualidade, inovação e fiabilidade em todas as etapas dos projectos, desde a consultoria até à assistência técnica pós-venda."}
+        imageUrl={equipaEventoImage}
         ctaLabel="Explorar Soluções"
         onCtaClick={() => {
           const isMobile = window.innerWidth < 1024;
