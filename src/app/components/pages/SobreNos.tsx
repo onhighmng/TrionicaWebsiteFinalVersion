@@ -4,6 +4,7 @@ import { AeroHero3 } from '../ui/aero-hero-3';
 import { About3 } from '../ui/about-3';
 import { LogoCarousel } from '../ui/logo-carousel';
 import { GradientHeading } from '../ui/gradient-heading';
+import { EnsinoSuppliersSection } from './EnsinoSuppliersSection';
 import { getImageUrl } from '../../utils/images';
 import svgPaths from '../../imports/svg-a0w0pmyyr1';
 import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
@@ -117,6 +118,9 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
           },
         ]}
       />
+
+      {/* Supplier brands + YouTube videos */}
+      <EnsinoSuppliersSection />
 
       {/* Why Choose Us — footer rendered globally via App.tsx */}
       <section className="hidden">
