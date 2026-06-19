@@ -41,10 +41,6 @@ import incmImg3 from "../../../imports/portfolio-incm-3.jpg"
 import politImg1 from "../../../imports/portfolio-politecnica-1.jpg"
 import politImg2 from "../../../imports/portfolio-politecnica-2.jpg"
 import politImg3 from "../../../imports/portfolio-politecnica-3.jpg"
-import officeImg1 from "../../../imports/portfolio-office-1.jpg"
-import officeImg2 from "../../../imports/portfolio-office-2.jpg"
-import officeImg3 from "../../../imports/portfolio-office-3.jpg"
-import officeImg4 from "../../../imports/portfolio-office-4.jpg"
 import inhambaneImg1 from "../../../imports/portfolio-inhambane-1.jpg"
 import inhambaneImg2 from "../../../imports/portfolio-inhambane-2.jpg"
 import inhambaneImg3 from "../../../imports/portfolio-inhambane-3.jpg"
@@ -85,13 +81,6 @@ const projects: Project[] = [
     description: "Equipamentos e montagem para oficinas de mecânica automóvel (chaparia, pintura, equipamentos de ensaio e inspeção de veículos)",
     category: "MECÂNICA",
     images: [beiraElectricalImg, beiraWorkbenchImg, beiraLabImg, beiraWeldingImg, beiraWorkshopImg, beiraComputerLabImg],
-  },
-  {
-    id: "total",
-    title: "TOTAL",
-    description: "Fornecimento e instalação de mobiliário de escritório em Muxara e Afungi",
-    category: "FORNECIMENTO",
-    images: [officeImg1, officeImg2, officeImg3, officeImg4],
   },
   {
     id: "geracao-edm",
