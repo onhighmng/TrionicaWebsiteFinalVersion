@@ -1,30 +1,34 @@
 import React from 'react';
 import { CircularTestimonials } from '../ui/circular-testimonials';
+import membro1 from '../../../imports/membro-1.jpg';
+import membro2 from '../../../imports/membro-2.jpg';
+import membro3 from '../../../imports/membro-3.jpg';
+import membro4 from '../../../imports/membro-4.jpg';
 
 const testimonials = [
   {
     quote: "A Trionica forneceu equipamentos de alta qualidade que transformaram completamente o nosso laboratório. O suporte técnico e o profissionalismo da equipa são exemplares.",
     name: "Dr. João Silva",
     designation: "Universidade de Maputo",
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1368&auto=format&fit=crop",
+    src: membro1,
   },
   {
     quote: "Parceiro de confiança para todas as nossas necessidades de equipamento hospitalar. A Trionica garante qualidade e fiabilidade em cada entrega.",
     name: "Dra. Maria Santos",
     designation: "Hospital Central de Maputo",
-    src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1368&auto=format&fit=crop",
+    src: membro2,
   },
   {
     quote: "Os sistemas de monitorização ambiental fornecidos pela Trionica são essenciais para os nossos projetos. Tecnologia de ponta ao serviço de Moçambique.",
     name: "Eng. Carlos Nhantumbo",
     designation: "Ministério do Ambiente",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1368&auto=format&fit=crop",
+    src: membro3,
   },
   {
     quote: "Graças à Trionica, os nossos alunos têm acesso a equipamentos didáticos modernos. Uma parceria que transforma a educação em Moçambique.",
     name: "Prof. Ana Machava",
     designation: "Instituto Politécnico de Nampula",
-    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1368&auto=format&fit=crop",
+    src: membro4,
   },
 ];
 

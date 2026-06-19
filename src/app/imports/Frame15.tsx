@@ -1,10 +1,10 @@
 import svgPaths from "./svg-qmyqfzvoya";
 import { useRef, useState } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import meteorologiaImg from "../../imports/image-12.png";
-import qualidadeArImg from "../../imports/image-13.png";
+import meteorologiaImg from "../../imports/card-ambiente.jpg";
+import qualidadeArImg from "../../imports/water-meter-flow.jpeg";
 import acusticaImg from "figma:asset/abdc8e6a38c1d529f460b672ddeac064f7a84c06.png";
-import monitorizacaoImg from "../../imports/image-14.png";
+import monitorizacaoImg from "../../imports/buoy-monitoring.jpeg";
 import oceanografiaImg from "figma:asset/f7f4eee559adeada02a567b17879154cb9f44ed4.png";
 import saneamentoImg from "figma:asset/b6d01fa62fc7ce659df3be03127709bfd17c9c10.png";
 

@@ -8,6 +8,7 @@ import imgSaude from "figma:asset/5387dac094734b07fbea93a0716344069eaf78fc.png";
 import imgAguas from "figma:asset/e5338e4f7a6437afa17dbc009c762e48754173a4.png";
 import imgAmbiente from "figma:asset/c1b1db6c514cff25caa0cecbe74fea6016b4cc73.png";
 import imgMinas from "../../imports/card-minas.jpg";
+import imgEnsino from "../../imports/portfolio-edm-1.jpg";
 
 interface NavbarProps {
   currentPage: string;
@@ -274,7 +275,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                             <div className="w-max h-full p-4">
                               <div className="grid grid-cols-2 gap-3">
                                 {[
-                                  { id: 'ensino', label: 'Ensino', description: 'Equipamentos e soluções educacionais para laboratórios de ensino', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop' },
+                                  { id: 'ensino', label: 'Ensino', description: 'Equipamentos e soluções educacionais para laboratórios de ensino', image: imgEnsino },
                                   { id: 'saude', label: 'Saúde', description: 'Equipamentos hospitalares e soluções para diagnóstico médico', image: imgSaude },
                                   { id: 'aguas', label: 'Águas', description: 'Equipamento de medição, análise e tratamento de água para consumo e residuais', image: imgAguas },
                                   { id: 'ambiente', label: 'Ambiente', description: 'Soluções sustentáveis para monitorização ambiental', image: imgAmbiente },
