@@ -4,10 +4,10 @@ import { TimelineContent } from "../components/ui/timeline-animation";
 import geofisicaImg from "../../imports/qantix-q8.jpeg";
 import hidrogeologiaImg from "figma:asset/0efd7076281e220a819484eb2c7a3f20c3603558.png";
 import investigacaoImg from "../../imports/mbb-2.jpeg";
-import laboratorioImg from "../../imports/image-8.png";
-import geotecniaImg from "../../imports/image-9.png";
-import analiseQuimicaImg from "../../imports/image-10.png";
-import industriaImg from "../../imports/image-11.png";
+import laboratorioImg from "../../imports/sismica-geologia.jpg";
+import geotecniaImg from "../../imports/sismica-geotecnia.jpg";
+import analiseQuimicaImg from "../../imports/sismica-analise.jpg";
+import industriaImg from "../../imports/sismica-campo.jpg";
 
 const sectionData = [
   {

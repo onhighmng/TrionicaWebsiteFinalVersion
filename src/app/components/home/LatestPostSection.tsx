@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import saudeImage from "../../../imports/card-saude.jpg";
-import aguasImage from "../../../imports/image-21.png";
+import aguasImage from "../../../imports/water-probes.jpeg";
 import ambienteImage from "../../../imports/card-ambiente.jpg";
 import minasImage from "../../../imports/card-minas.jpg";
-import educacaoImage from "../../../imports/image-22.png";
+import educacaoImage from "../../../imports/portfolio-edm-1.jpg";
 
 const solutions = [
   {

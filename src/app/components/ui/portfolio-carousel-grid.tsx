@@ -27,6 +27,27 @@ import marreraMicroscopeLabImg from "../../../imports/marrera-1.jpg"
 import marreraGreenLabImg from "../../../imports/marrera-2.jpg"
 import marreraComputerRoomImg from "../../../imports/marrera-3.jpg"
 import marreraKitchenImg from "figma:asset/7c0ef6560415d15cf19e405480f124b0deee80ff.png"
+import edmImg1 from "../../../imports/portfolio-edm-1.jpg"
+import edmImg2 from "../../../imports/portfolio-edm-2.jpg"
+import edmImg3 from "../../../imports/portfolio-edm-3.jpg"
+import edmImg4 from "../../../imports/portfolio-edm-4.jpg"
+import univImg1 from "../../../imports/portfolio-unirovuma-1.jpg"
+import univImg2 from "../../../imports/portfolio-unirovuma-2.jpg"
+import univImg3 from "../../../imports/portfolio-unirovuma-3.jpg"
+import univImg4 from "../../../imports/portfolio-unirovuma-4.jpg"
+import incmImg1 from "../../../imports/portfolio-incm-1.jpg"
+import incmImg2 from "../../../imports/portfolio-incm-2.jpg"
+import incmImg3 from "../../../imports/portfolio-incm-3.jpg"
+import politImg1 from "../../../imports/portfolio-politecnica-1.jpg"
+import politImg2 from "../../../imports/portfolio-politecnica-2.jpg"
+import politImg3 from "../../../imports/portfolio-politecnica-3.jpg"
+import officeImg1 from "../../../imports/portfolio-office-1.jpg"
+import officeImg2 from "../../../imports/portfolio-office-2.jpg"
+import officeImg3 from "../../../imports/portfolio-office-3.jpg"
+import officeImg4 from "../../../imports/portfolio-office-4.jpg"
+import inhambaneImg1 from "../../../imports/portfolio-inhambane-1.jpg"
+import inhambaneImg2 from "../../../imports/portfolio-inhambane-2.jpg"
+import inhambaneImg3 from "../../../imports/portfolio-inhambane-3.jpg"
 
 interface Project {
   id: string
@@ -56,7 +77,7 @@ const projects: Project[] = [
     title: "Instituto Industrial de Inhambane",
     description: "Equipamentos e Montagem de oficinas e laboratórios nas áreas Electricidade, eletrónica, maquinação, serralharia, soldadura, canalização e construção civil",
     category: "OFICINAS",
-    images: ["https://images.unsplash.com/photo-1764114440403-4dd539cb582a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwd29ya3Nob3AlMjBtYWNoaW5lcnl8ZW58MXx8fHwxNzY2Njc1NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"],
+    images: [inhambaneImg1, inhambaneImg2, inhambaneImg3],
   },
   {
     id: "escola-beira",
@@ -70,7 +91,35 @@ const projects: Project[] = [
     title: "TOTAL",
     description: "Fornecimento e instalação de mobiliário de escritório em Muxara e Afungi",
     category: "FORNECIMENTO",
-    images: ["https://images.unsplash.com/photo-1750306957820-f778b67c4e13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBmdXJuaXR1cmV8ZW58MXx8fHwxNzY2NjYyNDMzfDA&ixlib=rb-4.1.0&q=80&w=1080"],
+    images: [officeImg1, officeImg2, officeImg3, officeImg4],
+  },
+  {
+    id: "geracao-edm",
+    title: "Geração EDM",
+    description: "Fornecimento e instalação de equipamentos de formação técnica e profissional para a Electricidade de Moçambique",
+    category: "FORMAÇÃO TÉCNICA",
+    images: [edmImg1, edmImg2, edmImg3, edmImg4],
+  },
+  {
+    id: "unirovuma",
+    title: "Universidade Rovuma",
+    description: "Registo fotográfico do fornecimento e instalação de mobiliário universitário na Universidade Rovuma",
+    category: "MOBILIÁRIO",
+    images: [univImg1, univImg2, univImg3, univImg4],
+  },
+  {
+    id: "ginasio-incm",
+    title: "Ginásio INCM",
+    description: "Fornecimento e instalação de equipamentos desportivos no ginásio do Instituto da Casa da Moeda",
+    category: "DESPORTO",
+    images: [incmImg1, incmImg2, incmImg3],
+  },
+  {
+    id: "politecnica-desporto",
+    title: "Universidade Politécnica",
+    description: "Equipamentos desportivos para a Universidade Politécnica de Moçambique",
+    category: "DESPORTO",
+    images: [politImg1, politImg2, politImg3],
   },
   {
     id: "ifpelac",

@@ -1,8 +1,8 @@
 import svgPaths from "./svg-zq3hsj0qm5";
 import { useRef } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import educacaoImg from "../../imports/image-15.png";
-import cienciaImg from "../../imports/image-16.png";
+import educacaoImg from "../../imports/portfolio-edm-1.jpg";
+import cienciaImg from "../../imports/seminario-sala.jpg";
 import energiaImg from "../../imports/bedrunka-oficinas.jpg";
 import tecnologiaImg from "../../imports/valuesteek-classroom.jpg";
 import mobiliarioImg from "../../imports/fly-escolar-desk-single.jpg";
