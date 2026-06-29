@@ -37,9 +37,6 @@ const clientLogos = [
   { id: 6,  name: "TotalEnergies",      img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/d/d1/TotalEnergies_wordmark_%282021-present%29.svg", alt: "TotalEnergies" }) as any },
   { id: 7,  name: "Fundação Aga Khan",  img: ImgLogo({ src: agaKhanLogo, alt: "Aga Khan Academy Maputo" }) as any },
   { id: 8,  name: "FIPAAS",             img: ImgLogo({ src: fipaasLogo, alt: "FIPAAS" }) as any },
-  { id: 9,  name: "HCB",                img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/HCB-360x97.jpg'), alt: "HCB" }) as any },
-  { id: 10, name: "BCI",                img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/BCI-LAST-360x400.png'), alt: "BCI" }) as any },
-  { id: 11, name: "Banco de Moçambique",img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/banco-last-360x400.png'), alt: "Banco de Moçambique" }) as any },
   { id: 12, name: "Universidades",      img: TextClientLogo({ label: "Universidades", color: "#475569" }) as any },
   { id: 13, name: "Ministérios",        img: TextClientLogo({ label: "Ministérios", color: "#475569" }) as any },
 ];

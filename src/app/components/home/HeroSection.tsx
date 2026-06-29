@@ -1,9 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import heroVideo from "../../../assets/video/websitevideofinal.mp4";
-import bciLogo from "figma:asset/82cd405a60a5f350e706ed8d47affe6341ac868f.png";
-import bancoMocambiqueLogo from "figma:asset/01e953708179a504fc7c0147ad9b0d1eba4f4677.png";
-import hcbLogo from "figma:asset/63f97fc06c7d3667f8975059283b6bab246ebc3e.png";
+import { getImageUrl } from '../../utils/images';
+import agaKhanLogo from "../../../imports/aka_maputo.png";
 
 interface HeroSectionProps {
   onNavigate?: (page: string) => void;
@@ -12,9 +11,9 @@ interface HeroSectionProps {
 }
 
 const partnerLogos = [
-  { src: bciLogo, alt: "BCI" },
-  { src: bancoMocambiqueLogo, alt: "Banco de Moçambique" },
-  { src: hcbLogo, alt: "Hidroeléctrica de Cahora Bassa" },
+  { src: getImageUrl('wp-content/uploads/2019/05/header-logo-anep.png'), alt: "ANEP" },
+  { src: agaKhanLogo, alt: "Aga Khan Academy Maputo" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Japan_International_Cooperation_Agency_logo.svg", alt: "JICA" },
 ];
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
