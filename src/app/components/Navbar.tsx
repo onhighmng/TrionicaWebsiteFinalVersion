@@ -160,7 +160,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0
                 }}
-                className="hidden lg:block h-[68px] w-[66px] shrink-0 cursor-pointer lg:ml-[24px]"
+                className="hidden lg:block h-[90px] w-[87px] shrink-0 cursor-pointer lg:ml-[24px]"
                 onClick={() => handleNavClick('home')}
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >

@@ -13,7 +13,6 @@ interface HeroSectionProps {
 const partnerLogos = [
   { src: getImageUrl('wp-content/uploads/2019/05/header-logo-anep.png'), alt: "ANEP" },
   { src: agaKhanLogo, alt: "Aga Khan Academy Maputo" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Japan_International_Cooperation_Agency_logo.svg", alt: "JICA" },
 ];
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
