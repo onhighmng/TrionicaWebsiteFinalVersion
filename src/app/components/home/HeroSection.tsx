@@ -34,7 +34,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07111c] via-[#07111c]/42 to-[#07111c]/10" />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 md:px-10 md:pb-16 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end lg:gap-16 xl:px-0 xl:pb-20">
