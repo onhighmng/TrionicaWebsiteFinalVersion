@@ -34,7 +34,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-[#102238]/45 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#07111c] via-[#07111c]/42 to-[#07111c]/10" />
       </div>
 

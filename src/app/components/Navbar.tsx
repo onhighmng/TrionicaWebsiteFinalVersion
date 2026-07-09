@@ -349,12 +349,12 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
           <div className="flex lg:hidden items-center justify-between w-full">
             {/* Logo section */}
             <div className="flex items-center gap-2 md:gap-3 cursor-pointer" onClick={() => handleNavClick('home')}>
-              <img 
+              <img
                 src={getImageUrl("wp-content/uploads/2019/05/cropped-LogoTRIONICAmz-002_1-1.png")}
-                alt="Trionica" 
-                className="h-8 md:h-10 w-auto"
+                alt="Trionica"
+                className="h-11 md:h-14 w-auto"
               />
-              <span className={`text-base md:text-lg font-semibold ${currentPage === 'contacte-nos' && !mobileMenuOpen ? 'text-white' : 'text-gray-900'}`}>Trionica</span>
+              <span className={`text-lg md:text-xl font-semibold ${currentPage === 'contacte-nos' && !mobileMenuOpen ? 'text-white' : 'text-gray-900'}`}>Trionica</span>
             </div>
 
             {/* Mobile menu button - stays above the menu overlay so the burger→X morph is visible */}
