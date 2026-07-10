@@ -1,5 +1,6 @@
 import React from 'react';
 import { getImageUrl } from '../../utils/images';
+import ensinoHeroImg from '../../../imports/gunt-et360.jpg';
 import { Timeline } from '../ui/timeline';
 import { MagicText } from '../ui/magic-text';
 import { Sprout, FlaskConical, Building2, Trophy, Cpu, Cog } from 'lucide-react';
@@ -360,7 +361,7 @@ export function Ensino() {
                   preserveAspectRatio="xMidYMid slice"
                   width={"100%"}
                   height={"100%"}
-                  xlinkHref="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&auto=format&fit=crop"
+                  xlinkHref={ensinoHeroImg}
                 ></image>
               </svg>
             </TimelineContent>
@@ -489,7 +490,7 @@ export function Ensino() {
             <img 
               alt="Ensino - Equipamentos educacionais" 
               className="w-full h-auto object-cover" 
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&auto=format&fit=crop"
+              src={ensinoHeroImg}
             />
           </div>
         </div>

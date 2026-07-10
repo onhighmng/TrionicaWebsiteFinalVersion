@@ -8,7 +8,7 @@ import imgSaude from "figma:asset/5387dac094734b07fbea93a0716344069eaf78fc.png";
 import imgAguas from "figma:asset/e5338e4f7a6437afa17dbc009c762e48754173a4.png";
 import imgAmbiente from "figma:asset/c1b1db6c514cff25caa0cecbe74fea6016b4cc73.png";
 import imgMinas from "../../imports/card-minas.jpg";
-import imgEnsino from "../../imports/portfolio-edm-1.jpg";
+import imgEnsino from "../../imports/gunt-wl110.jpg";
 
 interface NavbarProps {
   currentPage: string;

@@ -23,14 +23,17 @@ import beiraLabImg from "figma:asset/92cda19d2391c27f3d4929a37f6b93828a58c571.pn
 import beiraWeldingImg from "figma:asset/2341ad20738b3658d08251e2506b5b8c5afa1e90.png"
 import beiraWorkshopImg from "figma:asset/d81838a81be2a577384234692bc66e1c3399ae26.png"
 import beiraComputerLabImg from "figma:asset/e8f1981e50c1c56a3554a03b4ff74c2d40a5404e.png"
-import marreraMicroscopeLabImg from "../../../imports/marrera-1.jpg"
-import marreraGreenLabImg from "../../../imports/marrera-2.jpg"
-import marreraComputerRoomImg from "../../../imports/marrera-3.jpg"
-import marreraKitchenImg from "figma:asset/7c0ef6560415d15cf19e405480f124b0deee80ff.png"
+import marreraImg1 from "../../../imports/marrera-new-1.jpg"
+import marreraImg2 from "../../../imports/marrera-new-2.jpg"
+import marreraImg3 from "../../../imports/marrera-new-3.jpg"
+import marreraImg4 from "../../../imports/marrera-new-4.jpg"
+import marreraImg5 from "../../../imports/marrera-new-5.jpg"
 import edmImg1 from "../../../imports/portfolio-edm-1.jpg"
 import edmImg2 from "../../../imports/portfolio-edm-2.jpg"
 import edmImg3 from "../../../imports/portfolio-edm-3.jpg"
 import edmImg4 from "../../../imports/portfolio-edm-4.jpg"
+import edmImg5 from "../../../imports/portfolio-edm-5.jpg"
+import edmImg6 from "../../../imports/portfolio-edm-6.jpg"
 import univImg1 from "../../../imports/portfolio-unirovuma-1.jpg"
 import univImg2 from "../../../imports/portfolio-unirovuma-2.jpg"
 import univImg3 from "../../../imports/portfolio-unirovuma-3.jpg"
@@ -66,7 +69,7 @@ const projects: Project[] = [
     title: "Escola Agrária de Marrera",
     description: "Instalação completa de laboratórios, oficinas e equipamentos agrícolas",
     category: "INSTALAÇÃO",
-    images: [marreraMicroscopeLabImg, marreraGreenLabImg, marreraComputerRoomImg, marreraKitchenImg],
+    images: [marreraImg1, marreraImg2, marreraImg3, marreraImg4, marreraImg5],
   },
   {
     id: "instituto-inhambane",
@@ -87,7 +90,7 @@ const projects: Project[] = [
     title: "Geração EDM",
     description: "Fornecimento e instalação de equipamentos de formação técnica e profissional para a Electricidade de Moçambique",
     category: "FORMAÇÃO TÉCNICA",
-    images: [edmImg1, edmImg2, edmImg3, edmImg4],
+    images: [edmImg1, edmImg2, edmImg3, edmImg4, edmImg5, edmImg6],
   },
   {
     id: "unirovuma",
