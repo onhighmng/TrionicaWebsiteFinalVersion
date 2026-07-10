@@ -11,6 +11,7 @@ import equipaGrupoImage from "../../../imports/equipa-grupo.jpg";
 import equipaEventoImage from "../../../imports/equipa-evento.jpg";
 import agaKhanLogo from "../../../imports/aka_maputo.png";
 import fipaasLogo from "../../../imports/fipaas_logo.jpg";
+import edmLogo from "../../../imports/edm_logo.jpg";
 
 // ── Client logo components ─────────────────────────────────────────────────────
 
@@ -30,8 +31,7 @@ function TextClientLogo({ label, color = '#1a1a2e' }: { label: string; color?: s
 
 const clientLogos = [
   { id: 1,  name: "ANEP",               img: ImgLogo({ src: getImageUrl('wp-content/uploads/2019/05/header-logo-anep.png'), alt: "ANEP" }) as any },
-  { id: 2,  name: "EDM",                img: TextClientLogo({ label: "EDM", color: "#006633" }) as any },
-  { id: 3,  name: "JICA",               img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Japan_International_Cooperation_Agency_logo.svg", alt: "JICA" }) as any },
+  { id: 2,  name: "EDM",                img: ImgLogo({ src: edmLogo, alt: "EDM" }) as any },
   { id: 4,  name: "GIZ",                img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Deutsche_Gesellschaft_f%C3%BCr_Internationale_Zusammenarbeit_Logo.svg", alt: "GIZ" }) as any },
   { id: 5,  name: "KOICA",              img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/9/94/KOICA_official_logo_in_english.png", alt: "KOICA" }) as any },
   { id: 6,  name: "TotalEnergies",      img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/d/d1/TotalEnergies_wordmark_%282021-present%29.svg", alt: "TotalEnergies" }) as any },
@@ -52,7 +52,7 @@ export function SobreNos({ onNavigate }: SobreNosProps) {
       {/* Hero Section */}
       <AeroHero3
         title="SOBRE NÓS"
-        subtitle={"Construindo o Futuro de Moçambique Desde 2010\n\nA Triónica Moçambique, Lda é uma empresa especializada no fornecimento de soluções tecnológicas, equipamentos, formação técnica e assistência especializada para os sectores de Ensino & Investigação, Saúde, Águas, Ambiente e Minas.\n\nDesde 2010, fornecemos equipamentos, tecnologias e serviços especializados, assegurando qualidade, inovação e fiabilidade em todas as etapas dos projectos, desde a consultoria até à assistência técnica pós-venda."}
+        subtitle={"Ajudando a Construir o Futuro de Moçambique Desde 2010\n\nA Triónica Moçambique, Lda é uma empresa especializada no fornecimento de soluções tecnológicas, equipamentos, formação técnica e assistência especializada para os sectores de Ensino & Investigação, Saúde, Águas, Ambiente e Minas.\n\nDesde 2010, fornecemos equipamentos, tecnologias e serviços especializados, assegurando qualidade, inovação e fiabilidade em todas as etapas dos projectos, desde a consultoria até à assistência técnica pós-venda."}
         imageUrl={equipaEventoImage}
         ctaLabel="Explorar Soluções"
         onCtaClick={() => {

@@ -16,13 +16,13 @@ import lucasNulleLogo from "../../../imports/lucasnulle_logo.svg";
 import { LogoCloud } from '../ui/logo-cloud-3';
 
 const logos = [
-  { src: lucasNulleLogo, alt: "Lucas-Nülle" },
+  { src: lucasNulleLogo, alt: "Lucas-Nülle", boost: true },
   { src: phyweLogo,      alt: "Phywe" },
   { src: guntLogo,       alt: "Gunt", darkBg: true },
   { src: seaberyLogo,    alt: "Seabery" },
   { src: bedrunkaLogo,   alt: "Bedrunka+Hirth" },
-  { src: sturmerLogo,    alt: "Stürmer" },
-  { src: auxilabLogo,    alt: "Auxilab" },
+  { src: sturmerLogo,    alt: "Stürmer", boost: true },
+  { src: auxilabLogo,    alt: "Auxilab", boost: true },
   { src: gimaLogo,       alt: "Gima" },
   { src: valueSTekLogo,  alt: "ValueSTek" },
   { src: kernLogo,       alt: "Kern" },

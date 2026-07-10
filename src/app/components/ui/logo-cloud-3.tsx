@@ -8,6 +8,8 @@ type Logo = {
   height?: number;
   /** Logo artwork is white/light-colored and needs a dark chip background to stay visible */
   darkBg?: boolean;
+  /** Source artwork has extra internal padding, so it reads smaller than the others at the same chip size */
+  boost?: boolean;
 };
 
 type LogoCloudProps = React.ComponentProps<"div"> & {
@@ -32,13 +34,17 @@ export function LogoCloud({ className, logos, gap = 42, reverse = false, speed =
           <div
             key={`logo-${logo.alt}`}
             className={cn(
-              "flex h-12 items-center justify-center rounded-lg px-3 py-2",
+              "flex items-center justify-center self-center rounded-lg px-3 py-2",
+              logo.boost ? "h-16" : "h-12",
               logo.darkBg ? "bg-[#0c1d2c]" : "bg-white"
             )}
           >
             <img
               alt={logo.alt}
-              className="pointer-events-none h-full max-w-[140px] select-none object-contain opacity-100 transition-all duration-300"
+              className={cn(
+                "pointer-events-none select-none object-contain opacity-100 transition-all duration-300",
+                logo.boost ? "h-full max-w-[180px]" : "h-full max-w-[140px]"
+              )}
               height={logo.height || "auto"}
               loading="eager"
               src={logo.src}

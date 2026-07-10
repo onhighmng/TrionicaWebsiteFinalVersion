@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import heroVideo from "../../../assets/video/websitevideofinal.mp4";
 import { getImageUrl } from '../../utils/images';
 import agaKhanLogo from "../../../imports/aka_maputo.png";
+import edmLogo from "../../../imports/edm_logo.jpg";
 
 interface HeroSectionProps {
   onNavigate?: (page: string) => void;
@@ -13,6 +14,7 @@ interface HeroSectionProps {
 const partnerLogos = [
   { src: getImageUrl('wp-content/uploads/2019/05/header-logo-anep.png'), alt: "ANEP" },
   { src: agaKhanLogo, alt: "Aga Khan Academy Maputo" },
+  { src: edmLogo, alt: "EDM" },
 ];
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
@@ -33,16 +35,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-      </div>
-
-      <div className="absolute left-1/2 top-24 z-10 w-full max-w-[1280px] -translate-x-1/2 px-6 md:top-28 md:px-10 xl:px-0">
-        <div className="inline-flex items-center gap-2.5 rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white/90 backdrop-blur-sm ring-1 ring-inset ring-white/20 md:text-sm">
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fb3ff] opacity-75" />
-            <span className="relative inline-flex size-2 rounded-full bg-[#8fb3ff]" />
-          </span>
-          Este website está em atualização
-        </div>
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 md:px-10 md:pb-16 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end lg:gap-16 xl:px-0 xl:pb-20">
@@ -96,7 +88,32 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               <ArrowUpRight className="absolute size-5 -translate-x-8 translate-y-8 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
             </span>
           </button>
+
+          <div className="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-3 shadow-lg lg:hidden">
+            <span className="relative flex size-2.5 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2354a2] opacity-75" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-[#2354a2]" />
+            </span>
+            <span className="text-base font-semibold text-[#0c1313]">
+              Este website está em atualização
+            </span>
+          </div>
         </motion.div>
+      </div>
+
+      {/* Desktop-only badge anchored under the navbar's "Contactar-nos" button (top-right) */}
+      <div className="pointer-events-none fixed left-0 right-0 top-0 z-40 hidden justify-center lg:flex">
+        <div className="relative h-[72px] w-full lg:mt-6 lg:w-[1280px]">
+          <div className="pointer-events-auto absolute right-2 top-[56px] inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-3 shadow-lg">
+            <span className="relative flex size-2.5 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2354a2] opacity-75" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-[#2354a2]" />
+            </span>
+            <span className="text-base font-semibold text-[#0c1313] whitespace-nowrap">
+              Este website está em atualização
+            </span>
+          </div>
+        </div>
       </div>
 
     </section>

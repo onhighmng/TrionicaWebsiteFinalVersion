@@ -31,7 +31,7 @@ export default function PortfolioHero({ onNavigate }: PortfolioHeroProps) {
       {/* Content */}
       <div className="relative z-20 max-w-5xl px-6 text-center text-white">
         <h1 className="font-['Manrope'] font-medium text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 tracking-tight flex items-center justify-center gap-2 md:gap-4 flex-wrap">
-          <span>Construímos o Futuro</span>
+          <span>Ajudamos a Construir o Futuro</span>
           <img
             src={mozambiqueFlag}
             alt="Mozambique Flag"
