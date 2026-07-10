@@ -35,6 +35,16 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         </video>
       </div>
 
+      <div className="absolute left-1/2 top-24 z-10 w-full max-w-[1280px] -translate-x-1/2 px-6 md:top-28 md:px-10 xl:px-0">
+        <div className="inline-flex items-center gap-2.5 rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white/90 backdrop-blur-sm ring-1 ring-inset ring-white/20 md:text-sm">
+          <span className="relative flex size-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fb3ff] opacity-75" />
+            <span className="relative inline-flex size-2 rounded-full bg-[#8fb3ff]" />
+          </span>
+          Este website está em atualização
+        </div>
+      </div>
+
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 md:px-10 md:pb-16 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end lg:gap-16 xl:px-0 xl:pb-20">
         <motion.div
           className="w-full"

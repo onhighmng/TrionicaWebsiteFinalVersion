@@ -146,7 +146,7 @@ export function AboutSection({ onNavigate, className }: AboutSectionProps) {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Manutenção & Suporte</h4>
-                  <p className="text-sm text-gray-600">Atendimento 24/7 com equipa técnica qualificada</p>
+                  <p className="text-sm text-gray-600">Atendimento contínuo com equipa técnica qualificada</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

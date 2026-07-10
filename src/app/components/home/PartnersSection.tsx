@@ -1,25 +1,33 @@
 "use client"
 
 import React from 'react';
-import { getImageUrl } from '../../utils/images';
 import auxilabLogo from "../../../imports/auxilab_logo.png";
+import valueSTekLogo from "../../../imports/valuestek_logo.webp";
+import guntLogo from "../../../imports/gunt_logo.png";
+import phyweLogo from "../../../imports/phywe_logo.svg";
+import seaberyLogo from "../../../imports/seabery_logo.png";
+import bedrunkaLogo from "../../../imports/bedrunka_logo.svg";
+import sturmerLogo from "../../../imports/sturmer_logo.svg";
+import gimaLogo from "../../../imports/gima_logo.png";
+import kernLogo from "../../../imports/kern_logo.svg";
+import revLogo from "../../../imports/rev_logo.svg";
+import canonLogo from "../../../imports/canon_logo.svg";
+import lucasNulleLogo from "../../../imports/lucasnulle_logo.svg";
 import { LogoCloud } from '../ui/logo-cloud-3';
 
 const logos = [
-  { src: getImageUrl('wp-content/uploads/2019/03/lucas_nuelle_en-us.svg'),                                                    alt: "Lucas-Nülle" },
-  { src: getImageUrl('wp-content/uploads/2019/03/logo_optika_italy_black.png'),                                               alt: "Optika Italy" },
-  { src: getImageUrl('wp-content/uploads/2019/03/Logo_Matest_def-01-e1508228789861-1024x232.jpg'),                            alt: "Matest" },
-  { src: "https://www.gunt.de/templates/gunt/img/gunt-hamburg.png",                                                           alt: "Gunt" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/0/0d/PHYWE_Logo_mit_Claim_CMYK.svg",                                 alt: "Phywe" },
-  { src: "https://www.kern-sohn.com/cosmoshop/shared/pix/logo.svg",                                                           alt: "Kern" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Rev_Official_Company_Logo.svg",                                 alt: "REV Robotics" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Canon_logo.svg",                                                alt: "Canon" },
-  { src: "https://dl.svgcdn.com/svg/cbi/xtool.svg",                                                                           alt: "xTool" },
-  { src: "https://www.stuermer-machines.com/typo3conf/ext/stuermer_theme/Resources/Public/Images/swdm.svg",                    alt: "Stürmer" },
-  { src: "https://seaberyat.com/wp-content/uploads/2025/09/Logo_2-Color-RGB_Seabery.png",                                     alt: "Seabery" },
-  { src: "https://www.bedrunka-hirth.de/typo3conf/ext/bedrunka_hirth/Resources/Public/Images/bedrunka_hirth_logo.svg",        alt: "Bedrunka+Hirth" },
-  { src: "https://www.gimaitaly.com/images/logo/logo-gima_footer.png",                                                        alt: "Gima" },
-  { src: auxilabLogo,                                                                                                          alt: "Auxilab" },
+  { src: lucasNulleLogo, alt: "Lucas-Nülle" },
+  { src: phyweLogo,      alt: "Phywe" },
+  { src: guntLogo,       alt: "Gunt", darkBg: true },
+  { src: seaberyLogo,    alt: "Seabery" },
+  { src: bedrunkaLogo,   alt: "Bedrunka+Hirth" },
+  { src: sturmerLogo,    alt: "Stürmer" },
+  { src: auxilabLogo,    alt: "Auxilab" },
+  { src: gimaLogo,       alt: "Gima" },
+  { src: valueSTekLogo,  alt: "ValueSTek" },
+  { src: kernLogo,       alt: "Kern" },
+  { src: revLogo,        alt: "REV Robotics" },
+  { src: canonLogo,      alt: "Canon" },
 ];
 
 export function PartnersSection() {
@@ -42,7 +50,7 @@ export function PartnersSection() {
             gap={56}
             speed={60}
             speedOnHover={20}
-            className="w-full [&_img]:brightness-0 [&_img]:invert [&_img]:opacity-60 [&_img:hover]:opacity-100"
+            className="w-full"
           />
         </div>
       </div>

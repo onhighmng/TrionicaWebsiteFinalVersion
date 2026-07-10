@@ -3,8 +3,8 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ensinoImg from '../../../imports/ensino-lab.jpg';
-import saudeImg from '../../../imports/card-saude.jpg';
-import aguasImg from '../../../imports/plant-1.jpg';
+import saudeImg from '../../../imports/card-saude.webp';
+import aguasImg from '../../../imports/plant-1-new.png';
 import ambienteImg from '../../../imports/card-ambiente.jpg';
 import minasImg from '../../../imports/card-minas.jpg';
 
