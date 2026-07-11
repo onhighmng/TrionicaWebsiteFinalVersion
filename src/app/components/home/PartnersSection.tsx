@@ -49,7 +49,7 @@ export function PartnersSection() {
             logos={logos}
             gap={56}
             speed={60}
-            speedOnHover={20}
+            speedOnHover={60}
             className="w-full"
           />
         </div>

@@ -1,20 +1,22 @@
 import svgPaths from "./svg-tpr83w14el";
 import { useRef, useState } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import geofisicaImg from "../../imports/qantix-q8.jpeg";
-import hidrogeologiaImg from "figma:asset/0efd7076281e220a819484eb2c7a3f20c3603558.png";
-import investigacaoImg from "../../imports/mbb-2.jpeg";
-import laboratorioImg from "../../imports/sismica-geologia.jpg";
-import geotecniaImg from "../../imports/sismica-geotecnia.jpg";
-import analiseQuimicaImg from "../../imports/sismica-analise.jpg";
-import industriaImg from "../../imports/sismica-campo.jpg";
+import geofisicaImg from "../../imports/minas-qantix-q8.jpeg";
+import geofisicaImg2 from "../../imports/minas-mbb2.jpeg";
+import hidrogeologiaImg from "../../imports/minas-card-hidrogeologia.png";
+import investigacaoImg from "../../imports/minas-card-geofisica.png";
+import laboratorioImg from "../../imports/minas-card-laboratorio.png";
+import geotecniaImg from "../../imports/minas-card-geotecnia.png";
+import analiseQuimicaImg from "../../imports/minas-card-analise.png";
+import industriaImg from "../../imports/minas-card-industria.png";
 
-const sectionData = [
+const sectionData: { id: string; category: string; title: string; imgSrc: string; imgSrc2?: string }[] = [
   {
     id: "geofisica",
     category: "SISMOLOGIA",
     title: "Equipamentos de geofísica e estações sísmicas",
     imgSrc: geofisicaImg,
+    imgSrc2: geofisicaImg2,
   },
   {
     id: "hidrogeologia",
@@ -90,11 +92,18 @@ function Section() {
                 onClick={() => setSelectedImage({ src: item.imgSrc, title: item.title })}
                 className="relative group no-underline bg-[#deeae2] p-4 rounded-lg border border-[#c5d7cc] hover:shadow-lg transition-shadow duration-300 cursor-pointer"
               >
-                <img
-                  src={item.imgSrc}
-                  alt={item.title}
-                  className="rounded-lg w-full object-cover aspect-video mb-3"
-                />
+                {item.imgSrc2 ? (
+                  <div className="rounded-lg w-full aspect-video mb-3 overflow-hidden flex flex-col gap-0.5">
+                    <img src={item.imgSrc} alt={item.title} className="w-full h-1/2 object-cover" />
+                    <img src={item.imgSrc2} alt={item.title} className="w-full h-1/2 object-cover" />
+                  </div>
+                ) : (
+                  <img
+                    src={item.imgSrc}
+                    alt={item.title}
+                    className="rounded-lg w-full object-cover aspect-video mb-3"
+                  />
+                )}
                 <div className="flex gap-2 items-center mb-2">
                   <div className="relative shrink-0 size-[6px]">
                     <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">

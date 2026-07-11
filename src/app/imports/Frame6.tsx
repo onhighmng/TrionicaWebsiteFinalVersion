@@ -1,12 +1,12 @@
 import svgPaths from "./svg-zq3hsj0qm5";
 import { useRef } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import educacaoImg from "../../imports/portfolio-edm-1.jpg";
-import cienciaImg from "../../imports/ensino-lab-ciencias.jpg";
-import energiaImg from "../../imports/bedrunka-oficinas.jpg";
-import tecnologiaImg from "../../imports/valuesteek-classroom.jpg";
-import mobiliarioImg from "../../imports/fly-escolar-desk-single.jpg";
-import diversosImg from "../../imports/card-desporto.jpg";
+import educacaoImg from "../../imports/gunt-hm250.jpeg";
+import cienciaImg from "../../imports/ensino-card-ciencias.png";
+import energiaImg from "../../imports/ensino-card-oficinas.png";
+import tecnologiaImg from "../../imports/ensino-card-tecnologia.png";
+import mobiliarioImg from "../../imports/ensino-card-mobiliario.png";
+import diversosImg from "../../imports/ensino-card-diversos.png";
 
 const sectionData = [
   {

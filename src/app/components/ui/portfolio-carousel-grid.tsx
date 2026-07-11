@@ -5,8 +5,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import ifpelacImg from "figma:asset/d31608eced1506e2b0ab6eaceeee99ad59045336.png"
 import ifpelacPhotovoltaicsImg from "figma:asset/09e07fd8540ba2954e373cebd831c261450e9290.png"
-import ifpelacAuditoriumImg from "figma:asset/a3f0a572434404c45f72420548a95089fa2c26b8.png"
-import ifpelacLabImg from "figma:asset/911431dab07427c6c5e254f22141277304068c3d.png"
+import ifpelacNew1 from "../../../imports/ifpelac-1.jpeg"
+import ifpelacNew2 from "../../../imports/ifpelac-2.jpeg"
+import ifpelacNew3 from "../../../imports/ifpelac-3.jpeg"
+import ifpelacNew4 from "../../../imports/ifpelac-4.jpeg"
+import ifpelacNew5 from "../../../imports/ifpelac-5.jpeg"
 import seetpImg from "figma:asset/c6cbea9045063612fe5c5a15936e04e150fd2999.png"
 import seetpCharriotImg from "figma:asset/76f837f3ff9dd9f12752bfe218560ec2b0590de3.png"
 import seetpMuanzaImg from "figma:asset/b8b220ca7dc61ebdea5e72635f54722dd3eee016.png"
@@ -23,17 +26,24 @@ import beiraLabImg from "figma:asset/92cda19d2391c27f3d4929a37f6b93828a58c571.pn
 import beiraWeldingImg from "figma:asset/2341ad20738b3658d08251e2506b5b8c5afa1e90.png"
 import beiraWorkshopImg from "figma:asset/d81838a81be2a577384234692bc66e1c3399ae26.png"
 import beiraComputerLabImg from "figma:asset/e8f1981e50c1c56a3554a03b4ff74c2d40a5404e.png"
-import marreraImg1 from "../../../imports/marrera-new-1.jpg"
-import marreraImg2 from "../../../imports/marrera-new-2.jpg"
-import marreraImg3 from "../../../imports/marrera-new-3.jpg"
-import marreraImg4 from "../../../imports/marrera-new-4.jpg"
-import marreraImg5 from "../../../imports/marrera-new-5.jpg"
+import marreraImg1 from "../../../imports/marrera-1.jpeg"
+import marreraImg2 from "../../../imports/marrera-2.jpeg"
+import marreraImg4 from "../../../imports/marrera-4.jpeg"
+import marreraImg5 from "../../../imports/marrera-5.jpeg"
+import marreraImg6 from "../../../imports/marrera-6.jpeg"
 import edmImg1 from "../../../imports/portfolio-edm-1.jpg"
 import edmImg2 from "../../../imports/portfolio-edm-2.jpg"
 import edmImg3 from "../../../imports/portfolio-edm-3.jpg"
 import edmImg4 from "../../../imports/portfolio-edm-4.jpg"
 import edmImg5 from "../../../imports/portfolio-edm-5.jpg"
 import edmImg6 from "../../../imports/portfolio-edm-6.jpg"
+
+import fipagImg1 from "../../../imports/fipag-1.jpeg"
+import fipagImg2 from "../../../imports/fipag-2.jpeg"
+import fipagImg3 from "../../../imports/fipag-3.jpeg"
+import fipagImg4 from "../../../imports/fipag-4.jpeg"
+import fipagImg5 from "../../../imports/fipag-5.jpeg"
+import fipagImg6 from "../../../imports/fipag-6.jpeg"
 import univImg1 from "../../../imports/portfolio-unirovuma-1.jpg"
 import univImg2 from "../../../imports/portfolio-unirovuma-2.jpg"
 import univImg3 from "../../../imports/portfolio-unirovuma-3.jpg"
@@ -54,28 +64,24 @@ interface Project {
   description: string
   category: string
   images: string[]
+  project?: string
 }
 
 const projects: Project[] = [
-  {
-    id: "kfw-mctestp",
-    title: "Projecto KFW / MCTESTP",
-    description: "Fornecimento, instalação e pós-venda de sistemas de formação técnica e profissional (TVET) na Escola Profissional Familiar e Rural de Marrera",
-    category: "FORMAÇÃO (TVET)",
-    images: [kfwAutoImg, kfwElectricalImg, kfwSimulatorImg],
-  },
   {
     id: "escola-agraria",
     title: "Escola Agrária de Marrera",
     description: "Instalação completa de laboratórios, oficinas e equipamentos agrícolas",
     category: "INSTALAÇÃO",
-    images: [marreraImg1, marreraImg2, marreraImg3, marreraImg4, marreraImg5],
+    project: "Projecto KFW/MCTESTP",
+    images: [marreraImg1, marreraImg2, marreraImg4, marreraImg5, marreraImg6],
   },
   {
     id: "instituto-inhambane",
     title: "Instituto Industrial de Inhambane",
     description: "Equipamentos e Montagem de oficinas e laboratórios nas áreas Electricidade, eletrónica, maquinação, serralharia, soldadura, canalização e construção civil",
     category: "OFICINAS",
+    project: "Projecto KFW/MCTESTP",
     images: [inhambaneImg1, inhambaneImg2, inhambaneImg3],
   },
   {
@@ -83,14 +89,15 @@ const projects: Project[] = [
     title: "Escola Industrial e Comercial da Beira",
     description: "Equipamentos e montagem para oficinas de mecânica automóvel (chaparia, pintura, equipamentos de ensaio e inspeção de veículos)",
     category: "MECÂNICA",
+    project: "Projecto KFW/MCTESTP",
     images: [beiraElectricalImg, beiraWorkbenchImg, beiraLabImg, beiraWeldingImg, beiraWorkshopImg, beiraComputerLabImg],
   },
   {
     id: "geracao-edm",
-    title: "Geração EDM",
+    title: "Academia EDM",
     description: "Fornecimento e instalação de equipamentos de formação técnica e profissional para a Electricidade de Moçambique",
     category: "FORMAÇÃO TÉCNICA",
-    images: [edmImg1, edmImg2, edmImg3, edmImg4, edmImg5, edmImg6],
+    images: [edmImg1, edmImg2, edmImg3, edmImg4, edmImg5, edmImg6, edmChimoioImg],
   },
   {
     id: "unirovuma",
@@ -118,15 +125,9 @@ const projects: Project[] = [
     title: "IFPELAC",
     description: "Vários fornecimentos de equipamentos e ferramentas para centros de formação profissional em Maputo, Chimoio, Pemba e Tete.",
     category: "EQUIPAMENTOS",
-    images: [ifpelacImg, ifpelacPhotovoltaicsImg, ifpelacAuditoriumImg, ifpelacLabImg],
+    images: [ifpelacImg, ifpelacPhotovoltaicsImg, ifpelacNew1, ifpelacNew2, ifpelacNew3, ifpelacNew4, ifpelacNew5],
   },
-  {
-    id: "edm",
-    title: "EDM",
-    description: "Instalação de oficinas e laboratórios de eletricidade, mecânica e testes de óleo.",
-    category: "TESTES DE ÓLEO",
-    images: [edmChimoioImg],
-  },
+
   {
     id: "seetp",
     title: "SEETP",
@@ -140,6 +141,13 @@ const projects: Project[] = [
     description: "Fornecimento de equipamento sísmico e de laboratório para geologia.",
     category: "SISMOLOGIA",
     images: [miremeInamiImg, inamiLabImg],
+  },
+  {
+    id: "fipag",
+    title: "FIPAG",
+    description: "Fornecimento de equipamentos de monitorização e análise de qualidade da água para o Fundo de Investimento e Património do Abastecimento de Água.",
+    category: "ÁGUAS",
+    images: [fipagImg1, fipagImg2, fipagImg3, fipagImg4, fipagImg5, fipagImg6],
   },
 ]
 
@@ -234,10 +242,16 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="absolute top-4 left-4 bg-[#2354a2] text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
           {project.category}
         </div>
+
       </div>
 
       {/* Project Info */}
       <div className="p-6">
+        {project.project && (
+          <p className="text-sm font-semibold text-[#2354a2] uppercase tracking-wide mb-1">
+            {project.project}
+          </p>
+        )}
         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
           {project.title}
         </h3>

@@ -35,7 +35,7 @@ export function LogoCloud({ className, logos, gap = 42, reverse = false, speed =
             key={`logo-${logo.alt}`}
             className={cn(
               "flex items-center justify-center self-center rounded-lg px-3 py-2",
-              logo.boost ? "h-16" : "h-12",
+              logo.boost ? "h-24" : "h-12",
               logo.darkBg ? "bg-[#0c1d2c]" : "bg-white"
             )}
           >

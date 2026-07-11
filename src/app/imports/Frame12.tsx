@@ -1,14 +1,15 @@
 import svgPaths from "./svg-widzfferv8";
 import { useRef, useState } from "react";
 import { TimelineContent } from "../components/ui/timeline-animation";
-import gestaoImg from "../../imports/water-meter-flow.jpeg";
+import gestaoImg from "../../imports/czns-water-meter.jpeg";
 import medicaoImg from "../../imports/water-meter-industrial.jpeg";
 import qualidadeImg from "../../imports/water-probes.jpeg";
 import controloRemotoImg from "../../imports/image-2.png";
-import hidrologiaImg from "../../imports/buoy-monitoring.jpeg";
+import hidrologiaImg from "../../imports/buoy-monitoring-new.jpeg";
+import hidrologiaImg2 from "../../imports/water-probes-new.jpeg";
 import tratamentoImg from "../../imports/image-4.png";
 
-const sectionData = [
+const sectionData: { id: string; category: string; title: string; imgSrc: string; imgSrc2?: string }[] = [
   {
     id: "gestao",
     category: "GESTÃO",
@@ -38,6 +39,7 @@ const sectionData = [
     category: "HIDROLOGIA",
     title: "Sistemas de monitorização de recursos hídricos",
     imgSrc: hidrologiaImg,
+    imgSrc2: hidrologiaImg2,
   },
   {
     id: "tratamento",
@@ -83,11 +85,18 @@ function Section() {
                 onClick={() => setSelectedImage({ src: item.imgSrc, title: item.title })}
                 className="relative group no-underline bg-[#deeae2] p-4 rounded-lg border border-[#c5d7cc] hover:shadow-lg transition-shadow duration-300 cursor-pointer"
               >
-                <img
-                  src={item.imgSrc}
-                  alt={item.title}
-                  className="rounded-lg w-full object-cover aspect-video mb-3"
-                />
+                {item.imgSrc2 ? (
+                  <div className="rounded-lg w-full aspect-video mb-3 overflow-hidden flex gap-0.5">
+                    <img src={item.imgSrc} alt={item.title} className="w-1/2 h-full object-cover" />
+                    <img src={item.imgSrc2} alt={item.title} className="w-1/2 h-full object-cover" />
+                  </div>
+                ) : (
+                  <img
+                    src={item.imgSrc}
+                    alt={item.title}
+                    className="rounded-lg w-full object-cover aspect-video mb-3"
+                  />
+                )}
                 <div className="flex gap-2 items-center mb-2">
                   <div className="relative shrink-0 size-[6px]">
                     <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
