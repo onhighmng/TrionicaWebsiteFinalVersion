@@ -91,8 +91,8 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
 
           <div className="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-3 shadow-lg lg:hidden">
             <span className="relative flex size-2.5 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2354a2] opacity-75" />
-              <span className="relative inline-flex size-2.5 rounded-full bg-[#2354a2]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-red-500" />
             </span>
             <span className="text-base font-semibold text-[#0c1313]">
               Este website está em atualização
@@ -106,8 +106,8 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         <div className="relative h-[72px] w-full lg:mt-6 lg:w-[1280px]">
           <div className="pointer-events-auto absolute right-2 top-[56px] inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-3 shadow-lg">
             <span className="relative flex size-2.5 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2354a2] opacity-75" />
-              <span className="relative inline-flex size-2.5 rounded-full bg-[#2354a2]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-red-500" />
             </span>
             <span className="text-base font-semibold text-[#0c1313] whitespace-nowrap">
               Este website está em atualização

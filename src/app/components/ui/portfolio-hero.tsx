@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import maputoImg from "../../../imports/maputo.jpg";
+import maputoImg from "../../../imports/portfolio-hero.jpg";
 import mozambiqueFlag from "figma:asset/13696806984cbb3d9f84c25ed209563ac4ea660b.png";
 
 interface PortfolioHeroProps {
