@@ -16,6 +16,10 @@ import seetpMuanzaImg from "figma:asset/b8b220ca7dc61ebdea5e72635f54722dd3eee016
 import seetpMaioImg from "figma:asset/623124a118fa40128a0ac8ecffca42d30d5a6d14.png"
 import miremeInamiImg from "figma:asset/ca4fff8b45d7bec0b6435b71d15bb054bc931358.png"
 import inamiLabImg from "figma:asset/914ec62016f50e49700817a6e2934f8e80de0bff.png"
+import inamiLab2Img from "../../../imports/inami-lab-2.png"
+import miremeSismicaImg from "../../../imports/mireme-sismica.png"
+import miremeKeylineImg from "../../../imports/keyline-water-meter.png"
+import miremeAquasafeImg from "../../../imports/aquasafe-wsl50.png"
 import edmChimoioImg from "figma:asset/d8c2f4bd153362248e9a98aca02008fcc82f3634.png"
 import kfwAutoImg from "figma:asset/2a99570188868ed389594a2ffcd50d68300547a0.png"
 import kfwElectricalImg from "figma:asset/7a6cc51bda1f35be51ac13d61aa2ffa832625975.png"
@@ -140,7 +144,7 @@ const projects: Project[] = [
     title: "MIREME & INAMI",
     description: "Fornecimento de equipamento sísmico e de laboratório para geologia.",
     category: "SISMOLOGIA",
-    images: [miremeInamiImg, inamiLabImg],
+    images: [inamiLabImg, inamiLab2Img, miremeSismicaImg, miremeInamiImg, miremeKeylineImg, miremeAquasafeImg],
   },
   {
     id: "fipag",

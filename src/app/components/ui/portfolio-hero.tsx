@@ -24,9 +24,7 @@ export default function PortfolioHero({ onNavigate }: PortfolioHeroProps) {
       <div
         className="absolute inset-0 bg-center bg-cover"
         style={{ backgroundImage: `url(${maputoImg})` }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      />
 
       {/* Content */}
       <div className="relative z-20 max-w-5xl px-6 text-center text-white">

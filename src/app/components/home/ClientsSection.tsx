@@ -1,6 +1,11 @@
 import React from 'react';
 import { LogoCloud } from '../ui/logo-cloud-3';
 
+function makeSvgLogo(abbr: string, full: string): string {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="62"><text x="110" y="30" font-family="Arial Black,Arial,sans-serif" font-size="22" font-weight="900" text-anchor="middle" fill="#000">${abbr}</text><text x="110" y="48" font-family="Arial,sans-serif" font-size="8.5" text-anchor="middle" fill="#333">${full}</text></svg>`;
+  return `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
+}
+
 const clientLogos = [
   { src: "https://upload.wikimedia.org/wikipedia/commons/8/87/The_World_Bank_logo.svg",                                                                           alt: "World Bank" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Logo_of_the_World_Health_Organization.svg",                                                        alt: "WHO" },
@@ -12,6 +17,23 @@ const clientLogos = [
   { src: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Cruz_Vermelha_de_Mo%C3%A7ambique_logo.png",                                                        alt: "Cruz Vermelha" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/4/48/USAID_logo.svg",                                                                                   alt: "USAID" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/5/5e/EU_flag.svg",                                                                                      alt: "União Europeia" },
+  // Universidades moçambicanas
+  { src: makeSvgLogo("UEM",        "Universidade Eduardo Mondlane"),          alt: "UEM" },
+  { src: makeSvgLogo("UCM",        "Universidade Católica de Moçambique"),    alt: "UCM" },
+  { src: makeSvgLogo("UP",         "Universidade Pedagógica"),                alt: "UP" },
+  { src: makeSvgLogo("UNIZAMBEZE", "Universidade Zambeze"),                   alt: "UNIZAMBEZE" },
+  { src: makeSvgLogo("UNIROVUMA",  "Universidade Rovuma"),                    alt: "UNIROVUMA" },
+  { src: makeSvgLogo("UNILICUNGO", "Universidade Licungo"),                   alt: "UNILICUNGO" },
+  { src: makeSvgLogo("UNILURIO",   "Universidade Lúrio"),                     alt: "UNILURIO" },
+  { src: makeSvgLogo("UNISAVE",    "Universidade Save"),                      alt: "UNISAVE" },
+  { src: makeSvgLogo("UNIPUNGUE",  "Universidade Púnguè"),                    alt: "UNIPUNGUE" },
+  // Ministérios
+  { src: makeSvgLogo("MISAU",  "Ministério da Saúde"),                                  alt: "MISAU" },
+  { src: makeSvgLogo("MEC",    "Ministério da Educação e Cultura"),                      alt: "MEC" },
+  { src: makeSvgLogo("MIREME", "Ministério dos Recursos Minerais e Energia"),            alt: "MIREME" },
+  { src: makeSvgLogo("MDN",    "Ministério da Defesa Nacional"),                         alt: "MDN" },
+  { src: makeSvgLogo("MAAP",   "Ministério da Agricultura, Ambiente e Pescas"),          alt: "MAAP" },
+  { src: makeSvgLogo("MTL",    "Ministério dos Transportes e Logística"),                alt: "MTL" },
 ];
 
 export function ClientsSection() {

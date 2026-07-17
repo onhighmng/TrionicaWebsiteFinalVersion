@@ -4,11 +4,12 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ensinoImg from '../../../imports/ensino-lab.jpg';
 import saudeImg from '../../../imports/card-saude-imaging.webp';
-import aguasImg from '../../../imports/plant-1-new.png';
+import aguasImg from '../../../imports/water-meter-industrial.jpeg';
+import aguasImg2 from '../../../imports/water-probes.jpeg';
 import ambienteImg from '../../../imports/card-ambiente.jpg';
 import minasImg from '../../../imports/card-minas-mine.webp';
 
-const solutions = [
+const solutions: { number: string; title: string; subtitle: string; description: string; bullets: string[]; image: string; image2?: string; link: string }[] = [
   {
     number: "01",
     title: "Ensino & Investigação",
@@ -57,6 +58,7 @@ const solutions = [
       "Instrumentação e medidores de nível e precipitação",
     ],
     image: aguasImg,
+    image2: aguasImg2,
     link: "aguas",
   },
   {
@@ -190,7 +192,14 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
               className="snap-center shrink-0 w-[85%] max-w-[340px] bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex flex-col"
             >
               <div className="relative">
-                <img src={s.image} alt={s.title} className="w-full h-44 object-cover" />
+                {s.image2 ? (
+                  <div className="flex w-full h-44">
+                    <img src={s.image} alt={s.title} className="w-1/2 h-full object-cover" />
+                    <img src={s.image2} alt={s.title} className="w-1/2 h-full object-cover" />
+                  </div>
+                ) : (
+                  <img src={s.image} alt={s.title} className="w-full h-44 object-cover" />
+                )}
                 <div className="absolute top-3 left-3 bg-[#2354a2] text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest">
                   {s.number}
                 </div>
@@ -223,13 +232,20 @@ export function ProductsSection({ onNavigate }: { onNavigate: (page: string) => 
             style={{ perspective: '1000px' }}
           >
             {solutions.map((s, i) => (
-              <img
+              <div
                 key={s.number}
-                src={s.image}
-                alt={s.title}
-                className="absolute w-full h-full object-cover rounded-3xl"
+                className="absolute w-full h-full rounded-3xl overflow-hidden"
                 style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.18)', ...getImageStyle(i) }}
-              />
+              >
+                {s.image2 ? (
+                  <div className="flex w-full h-full">
+                    <img src={s.image} alt={s.title} className="w-1/2 h-full object-cover" />
+                    <img src={s.image2} alt={s.title} className="w-1/2 h-full object-cover" />
+                  </div>
+                ) : (
+                  <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
+                )}
+              </div>
             ))}
             {/* Number badge on active image */}
             <div className="absolute top-4 left-4 z-10 bg-[#2354a2] text-white text-xs font-bold px-3 py-1.5 rounded-full tracking-widest uppercase pointer-events-none">

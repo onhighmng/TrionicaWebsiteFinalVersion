@@ -37,8 +37,23 @@ const clientLogos = [
   { id: 6,  name: "TotalEnergies",      img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/d/d1/TotalEnergies_wordmark_%282021-present%29.svg", alt: "TotalEnergies" }) as any },
   { id: 7,  name: "Fundação Aga Khan",  img: ImgLogo({ src: agaKhanLogo, alt: "Aga Khan Academy Maputo" }) as any },
   { id: 8,  name: "FIPAAS",             img: ImgLogo({ src: fipaasLogo, alt: "FIPAAS" }) as any },
-  { id: 12, name: "Universidades",      img: TextClientLogo({ label: "Universidades", color: "#475569" }) as any },
-  { id: 13, name: "Ministérios",        img: TextClientLogo({ label: "Ministérios", color: "#475569" }) as any },
+  // Universities
+  { id: 20, name: "UEM",        img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/pt/2/2f/Logo_UEM.jpg", alt: "UEM" }) as any },
+  { id: 21, name: "UCM",        img: TextClientLogo({ label: "UCM", color: "#1a3a6b" }) as any },
+  { id: 22, name: "UP",         img: TextClientLogo({ label: "UP", color: "#1a3a6b" }) as any },
+  { id: 23, name: "UNIZAMBEZE", img: TextClientLogo({ label: "UNIZAMBEZE", color: "#1a3a6b" }) as any },
+  { id: 24, name: "UNIROVUMA",  img: TextClientLogo({ label: "UNIROVUMA", color: "#1a3a6b" }) as any },
+  { id: 25, name: "UNILICUNGO", img: TextClientLogo({ label: "UNILICUNGO", color: "#1a3a6b" }) as any },
+  { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png", alt: "UNILURIO" }) as any },
+  { id: 27, name: "UNISAVE",    img: TextClientLogo({ label: "UNISAVE", color: "#1a3a6b" }) as any },
+  { id: 28, name: "UNIPUNGUE",  img: TextClientLogo({ label: "UNIPUNGUE", color: "#1a3a6b" }) as any },
+  // Ministries
+  { id: 30, name: "MISAU",   img: TextClientLogo({ label: "MISAU", color: "#2354a2" }) as any },
+  { id: 31, name: "MEC",     img: TextClientLogo({ label: "MEC", color: "#2354a2" }) as any },
+  { id: 32, name: "MIREME",  img: TextClientLogo({ label: "MIREME", color: "#2354a2" }) as any },
+  { id: 33, name: "MDN",     img: TextClientLogo({ label: "MDN", color: "#2354a2" }) as any },
+  { id: 34, name: "MAAP",    img: TextClientLogo({ label: "MAAP", color: "#2354a2" }) as any },
+  { id: 35, name: "MTL",     img: TextClientLogo({ label: "MTL", color: "#2354a2" }) as any },
 ];
 
 interface SobreNosProps {
