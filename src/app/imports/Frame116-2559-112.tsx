@@ -1,4 +1,4 @@
-import imgMinas from "../../imports/minas-card.jpeg";
+import imgMinas from "../../imports/card-minas-mine.webp";
 
 export default function Frame() {
   return (

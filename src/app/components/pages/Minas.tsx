@@ -15,7 +15,7 @@ export function Minas({ onNavigate }: MinasProps) {
   return (
     <div className="min-h-screen bg-white" data-navbar-section="light">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:flex relative w-full bg-white pt-20 md:pt-24 pb-8 md:pb-12 justify-center items-center" ref={heroRef}>
+      <section className="hidden md:block relative w-full bg-white pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -37,8 +37,14 @@ export function Minas({ onNavigate }: MinasProps) {
             }
           }}
         >
-          <div className="w-[1400px] h-[900px] scale-[0.28] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100">
-            <Frame17 />
+          <div className="relative w-full max-w-[98%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
+            <div className="relative w-full" style={{ paddingBottom: '64.29%' }}>
+              <div className="absolute inset-0 flex items-start justify-center md:block">
+                <div className="w-[1400px] h-[900px] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top-left md:origin-top-left md:translate-x-0">
+                  <Frame17 />
+                </div>
+              </div>
+            </div>
           </div>
         </TimelineContent>
       </section>

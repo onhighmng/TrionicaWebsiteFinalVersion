@@ -74,7 +74,7 @@ function Section() {
   return (
     <div className="absolute contents left-0 top-0" data-name="Section 01">
       <Button />
-      <div className="absolute h-[662.907px] left-0 top-[238px] w-full rounded-[15px] overflow-hidden" data-name="Image">
+      <div className="absolute h-[662.907px] left-0 top-[238px] w-[1167px] rounded-[15px] overflow-hidden" data-name="Image">
         <Frame113Image />
       </div>
       <People1 />

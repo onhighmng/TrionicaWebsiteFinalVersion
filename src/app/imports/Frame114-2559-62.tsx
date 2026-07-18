@@ -1,4 +1,4 @@
-import imgAguas from "../../imports/fipag-4.jpeg";
+import imgAguas from "../../imports/aguas-hero.jpeg";
 
 export default function Frame() {
   return (

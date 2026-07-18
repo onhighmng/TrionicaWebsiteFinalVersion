@@ -1,4 +1,4 @@
-import imgAmbiente from "../../imports/card-ambiente.jpg";
+import imgAmbiente from "../../imports/ambiente-hero.jpeg";
 
 export default function Frame() {
   return (

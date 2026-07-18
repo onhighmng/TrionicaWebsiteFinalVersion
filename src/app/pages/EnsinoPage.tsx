@@ -16,7 +16,7 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
   return (
     <div className="w-full bg-[#F5F5F5]" data-navbar-section="light">
       {/* Desktop Hero Section */}
-      <div className="hidden md:block pt-20 md:pt-24 pb-8 md:pb-12 px-4" ref={heroRef}>
+      <div className="hidden md:block pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -38,10 +38,10 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
             }
           }}
         >
-          <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1184px] mx-auto overflow-hidden">
-            <div className="relative w-full" style={{ paddingBottom: '72.9%' }}> {/* 863/1184 = 72.9% — clips empty 114px at frame bottom */}
+          <div className="relative w-full max-w-[98%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto overflow-hidden">
+            <div className="relative w-full" style={{ paddingBottom: '64.29%' }}>
               <div className="absolute inset-0 flex items-start justify-center">
-                <div className="w-[1184px] h-[977px] scale-[0.45] sm:scale-[0.55] md:scale-[0.7] lg:scale-[0.85] xl:scale-100 origin-top">
+                <div className="w-[1184px] h-[977px] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top">
                   <Frame5 />
                 </div>
               </div>
