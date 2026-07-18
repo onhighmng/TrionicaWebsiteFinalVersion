@@ -12,6 +12,11 @@ import equipaEventoImage from "../../../imports/equipa-evento.jpg";
 import agaKhanLogo from "../../../imports/aka_maputo.png";
 import fipaasLogo from "../../../imports/fipaas_logo.jpg";
 import edmLogo from "../../../imports/edm_logo.jpg";
+import govEmblemImg from "../../../imports/mozambique-gov-emblem.png";
+import misauLogoImg from "../../../imports/misau-logo.png";
+import miremeLogoImg from "../../../imports/mireme-logo.svg";
+import maapLogoImg from "../../../imports/maap-logo.png";
+import mtlLogoImg from "../../../imports/mtl-logo.png";
 
 // ── Client logo components ─────────────────────────────────────────────────────
 
@@ -21,11 +26,13 @@ function ImgLogo({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-function TextClientLogo({ label, color = '#1a1a2e' }: { label: string; color?: string }) {
-  return (props: SVGProps<SVGSVGElement>) => (
-    <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: 'clamp(12px, 1.4vw, 17px)', color, letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>
-      {label}
-    </span>
+// For ministries using the national coat of arms — shows emblem + acronym label
+function GovLogo({ acronym }: { acronym: string }) {
+  return (_props: SVGProps<SVGSVGElement>) => (
+    <div className="flex flex-col items-center gap-1">
+      <img src={govEmblemImg} alt={acronym} className="h-12 w-12 md:h-16 md:w-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+      <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: '10px', color: '#1a1a2e', letterSpacing: '0.06em' }}>{acronym}</span>
+    </div>
   );
 }
 
@@ -38,22 +45,22 @@ const clientLogos = [
   { id: 7,  name: "Fundação Aga Khan",  img: ImgLogo({ src: agaKhanLogo, alt: "Aga Khan Academy Maputo" }) as any },
   { id: 8,  name: "FIPAAS",             img: ImgLogo({ src: fipaasLogo, alt: "FIPAAS" }) as any },
   // Universities
-  { id: 20, name: "UEM",        img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/pt/2/2f/Logo_UEM.jpg", alt: "UEM" }) as any },
-  { id: 21, name: "UCM",        img: TextClientLogo({ label: "UCM", color: "#1a3a6b" }) as any },
-  { id: 22, name: "UP",         img: TextClientLogo({ label: "UP", color: "#1a3a6b" }) as any },
-  { id: 23, name: "UNIZAMBEZE", img: TextClientLogo({ label: "UNIZAMBEZE", color: "#1a3a6b" }) as any },
-  { id: 24, name: "UNIROVUMA",  img: TextClientLogo({ label: "UNIROVUMA", color: "#1a3a6b" }) as any },
-  { id: 25, name: "UNILICUNGO", img: TextClientLogo({ label: "UNILICUNGO", color: "#1a3a6b" }) as any },
-  { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png", alt: "UNILURIO" }) as any },
-  { id: 27, name: "UNISAVE",    img: TextClientLogo({ label: "UNISAVE", color: "#1a3a6b" }) as any },
-  { id: 28, name: "UNIPUNGUE",  img: TextClientLogo({ label: "UNIPUNGUE", color: "#1a3a6b" }) as any },
+  { id: 20, name: "UEM",        img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/pt/2/2f/Logo_UEM.jpg",                                                             alt: "UEM" }) as any },
+  { id: 21, name: "UCM",        img: ImgLogo({ src: "https://ucm.ac.mz/wp-content/uploads/2025/06/logo_no_back-1-168x170.png",                                                alt: "UCM" }) as any },
+  { id: 22, name: "UP",         img: ImgLogo({ src: "https://www.up.ac.mz/images/logo-no-bg.png",                                                                             alt: "UP" }) as any },
+  { id: 23, name: "UNIZAMBEZE", img: ImgLogo({ src: "https://unizambeze.ac.mz/wp-content/uploads/2025/07/Logo-UZ-296x300.png",                                               alt: "UNIZAMBEZE" }) as any },
+  { id: 24, name: "UNIROVUMA",  img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Universidade_rovuma.jpg",                                            alt: "UNIROVUMA" }) as any },
+  { id: 25, name: "UNILICUNGO", img: ImgLogo({ src: "https://unilicungo.ac.mz/wp-content/uploads/2025/12/UniLicungo.png",                                                    alt: "UNILICUNGO" }) as any },
+  { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png",                                               alt: "UNILURIO" }) as any },
+  { id: 27, name: "UNISAVE",    img: ImgLogo({ src: "https://unisave.ac.mz/wp-content/uploads/2025/09/cropped-unisave-150x150.png",                                           alt: "UNISAVE" }) as any },
+  { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: "https://unipungue.ac.mz/wp-content/uploads/2023/04/logo_retina.png",                                                    alt: "UNIPUNGUE" }) as any },
   // Ministries
-  { id: 30, name: "MISAU",   img: TextClientLogo({ label: "MISAU", color: "#2354a2" }) as any },
-  { id: 31, name: "MEC",     img: TextClientLogo({ label: "MEC", color: "#2354a2" }) as any },
-  { id: 32, name: "MIREME",  img: TextClientLogo({ label: "MIREME", color: "#2354a2" }) as any },
-  { id: 33, name: "MDN",     img: TextClientLogo({ label: "MDN", color: "#2354a2" }) as any },
-  { id: 34, name: "MAAP",    img: TextClientLogo({ label: "MAAP", color: "#2354a2" }) as any },
-  { id: 35, name: "MTL",     img: TextClientLogo({ label: "MTL", color: "#2354a2" }) as any },
+  { id: 30, name: "MISAU",   img: ImgLogo({ src: misauLogoImg,   alt: "MISAU" }) as any },
+  { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC" }) as any },
+  { id: 32, name: "MIREME",  img: ImgLogo({ src: miremeLogoImg,  alt: "MIREME" }) as any },
+  { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN" }) as any },
+  { id: 34, name: "MAAP",    img: ImgLogo({ src: maapLogoImg,    alt: "MAAP" }) as any },
+  { id: 35, name: "MTL",     img: ImgLogo({ src: mtlLogoImg,     alt: "MTL" }) as any },
 ];
 
 interface SobreNosProps {

@@ -38,10 +38,10 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
             }
           }}
         >
-          <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1184px] mx-auto">
-            <div className="relative w-full" style={{ paddingBottom: '82.52%' }}> {/* 977/1184 = 82.52% */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[1184px] h-[977px] scale-[0.45] sm:scale-[0.55] md:scale-[0.7] lg:scale-[0.85] xl:scale-100 origin-center">
+          <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1184px] mx-auto overflow-hidden">
+            <div className="relative w-full" style={{ paddingBottom: '72.9%' }}> {/* 863/1184 = 72.9% — clips empty 114px at frame bottom */}
+              <div className="absolute inset-0 flex items-start justify-center">
+                <div className="w-[1184px] h-[977px] scale-[0.45] sm:scale-[0.55] md:scale-[0.7] lg:scale-[0.85] xl:scale-100 origin-top">
                   <Frame5 />
                 </div>
               </div>
@@ -79,11 +79,15 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
         </div>
       </section>
       
-      {/* Mobile Description Section */}
-      <section className="md:hidden relative w-full bg-[#F5F5F5] px-6 pb-8">
-        <div className="max-w-[600px] mx-auto">
-          <p className="font-['Roboto:Regular',sans-serif] text-[#1c1716] text-[18px] leading-[26px] text-justify">
-            Disponibilizamos uma vasta gama de equipamentos destinados ao ensino superior, instituições técnico-profissionais, escolas secundárias e primárias, bem como laboratórios de investigação.
+
+      {/* Description Section */}
+      <section className="relative w-full bg-[#F5F5F5] px-4 md:px-4 pb-8">
+        <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">
+          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
+            Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.
+          </p>
+          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[14px] tracking-[-0.1504px] whitespace-nowrap shrink-0 hidden md:block">
+            Equipamentos Educacionais | Soluções Científicas
           </p>
         </div>
       </section>

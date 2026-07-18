@@ -95,7 +95,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               <span className="relative inline-flex size-2.5 rounded-full bg-red-500" />
             </span>
             <span className="text-base font-semibold text-[#0c1313]">
-              Este website está em atualização
+              Este website está em actualização
             </span>
           </div>
         </motion.div>
@@ -110,7 +110,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               <span className="relative inline-flex size-2.5 rounded-full bg-red-500" />
             </span>
             <span className="text-base font-semibold text-[#0c1313] whitespace-nowrap">
-              Este website está em atualização
+              Este website está em actualização
             </span>
           </div>
         </div>

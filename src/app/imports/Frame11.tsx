@@ -57,7 +57,7 @@ function Container3() {
 
 function Container4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] h-[382px] items-start left-[64px] top-[522px] w-[744px] hidden md:flex" data-name="Container">
+    <div className="absolute content-stretch flex flex-col gap-[32px] h-[382px] items-start left-[64px] top-[522px] w-[744px] hidden" data-name="Container">
       <VerticalCutReveal />
       <Container3 />
     </div>
@@ -127,9 +127,9 @@ function People1() {
 
 function Section() {
   return (
-    <div className="absolute contents left-0 top-[97px]" data-name="Section 01">
+    <div className="absolute contents left-0 top-0" data-name="Section 01">
       <Button />
-      <div className="absolute h-[662.907px] left-0 top-[97px] w-[1167px] rounded-[15px] overflow-hidden" data-name="Image">
+      <div className="absolute h-[662.907px] left-0 top-[220px] w-[1167px] rounded-[15px] overflow-hidden" data-name="Image">
         <Frame114Image />
       </div>
       <People1 />
@@ -178,11 +178,10 @@ export default function Frame() {
         <Container />
         <Container4 />
         <Section />
-        <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[19px] leading-[20px] left-[1117px] not-italic text-[#4a5565] text-[14px] text-right top-[751px] tracking-[-0.1504px] translate-x-[-100%] w-[300px] hidden md:block">Equipamentos Educacionais | Soluções Científicas</p>
+        <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
         <Container5 />
-        <p className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[133.509px] leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[75px] tracking-[-1.92px] w-[536.414px]">Tecnologia para água limpa.</p>
-        <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[8px] text-[#1c1716] text-[22px] top-[260px] w-[590px]" style={{ fontVariationSettings: "'wdth' 100" }}>A infraestrutura necessária para converter desafios hídricos em novos ativos de desenvolvimento.</p>
-      </div>
+        <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[75px] tracking-[-1.92px] whitespace-nowrap">Tecnologia para água limpa.</p>
+        </div>
     </div>
   );
 }

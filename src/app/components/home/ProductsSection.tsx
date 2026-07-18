@@ -3,11 +3,11 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ensinoImg from '../../../imports/ensino-lab.jpg';
-import saudeImg from '../../../imports/card-saude-imaging.webp';
+import saudeImg from '../../../imports/saude-card.jpeg';
 import aguasImg from '../../../imports/water-meter-industrial.jpeg';
-import aguasImg2 from '../../../imports/water-probes.jpeg';
+import aguasImg2 from '../../../imports/aquasafe-wsl50-case.png';
 import ambienteImg from '../../../imports/card-ambiente.jpg';
-import minasImg from '../../../imports/card-minas-mine.webp';
+import minasImg from '../../../imports/minas-card.jpeg';
 
 const solutions: { number: string; title: string; subtitle: string; description: string; bullets: string[]; image: string; image2?: string; link: string }[] = [
   {
@@ -57,8 +57,7 @@ const solutions: { number: string; title: string; subtitle: string; description:
       "Sistemas de tratamento — desinfeção, dessalinização, ETARs",
       "Instrumentação e medidores de nível e precipitação",
     ],
-    image: aguasImg,
-    image2: aguasImg2,
+    image: aguasImg2,
     link: "aguas",
   },
   {

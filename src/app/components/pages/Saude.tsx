@@ -49,10 +49,13 @@ export function Saude({ onNavigate }: SaudeProps) {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="md:hidden relative w-full bg-white px-6 pb-8">
-        <div className="max-w-[600px] mx-auto">
-          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-justify tracking-[-0.3125px]">
+      <section className="relative w-full bg-white px-4 md:px-4 pb-8">
+        <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">
+          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
             Contribuímos para o fortalecimento do sistema nacional de saúde através do fornecimento de equipamentos de última geração para prevenção, diagnóstico e tratamento.
+          </p>
+          <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[14px] tracking-[-0.1504px] whitespace-nowrap shrink-0 hidden md:block">
+            Equipamentos Educacionais | Soluções Científicas
           </p>
         </div>
       </section>

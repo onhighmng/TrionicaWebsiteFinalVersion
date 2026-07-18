@@ -72,9 +72,9 @@ function People1() {
 
 function Section() {
   return (
-    <div className="absolute contents left-[106px] top-[120px]" data-name="Section 01">
+    <div className="absolute contents left-0 top-0" data-name="Section 01">
       <Button />
-      <div className="absolute h-[662.907px] left-[106px] top-[120px] w-[1167px] rounded-[15px] overflow-hidden" data-name="Image">
+      <div className="absolute h-[662.907px] left-0 top-[238px] w-full rounded-[15px] overflow-hidden" data-name="Image">
         <Frame113Image />
       </div>
       <People1 />
@@ -104,7 +104,7 @@ function Text1() {
 
 function Container1() {
   return (
-    <div className="absolute content-stretch flex gap-[0.364px] h-[97px] items-center left-[130px] pl-[-7.636px] pr-0 py-0 top-[60px] w-[160px]" data-name="Container">
+    <div className="absolute content-stretch flex gap-[0.364px] h-[97px] items-center left-[130px] pl-[-7.636px] pr-0 py-0 top-0 w-[160px]" data-name="Container">
       <div className="flex h-[42.874px] items-center justify-center relative shrink-0 w-[42.866px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[316.003deg]">
           <Text />
@@ -146,7 +146,7 @@ function Container3() {
 
 function Container4() {
   return (
-    <div className="absolute content-stretch flex flex-col h-[382px] items-start left-[148px] top-[820px] w-[744px] hidden md:flex" data-name="Container">
+    <div className="absolute content-stretch flex flex-col h-[382px] items-start left-[148px] top-[820px] w-[744px] hidden" data-name="Container">
       <Container3 />
     </div>
   );
@@ -157,12 +157,9 @@ export default function Frame() {
     <div className="relative size-full">
       <Container />
       <Section />
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[19px] leading-[20px] left-[1223px] not-italic text-[#4a5565] text-[14px] text-right top-[774px] tracking-[-0.1504px] translate-x-[-100%] w-[300px] hidden md:block">Equipamentos Educacionais | Soluções Científicas</p>
+      <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
       <Container1 />
-      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium h-[133.509px] leading-[1.12] left-[130px] text-[#1c1716] text-[64px] top-[145px] tracking-[-1.92px] w-[536.414px]">Tecnologia que salva vidas.</p>
-      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[130px] text-[#1c1716] text-[22px] top-[320px] w-[590px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Posicione a sua instituição na liderança da inovação médica nacional.
-      </p>
+      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[130px] text-[#1c1716] text-[64px] top-[100px] tracking-[-1.92px] whitespace-nowrap">Tecnologia que salva vidas.</p>
       <Container4 />
     </div>
   );

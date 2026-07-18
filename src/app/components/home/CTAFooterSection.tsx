@@ -102,7 +102,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
                 onClick={() => handleNavigation('portfolio')}
                 className="capitalize font-['Plus_Jakarta_Sans'] font-medium text-base md:text-[18px] text-[#667085] hover:text-[#4278ec] transition-colors"
               >
-                Portfolio
+                Portfólio
               </button>
             </div>
 
@@ -326,7 +326,7 @@ export function CTAFooterSection({ onNavigate }: CTAFooterSectionProps) {
               onClick={() => handleNavigation('portfolio')}
               className="capitalize flex flex-col font-['Plus_Jakarta_Sans'] font-medium justify-center leading-[0] shrink-0 text-[#667085] text-[18px] text-nowrap hover:text-[#4278ec] transition-colors"
             >
-              <p className="leading-[1.2]">Portfolio</p>
+              <p className="leading-[1.2]">Portfólio</p>
             </button>
           </div>
 

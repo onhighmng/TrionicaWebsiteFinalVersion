@@ -8,7 +8,6 @@ function VerticalCutReveal() {
 function Ensino() {
   return (
     <div className="h-[130px] relative shrink-0 w-full" data-name="Ensino">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[26px] left-0 not-italic text-[#4a5565] text-[24px] text-justify top-[-0.59px] tracking-[-0.3125px] w-[701px]">Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.</p>
     </div>
   );
 }
@@ -112,19 +111,13 @@ function Section() {
         <Frame112Image />
       </div>
       <People1 />
-      <div className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.1] left-0 text-[#1c1716] text-[44px] top-0 tracking-[-1.4px] w-[620px]">
-        <p>Equipamentos para Ensino e Investigação</p>
-      </div>
-      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal h-auto leading-[30px] left-[4px] text-[#1c1716] text-[20px] top-[150px] w-[600px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Disponibilizamos uma vasta gama de equipamentos destinados ao ensino superior, instituições técnico-profissionais, escolas secundárias e primárias, bem como laboratórios de investigação.
-      </p>
     </div>
   );
 }
 
 function Frame() {
   return (
-    <div className="absolute h-[662.907px] left-[17px] top-[114px] w-[1167px]">
+    <div className="absolute h-[662.907px] left-[17px] top-[200px] w-[1167px]">
       <Section />
     </div>
   );
@@ -168,7 +161,10 @@ function Frame1() {
     <div className="absolute h-[977px] left-0 top-0 w-[1184px]">
       <Container2 />
       <Frame />
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal h-[19px] leading-[20px] left-[1134px] not-italic text-[#4a5565] text-[14px] text-right top-[768px] tracking-[-0.1504px] translate-x-[-100%] w-[300px]">Equipamentos Educacionais | Soluções Científicas</p>
+      <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
+      <div className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.1] left-[17px] text-[#1c1716] text-[44px] top-[97px] tracking-[-1.4px] whitespace-nowrap">
+        <p>Equipamentos para Ensino e Investigação</p>
+      </div>
       <Container3 />
     </div>
   );
@@ -178,7 +174,7 @@ export default function Frame2() {
   return (
     <div className="relative size-full">
       <Frame1 />
-      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[984px] -translate-x-1/2 not-italic text-[#2354a2] text-[24px] text-nowrap top-[714px] tracking-[0.0703px]">Triónica</p>
+      <p className="hidden absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-[984px] -translate-x-1/2 not-italic text-[#2354a2] text-[24px] text-nowrap top-[810px] tracking-[0.0703px]">Triónica</p>
     </div>
   );
 }

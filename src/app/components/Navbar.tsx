@@ -318,7 +318,7 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                     style={{ willChange: 'transform, opacity' }}
                   >
                     <p className={`font-['DM_Sans:Bold',sans-serif] font-bold text-[17px] leading-none whitespace-nowrap transition-colors duration-300 ${isDarkBg ? 'text-white' : 'text-[#101828]'}`} style={{ fontVariationSettings: "'opsz' 14" }}>
-                      Portfolio
+                      Portfólio
                     </p>
                   </motion.div>
 
@@ -503,9 +503,9 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
                         : "font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium text-lg sm:text-[20px] md:text-[24px] text-[#667085] hover:text-[#2354a2]"
                     }`}
                   >
-                    Portfolio
+                    Portfólio
                   </button>
-                  
+
                   <button
                     onClick={() => handleNavClick('contacte-nos')}
                     className={`text-center transition-colors ${
