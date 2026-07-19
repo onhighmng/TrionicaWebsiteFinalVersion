@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import ensinoImg from '../../../imports/ensino-lab.jpg';
+import ensinoImg from '../../../imports/ensino-card.jpeg';
 import saudeImg from '../../../imports/saude-card.jpeg';
 import aguasImg from '../../../imports/aguas-hero.png';
 import aguasImg2 from '../../../imports/aquasafe-wsl50-case.png';
