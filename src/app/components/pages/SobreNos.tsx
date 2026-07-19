@@ -17,20 +17,28 @@ import misauLogoImg from "../../../imports/misau-logo.png";
 import miremeLogoImg from "../../../imports/mireme-logo.svg";
 import maapLogoImg from "../../../imports/maap-logo.png";
 import mtlLogoImg from "../../../imports/mtl-logo.png";
+import unipungueLogoImg from "../../../imports/unipungue-logo.jpg";
 
 // ── Client logo components ─────────────────────────────────────────────────────
 
-function ImgLogo({ src, alt }: { src: string; alt: string }) {
-  return (props: SVGProps<SVGSVGElement>) => (
-    <img src={src} alt={alt} className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300" {...(props as any)} />
+function ImgLogo({ src, alt, scale = 1 }: { src: string; alt: string; scale?: number }) {
+  return (_props: SVGProps<SVGSVGElement>) => (
+    <div className="flex items-center justify-center w-full h-full transition-all duration-300">
+      <img src={src} alt={alt} className="h-[44px] md:h-[60px] max-w-[130px] md:max-w-[170px] w-auto object-contain" style={scale !== 1 ? { transform: `scale(${scale})` } : undefined} />
+    </div>
   );
+}
+
+function makeSvgLogoUrl(abbr: string, full: string): string {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="62"><text x="110" y="30" font-family="Arial Black,Arial,sans-serif" font-size="22" font-weight="900" text-anchor="middle" fill="#000">${abbr}</text><text x="110" y="48" font-family="Arial,sans-serif" font-size="8.5" text-anchor="middle" fill="#333">${full}</text></svg>`;
+  return `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
 }
 
 // For ministries using the national coat of arms — shows emblem + acronym label
 function GovLogo({ acronym }: { acronym: string }) {
   return (_props: SVGProps<SVGSVGElement>) => (
-    <div className="flex flex-col items-center gap-1">
-      <img src={govEmblemImg} alt={acronym} className="h-12 w-12 md:h-16 md:w-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    <div className="flex flex-col items-center justify-center gap-1 w-full h-full transition-all duration-300">
+      <img src={govEmblemImg} alt={acronym} className="max-h-[40px] md:max-h-[52px] w-auto object-contain" />
       <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: '10px', color: '#1a1a2e', letterSpacing: '0.06em' }}>{acronym}</span>
     </div>
   );
@@ -49,9 +57,9 @@ const clientLogos = [
   { id: 21, name: "UCM",        img: ImgLogo({ src: "https://ucm.ac.mz/wp-content/uploads/2025/06/logo_no_back-1-168x170.png",                                                alt: "UCM" }) as any },
   { id: 22, name: "UP",         img: ImgLogo({ src: "https://www.up.ac.mz/images/logo-no-bg.png",                                                                             alt: "UP" }) as any },
   { id: 23, name: "UNIZAMBEZE", img: ImgLogo({ src: "https://unizambeze.ac.mz/wp-content/uploads/2025/07/Logo-UZ-296x300.png",                                               alt: "UNIZAMBEZE" }) as any },
-  { id: 24, name: "UNIROVUMA",  img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Universidade_rovuma.jpg",                                            alt: "UNIROVUMA" }) as any },
+  { id: 24, name: "UNIROVUMA",  img: ImgLogo({ src: makeSvgLogoUrl("UNIROVUMA", "Universidade Rovuma"),                                                                    alt: "UNIROVUMA" }) as any },
   { id: 25, name: "UNILICUNGO", img: ImgLogo({ src: "https://unilicungo.ac.mz/wp-content/uploads/2025/12/UniLicungo.png",                                                    alt: "UNILICUNGO" }) as any },
-  { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png",                                               alt: "UNILURIO" }) as any },
+  { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png",                                               alt: "UNILURIO", scale: 1.8 }) as any },
   { id: 27, name: "UNISAVE",    img: ImgLogo({ src: "https://unisave.ac.mz/wp-content/uploads/2025/09/cropped-unisave-150x150.png",                                           alt: "UNISAVE" }) as any },
   { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: "https://unipungue.ac.mz/wp-content/uploads/2023/04/logo_retina.png",                                                    alt: "UNIPUNGUE" }) as any },
   // Ministries
@@ -60,7 +68,7 @@ const clientLogos = [
   { id: 32, name: "MIREME",  img: ImgLogo({ src: miremeLogoImg,  alt: "MIREME" }) as any },
   { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN" }) as any },
   { id: 34, name: "MAAP",    img: ImgLogo({ src: maapLogoImg,    alt: "MAAP" }) as any },
-  { id: 35, name: "MTL",     img: ImgLogo({ src: mtlLogoImg,     alt: "MTL" }) as any },
+  { id: 35, name: "MTL",     img: GovLogo({ acronym: "MTL" }) as any },
 ];
 
 interface SobreNosProps {

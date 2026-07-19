@@ -14,7 +14,7 @@ const clientLogos = [
   { src: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Deutsche_Gesellschaft_f%C3%BCr_Internationale_Zusammenarbeit_%28GIZ%29_GmbH_Logo.svg",             alt: "GIZ" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/a/ab/MSF_Logo_without_tagline.svg",                                                                      alt: "MSF" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/9/9e/African_Development_Bank_logo.svg",                                                                 alt: "AfDB" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Cruz_Vermelha_de_Mo%C3%A7ambique_logo.png",                                                        alt: "Cruz Vermelha" },
+  { src: makeSvgLogo("CVM", "Cruz Vermelha de Moçambique"),                      alt: "Cruz Vermelha" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/4/48/USAID_logo.svg",                                                                                   alt: "USAID" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/5/5e/EU_flag.svg",                                                                                      alt: "União Europeia" },
   // Universidades moçambicanas
