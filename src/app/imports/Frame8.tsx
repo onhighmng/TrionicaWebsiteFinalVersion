@@ -154,7 +154,7 @@ function Container4() {
 
 export default function Frame() {
   return (
-    <div className="relative size-full">
+    <div className="relative w-[1167px] h-full mx-auto">
       <Container />
       <Section />
       <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
