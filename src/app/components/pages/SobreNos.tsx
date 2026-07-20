@@ -35,13 +35,15 @@ function makeSvgLogoUrl(abbr: string, full: string): string {
   return `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
 }
 
-// For ministries using the national coat of arms — shows emblem + acronym + optional full name
-function GovLogo({ acronym, fullName }: { acronym: string; fullName?: string }) {
+// For ministries using the national coat of arms — horizontal layout matching MIREME style
+function GovLogo({ acronym, line1, line2 }: { acronym: string; line1?: string; line2?: string }) {
   return (_props: SVGProps<SVGSVGElement>) => (
-    <div className="flex flex-col items-center justify-center gap-1 w-full h-full transition-all duration-300 px-1">
-      <img src={govEmblemImg} alt={acronym} className="max-h-[50px] md:max-h-[64px] w-auto object-contain" />
-      <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: '9px', color: '#1a1a2e', letterSpacing: '0.06em' }}>{acronym}</span>
-      {fullName && <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: '7px', color: '#444', textAlign: 'center', lineHeight: '1.3' }}>{fullName}</span>}
+    <div className="flex flex-row items-center justify-center gap-2 w-full h-full transition-all duration-300 px-1">
+      <img src={govEmblemImg} alt={acronym} className="max-h-[44px] md:max-h-[56px] w-auto object-contain shrink-0" />
+      <div style={{ fontFamily: "'Arial Black', 'Arial', sans-serif", fontWeight: 900, fontSize: '7.5px', color: '#1a1a1a', lineHeight: '1.4', textTransform: 'uppercase' }}>
+        <div>{line1 ?? acronym}</div>
+        {line2 && <div>{line2}</div>}
+      </div>
     </div>
   );
 }
@@ -66,11 +68,11 @@ const clientLogos = [
   { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: unipungueLogoImg,                                                                                                         alt: "UNIPUNGUE" }) as any },
   // Ministries
   { id: 30, name: "MISAU",   img: ImgLogo({ src: misauLogoImg,   alt: "MISAU" }) as any },
-  { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC", fullName: "Ministério da Educação e Cultura" }) as any },
+  { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC",  line1: "MINISTÉRIO DA",         line2: "EDUCAÇÃO E CULTURA" }) as any },
   { id: 32, name: "MIREME",  img: ImgLogo({ src: miremeLogoImg,  alt: "MIREME" }) as any },
-  { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN", fullName: "Ministério da Defesa Nacional" }) as any },
-  { id: 34, name: "MAAP",    img: ImgLogo({ src: maapLogoImg,    alt: "MAAP" }) as any },
-  { id: 35, name: "MTL",     img: GovLogo({ acronym: "MTL", fullName: "Ministério dos Transportes e Logística" }) as any },
+  { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN",  line1: "MINISTÉRIO DA",         line2: "DEFESA NACIONAL" }) as any },
+  { id: 34, name: "MAAP",    img: GovLogo({ acronym: "MAAP", line1: "MINISTÉRIO DA AGRICULTURA", line2: "AMBIENTE E PESCAS" }) as any },
+  { id: 35, name: "MTL",     img: GovLogo({ acronym: "MTL",  line1: "MINISTÉRIO DOS",        line2: "TRANSPORTES E LOGÍSTICA" }) as any },
 ];
 
 interface SobreNosProps {
