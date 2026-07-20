@@ -26,22 +26,25 @@ export default function PortfolioHero({ onNavigate }: PortfolioHeroProps) {
         style={{ backgroundImage: `url(${maputoImg})` }}
       />
 
+      {/* Dark overlay for text legibility */}
+      <div className="absolute inset-0 bg-black/40" />
+
       {/* Content */}
       <div className="relative z-20 max-w-5xl px-6 text-center text-white">
-        <h1 className="font-['Manrope'] font-medium text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 tracking-tight flex items-center justify-center gap-2 md:gap-4 flex-wrap">
+        <h1 className="font-['Manrope'] font-medium text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 tracking-tight flex items-center justify-center gap-2 md:gap-4 flex-wrap" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}>
           <span>Ajudamos a Construir o Futuro</span>
           <img
             src={mozambiqueFlag}
             alt="Mozambique Flag"
             className="inline-block h-8 md:h-10 lg:h-12 w-auto rounded-lg shadow-md"
           />
-          <span className="text-[#e1fcad] relative inline-block">
+          <span className="text-[#e1fcad] relative inline-block" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}>
             Nacional
             <span className="absolute left-0 right-0 h-[2px] bg-[#e1fcad] transform -rotate-1 origin-left" style={{ top: 'calc(100% + 4px)' }} />
           </span>
         </h1>
 
-        <p className="mx-auto mb-8 max-w-xs sm:max-w-lg md:max-w-2xl text-center font-light text-sm sm:text-base md:text-lg text-white/80 lg:text-xl">
+        <p className="mx-auto mb-8 max-w-xs sm:max-w-lg md:max-w-2xl text-center font-light text-sm sm:text-base md:text-lg text-white lg:text-xl" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}>
           Um portfólio de tecnologia de vanguarda ao serviço das instituições que lideram Moçambique.
         </p>
 

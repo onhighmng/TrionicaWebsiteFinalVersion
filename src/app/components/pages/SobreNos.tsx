@@ -51,7 +51,7 @@ const clientLogos = [
   { id: 5,  name: "KOICA",              img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/9/94/KOICA_official_logo_in_english.png", alt: "KOICA" }) as any },
   { id: 6,  name: "TotalEnergies",      img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/commons/d/d1/TotalEnergies_wordmark_%282021-present%29.svg", alt: "TotalEnergies" }) as any },
   { id: 7,  name: "Fundação Aga Khan",  img: ImgLogo({ src: agaKhanLogo, alt: "Aga Khan Academy Maputo" }) as any },
-  { id: 8,  name: "FIPAAS",             img: ImgLogo({ src: fipaasLogo, alt: "FIPAAS" }) as any },
+  { id: 8,  name: "FIPAAS",             img: ImgLogo({ src: fipaasLogo, alt: "FIPAAS", scale: 1.5 }) as any },
   // Universities
   { id: 20, name: "UEM",        img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/pt/2/2f/Logo_UEM.jpg",                                                             alt: "UEM" }) as any },
   { id: 21, name: "UCM",        img: ImgLogo({ src: "https://ucm.ac.mz/wp-content/uploads/2025/06/logo_no_back-1-168x170.png",                                                alt: "UCM" }) as any },
@@ -61,7 +61,7 @@ const clientLogos = [
   { id: 25, name: "UNILICUNGO", img: ImgLogo({ src: "https://unilicungo.ac.mz/wp-content/uploads/2025/12/UniLicungo.png",                                                    alt: "UNILICUNGO" }) as any },
   { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png",                                               alt: "UNILURIO", scale: 1.8 }) as any },
   { id: 27, name: "UNISAVE",    img: ImgLogo({ src: "https://unisave.ac.mz/wp-content/uploads/2025/09/cropped-unisave-150x150.png",                                           alt: "UNISAVE" }) as any },
-  { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: "https://unipungue.ac.mz/wp-content/uploads/2023/04/logo_retina.png",                                                    alt: "UNIPUNGUE" }) as any },
+  { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: unipungueLogoImg,                                                                                                         alt: "UNIPUNGUE" }) as any },
   // Ministries
   { id: 30, name: "MISAU",   img: ImgLogo({ src: misauLogoImg,   alt: "MISAU" }) as any },
   { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC" }) as any },

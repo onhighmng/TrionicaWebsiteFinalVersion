@@ -14,7 +14,7 @@ export function Saude({ onNavigate }: SaudeProps) {
   return (
     <div className="min-h-screen bg-white" data-navbar-section="light">
       {/* Hero Section */}
-      <section className="relative w-full bg-white pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
+      <section className="relative w-full bg-white pt-20 md:pt-24 pb-2 md:pb-4 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
