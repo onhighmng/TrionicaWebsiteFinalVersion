@@ -77,7 +77,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: "escola-agraria",
-    title: "Escola Agrária de Marrera",
+    title: "Instituto Agrário de Marrera",
     description: "Instalação completa de laboratórios, oficinas e equipamentos agrícolas",
     category: "INSTALAÇÃO",
     project: "Projecto KFW/MCTESTP",
@@ -93,7 +93,7 @@ const projects: Project[] = [
   },
   {
     id: "escola-beira",
-    title: "Escola Industrial e Comercial da Beira",
+    title: "Instituto Industrial e Comercial da Beira",
     description: "Equipamentos e montagem para oficinas de mecânica automóvel (chaparia, pintura, equipamentos de ensaio e inspeção de veículos)",
     category: "MECÂNICA",
     project: "Projecto KFW/MCTESTP",
