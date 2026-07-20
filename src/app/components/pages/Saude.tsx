@@ -39,7 +39,7 @@ export function Saude({ onNavigate }: SaudeProps) {
           <div className="relative w-full mx-auto overflow-hidden">
             <div className="relative w-full" style={{ paddingBottom: '64.29%' }}> {/* 900/1400 = 64.29% */}
               <div className="absolute inset-0 flex items-start justify-center">
-                <div className="w-[1400px] h-[900px] scale-[0.295] min-[430px]:scale-[0.32] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top md:origin-top-left">
+                <div className="w-[1400px] h-[900px] scale-[0.295] min-[430px]:scale-[0.32] sm:scale-[0.5] md:scale-[0.64] lg:scale-[0.86] xl:scale-100 origin-top">
                   <Frame8 />
                 </div>
               </div>
