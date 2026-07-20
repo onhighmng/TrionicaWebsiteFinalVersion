@@ -67,7 +67,7 @@ const clientLogos = [
   { id: 27, name: "UNISAVE",    img: ImgLogo({ src: "https://unisave.ac.mz/wp-content/uploads/2025/09/cropped-unisave-150x150.png",                                           alt: "UNISAVE" }) as any },
   { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: unipungueLogoImg,                                                                                                         alt: "UNIPUNGUE" }) as any },
   // Ministries
-  { id: 30, name: "MISAU",   img: ImgLogo({ src: misauLogoImg,   alt: "MISAU" }) as any },
+  { id: 30, name: "MISAU",   img: GovLogo({ acronym: "MISAU", line1: "MINISTÉRIO DA", line2: "SAÚDE" }) as any },
   { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC",  line1: "MINISTÉRIO DA",         line2: "EDUCAÇÃO E CULTURA" }) as any },
   { id: 32, name: "MIREME",  img: ImgLogo({ src: miremeLogoImg,  alt: "MIREME" }) as any },
   { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN",  line1: "MINISTÉRIO DA",         line2: "DEFESA NACIONAL" }) as any },
