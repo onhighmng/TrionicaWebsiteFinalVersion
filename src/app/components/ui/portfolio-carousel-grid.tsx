@@ -48,6 +48,9 @@ import fipagImg3 from "../../../imports/fipag-3.jpeg"
 import fipagImg4 from "../../../imports/fipag-4.jpeg"
 import fipagImg5 from "../../../imports/fipag-5.jpeg"
 import fipagImg6 from "../../../imports/fipag-6.jpeg"
+import fipagNew1 from "../../../imports/fipag-new-1.jpeg"
+import fipagNew2 from "../../../imports/fipag-new-2.png"
+import fipagNew3 from "../../../imports/fipag-new-3.jpeg"
 import univImg1 from "../../../imports/portfolio-unirovuma-1.jpg"
 import univImg2 from "../../../imports/portfolio-unirovuma-2.jpg"
 import univImg3 from "../../../imports/portfolio-unirovuma-3.jpg"
@@ -151,7 +154,7 @@ const projects: Project[] = [
     title: "FIPAG",
     description: "Fornecimento de equipamentos de monitorização e análise de qualidade da água para o Fundo de Investimento e Património do Abastecimento de Água.",
     category: "ÁGUAS",
-    images: [fipagImg2, fipagImg6, fipagImg3, fipagImg4, fipagImg5, fipagImg1],
+    images: [fipagImg2, fipagImg6, fipagImg3, fipagImg4, fipagNew1, fipagNew3],
   },
 ]
 
