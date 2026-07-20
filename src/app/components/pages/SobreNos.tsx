@@ -18,6 +18,7 @@ import miremeLogoImg from "../../../imports/mireme-logo.svg";
 import maapLogoImg from "../../../imports/maap-logo.png";
 import mtlLogoImg from "../../../imports/mtl-logo.png";
 import unipungueLogoImg from "../../../imports/unipungue-logo.jpg";
+import unirovumaLogoImg from "../../../imports/unirovuma-logo.png";
 
 // ── Client logo components ─────────────────────────────────────────────────────
 
@@ -57,7 +58,7 @@ const clientLogos = [
   { id: 21, name: "UCM",        img: ImgLogo({ src: "https://ucm.ac.mz/wp-content/uploads/2025/06/logo_no_back-1-168x170.png",                                                alt: "UCM" }) as any },
   { id: 22, name: "UP",         img: ImgLogo({ src: "https://www.up.ac.mz/images/logo-no-bg.png",                                                                             alt: "UP" }) as any },
   { id: 23, name: "UNIZAMBEZE", img: ImgLogo({ src: "https://unizambeze.ac.mz/wp-content/uploads/2025/07/Logo-UZ-296x300.png",                                               alt: "UNIZAMBEZE" }) as any },
-  { id: 24, name: "UNIROVUMA",  img: ImgLogo({ src: makeSvgLogoUrl("UNIROVUMA", "Universidade Rovuma"),                                                                    alt: "UNIROVUMA" }) as any },
+  { id: 24, name: "UNIROVUMA",  img: ImgLogo({ src: unirovumaLogoImg,                                                                                                        alt: "UNIROVUMA" }) as any },
   { id: 25, name: "UNILICUNGO", img: ImgLogo({ src: "https://unilicungo.ac.mz/wp-content/uploads/2025/12/UniLicungo.png",                                                    alt: "UNILICUNGO" }) as any },
   { id: 26, name: "UNILURIO",   img: ImgLogo({ src: "https://upload.wikimedia.org/wikipedia/en/b/b6/Lurio_University_logo.png",                                               alt: "UNILURIO", scale: 1.8 }) as any },
   { id: 27, name: "UNISAVE",    img: ImgLogo({ src: "https://unisave.ac.mz/wp-content/uploads/2025/09/cropped-unisave-150x150.png",                                           alt: "UNISAVE" }) as any },

@@ -144,7 +144,7 @@ const projects: Project[] = [
     title: "MIREME & INAMI",
     description: "Fornecimento de equipamento sísmico e de laboratório para geologia.",
     category: "SISMOLOGIA",
-    images: [inamiLabImg, inamiLab2Img, miremeSismicaImg, miremeInamiImg, miremeKeylineImg, miremeAquasafeImg],
+    images: [inamiLabImg, inamiLab2Img, miremeSismicaImg, miremeInamiImg],
   },
   {
     id: "fipag",
