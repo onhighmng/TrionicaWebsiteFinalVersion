@@ -15,7 +15,7 @@ import edmLogo from "../../../imports/edm_logo.jpg";
 import govEmblemImg from "../../../imports/mozambique-gov-emblem.png";
 import misauLogoImg from "../../../imports/misau-logo.png";
 import miremeLogoImg from "../../../imports/mireme-logo.svg";
-import maapLogoImg from "../../../imports/maap-logo.png";
+import maapLogoImg from "../../../imports/maap-logo-new.png";
 import mtlLogoImg from "../../../imports/mtl-logo.png";
 import unipungueLogoImg from "../../../imports/unipungue-logo.jpg";
 import unirovumaLogoImg from "../../../imports/unirovuma-logo.png";
@@ -25,7 +25,7 @@ import unirovumaLogoImg from "../../../imports/unirovuma-logo.png";
 function ImgLogo({ src, alt, scale = 1 }: { src: string; alt: string; scale?: number }) {
   return (_props: SVGProps<SVGSVGElement>) => (
     <div className="flex items-center justify-center w-full h-full transition-all duration-300">
-      <img src={src} alt={alt} className="h-[44px] md:h-[60px] max-w-[130px] md:max-w-[170px] w-auto object-contain" style={scale !== 1 ? { transform: `scale(${scale})` } : undefined} />
+      <img src={src} alt={alt} className="h-[60px] md:h-[80px] max-w-[170px] md:max-w-[220px] w-auto object-contain" style={scale !== 1 ? { transform: `scale(${scale})` } : undefined} />
     </div>
   );
 }
@@ -35,12 +35,13 @@ function makeSvgLogoUrl(abbr: string, full: string): string {
   return `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
 }
 
-// For ministries using the national coat of arms — shows emblem + acronym label
-function GovLogo({ acronym }: { acronym: string }) {
+// For ministries using the national coat of arms — shows emblem + acronym + optional full name
+function GovLogo({ acronym, fullName }: { acronym: string; fullName?: string }) {
   return (_props: SVGProps<SVGSVGElement>) => (
-    <div className="flex flex-col items-center justify-center gap-1 w-full h-full transition-all duration-300">
-      <img src={govEmblemImg} alt={acronym} className="max-h-[40px] md:max-h-[52px] w-auto object-contain" />
-      <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: '10px', color: '#1a1a2e', letterSpacing: '0.06em' }}>{acronym}</span>
+    <div className="flex flex-col items-center justify-center gap-1 w-full h-full transition-all duration-300 px-1">
+      <img src={govEmblemImg} alt={acronym} className="max-h-[50px] md:max-h-[64px] w-auto object-contain" />
+      <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: '9px', color: '#1a1a2e', letterSpacing: '0.06em' }}>{acronym}</span>
+      {fullName && <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: '7px', color: '#444', textAlign: 'center', lineHeight: '1.3' }}>{fullName}</span>}
     </div>
   );
 }
@@ -65,11 +66,11 @@ const clientLogos = [
   { id: 28, name: "UNIPUNGUE",  img: ImgLogo({ src: unipungueLogoImg,                                                                                                         alt: "UNIPUNGUE" }) as any },
   // Ministries
   { id: 30, name: "MISAU",   img: ImgLogo({ src: misauLogoImg,   alt: "MISAU" }) as any },
-  { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC" }) as any },
+  { id: 31, name: "MEC",     img: GovLogo({ acronym: "MEC", fullName: "Ministério da Educação e Cultura" }) as any },
   { id: 32, name: "MIREME",  img: ImgLogo({ src: miremeLogoImg,  alt: "MIREME" }) as any },
-  { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN" }) as any },
+  { id: 33, name: "MDN",     img: GovLogo({ acronym: "MDN", fullName: "Ministério da Defesa Nacional" }) as any },
   { id: 34, name: "MAAP",    img: ImgLogo({ src: maapLogoImg,    alt: "MAAP" }) as any },
-  { id: 35, name: "MTL",     img: GovLogo({ acronym: "MTL" }) as any },
+  { id: 35, name: "MTL",     img: GovLogo({ acronym: "MTL", fullName: "Ministério dos Transportes e Logística" }) as any },
 ];
 
 interface SobreNosProps {
