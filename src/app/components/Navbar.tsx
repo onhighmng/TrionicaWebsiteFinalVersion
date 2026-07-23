@@ -351,10 +351,9 @@ export const Navbar = ({ currentPage, onNavigate }: NavbarProps) => {
             <div className="flex items-center gap-2 md:gap-3 cursor-pointer" onClick={() => handleNavClick('home')}>
               <img
                 src={getImageUrl("wp-content/uploads/2019/05/cropped-LogoTRIONICAmz-002_1-1.png")}
-                alt="Trionica"
+                alt="Triónica"
                 className="h-11 md:h-14 w-auto"
               />
-              <span className={`text-lg md:text-xl font-semibold ${currentPage === 'contacte-nos' && !mobileMenuOpen ? 'text-white' : 'text-gray-900'}`}>Trionica</span>
             </div>
 
             {/* Mobile menu button - stays above the menu overlay so the burger→X morph is visible */}

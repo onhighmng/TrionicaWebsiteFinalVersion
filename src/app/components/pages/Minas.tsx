@@ -64,7 +64,7 @@ export function Minas({ onNavigate }: MinasProps) {
           
           {/* Heading */}
           <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
-            Inovação no Coração da Terra.
+            Tecnologia para mineração e geociência.
           </h1>
           
           {/* Hero Image */}
@@ -82,7 +82,7 @@ export function Minas({ onNavigate }: MinasProps) {
       <section className="relative w-full bg-white px-4 md:px-4 pb-8">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
-            Apoiamos o desenvolvimento do sector mineiro com equipamentos de alta tecnologia para laboratórios e investigação geológica.
+            Equipamentos e soluções para investigação geológica, geofísica, hidrogeologia, geotecnia, sismologia e análise laboratorial.
           </p>
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[14px] tracking-[-0.1504px] whitespace-nowrap shrink-0 hidden md:block">
             Equipamentos Educacionais | Soluções Científicas

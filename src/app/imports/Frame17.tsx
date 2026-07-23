@@ -22,7 +22,7 @@ function Ensino() {
   return (
     <div className="h-[130px] relative shrink-0 w-full" data-name="Ensino">
       <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[26px] left-0 not-italic text-[#4a5565] text-[24px] text-justify top-[-0.59px] tracking-[-0.3125px] w-[611px]">
-        <p className="mb-0">Apoiamos o desenvolvimento do sector mineiro com equipamentos de alta tecnologia para laboratórios e investigação geológica.</p>
+        <p className="mb-0">Equipamentos e soluções para investigação geológica, geofísica, hidrogeologia, geotecnia, sismologia e análise laboratorial.</p>
         <p>&nbsp;</p>
       </div>
     </div>
@@ -182,7 +182,7 @@ export default function Frame() {
       <Section />
       <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
       <Container5 />
-      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] whitespace-nowrap">Inovação no Coração da Terra.</p>
+      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] whitespace-nowrap">Tecnologia para mineração e geociência.</p>
     </div>
   );
 }

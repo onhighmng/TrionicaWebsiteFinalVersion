@@ -4,10 +4,10 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ensinoImg from '../../../imports/ensino-lab.jpg';
 import saudeImg from '../../../imports/saude-card.jpeg';
-import aguasImg from '../../../imports/aguas-hero.png';
+import aguasImg from '../../../imports/aguas-card-new.jpeg';
 import aguasImg2 from '../../../imports/aquasafe-wsl50-case.png';
-import ambienteImg from '../../../imports/card-ambiente.jpg';
-import minasImg from '../../../imports/card-minas-mine.webp';
+import ambienteImg from '../../../imports/ambiente-card.jpeg';
+import minasImg from '../../../imports/minas-card-new.jpeg';
 
 const solutions: { number: string; title: string; subtitle: string; description: string; bullets: string[]; image: string; image2?: string; link: string }[] = [
   {
@@ -47,7 +47,7 @@ const solutions: { number: string; title: string; subtitle: string; description:
     number: "03",
     title: "Águas",
     subtitle: "Análise, monitorização e tratamento da qualidade da água",
-    description: "Fornecimento de equipamentos e soluções para análise, monitorização e tratamento da qualidade da água.",
+    description: "Fornecimento de Equipamentos e soluções para análise de qualidade, monitoramento e tratamento da água.",
     bullets: [
       "Caudalímetros (controlo de perdas)",
       "Contadores mecânicos, eletrónicos e pré-pagos",
