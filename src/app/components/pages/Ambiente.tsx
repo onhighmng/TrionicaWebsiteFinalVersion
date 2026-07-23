@@ -64,7 +64,7 @@ export function Ambiente({ onNavigate }: AmbienteProps) {
           
           {/* Heading */}
           <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
-            Juntos pelo mundo verde.
+            soluções ambientais para terra água e Ar.
           </h1>
           
           {/* Hero Image */}
