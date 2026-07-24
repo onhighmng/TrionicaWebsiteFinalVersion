@@ -104,7 +104,7 @@ function Text1() {
 
 function Container1() {
   return (
-    <div className="absolute content-stretch flex gap-[0.364px] h-[97px] items-center left-[130px] pl-[-7.636px] pr-0 py-0 top-0 w-[160px]" data-name="Container">
+    <div className="absolute content-stretch flex gap-[0.364px] h-[97px] items-center left-[8px] pl-[-7.636px] pr-0 py-0 top-0 w-[160px]" data-name="Container">
       <div className="flex h-[42.874px] items-center justify-center relative shrink-0 w-[42.866px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[316.003deg]">
           <Text />
