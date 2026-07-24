@@ -61,7 +61,7 @@ export function Aguas({ onNavigate }: AguasProps) {
             <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">Águas</p>
           </div>
           <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
-            Soluções para a qualidade da água.
+            Soluções tecnológicas para gestão da água
           </h1>
           <div className="w-full rounded-[12px] overflow-hidden mb-6">
             <img
@@ -77,7 +77,7 @@ export function Aguas({ onNavigate }: AguasProps) {
       <section className="relative w-full bg-white px-2 md:px-4 py-8">
         <div className="relative w-full max-w-[98%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8 md:pl-[75px] lg:pl-[100px] xl:pl-[116px] md:pr-[75px] lg:pr-[100px] xl:pr-[116px]">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
-            Fornecimento de equipamentos e soluções para análise de qualidade, monitoramento e tratamento da água.
+            Fornecemos equipamentos para monitorização, medição, controle e tratamento da água, apoiando a gestão eficiente dos recursos hídricos e melhoria de qualidade da água
           </p>
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[14px] tracking-[-0.1504px] whitespace-nowrap shrink-0 hidden md:block">
             Equipamentos Educacionais | Soluções Científicas

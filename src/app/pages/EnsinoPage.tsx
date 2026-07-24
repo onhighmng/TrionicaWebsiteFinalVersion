@@ -65,7 +65,7 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
 
           {/* Heading */}
           <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[32px] leading-[1.15] tracking-[-1px] mb-6">
-            Equipamentos para Ensino e Investigação
+            Equipamentos para ensino e investigação
           </h1>
           
           {/* Hero Image */}

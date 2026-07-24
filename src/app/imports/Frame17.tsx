@@ -182,7 +182,7 @@ export default function Frame() {
       <Section />
       <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
       <Container5 />
-      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] whitespace-nowrap">Tecnologia para mineração e geociência.</p>
+      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] whitespace-nowrap">Tecnologia para mineração e geociência</p>
     </div>
   );
 }

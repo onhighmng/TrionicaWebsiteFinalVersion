@@ -163,7 +163,7 @@ function Frame1() {
       <Frame />
       <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
       <div className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.1] left-[17px] text-[#1c1716] text-[44px] top-[97px] tracking-[-1.4px] whitespace-nowrap">
-        <p>Equipamentos para Ensino e Investigação</p>
+        <p>Equipamentos para ensino e investigação</p>
       </div>
       <Container3 />
     </div>

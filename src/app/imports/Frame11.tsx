@@ -180,7 +180,7 @@ export default function Frame() {
         <Section />
         <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
         <Container5 />
-        <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[75px] tracking-[-1.92px] whitespace-nowrap">Tecnologia para água limpa.</p>
+        <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] text-[#1c1716] text-[64px] top-[75px] tracking-[-1.92px] whitespace-nowrap">Soluções tecnológicas para gestão da água</p>
         </div>
     </div>
   );
