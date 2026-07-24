@@ -3,7 +3,7 @@ import Frame17 from '../../imports/Frame17';
 import Frame18 from '../../imports/Frame18';
 import { TimelineContent } from '../ui/timeline-animation';
 import { CTAFooterSection } from '../home/CTAFooterSection';
-import imgFrame116 from "figma:asset/0a953ce0f0bfab0173f325511fdb890be8d0105d.png";
+import imgFrame116 from "../../../imports/minas-card-new.jpeg";
 
 interface MinasProps {
   onNavigate?: (page: string) => void;

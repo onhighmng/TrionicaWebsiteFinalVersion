@@ -1,4 +1,4 @@
-import imgAguas from "../../imports/aguas-hero.jpeg";
+import imgAguas from "../../imports/aguas-card-new.jpeg";
 
 export default function Frame() {
   return (

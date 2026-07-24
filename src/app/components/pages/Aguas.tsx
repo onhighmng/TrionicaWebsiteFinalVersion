@@ -3,6 +3,7 @@ import Frame11 from '../../imports/Frame11';
 import Frame12 from '../../imports/Frame12';
 import { TimelineContent } from '../ui/timeline-animation';
 import { CTAFooterSection } from '../home/CTAFooterSection';
+import aguasCardImg from "../../../imports/aguas-card-new.jpeg";
 
 interface AguasProps {
   onNavigate?: (page: string) => void;
@@ -13,8 +14,8 @@ export function Aguas({ onNavigate }: AguasProps) {
   
   return (
     <div className="min-h-screen bg-white" data-navbar-section="light">
-      {/* Hero Section */}
-      <section className="relative w-full bg-white pt-20 md:pt-24 pb-2 md:pb-4 px-4 md:px-4" ref={heroRef}>
+      {/* Hero Section - Desktop */}
+      <section className="hidden md:block relative w-full bg-white pt-20 md:pt-24 pb-2 md:pb-4 px-4 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -48,6 +49,30 @@ export function Aguas({ onNavigate }: AguasProps) {
         </TimelineContent>
       </section>
       
+      {/* Hero Section - Mobile */}
+      <section className="md:hidden relative w-full bg-white pt-20 pb-8 px-6">
+        <div className="max-w-[600px] mx-auto">
+          <div className="flex gap-[4px] items-center h-[40px] mb-4">
+            <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[30px]">
+              <div className="flex-none">
+                <p className="font-['Inter:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal text-[#2354a2] text-[24px] animate-spin">✱</p>
+              </div>
+            </div>
+            <p className="font-['Inter:Medium',sans-serif] font-medium text-[#4a5565] text-[18px]">Águas</p>
+          </div>
+          <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
+            Soluções para a qualidade da água.
+          </h1>
+          <div className="w-full rounded-[12px] overflow-hidden mb-6">
+            <img
+              alt="Águas - Soluções para qualidade da água"
+              className="w-full h-auto object-cover"
+              src={aguasCardImg}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Mobile Description Section - Between hero and cards */}
       <section className="relative w-full bg-white px-4 md:px-4 pb-8">
         <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">

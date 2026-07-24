@@ -3,7 +3,7 @@ import Frame14 from '../../imports/Frame14';
 import Frame15 from '../../imports/Frame15';
 import { TimelineContent } from '../ui/timeline-animation';
 import { CTAFooterSection } from '../home/CTAFooterSection';
-import imgFrame115 from "figma:asset/fae0ca8c4c8b8276529bcc52aad8566e0feb7811.png";
+import imgFrame115 from "../../../imports/ambiente-card.jpeg";
 
 interface AmbienteProps {
   onNavigate?: (page: string) => void;

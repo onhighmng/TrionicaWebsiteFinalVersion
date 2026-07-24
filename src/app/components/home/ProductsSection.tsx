@@ -4,10 +4,10 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ensinoImg from '../../../imports/ensino-lab.jpg';
 import saudeImg from '../../../imports/saude-card.jpeg';
-import aguasImg from '../../../imports/aguas-card-new.jpeg';
+import aguasImg from '../../../imports/aguas-hero.png';
 import aguasImg2 from '../../../imports/aquasafe-wsl50-case.png';
-import ambienteImg from '../../../imports/ambiente-card.jpeg';
-import minasImg from '../../../imports/minas-card-new.jpeg';
+import ambienteImg from '../../../imports/card-ambiente.jpg';
+import minasImg from '../../../imports/card-minas-mine.webp';
 
 const solutions: { number: string; title: string; subtitle: string; description: string; bullets: string[]; image: string; image2?: string; link: string }[] = [
   {
