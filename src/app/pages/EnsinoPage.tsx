@@ -16,7 +16,7 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
   return (
     <div className="w-full bg-[#F5F5F5]" data-navbar-section="light">
       {/* Desktop Hero Section */}
-      <div className="hidden md:block pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
+      <div className="hidden md:block pt-20 md:pt-24 pb-0 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -81,14 +81,16 @@ export function EnsinoPage({ onNavigate }: EnsinoPageProps) {
       
 
       {/* Description Section */}
-      <section className="relative w-full bg-[#F5F5F5] px-4 md:px-4 pb-8">
-        <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">
+      <section className="relative w-full bg-[#F5F5F5] px-4 md:px-4 py-8">
+        <div className="relative w-full max-w-[98%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto">
+        <div className="flex items-center justify-between gap-8 md:pl-[calc(50%_-_368px)] lg:pl-[calc(50%_-_495px)] xl:pl-[calc(50%_-_575px)] xl:pr-[calc(50%_-_592px)]">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
             Disponibilizamos uma vasta gama de equipamentos destinados ao Ensino Superior, Instituições Técnico-Profissionais, Escolas Secundárias e Primárias, bem como Laboratórios de Investigação.
           </p>
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[14px] tracking-[-0.1504px] whitespace-nowrap shrink-0 hidden md:block">
             Equipamentos Educacionais | Soluções Científicas
           </p>
+        </div>
         </div>
       </section>
 

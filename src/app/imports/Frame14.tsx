@@ -179,7 +179,7 @@ export default function Frame() {
       <Section />
       <p className="hidden">Equipamentos Educacionais | Soluções Científicas</p>
       <Container5 />
-      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] md:left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] whitespace-nowrap block">Juntos pelo mundo verde.</p>
+      <p className="absolute font-['Manrope:Medium',sans-serif] font-medium leading-[1.12] left-[8px] md:left-[8px] text-[#1c1716] text-[64px] top-[97px] tracking-[-1.92px] whitespace-nowrap block">Soluções ambientais para Terra, Água e Ar.</p>
     </div>
   );
 }

@@ -47,7 +47,7 @@ const solutions: { number: string; title: string; subtitle: string; description:
     number: "03",
     title: "Águas",
     subtitle: "Análise, monitorização e tratamento da qualidade da água",
-    description: "Fornecimento de Equipamentos e soluções para análise de qualidade, monitoramento e tratamento da água.",
+    description: "Fornecimento de equipamentos e soluções para análise de qualidade, monitoramento e tratamento da água.",
     bullets: [
       "Caudalímetros (controlo de perdas)",
       "Contadores mecânicos, eletrónicos e pré-pagos",

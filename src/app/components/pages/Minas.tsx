@@ -15,7 +15,7 @@ export function Minas({ onNavigate }: MinasProps) {
   return (
     <div className="min-h-screen bg-white" data-navbar-section="light">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:block relative w-full bg-white pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
+      <section className="hidden md:block relative w-full bg-white pt-20 md:pt-24 pb-0 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -79,8 +79,8 @@ export function Minas({ onNavigate }: MinasProps) {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="relative w-full bg-white px-4 md:px-4 pb-8">
-        <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">
+      <section className="relative w-full bg-white px-2 md:px-4 py-8">
+        <div className="relative w-full max-w-[98%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8 md:pl-[75px] lg:pl-[100px] xl:pl-[116px] md:pr-[75px] lg:pr-[100px] xl:pr-[116px]">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
             Equipamentos e soluções para investigação geológica, geofísica, hidrogeologia, geotecnia, sismologia e análise laboratorial.
           </p>

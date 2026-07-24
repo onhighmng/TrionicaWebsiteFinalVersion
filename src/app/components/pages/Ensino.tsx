@@ -313,7 +313,7 @@ export function Ensino() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:block py-8 px-4 bg-white" ref={heroRef}>
+      <section className="hidden md:block pt-8 pb-4 px-4 bg-white" ref={heroRef}>
         <div className="max-w-6xl mx-auto">
           <div className="relative">
             {/* Header */}
@@ -368,7 +368,7 @@ export function Ensino() {
           </div>
 
           {/* Main Content */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 pl-[10%]">
             <div className="md:col-span-2">
               <h1 className="sm:text-4xl md:text-5xl text-2xl !leading-[110%] font-semibold text-gray-900 mb-8">
                 <VerticalCutReveal

@@ -15,7 +15,7 @@ export function Ambiente({ onNavigate }: AmbienteProps) {
   return (
     <div className="min-h-screen bg-white" data-navbar-section="light">
       {/* Hero Section - Desktop */}
-      <section className="hidden md:block relative w-full bg-white pt-20 md:pt-24 pb-12 md:pb-20 px-2 md:px-4" ref={heroRef}>
+      <section className="hidden md:block relative w-full bg-white pt-20 md:pt-24 pb-0 px-2 md:px-4" ref={heroRef}>
         <TimelineContent
           as="div"
           animationNum={0}
@@ -64,7 +64,7 @@ export function Ambiente({ onNavigate }: AmbienteProps) {
           
           {/* Heading */}
           <h1 className="font-['Manrope:Medium',sans-serif] font-medium text-[#1c1716] text-[36px] leading-[1.15] tracking-[-1.08px] mb-6">
-            Juntos pelo mundo verde.
+            Soluções ambientais para Terra, Água e Ar.
           </h1>
           
           {/* Hero Image */}
@@ -79,10 +79,10 @@ export function Ambiente({ onNavigate }: AmbienteProps) {
       </section>
       
       {/* Mobile Description Section - Only visible on mobile */}
-      <section className="relative w-full bg-white px-4 md:px-4 pb-8">
-        <div className="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8">
+      <section className="relative w-full bg-white px-2 md:px-4 py-8">
+        <div className="relative w-full max-w-[98%] sm:max-w-[600px] md:max-w-[900px] lg:max-w-[1200px] xl:max-w-[1400px] mx-auto flex items-center justify-between gap-8 md:pl-[75px] lg:pl-[100px] xl:pl-[116px] md:pr-[75px] lg:pr-[100px] xl:pr-[116px]">
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[18px] leading-[26px] text-left tracking-[-0.3125px] max-w-[700px]">
-            Promovemos soluções sustentáveis que contribuem para a preservação ambiental, fornecendo equipamentos para laboratório e campo.
+            Soluções e equipamentos para monitorizar, proteger e gerir melhor os nossos recursos naturais - do ar à água, da terra ao oceano.
           </p>
           <p className="font-['Inter:Regular',sans-serif] text-[#4a5565] text-[14px] tracking-[-0.1504px] whitespace-nowrap shrink-0 hidden md:block">
             Equipamentos Educacionais | Soluções Científicas
